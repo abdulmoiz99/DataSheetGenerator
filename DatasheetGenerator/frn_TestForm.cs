@@ -24,44 +24,47 @@ namespace DatasheetGenerator
         private void frn_TestForm_Load(object sender, EventArgs e)
         {
 
+            //Adding column names
             dataGridView1.Columns.Add("newColumnName", "Gerneral");
             dataGridView1.Columns.Add("newColumnName1", "");
 
+            //COLUMN HEADER
+            //Set Header height
             this.dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-
             this.dataGridView1.ColumnHeadersHeight = 50;
-
             this.dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-
-            dataGridView1.Columns[0].HeaderCell.Style.Font = new Font("Roboto Slab", 13, FontStyle.Bold);
+            //Header Font
+            dataGridView1.Columns[0].HeaderCell.Style.Font = new Font("Roboto Medium", 13);
+            //Auto Size Column
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //Header Border
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            //Header Color
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 101, 177);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            //ROW
+            //Row Height
             dataGridView1.RowTemplate.Height = 40;
+            //Row Fore Color
             dataGridView1.Columns[0].DefaultCellStyle.ForeColor = Color.FromArgb(82, 82, 84);
             dataGridView1.Columns[1].DefaultCellStyle.ForeColor = Color.FromArgb(82, 82, 84);
-
-
-
-            dataGridView1.BorderStyle = BorderStyle.None;
+            //Alternating Row Setup
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(237, 238, 239);
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Gray;
             dataGridView1.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
             dataGridView1.BackgroundColor = Color.White;
 
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 101, 177); // Header Color
-            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            //GRID BORDER
+             dataGridView1.BorderStyle = BorderStyle.None;
+           
 
-            this.dataGridView1.DefaultCellStyle.Font = new Font("Roboto Slab", 10);
+            this.dataGridView1.DefaultCellStyle.Font = new Font("Roboto", 10);
 
-            //dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight;
-            //dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomLeft;
-
-
-
-
-
+            ////dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomRight;
+            ////dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomLeft;
 
 
 
