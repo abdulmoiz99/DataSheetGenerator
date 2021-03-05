@@ -62,6 +62,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_AddHeaderPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AddHeaderPopup.Designer.cs">
+      <DependentUpon>frm_AddHeaderPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frm_AddHeaderPopup.resx">
+      <DependentUpon>frm_AddHeaderPopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Dashboard.resx">
       <DependentUpon>frm_Dashboard.cs</DependentUpon>
     </EmbeddedResource>

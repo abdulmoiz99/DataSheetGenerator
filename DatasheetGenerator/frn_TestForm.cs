@@ -78,18 +78,17 @@ namespace DatasheetGenerator
             dataGridView.Rows.Add("Product Name", "Text Field");
             dataGridView.Rows.Add("Product Code", "Text Field");
             dataGridView.Rows.Add("Prodcut Description", "Text Field");
-
-
-
-
-
-
         }
 
         private void dgv_MouseDown(object sender, MouseEventArgs e)
         {
             base.OnMouseDown(e);
             DoDragDrop(sender, DragDropEffects.All);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show(dataGridView1.Columns[e.ColumnIndex].HeaderText);
         }
     }
 }
