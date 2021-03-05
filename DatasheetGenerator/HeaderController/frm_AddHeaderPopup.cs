@@ -31,5 +31,12 @@ namespace DatasheetGenerator
         {
             if (txt_HeaderName.Text == "Header Name") txt_HeaderName.Clear();
         }
+
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+            HeaderController.Header.NewHeaderAdded = true;
+            HeaderController.Header.HeaderText  = txt_HeaderName.Text;
+            this.Close();
+        }
     }
 }

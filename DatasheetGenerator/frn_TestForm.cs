@@ -23,13 +23,7 @@ namespace DatasheetGenerator
 
         private void frn_TestForm_Load(object sender, EventArgs e)
         {
-            GenerateGrid(dgv);
-            GenerateGrid(dataGridView1);
-
-            //ControlExtension.Draggable(dgv, true);
-            //ControlExtension.Draggable(dataGridView1, true);
-
-            ControlExtension.Draggable(button1, true);
+            
 
         }
 
@@ -86,9 +80,5 @@ namespace DatasheetGenerator
             DoDragDrop(sender, DragDropEffects.All);
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            MessageBox.Show(dataGridView1.Columns[e.ColumnIndex].HeaderText);
-        }
     }
 }

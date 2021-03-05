@@ -108,6 +108,7 @@
             this.btn_Add.TabIndex = 19;
             this.btn_Add.TextColor = System.Drawing.Color.White;
             this.btn_Add.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // btn_Exit
             // 

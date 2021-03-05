@@ -252,6 +252,7 @@
             this.Name = "frm_Editor";
             this.Text = "frm_Editor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.frm_Editor_Activated);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.xuiCustomGroupbox1.ResumeLayout(false);

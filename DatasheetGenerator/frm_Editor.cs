@@ -22,18 +22,14 @@ namespace DatasheetGenerator
         {
             var frm = new frm_AddHeaderPopup();
             frm.ShowDialog();
-            var dgv = new DataGridView();
-            dgv.Size= new Size(546, 277);
-            GenerateGrid(dgv);
-            dgv.Tag = count++;
-            flowLayoutPanel1.Controls.Add(dgv);
+           
 
         }
-        private void GenerateGrid(DataGridView dataGridView)
+        private void GenerateGrid(DataGridView dataGridView,string HeaderText)
         {
             dataGridView.AllowUserToAddRows = false;
             //Adding column names
-            dataGridView.Columns.Add("newColumnName", "Gerneral");
+            dataGridView.Columns.Add("newColumnName", HeaderText);
             dataGridView.Columns.Add("newColumnName1", "");
 
 
@@ -77,6 +73,18 @@ namespace DatasheetGenerator
             dataGridView.Rows.Add("Prodcut Description", "Text Field");
             dataGridView.AllowUserToAddRows = true;
 
+        }
+
+        private void frm_Editor_Activated(object sender, EventArgs e)
+        {
+            if (HeaderController.Header.CheckNewHeader())
+            {
+                var dgv = new DataGridView();
+                dgv.Size = new Size(546, 277);
+                GenerateGrid(dgv,HeaderController.Header.HeaderText);
+                dgv.Tag = count++;
+                flowLayoutPanel1.Controls.Add(dgv);
+            }
         }
     }
 }
