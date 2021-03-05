@@ -36,6 +36,9 @@
     <Reference Include="Control.Draggable, Version=1.0.5049.269, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Control.Draggable.1.0.5049.269\lib\net35-Client\Control.Draggable.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -71,6 +74,12 @@
     <Compile Include="frm_Editor.Designer.cs">
       <DependentUpon>frm_Editor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Login.Designer.cs">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_MediaLibrary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Editor.resx">
       <DependentUpon>frm_Editor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Login.resx">
+      <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MediaLibrary.resx">
       <DependentUpon>frm_MediaLibrary.cs</DependentUpon>
