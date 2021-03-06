@@ -12,6 +12,7 @@ namespace DatasheetGenerator
 {
     public partial class frm_Editor : Form
     {
+        string HeaderChangedIndex = "";
         int count = 1;
         public frm_Editor()
         {
@@ -95,6 +96,34 @@ namespace DatasheetGenerator
                 flowLayoutPanel1.Controls.Add(dgv);
                 HeaderController.Header.DisableNewHeader();
 
+            }
+        }
+
+        private void dgv_HeaderDetails_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            var row = dgv_HeaderDetails.Rows[e.RowIndex];
+            var changedValue = (string)row.Cells[1].Value;
+            HeaderChangedIndex = changedValue;
+        }
+
+        private void Column1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;   
+            }
+        }
+
+        private void dgv_HeaderDetails_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            e.Control.KeyPress -= new KeyPressEventHandler(Column1_KeyPress);
+            if (dgv_HeaderDetails.CurrentCell.ColumnIndex == 1) //Desired Column
+            {
+                TextBox tb = e.Control as TextBox;
+                if (tb != null)
+                {
+                    tb.KeyPress += new KeyPressEventHandler(Column1_KeyPress);
+                }
             }
         }
     }
