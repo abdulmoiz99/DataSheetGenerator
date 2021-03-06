@@ -12,7 +12,7 @@ namespace DatasheetGenerator
 {
     public partial class frm_Editor : Form
     {
-        int count = 0;
+        int count = 1;
         public frm_Editor()
         {
             InitializeComponent();
@@ -22,10 +22,10 @@ namespace DatasheetGenerator
         {
             var frm = new frm_AddHeaderPopup();
             frm.ShowDialog();
-           
+
 
         }
-        private void GenerateGrid(DataGridView dataGridView,string HeaderText)
+        private void GenerateGrid(DataGridView dataGridView, string HeaderText)
         {
             dataGridView.AllowUserToAddRows = false;
             //Adding column names
@@ -73,17 +73,28 @@ namespace DatasheetGenerator
             dataGridView.Rows.Add("Prodcut Description", "Text Field");
             dataGridView.AllowUserToAddRows = true;
 
-        }
+            //Disabling Seletion Color
+            dataGridView.DefaultCellStyle.SelectionBackColor = dataGridView.DefaultCellStyle.BackColor;
+            dataGridView.DefaultCellStyle.SelectionForeColor = dataGridView.DefaultCellStyle.ForeColor;
 
+        }
+        private void UpdateHeaderDetails(DataGridView dataGridView, string HeaderText, string Position)
+        {
+            dataGridView.Rows.Add(HeaderText, Position);
+
+        }
         private void frm_Editor_Activated(object sender, EventArgs e)
         {
             if (HeaderController.Header.CheckNewHeader())
             {
                 var dgv = new DataGridView();
                 dgv.Size = new Size(546, 277);
-                GenerateGrid(dgv,HeaderController.Header.HeaderText);
+                GenerateGrid(dgv, HeaderController.Header.GetHeaderText());
+                UpdateHeaderDetails(dgv_HeaderDetails, HeaderController.Header.GetHeaderText(), count.ToString());
                 dgv.Tag = count++;
                 flowLayoutPanel1.Controls.Add(dgv);
+                HeaderController.Header.DisableNewHeader();
+
             }
         }
     }

@@ -34,8 +34,8 @@ namespace DatasheetGenerator
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            HeaderController.Header.NewHeaderAdded = true;
-            HeaderController.Header.HeaderText  = txt_HeaderName.Text;
+            HeaderController.Header.AddNewHeader();
+            HeaderController.Header.SetHeaderText(txt_HeaderName.Text);
             this.Close();
         }
     }

@@ -8,8 +8,8 @@ namespace DatasheetGenerator.HeaderController
 {
     class Header
     {
-        public static bool NewHeaderAdded = false;
-        public static string HeaderText;
+        static bool NewHeaderAdded = false;
+        static string HeaderText;
 
 
         public static bool CheckNewHeader()
@@ -20,5 +20,13 @@ namespace DatasheetGenerator.HeaderController
             }
             return false;
         }
+        public static string GetHeaderText()
+        {
+            return HeaderText;
+        }
+        public static void SetHeaderText(string headerText) => HeaderText = headerText ;
+
+        public static void AddNewHeader() => NewHeaderAdded = true;
+        public static void DisableNewHeader() => NewHeaderAdded = false;
     }
 }
