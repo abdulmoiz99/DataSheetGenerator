@@ -12,7 +12,7 @@ namespace DatasheetGenerator
 {
     public partial class frm_Editor : Form
     {
-        string HeaderChangedIndex = "";
+        int HeaderChangedIndex = 0;
         int count = 1;
         public frm_Editor()
         {
@@ -74,16 +74,18 @@ namespace DatasheetGenerator
             dataGridView.Rows.Add("Prodcut Description", "Text Field");
             dataGridView.AllowUserToAddRows = true;
 
-            //Disabling Seletion Color
+            //Disabling Selection Color
             dataGridView.DefaultCellStyle.SelectionBackColor = dataGridView.DefaultCellStyle.BackColor;
             dataGridView.DefaultCellStyle.SelectionForeColor = dataGridView.DefaultCellStyle.ForeColor;
 
         }
-        private void UpdateHeaderDetails(DataGridView dataGridView, string HeaderText, string Position)
-        {
-            dataGridView.Rows.Add(HeaderText, Position);
 
+        private void UpdateHeaderDetails(DataGridView dataGridView, string HeaderText, int Position, DataGridView refGrid)
+        {
+            int rowIndex = dataGridView.Rows.Add(HeaderText, Position);
+            dataGridView.Rows[rowIndex].Tag = refGrid;
         }
+
         private void frm_Editor_Activated(object sender, EventArgs e)
         {
             if (HeaderController.Header.CheckNewHeader())
@@ -91,19 +93,20 @@ namespace DatasheetGenerator
                 var dgv = new DataGridView();
                 dgv.Size = new Size(546, 277);
                 GenerateGrid(dgv, HeaderController.Header.GetHeaderText());
-                UpdateHeaderDetails(dgv_HeaderDetails, HeaderController.Header.GetHeaderText(), count.ToString());
+                UpdateHeaderDetails(dgv_HeaderDetails, HeaderController.Header.GetHeaderText(), count, dgv);
                 dgv.Tag = count++;
                 flowLayoutPanel1.Controls.Add(dgv);
                 HeaderController.Header.DisableNewHeader();
-
             }
         }
 
         private void dgv_HeaderDetails_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            var row = dgv_HeaderDetails.Rows[e.RowIndex];
-            var changedValue = (string)row.Cells[1].Value;
-            HeaderChangedIndex = changedValue;
+            if (e.ColumnIndex == 1) 
+            {
+                var row = dgv_HeaderDetails.Rows[e.RowIndex];
+                HeaderChangedIndex = Convert.ToInt32(row.Cells[1].Value);
+            }   
         }
 
         private void Column1_KeyPress(object sender, KeyPressEventArgs e)
@@ -123,6 +126,53 @@ namespace DatasheetGenerator
                 if (tb != null)
                 {
                     tb.KeyPress += new KeyPressEventHandler(Column1_KeyPress);
+                }
+            }
+        }
+
+        private void dgv_HeaderDetails_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            //Name Change
+            if (e.ColumnIndex == 0) 
+            {
+                DataGridView dataGridView = (DataGridView)dgv_HeaderDetails.Rows[e.RowIndex].Tag;
+
+                if (dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
+                {                  
+                    dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = dataGridView.Columns[0].HeaderText;
+                }
+                else 
+                {
+                    dataGridView.Columns[0].HeaderText = dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                }            
+            }
+
+            //Position Change
+            else if (e.ColumnIndex == 1)
+            {
+                if (dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
+                {
+                    dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = HeaderChangedIndex;
+                }
+
+                else
+                {
+                    dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = Convert.ToInt32(dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+
+                    foreach (DataGridViewRow row in dgv_HeaderDetails.Rows)
+                    {
+                        if (row.Cells[1].Value.ToString() == dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() && row.Index != e.RowIndex)
+                        {
+                            row.Cells[1].Value = HeaderChangedIndex;
+                        }
+                    }
+
+                    dgv_HeaderDetails.Sort(dgv_HeaderDetails.Columns[1], ListSortDirection.Ascending);
+
+                    foreach (DataGridViewRow row in dgv_HeaderDetails.Rows)
+                    {
+                        flowLayoutPanel1.Controls.Add((DataGridView)row.Tag);
+                    }
                 }
             }
         }

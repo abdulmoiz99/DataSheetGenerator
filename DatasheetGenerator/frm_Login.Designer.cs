@@ -71,7 +71,7 @@
             this.materialSingleLineTextField1.SelectedText = "";
             this.materialSingleLineTextField1.SelectionLength = 0;
             this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(319, 25);
+            this.materialSingleLineTextField1.Size = new System.Drawing.Size(319, 23);
             this.materialSingleLineTextField1.TabIndex = 1;
             this.materialSingleLineTextField1.TabStop = false;
             this.materialSingleLineTextField1.Text = "Username";
@@ -91,7 +91,7 @@
             this.materialSingleLineTextField2.SelectedText = "";
             this.materialSingleLineTextField2.SelectionLength = 0;
             this.materialSingleLineTextField2.SelectionStart = 0;
-            this.materialSingleLineTextField2.Size = new System.Drawing.Size(319, 25);
+            this.materialSingleLineTextField2.Size = new System.Drawing.Size(319, 23);
             this.materialSingleLineTextField2.TabIndex = 2;
             this.materialSingleLineTextField2.TabStop = false;
             this.materialSingleLineTextField2.Text = "Password";

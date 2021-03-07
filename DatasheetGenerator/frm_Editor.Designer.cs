@@ -54,7 +54,7 @@
             this.btn_AddHeader = new XanderUI.XUIButton();
             this.dgv_HeaderDetails = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Possition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -71,7 +71,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label1.Location = new System.Drawing.Point(12, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 39);
+            this.label1.Size = new System.Drawing.Size(221, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Product Family:";
             // 
@@ -468,12 +468,13 @@
             this.dgv_HeaderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_HeaderDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Possition});
+            this.Position});
             this.dgv_HeaderDetails.Location = new System.Drawing.Point(6, 39);
             this.dgv_HeaderDetails.Name = "dgv_HeaderDetails";
             this.dgv_HeaderDetails.Size = new System.Drawing.Size(324, 456);
             this.dgv_HeaderDetails.TabIndex = 1;
             this.dgv_HeaderDetails.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgv_HeaderDetails_CellBeginEdit);
+            this.dgv_HeaderDetails.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_HeaderDetails_CellEndEdit);
             this.dgv_HeaderDetails.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_HeaderDetails_EditingControlShowing);
             // 
             // Column1
@@ -481,10 +482,10 @@
             this.Column1.HeaderText = "Text";
             this.Column1.Name = "Column1";
             // 
-            // Possition
+            // Position
             // 
-            this.Possition.HeaderText = "Possition";
-            this.Possition.Name = "Possition";
+            this.Position.HeaderText = "Position";
+            this.Position.Name = "Position";
             // 
             // frm_Editor
             // 
@@ -525,8 +526,6 @@
         private System.Windows.Forms.DataGridView dgv_HeaderDetails;
         private XanderUI.XUIButton xuiButton5;
         private XanderUI.XUIButton btn_AddHeader;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Possition;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private XanderUI.XUICheckBox xuiCheckBox4;
@@ -540,5 +539,7 @@
         private System.Windows.Forms.Panel panel3;
         private XanderUI.XUIButton xuiButton6;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Position;
     }
 }
