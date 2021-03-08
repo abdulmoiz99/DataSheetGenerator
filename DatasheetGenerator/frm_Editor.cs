@@ -23,8 +23,6 @@ namespace DatasheetGenerator
         {
             var frm = new frm_AddHeaderPopup();
             frm.ShowDialog();
-
-
         }
         private void GenerateGrid(DataGridView dataGridView, string HeaderText)
         {
@@ -97,6 +95,7 @@ namespace DatasheetGenerator
                 dgv.Tag = count++;
                 flowLayoutPanel1.Controls.Add(dgv);
                 HeaderController.Header.DisableNewHeader();
+                dgv_HeaderDetails.ClearSelection();
             }
         }
 
@@ -165,15 +164,54 @@ namespace DatasheetGenerator
                         {
                             row.Cells[1].Value = HeaderChangedIndex;
                         }
-                    }
-
-                    dgv_HeaderDetails.Sort(dgv_HeaderDetails.Columns[1], ListSortDirection.Ascending);
-
-                    foreach (DataGridViewRow row in dgv_HeaderDetails.Rows)
-                    {
-                        flowLayoutPanel1.Controls.Add((DataGridView)row.Tag);
-                    }
+                    }             
                 }
+            }
+        }
+
+        private void dgv_HeaderDetails_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 1) 
+            {
+                dgv_HeaderDetails.Sort(dgv_HeaderDetails.Columns[1], ListSortDirection.Ascending);
+
+                foreach (DataGridViewRow row in dgv_HeaderDetails.Rows)
+                {
+                    flowLayoutPanel1.Controls.Add((DataGridView)row.Tag);
+                }
+            }
+        }
+
+        private void frm_Editor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.H) 
+            {
+                var frm = new frm_AddHeaderPopup();
+                frm.ShowDialog();
+            }
+        }
+
+        private void xuiButton5_Click_1(object sender, EventArgs e)
+        {
+            if (dgv_HeaderDetails.IsCurrentCellInEditMode)
+            {
+                dgv_HeaderDetails.EndEdit();
+            }
+        }
+
+        private void dgv_HeaderDetails_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            flowLayoutPanel1.Controls.Remove((DataGridView)e.Row.Tag);
+        }
+
+        private void dgv_HeaderDetails_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2 && e.RowIndex >= 0) 
+            {
+                DataGridViewRow row = dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningRow;
+                flowLayoutPanel1.Controls.Remove((DataGridView)row.Tag);
+                dgv_HeaderDetails.Rows.Remove(row);
+                dgv_HeaderDetails.ClearSelection();
             }
         }
     }
