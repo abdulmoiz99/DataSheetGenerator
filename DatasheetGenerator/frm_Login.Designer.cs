@@ -70,7 +70,6 @@
             this.txt_Username.TabIndex = 1;
             this.txt_Username.TabStop = false;
             this.txt_Username.UseSystemPasswordChar = false;
-            this.txt_Username.Click += new System.EventHandler(this.materialSingleLineTextField1_Click);
             // 
             // txt_Passoword
             // 
@@ -284,7 +283,6 @@
             this.Name = "frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Login";
-            this.Load += new System.EventHandler(this.frm_Login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

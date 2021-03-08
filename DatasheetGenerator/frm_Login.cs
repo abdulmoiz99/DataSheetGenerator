@@ -16,16 +16,6 @@ namespace DatasheetGenerator
         {
             InitializeComponent();
         }
-
-        private void frm_Login_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void materialSingleLineTextField1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label8_MouseEnter(object sender, EventArgs e)
         {
             label8.Font = new Font(label8.Font.Name, label8.Font.SizeInPoints, FontStyle.Underline);
@@ -46,7 +36,14 @@ namespace DatasheetGenerator
         {
             if (txt_Username.Text == "admin" && txt_Passoword.Text == "admin")
             {
-                MessageBox.Show("Success");
+                this.Hide();
+                var frm = new frm_Dashboard();
+                frm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+               MessageBox.Show("Invalid username or password","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
     }

@@ -56,6 +56,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomMessageForm.Designer.cs">
+      <DependentUpon>CustomMessageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     <Compile Include="HeaderController\HeaderController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomMessageForm.resx">
+      <DependentUpon>CustomMessageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HeaderController\frm_AddHeaderPopup.resx">
       <DependentUpon>frm_AddHeaderPopup.cs</DependentUpon>
     </EmbeddedResource>
