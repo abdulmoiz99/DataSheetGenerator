@@ -63,7 +63,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label1.Location = new System.Drawing.Point(193, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 39);
+            this.label1.Size = new System.Drawing.Size(166, 36);
             this.label1.TabIndex = 10;
             this.label1.Text = "Add Header";
             // 
@@ -81,7 +81,7 @@
             this.txt_HeaderName.SelectedText = "";
             this.txt_HeaderName.SelectionLength = 0;
             this.txt_HeaderName.SelectionStart = 0;
-            this.txt_HeaderName.Size = new System.Drawing.Size(257, 25);
+            this.txt_HeaderName.Size = new System.Drawing.Size(257, 23);
             this.txt_HeaderName.TabIndex = 11;
             this.txt_HeaderName.TabStop = false;
             this.txt_HeaderName.Text = "Header Name";

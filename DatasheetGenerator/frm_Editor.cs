@@ -174,6 +174,7 @@ namespace DatasheetGenerator
             if (e.ColumnIndex == 1) 
             {
                 dgv_HeaderDetails.Sort(dgv_HeaderDetails.Columns[1], ListSortDirection.Ascending);
+                Order.ReOrder(dgv_HeaderDetails);
 
                 foreach (DataGridViewRow row in dgv_HeaderDetails.Rows)
                 {
@@ -211,6 +212,8 @@ namespace DatasheetGenerator
                 DataGridViewRow row = dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningRow;
                 flowLayoutPanel1.Controls.Remove((DataGridView)row.Tag);
                 dgv_HeaderDetails.Rows.Remove(row);
+                Order.ReOrder(dgv_HeaderDetails);
+                count--;
                 dgv_HeaderDetails.ClearSelection();
             }
         }

@@ -26,7 +26,7 @@ namespace DatasheetGenerator
         {
             var frm = new frm_Editor();
             frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
+   
             frm.Show();
         }
 
