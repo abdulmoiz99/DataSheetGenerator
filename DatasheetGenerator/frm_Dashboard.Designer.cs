@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Dashboard));
-            this.xuiButton1 = new XanderUI.XUIButton();
-            this.xuiButton2 = new XanderUI.XUIButton();
+            this.btn_NewDatasheet = new XanderUI.XUIButton();
+            this.btn_MediaLinrary = new XanderUI.XUIButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,47 +45,49 @@
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // xuiButton1
+            // btn_NewDatasheet
             // 
-            this.xuiButton1.BackgroundColor = System.Drawing.Color.White;
-            this.xuiButton1.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton1.ButtonImage")));
-            this.xuiButton1.ButtonStyle = XanderUI.XUIButton.Style.Invert;
-            this.xuiButton1.ButtonText = "New Datasheet";
-            this.xuiButton1.ClickBackColor = System.Drawing.Color.Gray;
-            this.xuiButton1.ClickTextColor = System.Drawing.Color.Gray;
-            this.xuiButton1.CornerRadius = 5;
-            this.xuiButton1.Font = new System.Drawing.Font("Roboto Slab", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xuiButton1.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton1.HoverBackgroundColor = System.Drawing.Color.Gray;
-            this.xuiButton1.HoverTextColor = System.Drawing.Color.White;
-            this.xuiButton1.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton1.Location = new System.Drawing.Point(32, 20);
-            this.xuiButton1.Name = "xuiButton1";
-            this.xuiButton1.Size = new System.Drawing.Size(263, 50);
-            this.xuiButton1.TabIndex = 0;
-            this.xuiButton1.TextColor = System.Drawing.Color.Gray;
-            this.xuiButton1.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_NewDatasheet.BackgroundColor = System.Drawing.Color.White;
+            this.btn_NewDatasheet.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_NewDatasheet.ButtonImage")));
+            this.btn_NewDatasheet.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_NewDatasheet.ButtonText = "New Datasheet";
+            this.btn_NewDatasheet.ClickBackColor = System.Drawing.Color.Gray;
+            this.btn_NewDatasheet.ClickTextColor = System.Drawing.Color.Gray;
+            this.btn_NewDatasheet.CornerRadius = 5;
+            this.btn_NewDatasheet.Font = new System.Drawing.Font("Roboto Slab", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_NewDatasheet.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_NewDatasheet.HoverBackgroundColor = System.Drawing.Color.Gray;
+            this.btn_NewDatasheet.HoverTextColor = System.Drawing.Color.White;
+            this.btn_NewDatasheet.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_NewDatasheet.Location = new System.Drawing.Point(32, 20);
+            this.btn_NewDatasheet.Name = "btn_NewDatasheet";
+            this.btn_NewDatasheet.Size = new System.Drawing.Size(263, 50);
+            this.btn_NewDatasheet.TabIndex = 0;
+            this.btn_NewDatasheet.TextColor = System.Drawing.Color.Gray;
+            this.btn_NewDatasheet.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_NewDatasheet.Click += new System.EventHandler(this.btn_NewDatasheet_Click);
             // 
-            // xuiButton2
+            // btn_MediaLinrary
             // 
-            this.xuiButton2.BackgroundColor = System.Drawing.Color.White;
-            this.xuiButton2.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton2.ButtonImage")));
-            this.xuiButton2.ButtonStyle = XanderUI.XUIButton.Style.Invert;
-            this.xuiButton2.ButtonText = "Media Library";
-            this.xuiButton2.ClickBackColor = System.Drawing.Color.Gray;
-            this.xuiButton2.ClickTextColor = System.Drawing.Color.Gray;
-            this.xuiButton2.CornerRadius = 5;
-            this.xuiButton2.Font = new System.Drawing.Font("Roboto Slab", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xuiButton2.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton2.HoverBackgroundColor = System.Drawing.Color.Gray;
-            this.xuiButton2.HoverTextColor = System.Drawing.Color.White;
-            this.xuiButton2.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton2.Location = new System.Drawing.Point(32, 86);
-            this.xuiButton2.Name = "xuiButton2";
-            this.xuiButton2.Size = new System.Drawing.Size(263, 50);
-            this.xuiButton2.TabIndex = 1;
-            this.xuiButton2.TextColor = System.Drawing.Color.Gray;
-            this.xuiButton2.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_MediaLinrary.BackgroundColor = System.Drawing.Color.White;
+            this.btn_MediaLinrary.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_MediaLinrary.ButtonImage")));
+            this.btn_MediaLinrary.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_MediaLinrary.ButtonText = "Media Library";
+            this.btn_MediaLinrary.ClickBackColor = System.Drawing.Color.Gray;
+            this.btn_MediaLinrary.ClickTextColor = System.Drawing.Color.Gray;
+            this.btn_MediaLinrary.CornerRadius = 5;
+            this.btn_MediaLinrary.Font = new System.Drawing.Font("Roboto Slab", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_MediaLinrary.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_MediaLinrary.HoverBackgroundColor = System.Drawing.Color.Gray;
+            this.btn_MediaLinrary.HoverTextColor = System.Drawing.Color.White;
+            this.btn_MediaLinrary.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_MediaLinrary.Location = new System.Drawing.Point(32, 86);
+            this.btn_MediaLinrary.Name = "btn_MediaLinrary";
+            this.btn_MediaLinrary.Size = new System.Drawing.Size(263, 50);
+            this.btn_MediaLinrary.TabIndex = 1;
+            this.btn_MediaLinrary.TextColor = System.Drawing.Color.Gray;
+            this.btn_MediaLinrary.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_MediaLinrary.Click += new System.EventHandler(this.btn_MediaLinrary_Click);
             // 
             // pictureBox1
             // 
@@ -138,8 +140,8 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.xuiButton1);
-            this.panel5.Controls.Add(this.xuiButton2);
+            this.panel5.Controls.Add(this.btn_NewDatasheet);
+            this.panel5.Controls.Add(this.btn_MediaLinrary);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(20, 156);
             this.panel5.Name = "panel5";
@@ -200,8 +202,8 @@
 
         #endregion
 
-        private XanderUI.XUIButton xuiButton1;
-        private XanderUI.XUIButton xuiButton2;
+        private XanderUI.XUIButton btn_NewDatasheet;
+        private XanderUI.XUIButton btn_MediaLinrary;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;

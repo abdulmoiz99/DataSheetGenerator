@@ -38,12 +38,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Close = new XanderUI.XUIButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btn_Close = new XanderUI.XUIButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,7 +154,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(252, 221);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(403, 47);
+            this.label2.Size = new System.Drawing.Size(392, 46);
             this.label2.TabIndex = 9;
             this.label2.Text = "DataSheet Generator";
             // 
@@ -184,6 +184,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(751, 722);
             this.panel1.TabIndex = 11;
+            // 
+            // btn_Close
+            // 
+            this.btn_Close.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btn_Close.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_Close.ButtonImage")));
+            this.btn_Close.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
+            this.btn_Close.ButtonText = "";
+            this.btn_Close.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.btn_Close.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.btn_Close.CornerRadius = 5;
+            this.btn_Close.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Close.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.btn_Close.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.btn_Close.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_Close.Location = new System.Drawing.Point(690, 12);
+            this.btn_Close.Name = "btn_Close";
+            this.btn_Close.Size = new System.Drawing.Size(49, 50);
+            this.btn_Close.TabIndex = 17;
+            this.btn_Close.TextColor = System.Drawing.Color.DodgerBlue;
+            this.btn_Close.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
             // 
             // label4
             // 
@@ -242,27 +263,6 @@
             this.label8.MouseEnter += new System.EventHandler(this.label8_MouseEnter);
             this.label8.MouseLeave += new System.EventHandler(this.label8_MouseLeave);
             // 
-            // btn_Close
-            // 
-            this.btn_Close.BackgroundColor = System.Drawing.Color.Transparent;
-            this.btn_Close.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_Close.ButtonImage")));
-            this.btn_Close.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
-            this.btn_Close.ButtonText = "";
-            this.btn_Close.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.btn_Close.ClickTextColor = System.Drawing.Color.DodgerBlue;
-            this.btn_Close.CornerRadius = 5;
-            this.btn_Close.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_Close.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.btn_Close.HoverTextColor = System.Drawing.Color.DodgerBlue;
-            this.btn_Close.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btn_Close.Location = new System.Drawing.Point(690, 12);
-            this.btn_Close.Name = "btn_Close";
-            this.btn_Close.Size = new System.Drawing.Size(49, 50);
-            this.btn_Close.TabIndex = 17;
-            this.btn_Close.TextColor = System.Drawing.Color.DodgerBlue;
-            this.btn_Close.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
-            // 
             // frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,6 +283,7 @@
             this.Name = "frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Login";
+            this.Load += new System.EventHandler(this.frm_Login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
