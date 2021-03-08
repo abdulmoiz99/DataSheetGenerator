@@ -475,6 +475,8 @@
             this.Delete});
             this.dgv_HeaderDetails.Location = new System.Drawing.Point(6, 39);
             this.dgv_HeaderDetails.Name = "dgv_HeaderDetails";
+            this.dgv_HeaderDetails.RowHeadersVisible = false;
+            this.dgv_HeaderDetails.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_HeaderDetails.Size = new System.Drawing.Size(324, 456);
             this.dgv_HeaderDetails.TabIndex = 1;
             this.dgv_HeaderDetails.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgv_HeaderDetails_CellBeginEdit);
@@ -486,23 +488,29 @@
             // 
             // Column1
             // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.FillWeight = 60F;
             this.Column1.HeaderText = "Text";
             this.Column1.Name = "Column1";
             this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Position
             // 
+            this.Position.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Position.FillWeight = 30F;
             this.Position.HeaderText = "Position";
             this.Position.Name = "Position";
             this.Position.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Delete
             // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.Delete.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Delete.FillWeight = 10F;
             this.Delete.HeaderText = "";
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
             this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
