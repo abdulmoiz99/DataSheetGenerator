@@ -87,6 +87,7 @@
             this.txt_HeaderName.Text = "Header Name";
             this.txt_HeaderName.UseSystemPasswordChar = false;
             this.txt_HeaderName.Click += new System.EventHandler(this.txt_HeaderName_Click);
+            this.txt_HeaderName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_HeaderName_KeyDown);
             // 
             // btn_Add
             // 

@@ -29,7 +29,7 @@ namespace DatasheetGenerator
 
         private void txt_HeaderName_Click(object sender, EventArgs e)
         {
-            if (txt_HeaderName.Text == "Header Name") txt_HeaderName.Clear();
+            //if (txt_HeaderName.Text == "Header Name") txt_HeaderName.Clear();     //Not Required (Suggestion)
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
@@ -37,6 +37,19 @@ namespace DatasheetGenerator
             HeaderController.Header.AddNewHeader();
             HeaderController.Header.SetHeaderText(txt_HeaderName.Text);
             this.Close();
+        }
+
+        private void txt_HeaderName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btn_Add_Click(sender, e);
+            }
+
+            else if (e.KeyCode == Keys.Escape) 
+            {
+                this.Close();
+            }
         }
     }
 }

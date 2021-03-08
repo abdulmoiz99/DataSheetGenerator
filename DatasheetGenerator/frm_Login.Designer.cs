@@ -38,12 +38,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Close = new XanderUI.XUIButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btn_Close = new XanderUI.XUIButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +66,7 @@
             this.txt_Username.SelectedText = "";
             this.txt_Username.SelectionLength = 0;
             this.txt_Username.SelectionStart = 0;
-            this.txt_Username.Size = new System.Drawing.Size(344, 25);
+            this.txt_Username.Size = new System.Drawing.Size(344, 23);
             this.txt_Username.TabIndex = 1;
             this.txt_Username.TabStop = false;
             this.txt_Username.UseSystemPasswordChar = false;
@@ -84,7 +84,7 @@
             this.txt_Passoword.SelectedText = "";
             this.txt_Passoword.SelectionLength = 0;
             this.txt_Passoword.SelectionStart = 0;
-            this.txt_Passoword.Size = new System.Drawing.Size(344, 25);
+            this.txt_Passoword.Size = new System.Drawing.Size(344, 23);
             this.txt_Passoword.TabIndex = 2;
             this.txt_Passoword.TabStop = false;
             this.txt_Passoword.UseSystemPasswordChar = false;
@@ -142,7 +142,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(15, 220);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(247, 48);
+            this.label1.Size = new System.Drawing.Size(224, 43);
             this.label1.TabIndex = 8;
             this.label1.Text = "Welcome To ";
             // 
@@ -154,7 +154,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(252, 221);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(403, 47);
+            this.label2.Size = new System.Drawing.Size(363, 42);
             this.label2.TabIndex = 9;
             this.label2.Text = "DataSheet Generator";
             // 
@@ -166,7 +166,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(15, 284);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(291, 26);
+            this.label3.Size = new System.Drawing.Size(262, 24);
             this.label3.TabIndex = 10;
             this.label3.Text = "Log in to access your account";
             // 
@@ -184,63 +184,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(751, 722);
             this.panel1.TabIndex = 11;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.label4.Location = new System.Drawing.Point(12, 637);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 22);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Warning!";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Roboto", 10F);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.label5.Location = new System.Drawing.Point(12, 662);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(309, 19);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "This is just the demo version of the software";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Roboto Medium", 12F);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.label6.Location = new System.Drawing.Point(48, 98);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 22);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Username";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Roboto Medium", 12F);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.label7.Location = new System.Drawing.Point(48, 187);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 22);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Password";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Roboto", 10F);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.label8.Location = new System.Drawing.Point(48, 264);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(147, 19);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Create New Account";
-            this.label8.MouseEnter += new System.EventHandler(this.label8_MouseEnter);
-            this.label8.MouseLeave += new System.EventHandler(this.label8_MouseLeave);
             // 
             // btn_Close
             // 
@@ -262,6 +205,63 @@
             this.btn_Close.TextColor = System.Drawing.Color.DodgerBlue;
             this.btn_Close.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.label4.Location = new System.Drawing.Point(12, 637);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 19);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Warning!";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Roboto", 10F);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.label5.Location = new System.Drawing.Point(12, 662);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(280, 18);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "This is just the demo version of the software";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Roboto Medium", 12F);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.label6.Location = new System.Drawing.Point(48, 98);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 19);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Username";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Roboto Medium", 12F);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.label7.Location = new System.Drawing.Point(48, 187);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 19);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Password";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Roboto", 10F);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.label8.Location = new System.Drawing.Point(48, 264);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(135, 18);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Create New Account";
+            this.label8.MouseEnter += new System.EventHandler(this.label8_MouseEnter);
+            this.label8.MouseLeave += new System.EventHandler(this.label8_MouseLeave);
             // 
             // frm_Login
             // 
