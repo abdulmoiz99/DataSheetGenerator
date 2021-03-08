@@ -45,5 +45,10 @@ namespace DatasheetGenerator
             frm.Dock = DockStyle.Fill;
             frm.Show();
         }
+
+        private void frm_Dashboard_Activated(object sender, EventArgs e)
+        {
+            if (this.MdiChildren.Length > 0) this.ActivateMdiChild(this.MdiChildren[0]);
+        }
     }
 }

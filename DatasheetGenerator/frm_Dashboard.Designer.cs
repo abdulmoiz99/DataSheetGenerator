@@ -117,7 +117,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label1.Location = new System.Drawing.Point(1118, 85);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(293, 39);
+            this.label1.Size = new System.Drawing.Size(277, 36);
             this.label1.TabIndex = 9;
             this.label1.Text = "Datasheet Generator";
             // 
@@ -191,6 +191,7 @@
             this.Name = "frm_Dashboard";
             this.Text = "Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.frm_Dashboard_Activated);
             this.Load += new System.EventHandler(this.frm_Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
