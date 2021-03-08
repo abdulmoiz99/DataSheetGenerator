@@ -198,5 +198,21 @@ namespace DatasheetGenerator
                 dgv_HeaderDetails.EndEdit();
             }
         }
+
+        private void dgv_HeaderDetails_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            flowLayoutPanel1.Controls.Remove((DataGridView)e.Row.Tag);
+        }
+
+        private void dgv_HeaderDetails_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2) 
+            {
+                DataGridViewRow row = dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningRow;
+                flowLayoutPanel1.Controls.Remove((DataGridView)row.Tag);
+                dgv_HeaderDetails.Rows.Remove(row);
+                dgv_HeaderDetails.ClearSelection();
+            }
+        }
     }
 }
