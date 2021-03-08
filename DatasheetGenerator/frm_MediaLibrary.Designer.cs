@@ -65,7 +65,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(126)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(318, 58);
+            this.label1.Size = new System.Drawing.Size(289, 53);
             this.label1.TabIndex = 1;
             this.label1.Text = "Media Library";
             // 
@@ -76,7 +76,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(126)))), ((int)(((byte)(192)))));
             this.label2.Location = new System.Drawing.Point(16, 133);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 36);
+            this.label2.Size = new System.Drawing.Size(115, 32);
             this.label2.TabIndex = 2;
             this.label2.Text = "Symbols";
             // 
@@ -87,7 +87,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label3.Location = new System.Drawing.Point(406, 465);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(180, 24);
+            this.label3.Size = new System.Drawing.Size(164, 22);
             this.label3.TabIndex = 3;
             this.label3.Text = "Name of the Symbol";
             // 
@@ -160,7 +160,7 @@
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.textBox1.Location = new System.Drawing.Point(406, 492);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(245, 31);
+            this.textBox1.Size = new System.Drawing.Size(245, 29);
             this.textBox1.TabIndex = 9;
             // 
             // xuiButton2
@@ -191,7 +191,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label4.Location = new System.Drawing.Point(29, 187);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(143, 28);
+            this.label4.Size = new System.Drawing.Size(131, 26);
             this.label4.TabIndex = 11;
             this.label4.Text = "Symbols List";
             // 
@@ -236,7 +236,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label5.Location = new System.Drawing.Point(745, 187);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 28);
+            this.label5.Size = new System.Drawing.Size(108, 26);
             this.label5.TabIndex = 23;
             this.label5.Text = "Image List";
             // 
@@ -267,7 +267,7 @@
             this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.textBox2.Location = new System.Drawing.Point(1122, 492);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(245, 31);
+            this.textBox2.Size = new System.Drawing.Size(245, 29);
             this.textBox2.TabIndex = 21;
             // 
             // button2
@@ -340,7 +340,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label6.Location = new System.Drawing.Point(1122, 465);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(180, 24);
+            this.label6.Size = new System.Drawing.Size(164, 22);
             this.label6.TabIndex = 16;
             this.label6.Text = "Name of the Symbol";
             // 
@@ -351,7 +351,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(126)))), ((int)(((byte)(192)))));
             this.label7.Location = new System.Drawing.Point(732, 133);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 36);
+            this.label7.Size = new System.Drawing.Size(98, 32);
             this.label7.TabIndex = 15;
             this.label7.Text = "Images";
             // 
@@ -388,7 +388,6 @@
             this.Name = "frm_MediaLibrary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Media Library";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();

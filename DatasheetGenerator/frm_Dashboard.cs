@@ -24,14 +24,22 @@ namespace DatasheetGenerator
 
         private void btn_NewDatasheet_Click(object sender, EventArgs e)
         {
-            var frm = new frm_Editor();
+            foreach (Form form in MdiChildren)
+            {
+                form.Close();
+            }
+            var frm = new frm_Editor();         
             frm.MdiParent = this;
-   
+            frm.Dock = DockStyle.Fill;
             frm.Show();
         }
 
         private void btn_MediaLinrary_Click(object sender, EventArgs e)
         {
+            foreach (Form form in MdiChildren)
+            {
+                form.Close();
+            }
             var frm = new frm_MediaLibrary();
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
