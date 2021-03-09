@@ -18,11 +18,11 @@ namespace DatasheetGenerator
         {
             InitializeComponent();
         }
-
         private void btn_AddHeader_Click(object sender, EventArgs e)
         {
             var frm = new frm_AddHeaderPopup();
             frm.ShowDialog();
+            this.Refresh();
         }
         private void GenerateGrid(DataGridView dataGridView, string HeaderText)
         {
@@ -77,13 +77,11 @@ namespace DatasheetGenerator
             dataGridView.DefaultCellStyle.SelectionForeColor = dataGridView.DefaultCellStyle.ForeColor;
 
         }
-
         private void UpdateHeaderDetails(DataGridView dataGridView, string HeaderText, int Position, DataGridView refGrid)
         {
             int rowIndex = dataGridView.Rows.Add(HeaderText, Position);
             dataGridView.Rows[rowIndex].Tag = refGrid;
         }
-
         private void frm_Editor_Activated(object sender, EventArgs e)
         {
             if (HeaderController.Header.CheckNewHeader())
@@ -98,7 +96,6 @@ namespace DatasheetGenerator
                 dgv_HeaderDetails.ClearSelection();
             }
         }
-
         private void dgv_HeaderDetails_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             if (e.ColumnIndex == 1) 
@@ -107,7 +104,6 @@ namespace DatasheetGenerator
                 HeaderChangedIndex = Convert.ToInt32(row.Cells[1].Value);
             }   
         }
-
         private void Column1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -115,7 +111,6 @@ namespace DatasheetGenerator
                 e.Handled = true;   
             }
         }
-
         private void dgv_HeaderDetails_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             e.Control.KeyPress -= new KeyPressEventHandler(Column1_KeyPress);
@@ -128,7 +123,6 @@ namespace DatasheetGenerator
                 }
             }
         }
-
         private void dgv_HeaderDetails_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             //Name Change
@@ -145,7 +139,6 @@ namespace DatasheetGenerator
                     dataGridView.Columns[0].HeaderText = dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                 }            
             }
-
             //Position Change
             else if (e.ColumnIndex == 1)
             {
@@ -168,7 +161,6 @@ namespace DatasheetGenerator
                 }
             }
         }
-
         private void dgv_HeaderDetails_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 1) 
@@ -182,7 +174,6 @@ namespace DatasheetGenerator
                 }
             }
         }
-
         private void frm_Editor_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.H) 
@@ -191,7 +182,6 @@ namespace DatasheetGenerator
                 frm.ShowDialog();
             }
         }
-
         private void xuiButton5_Click_1(object sender, EventArgs e)
         {
             if (dgv_HeaderDetails.IsCurrentCellInEditMode)
@@ -199,12 +189,10 @@ namespace DatasheetGenerator
                 dgv_HeaderDetails.EndEdit();
             }
         }
-
         private void dgv_HeaderDetails_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             flowLayoutPanel1.Controls.Remove((DataGridView)e.Row.Tag);
         }
-
         private void dgv_HeaderDetails_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 2 && e.RowIndex >= 0) 

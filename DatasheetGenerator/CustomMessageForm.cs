@@ -35,13 +35,15 @@ namespace DatasheetGenerator
     /// </summary>
     public static class CustomMessageBox
     {
-        public static void Show(string description)
+        public static string Show(string description)
         {
             // using construct ensures the resources are freed when form is closed
             using (var form = new CustomMessageForm(description))
             {
                 form.ShowDialog();
             }
+
+            return "";
         }
     }
 }
