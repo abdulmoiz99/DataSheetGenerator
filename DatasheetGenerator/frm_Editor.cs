@@ -205,6 +205,13 @@ namespace DatasheetGenerator
                 dgv_HeaderDetails.ClearSelection();
             }
         }
-     
+
+        private void btn_Edit_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < count; i++)
+            {
+
+            }
+        }
     }
 }
