@@ -208,7 +208,20 @@ namespace DatasheetGenerator
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
-            Header.GetHeaders(flowLayoutPanel1);
+            Dictionary<string, Dictionary<string, string>> headers = Header.GetHeaders(flowLayoutPanel1);
+
+            foreach (string header in headers.Keys) 
+            {
+                string headerText = header;
+
+                foreach (string subHeader in headers[header].Keys) 
+                {
+                    string value1 = subHeader;
+                    string value2 = headers[header][subHeader];
+
+                    //SQL Query
+                }
+            }
         }
     }
 }
