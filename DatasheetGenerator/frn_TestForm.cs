@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,16 +18,32 @@ namespace DatasheetGenerator
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
-
         private void frn_TestForm_Load(object sender, EventArgs e)
         {
-            
+            DataGridViewTextBoxColumn dgvslno = new DataGridViewTextBoxColumn();
+            dgvslno.HeaderText = "ID";
+            dgvslno.Width = 90;
+            dataGridView1.Columns.Add(dgvslno);
 
+            DataGridViewTextBoxColumn dgvpro = new DataGridViewTextBoxColumn();
+            dgvpro.HeaderText = "Value";
+            dgvpro.Width = 90;
+            dataGridView1.Columns.Add(dgvpro);
         }
+        public AutoCompleteStringCollection AutoCompleteLoad()
+        {
+            var conn = new MySqlConnection(@"server=sql6.freemysqlhosting.net;port=3306;user id=sql6397749; password=CU6wE3Q1ve; database=sql6397749;");
 
+            var cmd = new MySqlCommand("Select Value from TestTable", conn);
+            conn.Open();
+            MySqlDataReader dr = cmd.ExecuteReader();
+            AutoCompleteStringCollection mycoll = new AutoCompleteStringCollection();
+            while (dr.Read())
+            {
+                mycoll.Add(dr["Value"].ToString());
+            }
+            return mycoll;
+        }
         private void GenerateGrid(DataGridView dataGridView)
         {
             //Adding column names
@@ -74,11 +91,31 @@ namespace DatasheetGenerator
             dataGridView.Rows.Add("Prodcut Description", "Text Field");
         }
 
-        private void dgv_MouseDown(object sender, MouseEventArgs e)
-        {
-            base.OnMouseDown(e);
-            DoDragDrop(sender, DragDropEffects.All);
-        }
 
+        private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            int column = dataGridView1.CurrentCell.ColumnIndex;
+            string headerText = dataGridView1.Columns[column].HeaderText;
+
+            if (headerText.Equals("ID"))
+            {
+                TextBox tb = e.Control as TextBox;
+
+                if (tb != null)
+                {
+                    tb.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    tb.AutoCompleteCustomSource = AutoCompleteLoad();
+                    tb.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                }
+            }
+            else
+            {
+                TextBox tb = e.Control as TextBox;
+                if (tb != null)
+                {
+                    tb.AutoCompleteMode = AutoCompleteMode.None;
+                }
+            }
+        }
     }
 }
