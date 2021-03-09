@@ -205,5 +205,6 @@ namespace DatasheetGenerator
                 dgv_HeaderDetails.ClearSelection();
             }
         }
+     
     }
 }

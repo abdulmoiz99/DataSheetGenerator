@@ -13,6 +13,7 @@ namespace DatasheetGenerator
 {
     public partial class frn_TestForm : Form
     {
+        AutoCompleteStringCollection data; 
         public frn_TestForm()
         {
             InitializeComponent();
@@ -22,13 +23,16 @@ namespace DatasheetGenerator
         {
             DataGridViewTextBoxColumn dgvslno = new DataGridViewTextBoxColumn();
             dgvslno.HeaderText = "ID";
-            dgvslno.Width = 90;
+            dgvslno.Width = 150;
             dataGridView1.Columns.Add(dgvslno);
 
             DataGridViewTextBoxColumn dgvpro = new DataGridViewTextBoxColumn();
             dgvpro.HeaderText = "Value";
-            dgvpro.Width = 90;
+            dgvpro.Width = 150;
             dataGridView1.Columns.Add(dgvpro);
+
+
+            data = AutoCompleteLoad();
         }
         public AutoCompleteStringCollection AutoCompleteLoad()
         {
@@ -97,14 +101,14 @@ namespace DatasheetGenerator
             int column = dataGridView1.CurrentCell.ColumnIndex;
             string headerText = dataGridView1.Columns[column].HeaderText;
 
-            if (headerText.Equals("ID"))
+            if (headerText.Equals("Value"))
             {
                 TextBox tb = e.Control as TextBox;
 
                 if (tb != null)
                 {
                     tb.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                    tb.AutoCompleteCustomSource = AutoCompleteLoad();
+                    tb.AutoCompleteCustomSource = data;
                     tb.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 }
             }
