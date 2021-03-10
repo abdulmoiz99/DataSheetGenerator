@@ -78,6 +78,12 @@
     <Compile Include="frm_AddSymbol.Designer.cs">
       <DependentUpon>frm_AddSymbol.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Home.Designer.cs">
+      <DependentUpon>frm_Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="HeaderController\frm_AddHeaderPopup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_AddSymbol.resx">
       <DependentUpon>frm_AddSymbol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Home.resx">
+      <DependentUpon>frm_Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HeaderController\frm_AddHeaderPopup.resx">
       <DependentUpon>frm_AddHeaderPopup.cs</DependentUpon>

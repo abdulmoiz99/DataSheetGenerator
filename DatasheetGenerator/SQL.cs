@@ -3,6 +3,7 @@ using System.Data;
 using MySql.Data.MySqlClient;
 using System.IO;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace DatasheetGenerator
 {
@@ -95,6 +96,27 @@ namespace DatasheetGenerator
             }
             return Result;
         }
+
+        public static List<string> GetDatasheets(string Query)
+        {
+            List<string> datasheets = new List<string>();
+            DataTable temp = new DataTable();
+            MySqlCommand command = new MySqlCommand(Query, con);
+            var adapter = new MySqlDataAdapter(command);
+            adapter.Fill(temp);
+
+            foreach (DataColumn column in temp.Columns)
+            {
+                foreach (DataRow row in temp.Rows)
+                {
+                   
+                    datasheets.Add(row[column].ToString());
+                }
+            }
+
+            return datasheets;
+        }
+
         public static void NonScalarQuery(String Query)
         {
             try
