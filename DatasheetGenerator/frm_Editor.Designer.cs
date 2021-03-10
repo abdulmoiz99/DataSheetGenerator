@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Editor));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_CopyToDraft = new XanderUI.XUIButton();
-            this.btn_Edit = new XanderUI.XUIButton();
+            this.btn_Save = new XanderUI.XUIButton();
             this.btn_DownloadPDF = new XanderUI.XUIButton();
             this.btn_SaveAsDraft = new XanderUI.XUIButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -80,7 +80,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btn_CopyToDraft);
-            this.panel1.Controls.Add(this.btn_Edit);
+            this.panel1.Controls.Add(this.btn_Save);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_DownloadPDF);
             this.panel1.Controls.Add(this.btn_SaveAsDraft);
@@ -112,28 +112,28 @@
             this.btn_CopyToDraft.TextColor = System.Drawing.Color.White;
             this.btn_CopyToDraft.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             // 
-            // btn_Edit
+            // btn_Save
             // 
-            this.btn_Edit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Edit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
-            this.btn_Edit.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_Edit.ButtonImage")));
-            this.btn_Edit.ButtonStyle = XanderUI.XUIButton.Style.Invert;
-            this.btn_Edit.ButtonText = "Save";
-            this.btn_Edit.ClickBackColor = System.Drawing.Color.White;
-            this.btn_Edit.ClickTextColor = System.Drawing.Color.White;
-            this.btn_Edit.CornerRadius = 5;
-            this.btn_Edit.Font = new System.Drawing.Font("Roboto Slab", 13F);
-            this.btn_Edit.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_Edit.HoverBackgroundColor = System.Drawing.Color.White;
-            this.btn_Edit.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
-            this.btn_Edit.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btn_Edit.Location = new System.Drawing.Point(1192, 55);
-            this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(133, 39);
-            this.btn_Edit.TabIndex = 5;
-            this.btn_Edit.TextColor = System.Drawing.Color.White;
-            this.btn_Edit.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
+            this.btn_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Save.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_Save.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_Save.ButtonImage")));
+            this.btn_Save.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_Save.ButtonText = "Save";
+            this.btn_Save.ClickBackColor = System.Drawing.Color.White;
+            this.btn_Save.ClickTextColor = System.Drawing.Color.White;
+            this.btn_Save.CornerRadius = 5;
+            this.btn_Save.Font = new System.Drawing.Font("Roboto Slab", 13F);
+            this.btn_Save.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Save.HoverBackgroundColor = System.Drawing.Color.White;
+            this.btn_Save.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_Save.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_Save.Location = new System.Drawing.Point(1192, 55);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(133, 39);
+            this.btn_Save.TabIndex = 5;
+            this.btn_Save.TextColor = System.Drawing.Color.White;
+            this.btn_Save.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_DownloadPDF
             // 
@@ -506,11 +506,11 @@
             // Delete
             // 
             this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle1;
             this.Delete.FillWeight = 10F;
             this.Delete.HeaderText = "";
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
@@ -553,7 +553,7 @@
         private System.Windows.Forms.Panel panel1;
         private XanderUI.XUIButton btn_SaveAsDraft;
         private XanderUI.XUIButton btn_CopyToDraft;
-        private XanderUI.XUIButton btn_Edit;
+        private XanderUI.XUIButton btn_Save;
         private XanderUI.XUIButton btn_DownloadPDF;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private XanderUI.XUICustomGroupbox xuiCustomGroupbox1;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -98,17 +99,17 @@ namespace DatasheetGenerator
         }
         private void dgv_HeaderDetails_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            if (e.ColumnIndex == 1) 
+            if (e.ColumnIndex == 1)
             {
                 var row = dgv_HeaderDetails.Rows[e.RowIndex];
                 HeaderChangedIndex = Convert.ToInt32(row.Cells[1].Value);
-            }   
+            }
         }
         private void Column1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true;   
+                e.Handled = true;
             }
         }
         private void dgv_HeaderDetails_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -126,18 +127,18 @@ namespace DatasheetGenerator
         private void dgv_HeaderDetails_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             //Name Change
-            if (e.ColumnIndex == 0) 
+            if (e.ColumnIndex == 0)
             {
                 DataGridView dataGridView = (DataGridView)dgv_HeaderDetails.Rows[e.RowIndex].Tag;
 
                 if (dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
-                {                  
+                {
                     dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = dataGridView.Columns[0].HeaderText;
                 }
-                else 
+                else
                 {
                     dataGridView.Columns[0].HeaderText = dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                }            
+                }
             }
             //Position Change
             else if (e.ColumnIndex == 1)
@@ -157,13 +158,13 @@ namespace DatasheetGenerator
                         {
                             row.Cells[1].Value = HeaderChangedIndex;
                         }
-                    }             
+                    }
                 }
             }
         }
         private void dgv_HeaderDetails_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 1) 
+            if (e.ColumnIndex == 1)
             {
                 dgv_HeaderDetails.Sort(dgv_HeaderDetails.Columns[1], ListSortDirection.Ascending);
                 Header.ReOrder(dgv_HeaderDetails);
@@ -176,7 +177,7 @@ namespace DatasheetGenerator
         }
         private void frm_Editor_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Control && e.KeyCode == Keys.H) 
+            if (e.Control && e.KeyCode == Keys.H)
             {
                 var frm = new frm_AddHeaderPopup();
                 frm.ShowDialog();
@@ -195,7 +196,7 @@ namespace DatasheetGenerator
         }
         private void dgv_HeaderDetails_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 2 && e.RowIndex >= 0) 
+            if (e.ColumnIndex == 2 && e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningRow;
                 flowLayoutPanel1.Controls.Remove((DataGridView)row.Tag);
@@ -206,22 +207,143 @@ namespace DatasheetGenerator
             }
         }
 
-        private void btn_Edit_Click(object sender, EventArgs e)
+        private void btn_Save_Click(object sender, EventArgs e)
         {
-            Dictionary<string, Dictionary<string, string>> headers = Header.GetHeaders(flowLayoutPanel1);
+            
 
-            foreach (string header in headers.Keys) 
+            if (count <= 1)
             {
-                string headerText = header;
-
-                foreach (string subHeader in headers[header].Keys) 
-                {
-                    string value1 = subHeader;
-                    string value2 = headers[header][subHeader];
-
-                    //SQL Query
-                }
+                MessageBox.Show("No Record To Save");
+                return;
             }
+            Cursor.Current = Cursors.WaitCursor;
+            Dictionary<string, Dictionary<string, string>> headers = Header.GetHeaders(flowLayoutPanel1);
+            string HeaderID = "0";
+
+
+            if (SQL.Con.State == ConnectionState.Closed) SQL.Con.Open();
+
+
+            MySqlCommand myCommand = SQL.con.CreateCommand();
+            MySqlTransaction transaction;
+
+            // Start a local transaction
+            transaction = SQL.con.BeginTransaction();
+            // Must assign both transaction object and connection
+            // to Command object for a pending local transaction
+            myCommand.Connection = SQL.con;
+            myCommand.Transaction = transaction;
+
+            try
+            {
+                foreach (string header in headers.Keys)
+                {
+
+
+                    string headerText = header;
+
+                    //Inserting values into Header Table
+                    myCommand.CommandText = @"Insert Into sql6397749.Header(Name           ,DS_ID) 
+                                                                                            values('" + header + "'," + Header.DatasheetID + ")";
+                    myCommand.ExecuteNonQuery();
+                    //Get the latest value from headerTable
+                    myCommand.CommandText = "Select  MAX(ID) from Header where DS_ID =  " + Header.DatasheetID + "";
+                    HeaderID = myCommand.ExecuteScalar().ToString(); ;
+
+
+                    foreach (string subHeader in headers[header].Keys)
+                    {
+                        string value1 = subHeader;
+                        string value2 = headers[header][subHeader];
+
+                        //Inserting values into Sub - Header Table // H_ID = Header ID
+                        myCommand.CommandText = @"Insert into sql6397749.Subheader(Value1      ,Value2          ,H_ID) 
+                                                                                      values('" + value1 + "','" + value2 + "'," + HeaderID + ")";
+
+                        myCommand.ExecuteNonQuery();
+                    }
+                }
+                transaction.Commit();
+                MessageBox.Show("Record Added Successfully");
+            }
+            catch (Exception ex)
+            {
+
+                transaction.Rollback();
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                SQL.con.Close();
+                Cursor.Current = Cursors.Default;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //using (MySqlTransaction trans = SQL.Con.BeginTransaction())
+            //{
+            //    try
+            //    {
+
+            //        foreach (string header in headers.Keys)
+            //        {
+
+
+            //            string headerText = header;
+
+            //            //Inserting values into Header Table
+            //            SQL.NonScalarQueryTransaction(@"Insert Into sql6397749.Header(Name           ,DS_ID) 
+            //                                                                                values('" + header + "'," + Header.DatasheetID + ")", trans);
+
+            //            //Get the latest value from headerTable
+            //            HeaderID = SQL.ScalarQuery("Select  MAX(ID) from Header where DS_ID =  " + Header.DatasheetID + "");
+
+            //            foreach (string subHeader in headers[header].Keys)
+            //            {
+            //                string value1 = subHeader;
+            //                string value2 = headers[header][subHeader];
+
+            //                //Inserting values into Sub - Header Table // H_ID = Header ID
+            //                SQL.NonScalarQueryTransaction(@"Insert into sql6397749.Subheader1(Value1      ,Value2          ,H_ID) 
+            //                                                                          values('" + value1 + "','" + value2 + "'," + HeaderID + ")", trans);
+            //            }
+            //        }
+            //        trans.Commit();
+            //        MessageBox.Show("Saved");
+
+            //    }
+            //    catch (Exception ex)
+            //    {
+
+            //         trans.Rollback();
+
+
+            //    }
+            //    finally
+            //    {
+            //        SQL.Con.Close();
+            //    }
+            //}
         }
     }
 }

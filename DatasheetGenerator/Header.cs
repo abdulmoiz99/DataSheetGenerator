@@ -9,6 +9,9 @@ namespace DatasheetGenerator
 {
     public class Header
     {
+        public static string ProductFamily;
+        public static int DatasheetID = 2;
+
         public static void ReOrder(DataGridView dgv)
         {
             foreach (DataGridViewRow row in dgv.Rows) 
