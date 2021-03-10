@@ -31,19 +31,16 @@ namespace DatasheetGenerator
 
         private void frm_Home_Load(object sender, EventArgs e)
         {
-            var name = SQL.GetDatasheets("SELECT Name FROM sql6397749.Datasheet");
-            var dateModified = SQL.GetDatasheets("SELECT DateModified FROM sql6397749.Datasheet");
+            var datasheets = SQL.GetDataTable("SELECT DateModified, Name FROM sql6397749.Datasheet");
 
-            //dart
-
-            for (int i = 0; i < name.Count; i++) 
+            foreach (DataRow row in datasheets.Rows) 
             {
                 Label label = new Label();
                 label.AutoSize = false;
                 label.Size = new Size(402, 27);
                 label.Font = new Font("Roboto", 9.75f);
                 label.ForeColor = Color.FromArgb(117, 117, 117);
-                label.Text = dateModified[i] + " | " + name[i];
+                label.Text = row[0] + " | " + row[1];
                 label.MouseDown += Label_MouseDown;
                 label.MouseEnter += Label_MouseEnter;
                 label.MouseLeave += Label_MouseLeave;

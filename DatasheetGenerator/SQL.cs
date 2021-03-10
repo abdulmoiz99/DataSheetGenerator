@@ -97,22 +97,12 @@ namespace DatasheetGenerator
             return Result;
         }
 
-        public static List<string> GetDatasheets(string Query)
+        public static DataTable GetDataTable(string Query)
         {
-            List<string> datasheets = new List<string>();
-            DataTable temp = new DataTable();
+            DataTable datasheets = new DataTable();
             MySqlCommand command = new MySqlCommand(Query, con);
             var adapter = new MySqlDataAdapter(command);
-            adapter.Fill(temp);
-
-            foreach (DataColumn column in temp.Columns)
-            {
-                foreach (DataRow row in temp.Rows)
-                {
-                   
-                    datasheets.Add(row[column].ToString());
-                }
-            }
+            adapter.Fill(datasheets);
 
             return datasheets;
         }
