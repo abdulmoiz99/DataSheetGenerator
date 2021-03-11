@@ -74,11 +74,7 @@ namespace DatasheetGenerator
             try
             {
 
-                if (Con.State == ConnectionState.Open)
-                {
-                    Con.Close();
-                }
-                Con.Open();
+                if (Con.State == ConnectionState.Closed) Con.Open();
                 var cmd = new MySqlCommand(Query, Con);
                 Result = cmd.ExecuteScalar().ToString();
             }
@@ -101,7 +97,7 @@ namespace DatasheetGenerator
         {
             try
             {
-                if (Con.State == ConnectionState.Closed)  Con.Open();
+                if (Con.State == ConnectionState.Closed) Con.Open();
                 var cmd = new MySqlCommand(Query, Con);
                 cmd.ExecuteNonQuery();
                 return true;

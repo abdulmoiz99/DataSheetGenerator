@@ -12,13 +12,17 @@ namespace DatasheetGenerator
         public static int UserId { get; set; }
         public static string UserName { get; set; }
 
-        public static bool Exist()
+        public static bool Exist(string name)
         {
-            return true;
+            string result = "0";
+            result = SQL.ScalarQuery("SELECT EXISTS(SELECT * FROM Login WHERE name = '" + name + "' and active = '1');");
+            if (result == "1") return true;
+            else return false;
         }
         public static bool CreateUser(string name, string email, string username, string password)
         {
-            return true;
+            return SQL.NonScalarQuery("Insert into Login (Name          ,email          ,username          ,password          ,Active)" +
+                                              "   values ('" + name + "','" + email + "','" + username + "','" + password + "',1);");
         }
         public static bool IsEmailValid(string emailaddress)
         {
