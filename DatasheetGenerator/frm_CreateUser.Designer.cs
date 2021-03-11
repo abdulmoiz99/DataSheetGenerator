@@ -33,13 +33,13 @@
             this.txt_Name = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label7 = new System.Windows.Forms.Label();
             this.xuiObjectEllipse1 = new XanderUI.XUIObjectEllipse();
-            this.materialSingleLineTextField4 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txt_ConfirmPassword = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label6 = new System.Windows.Forms.Label();
-            this.materialSingleLineTextField3 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txt_Password = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label5 = new System.Windows.Forms.Label();
-            this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txt_Username = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label4 = new System.Windows.Forms.Label();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txt_Email = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_Create = new XanderUI.XUIButton();
             this.btn_Close = new XanderUI.XUIButton();
@@ -91,23 +91,23 @@
             this.xuiObjectEllipse1.EffectedControl = this;
             this.xuiObjectEllipse1.EffectedForm = this;
             // 
-            // materialSingleLineTextField4
+            // txt_ConfirmPassword
             // 
-            this.materialSingleLineTextField4.Depth = 0;
-            this.materialSingleLineTextField4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialSingleLineTextField4.Hint = "";
-            this.materialSingleLineTextField4.Location = new System.Drawing.Point(43, 513);
-            this.materialSingleLineTextField4.MaxLength = 32767;
-            this.materialSingleLineTextField4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField4.Name = "materialSingleLineTextField4";
-            this.materialSingleLineTextField4.PasswordChar = '\0';
-            this.materialSingleLineTextField4.SelectedText = "";
-            this.materialSingleLineTextField4.SelectionLength = 0;
-            this.materialSingleLineTextField4.SelectionStart = 0;
-            this.materialSingleLineTextField4.Size = new System.Drawing.Size(349, 25);
-            this.materialSingleLineTextField4.TabIndex = 59;
-            this.materialSingleLineTextField4.TabStop = false;
-            this.materialSingleLineTextField4.UseSystemPasswordChar = false;
+            this.txt_ConfirmPassword.Depth = 0;
+            this.txt_ConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ConfirmPassword.Hint = "";
+            this.txt_ConfirmPassword.Location = new System.Drawing.Point(43, 513);
+            this.txt_ConfirmPassword.MaxLength = 32767;
+            this.txt_ConfirmPassword.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txt_ConfirmPassword.Name = "txt_ConfirmPassword";
+            this.txt_ConfirmPassword.PasswordChar = '\0';
+            this.txt_ConfirmPassword.SelectedText = "";
+            this.txt_ConfirmPassword.SelectionLength = 0;
+            this.txt_ConfirmPassword.SelectionStart = 0;
+            this.txt_ConfirmPassword.Size = new System.Drawing.Size(349, 25);
+            this.txt_ConfirmPassword.TabIndex = 59;
+            this.txt_ConfirmPassword.TabStop = false;
+            this.txt_ConfirmPassword.UseSystemPasswordChar = false;
             // 
             // label6
             // 
@@ -120,23 +120,23 @@
             this.label6.TabIndex = 58;
             this.label6.Text = "Confirm Password";
             // 
-            // materialSingleLineTextField3
+            // txt_Password
             // 
-            this.materialSingleLineTextField3.Depth = 0;
-            this.materialSingleLineTextField3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialSingleLineTextField3.Hint = "";
-            this.materialSingleLineTextField3.Location = new System.Drawing.Point(43, 431);
-            this.materialSingleLineTextField3.MaxLength = 32767;
-            this.materialSingleLineTextField3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField3.Name = "materialSingleLineTextField3";
-            this.materialSingleLineTextField3.PasswordChar = '\0';
-            this.materialSingleLineTextField3.SelectedText = "";
-            this.materialSingleLineTextField3.SelectionLength = 0;
-            this.materialSingleLineTextField3.SelectionStart = 0;
-            this.materialSingleLineTextField3.Size = new System.Drawing.Size(349, 25);
-            this.materialSingleLineTextField3.TabIndex = 57;
-            this.materialSingleLineTextField3.TabStop = false;
-            this.materialSingleLineTextField3.UseSystemPasswordChar = false;
+            this.txt_Password.Depth = 0;
+            this.txt_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Password.Hint = "";
+            this.txt_Password.Location = new System.Drawing.Point(43, 431);
+            this.txt_Password.MaxLength = 32767;
+            this.txt_Password.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txt_Password.Name = "txt_Password";
+            this.txt_Password.PasswordChar = '\0';
+            this.txt_Password.SelectedText = "";
+            this.txt_Password.SelectionLength = 0;
+            this.txt_Password.SelectionStart = 0;
+            this.txt_Password.Size = new System.Drawing.Size(349, 25);
+            this.txt_Password.TabIndex = 57;
+            this.txt_Password.TabStop = false;
+            this.txt_Password.UseSystemPasswordChar = false;
             // 
             // label5
             // 
@@ -149,23 +149,23 @@
             this.label5.TabIndex = 56;
             this.label5.Text = "Password";
             // 
-            // materialSingleLineTextField2
+            // txt_Username
             // 
-            this.materialSingleLineTextField2.Depth = 0;
-            this.materialSingleLineTextField2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialSingleLineTextField2.Hint = "";
-            this.materialSingleLineTextField2.Location = new System.Drawing.Point(43, 355);
-            this.materialSingleLineTextField2.MaxLength = 32767;
-            this.materialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField2.Name = "materialSingleLineTextField2";
-            this.materialSingleLineTextField2.PasswordChar = '\0';
-            this.materialSingleLineTextField2.SelectedText = "";
-            this.materialSingleLineTextField2.SelectionLength = 0;
-            this.materialSingleLineTextField2.SelectionStart = 0;
-            this.materialSingleLineTextField2.Size = new System.Drawing.Size(349, 25);
-            this.materialSingleLineTextField2.TabIndex = 55;
-            this.materialSingleLineTextField2.TabStop = false;
-            this.materialSingleLineTextField2.UseSystemPasswordChar = false;
+            this.txt_Username.Depth = 0;
+            this.txt_Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Username.Hint = "";
+            this.txt_Username.Location = new System.Drawing.Point(43, 355);
+            this.txt_Username.MaxLength = 32767;
+            this.txt_Username.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txt_Username.Name = "txt_Username";
+            this.txt_Username.PasswordChar = '\0';
+            this.txt_Username.SelectedText = "";
+            this.txt_Username.SelectionLength = 0;
+            this.txt_Username.SelectionStart = 0;
+            this.txt_Username.Size = new System.Drawing.Size(349, 25);
+            this.txt_Username.TabIndex = 55;
+            this.txt_Username.TabStop = false;
+            this.txt_Username.UseSystemPasswordChar = false;
             // 
             // label4
             // 
@@ -178,23 +178,23 @@
             this.label4.TabIndex = 54;
             this.label4.Text = "Username";
             // 
-            // materialSingleLineTextField1
+            // txt_Email
             // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(43, 267);
-            this.materialSingleLineTextField1.MaxLength = 32767;
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(349, 25);
-            this.materialSingleLineTextField1.TabIndex = 53;
-            this.materialSingleLineTextField1.TabStop = false;
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
+            this.txt_Email.Depth = 0;
+            this.txt_Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Email.Hint = "";
+            this.txt_Email.Location = new System.Drawing.Point(43, 267);
+            this.txt_Email.MaxLength = 32767;
+            this.txt_Email.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.PasswordChar = '\0';
+            this.txt_Email.SelectedText = "";
+            this.txt_Email.SelectionLength = 0;
+            this.txt_Email.SelectionStart = 0;
+            this.txt_Email.Size = new System.Drawing.Size(349, 25);
+            this.txt_Email.TabIndex = 53;
+            this.txt_Email.TabStop = false;
+            this.txt_Email.UseSystemPasswordChar = false;
             // 
             // label3
             // 
@@ -227,6 +227,7 @@
             this.btn_Create.TabIndex = 51;
             this.btn_Create.TextColor = System.Drawing.Color.White;
             this.btn_Create.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Create.Click += new System.EventHandler(this.btn_Create_Click);
             // 
             // btn_Close
             // 
@@ -259,13 +260,13 @@
             this.Controls.Add(this.txt_Name);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btn_Close);
-            this.Controls.Add(this.materialSingleLineTextField4);
+            this.Controls.Add(this.txt_ConfirmPassword);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.materialSingleLineTextField3);
+            this.Controls.Add(this.txt_Password);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.materialSingleLineTextField2);
+            this.Controls.Add(this.txt_Username);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.materialSingleLineTextField1);
+            this.Controls.Add(this.txt_Email);
             this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_CreateUser";
@@ -284,13 +285,13 @@
         private System.Windows.Forms.Label label7;
         private XanderUI.XUIObjectEllipse xuiObjectEllipse1;
         private XanderUI.XUIButton btn_Close;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField4;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txt_ConfirmPassword;
         private System.Windows.Forms.Label label6;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField3;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txt_Password;
         private System.Windows.Forms.Label label5;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txt_Username;
         private System.Windows.Forms.Label label4;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txt_Email;
         private System.Windows.Forms.Label label3;
     }
 }
