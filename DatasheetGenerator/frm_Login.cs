@@ -19,13 +19,13 @@ namespace DatasheetGenerator
         }
         private void label8_MouseEnter(object sender, EventArgs e)
         {
-            label8.Font = new Font(label8.Font.Name, label8.Font.SizeInPoints, FontStyle.Underline);
+            lab_CreateUser.Font = new Font(lab_CreateUser.Font.Name, lab_CreateUser.Font.SizeInPoints, FontStyle.Underline);
 
         }
 
         private void label8_MouseLeave(object sender, EventArgs e)
         {
-            label8.Font = new Font(label8.Font.Name, label8.Font.SizeInPoints, FontStyle.Regular);
+            lab_CreateUser.Font = new Font(lab_CreateUser.Font.Name, lab_CreateUser.Font.SizeInPoints, FontStyle.Regular);
         }
 
         private void btn_Close_Click(object sender, EventArgs e)
@@ -51,6 +51,14 @@ namespace DatasheetGenerator
         private void frm_Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void lab_CreateUser_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var frm = new frm_CreateUser    ();
+            frm.ShowDialog();
+            this.Close();
         }
     }
 }

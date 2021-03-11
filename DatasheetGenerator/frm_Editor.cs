@@ -241,8 +241,8 @@ namespace DatasheetGenerator
                     string headerText = header;
 
                     //Inserting values into Header Table
-                    myCommand.CommandText = @"Insert Into sql6397749.Header(Name           ,DS_ID) 
-                                                                                            values('" + header + "'," + Header.DatasheetID + ")";
+                    myCommand.CommandText = @"Insert Into Header(Name           ,DS_ID) 
+                                                          values('" + header + "'," + Header.DatasheetID + ")";
                     myCommand.ExecuteNonQuery();
                     //Get the latest value from headerTable
                     myCommand.CommandText = "Select  MAX(ID) from Header where DS_ID =  " + Header.DatasheetID + "";
@@ -255,8 +255,8 @@ namespace DatasheetGenerator
                         string value2 = headers[header][subHeader];
 
                         //Inserting values into Sub - Header Table // H_ID = Header ID
-                        myCommand.CommandText = @"Insert into sql6397749.Subheader(Value1      ,Value2          ,H_ID) 
-                                                                                      values('" + value1 + "','" + value2 + "'," + HeaderID + ")";
+                        myCommand.CommandText = @"Insert into Subheader(Value1      ,Value2          ,H_ID) 
+                                                                 values('" + value1 + "','" + value2 + "'," + HeaderID + ")";
 
                         myCommand.ExecuteNonQuery();
                     }
