@@ -11,6 +11,9 @@ namespace DatasheetGenerator
     class Datasheet
     {
         public static bool IsCreated = false;
+        public static string ProductFamilly { get; set; }
+        public static string Name { get; set; }
+
         public static DataTable GetDataTable(string Query)
         {
             if (SQL.con.State == ConnectionState.Closed)
@@ -22,6 +25,16 @@ namespace DatasheetGenerator
             var adapter = new MySqlDataAdapter(command);
             adapter.Fill(datasheets);
             return datasheets;
+        }
+        public static bool Exist(string datasheetName)
+        {
+            string result = "0";
+            result = SQL.ScalarQuery("SELECT EXISTS(SELECT * FROM Datasheet WHERE name = '" + datasheetName + "' and active = 1)");
+            if (result == "1")
+            {
+                return true;
+            }
+            else return false;
         }
     }
 }

@@ -53,11 +53,35 @@ namespace DatasheetGenerator
             {
                 MessageBox.Show("Please select product family", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if (Datasheet.Exist(txt_Name.Text))
+            {
+                MessageBox.Show("Datasheet With Same Name Already Exisit", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else
             {
-                SQL.NonScalarQuery("Insert into ProductFamily(Name)" +
-                                                    " values ('" + txt_Name.Text + "');");
+
+                if (SQL.NonScalarQuery("Insert into Datasheet (Name                   ,PF_ID                                  ,Flag ,Type  ,DateCreated                               ,DateModified                              ,Active) " +
+                                                  "values ('" + txt_Name.Text + "'," + cmb_ProductFamily.SelectedValue + ",0    ,1     ,'" + DateTime.Now.ToShortDateString() + "','" + DateTime.Now.ToShortDateString() + "',1);"))
+                {
+                    Datasheet.ProductFamilly = cmb_ProductFamily.Text;
+                    Datasheet.Name = txt_Name.Text;
+                    Datasheet.IsCreated = true;
+                    this.Close();
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Unable To Create New Datasheet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+        }
+
+        private void btn_AddNewProductFamily_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var frm = new frm_CreateProdcutFamily();
+            frm.ShowDialog();
+            this.Close();
         }
     }
 }

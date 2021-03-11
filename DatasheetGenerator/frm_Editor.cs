@@ -209,8 +209,6 @@ namespace DatasheetGenerator
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            
-
             if (count <= 1)
             {
                 MessageBox.Show("No Record To Save");
@@ -279,71 +277,11 @@ namespace DatasheetGenerator
                 Cursor.Current = Cursors.Default;
             }
 
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            //using (MySqlTransaction trans = SQL.Con.BeginTransaction())
-            //{
-            //    try
-            //    {
-
-            //        foreach (string header in headers.Keys)
-            //        {
-
-
-            //            string headerText = header;
-
-            //            //Inserting values into Header Table
-            //            SQL.NonScalarQueryTransaction(@"Insert Into sql6397749.Header(Name           ,DS_ID) 
-            //                                                                                values('" + header + "'," + Header.DatasheetID + ")", trans);
-
-            //            //Get the latest value from headerTable
-            //            HeaderID = SQL.ScalarQuery("Select  MAX(ID) from Header where DS_ID =  " + Header.DatasheetID + "");
-
-            //            foreach (string subHeader in headers[header].Keys)
-            //            {
-            //                string value1 = subHeader;
-            //                string value2 = headers[header][subHeader];
-
-            //                //Inserting values into Sub - Header Table // H_ID = Header ID
-            //                SQL.NonScalarQueryTransaction(@"Insert into sql6397749.Subheader1(Value1      ,Value2          ,H_ID) 
-            //                                                                          values('" + value1 + "','" + value2 + "'," + HeaderID + ")", trans);
-            //            }
-            //        }
-            //        trans.Commit();
-            //        MessageBox.Show("Saved");
-
-            //    }
-            //    catch (Exception ex)
-            //    {
-
-            //         trans.Rollback();
-
-
-            //    }
-            //    finally
-            //    {
-            //        SQL.Con.Close();
-            //    }
-            //}
+        private void frm_Editor_Load(object sender, EventArgs e)
+        {
+            lab_ProductFamily.Text = Datasheet.ProductFamilly;
         }
     }
 }

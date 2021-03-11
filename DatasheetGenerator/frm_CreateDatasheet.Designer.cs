@@ -35,11 +35,10 @@
             this.cmb_ProductFamily = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.xuiObjectEllipse1 = new XanderUI.XUIObjectEllipse();
-            this.xuiObjectAnimator1 = new XanderUI.XUIObjectAnimator();
             this.btn_Cancel = new XanderUI.XUIButton();
             this.btn_Exit = new XanderUI.XUIButton();
             this.btn_Create = new XanderUI.XUIButton();
-            this.xuiButton1 = new XanderUI.XUIButton();
+            this.btn_AddNewProductFamily = new XanderUI.XUIButton();
             this.SuspendLayout();
             // 
             // label7
@@ -73,7 +72,7 @@
             this.txt_Name.MaxLength = 32767;
             this.txt_Name.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_Name.Name = "txt_Name";
-            this.txt_Name.PasswordChar = '•';
+            this.txt_Name.PasswordChar = '\0';
             this.txt_Name.SelectedText = "";
             this.txt_Name.SelectionLength = 0;
             this.txt_Name.SelectionStart = 0;
@@ -106,7 +105,7 @@
             // 
             // xuiObjectEllipse1
             // 
-            this.xuiObjectEllipse1.CornerRadius = 10;
+            this.xuiObjectEllipse1.CornerRadius = 30;
             this.xuiObjectEllipse1.EffectedControl = this;
             this.xuiObjectEllipse1.EffectedForm = this;
             // 
@@ -176,26 +175,27 @@
             this.btn_Create.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.btn_Create.Click += new System.EventHandler(this.btn_Create_Click);
             // 
-            // xuiButton1
+            // btn_AddNewProductFamily
             // 
-            this.xuiButton1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.xuiButton1.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton1.ButtonImage")));
-            this.xuiButton1.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
-            this.xuiButton1.ButtonText = "";
-            this.xuiButton1.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.xuiButton1.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.xuiButton1.CornerRadius = 50;
-            this.xuiButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.xuiButton1.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton1.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.xuiButton1.HoverTextColor = System.Drawing.Color.White;
-            this.xuiButton1.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton1.Location = new System.Drawing.Point(411, 214);
-            this.xuiButton1.Name = "xuiButton1";
-            this.xuiButton1.Size = new System.Drawing.Size(36, 36);
-            this.xuiButton1.TabIndex = 29;
-            this.xuiButton1.TextColor = System.Drawing.Color.White;
-            this.xuiButton1.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_AddNewProductFamily.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_AddNewProductFamily.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_AddNewProductFamily.ButtonImage")));
+            this.btn_AddNewProductFamily.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
+            this.btn_AddNewProductFamily.ButtonText = "";
+            this.btn_AddNewProductFamily.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_AddNewProductFamily.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_AddNewProductFamily.CornerRadius = 50;
+            this.btn_AddNewProductFamily.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btn_AddNewProductFamily.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_AddNewProductFamily.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_AddNewProductFamily.HoverTextColor = System.Drawing.Color.White;
+            this.btn_AddNewProductFamily.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_AddNewProductFamily.Location = new System.Drawing.Point(411, 214);
+            this.btn_AddNewProductFamily.Name = "btn_AddNewProductFamily";
+            this.btn_AddNewProductFamily.Size = new System.Drawing.Size(36, 36);
+            this.btn_AddNewProductFamily.TabIndex = 29;
+            this.btn_AddNewProductFamily.TextColor = System.Drawing.Color.White;
+            this.btn_AddNewProductFamily.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_AddNewProductFamily.Click += new System.EventHandler(this.btn_AddNewProductFamily_Click);
             // 
             // frm_CreateDatasheet
             // 
@@ -203,7 +203,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(495, 356);
-            this.Controls.Add(this.xuiButton1);
+            this.Controls.Add(this.btn_AddNewProductFamily);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Create);
@@ -214,7 +214,7 @@
             this.Controls.Add(this.label7);
             this.Font = new System.Drawing.Font("Roboto", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_CreateDatasheet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_CreateDatasheet";
@@ -235,7 +235,6 @@
         private XanderUI.XUIButton btn_Exit;
         private XanderUI.XUIButton btn_Create;
         private XanderUI.XUIObjectEllipse xuiObjectEllipse1;
-        private XanderUI.XUIObjectAnimator xuiObjectAnimator1;
-        private XanderUI.XUIButton xuiButton1;
+        private XanderUI.XUIButton btn_AddNewProductFamily;
     }
 }

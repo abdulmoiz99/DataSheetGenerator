@@ -146,7 +146,7 @@
             // 
             // xuiObjectEllipse1
             // 
-            this.xuiObjectEllipse1.CornerRadius = 10;
+            this.xuiObjectEllipse1.CornerRadius = 30;
             this.xuiObjectEllipse1.EffectedControl = this;
             this.xuiObjectEllipse1.EffectedForm = this;
             // 

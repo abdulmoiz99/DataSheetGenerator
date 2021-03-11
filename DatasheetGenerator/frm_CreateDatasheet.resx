@@ -121,18 +121,18 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="xuiButton1.ButtonImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_AddNewProductFamily.ButtonImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAH8SURBVFhH7ZZLTsJgFIVZg8+xj6mPoTpwirQUWhV3o6Ab0EDcBAlt0S3oTFEX4SNxAVIH6rnk
-        JpXb+2NLccaXnITQ89/T/u/ClHFwrp25SreyXg6rlhO4JSusrnm+N8uP/wcErtph9bQcuI/Qt0EPUKMU
-        uCvcLD8IXrQD9xJf+inCjGJvC72ywGXGo+x72+jmVxmQQe9Wt7LL5bKBrzhCgb4oOI76tu/VuGw6MNY7
-        1FAUyqModU/QmKPBmyiQXxjKUrs2zzFmaMKpBYRunm+HpHmkMKxNjtGhpZZ2tks0j6LI7hwsc1wShJ8p
-        jVRJNI9BdY5LgmX3pDRQJdE8BvU4bhjaXhWzURLNY9BXsV2b4dgYK3A3FfNANMmyMmpi0jnCsTEY/5Jm
-        Jk36BSzf2+PYGPpTM5Mm/QLY6IocG4MJuKGZSRPvARzfHBtD57lmNkmieQzSJyGBh3Sea40Skmgeg+44
-        LgkeNoTZKInm0YSt/pjjktBNBqZINtIk0TyKIufKWeI4HZhaopEqmmS/pXmksNTPOcYMXaNy3oJUIfyF
-        dluOGc3gKjbJC0lY/XA6+1tcPh10jULj/C+BcOiQy2aD3jrPcAy6PeuXS+gahUJNFEy1OljkvUg95mmg
-        mwyK1qEeh2i6d3zv5M+llhfaSmk/pxOURL+N2+uUkRQKP9ES1TY+8pFIAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAfxJREFUWEft
+        lktOwmAUhVmDz7GPqY+hOnCKtBRaFXejoBvQQNwECW3RLehMURfhI3EBUgfqueQmldv7Y0txxpechNDz
+        39P+78KUcXCunblKt7JeDquWE7glK6yueb43y4//BwSu2mH1tBy4j9C3QQ9QoxS4K9wsPwhetAP3El/6
+        KcKMYm8LvbLAZcaj7Hvb6OZXGZBB71a3ssvlsoGvOEKBvig4jvq279W4bDow1jvUUBTKoyh1T9CYo8Gb
+        KJBfGMpSuzbPMWZowqkFhG6eb4ekeaQwrE2O0aGllna2SzSPosjuHCxzXBKEnymNVEk0j0F1jkuCZfek
+        NFAl0TwG9ThuGNpeFbNREs1j0FexXZvh2BgrcDcV80A0ybIyamLSOcKxMRj/kmYmTfoFLN/b49gY+lMz
+        kyb9Atjoihwbgwm4oZlJE+8BHN8cG0PnuWY2SaJ5DNInIYGHdJ5rjRKSaB6D7jguCR42hNkoiebRhK3+
+        mOOS0E0Gpkg20iTRPIoi58pZ4jgdmFqikSqaZL+leaSw1M85xgxdo3LeglQh/IV2W44ZzeAqNskLSVj9
+        cDr7W1w+HXSNQuP8L4Fw6JDLZoPeOs9wDLo965dL6BqFQk0UTLU6WOS9SD3maaCbDIrWoR6HaLp3fO/k
+        z6WWF9pKaT+nE5REv43b65SRFAo/0RLVNj7ykUgAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btn_Cancel.ButtonImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -276,7 +276,4 @@
         NEoxCxulmIWNUszCRilmYaNQ3P0PzTHwOokEAVIAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="xuiObjectAnimator1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>169, 17</value>
-  </metadata>
 </root>

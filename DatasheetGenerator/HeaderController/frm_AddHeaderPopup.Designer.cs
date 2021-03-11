@@ -30,30 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_AddHeaderPopup));
             this.xuiObjectEllipse1 = new XanderUI.XUIObjectEllipse();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_HeaderName = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.btn_Add = new XanderUI.XUIButton();
-            this.btn_Exit = new XanderUI.XUIButton();
             this.btn_Cancel = new XanderUI.XUIButton();
+            this.btn_Exit = new XanderUI.XUIButton();
+            this.btn_Add = new XanderUI.XUIButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // xuiObjectEllipse1
             // 
-            this.xuiObjectEllipse1.CornerRadius = 20;
+            this.xuiObjectEllipse1.CornerRadius = 30;
             this.xuiObjectEllipse1.EffectedControl = this;
             this.xuiObjectEllipse1.EffectedForm = this;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 38);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(151, 119);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -89,27 +79,27 @@
             this.txt_HeaderName.Click += new System.EventHandler(this.txt_HeaderName_Click);
             this.txt_HeaderName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_HeaderName_KeyDown);
             // 
-            // btn_Add
+            // btn_Cancel
             // 
-            this.btn_Add.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
-            this.btn_Add.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_Add.ButtonImage")));
-            this.btn_Add.ButtonStyle = XanderUI.XUIButton.Style.Invert;
-            this.btn_Add.ButtonText = "+ Add";
-            this.btn_Add.ClickBackColor = System.Drawing.Color.White;
-            this.btn_Add.ClickTextColor = System.Drawing.Color.White;
-            this.btn_Add.CornerRadius = 5;
-            this.btn_Add.Font = new System.Drawing.Font("Roboto Slab", 12F);
-            this.btn_Add.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_Add.HoverBackgroundColor = System.Drawing.Color.White;
-            this.btn_Add.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
-            this.btn_Add.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btn_Add.Location = new System.Drawing.Point(193, 131);
-            this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(123, 36);
-            this.btn_Add.TabIndex = 19;
-            this.btn_Add.TextColor = System.Drawing.Color.White;
-            this.btn_Add.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+            this.btn_Cancel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(79)))), ((int)(((byte)(95)))));
+            this.btn_Cancel.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_Cancel.ButtonImage")));
+            this.btn_Cancel.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_Cancel.ButtonText = "Cancel";
+            this.btn_Cancel.ClickBackColor = System.Drawing.Color.White;
+            this.btn_Cancel.ClickTextColor = System.Drawing.Color.White;
+            this.btn_Cancel.CornerRadius = 5;
+            this.btn_Cancel.Font = new System.Drawing.Font("Roboto Slab", 12F);
+            this.btn_Cancel.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Cancel.HoverBackgroundColor = System.Drawing.Color.White;
+            this.btn_Cancel.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(79)))), ((int)(((byte)(95)))));
+            this.btn_Cancel.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_Cancel.Location = new System.Drawing.Point(322, 131);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(123, 36);
+            this.btn_Cancel.TabIndex = 21;
+            this.btn_Cancel.TextColor = System.Drawing.Color.White;
+            this.btn_Cancel.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // btn_Exit
             // 
@@ -133,27 +123,37 @@
             this.btn_Exit.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
-            // btn_Cancel
+            // btn_Add
             // 
-            this.btn_Cancel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(79)))), ((int)(((byte)(95)))));
-            this.btn_Cancel.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_Cancel.ButtonImage")));
-            this.btn_Cancel.ButtonStyle = XanderUI.XUIButton.Style.Invert;
-            this.btn_Cancel.ButtonText = "Cancel";
-            this.btn_Cancel.ClickBackColor = System.Drawing.Color.White;
-            this.btn_Cancel.ClickTextColor = System.Drawing.Color.White;
-            this.btn_Cancel.CornerRadius = 5;
-            this.btn_Cancel.Font = new System.Drawing.Font("Roboto Slab", 12F);
-            this.btn_Cancel.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_Cancel.HoverBackgroundColor = System.Drawing.Color.White;
-            this.btn_Cancel.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(79)))), ((int)(((byte)(95)))));
-            this.btn_Cancel.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btn_Cancel.Location = new System.Drawing.Point(322, 131);
-            this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(123, 36);
-            this.btn_Cancel.TabIndex = 21;
-            this.btn_Cancel.TextColor = System.Drawing.Color.White;
-            this.btn_Cancel.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            this.btn_Add.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_Add.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_Add.ButtonImage")));
+            this.btn_Add.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_Add.ButtonText = "+ Add";
+            this.btn_Add.ClickBackColor = System.Drawing.Color.White;
+            this.btn_Add.ClickTextColor = System.Drawing.Color.White;
+            this.btn_Add.CornerRadius = 5;
+            this.btn_Add.Font = new System.Drawing.Font("Roboto Slab", 12F);
+            this.btn_Add.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Add.HoverBackgroundColor = System.Drawing.Color.White;
+            this.btn_Add.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_Add.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_Add.Location = new System.Drawing.Point(193, 131);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(123, 36);
+            this.btn_Add.TabIndex = 19;
+            this.btn_Add.TextColor = System.Drawing.Color.White;
+            this.btn_Add.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 38);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(151, 119);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // frm_AddHeaderPopup
             // 

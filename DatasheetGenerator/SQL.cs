@@ -97,23 +97,19 @@ namespace DatasheetGenerator
             return Result;
         }
 
-       
-
-        public static void NonScalarQuery(String Query)
+        public static bool NonScalarQuery(String Query)
         {
             try
             {
                 if (Con.State == ConnectionState.Closed)  Con.Open();
                 var cmd = new MySqlCommand(Query, Con);
                 cmd.ExecuteNonQuery();
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("SQL " + ex.Message);
+                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("SQL" + ex.Message);
+                //MessageBox.Show("SQL" + ex.Message);
+                return false;
             }
             finally
             {
