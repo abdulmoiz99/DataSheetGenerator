@@ -14,9 +14,10 @@ namespace DatasheetGenerator
         [STAThread]
         static void Main()
         {
+            SQL.con.Open();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Home());
+            Application.Run(new frm_Dashboard());
         }
     }
 }

@@ -97,15 +97,7 @@ namespace DatasheetGenerator
             return Result;
         }
 
-        public static DataTable GetDataTable(string Query)
-        {
-            DataTable datasheets = new DataTable();
-            MySqlCommand command = new MySqlCommand(Query, con);
-            var adapter = new MySqlDataAdapter(command);
-            adapter.Fill(datasheets);
-
-            return datasheets;
-        }
+       
 
         public static void NonScalarQuery(String Query)
         {

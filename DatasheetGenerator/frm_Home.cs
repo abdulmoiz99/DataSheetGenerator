@@ -31,7 +31,7 @@ namespace DatasheetGenerator
 
         private void frm_Home_Load(object sender, EventArgs e)
         {
-            var datasheets = SQL.GetDataTable("SELECT DateModified, Name FROM sql6397749.Datasheet");
+            var datasheets = Datasheet.GetDataTable("SELECT DateModified, Name FROM sql6397749.Datasheet");
 
             foreach (DataRow row in datasheets.Rows) 
             {

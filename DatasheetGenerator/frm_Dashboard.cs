@@ -24,22 +24,25 @@ namespace DatasheetGenerator
 
         private void btn_NewDatasheet_Click(object sender, EventArgs e)
         {
-            foreach (Form form in MdiChildren)
-            {
-                form.Close();
-            }
-            var frm = new frm_Editor();         
-            frm.MdiParent = this;
-            frm.Dock = DockStyle.Fill;
+            CloseAllForm();
+            var frm = new frm_CreateDatasheet();
             frm.Show();
+            //frm.MdiParent = this;
+            //frm.Dock = DockStyle.Fill;
+            //frm.Show();
         }
 
-        private void btn_MediaLinrary_Click(object sender, EventArgs e)
+        private void CloseAllForm()
         {
             foreach (Form form in MdiChildren)
             {
                 form.Close();
             }
+        }
+
+        private void btn_MediaLinrary_Click(object sender, EventArgs e)
+        {
+            CloseAllForm();
             var frm = new frm_MediaLibrary();
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
@@ -49,6 +52,14 @@ namespace DatasheetGenerator
         private void frm_Dashboard_Activated(object sender, EventArgs e)
         {
             if (this.MdiChildren.Length > 0) this.ActivateMdiChild(this.MdiChildren[0]);
+            if (Datasheet.IsCreated)
+            {
+                CloseAllForm();
+                var frm = new frm_Editor();
+                frm.MdiParent = this;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+            }
         }
     }
 }
