@@ -35,7 +35,9 @@ namespace DatasheetGenerator
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            if (txt_Username.Text == "admin" && txt_Passoword.Text == "admin")
+            if (string.IsNullOrEmpty(txt_Username.Text)) MessageBox.Show("Please Enter Username ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else if (string.IsNullOrEmpty(txt_Password.Text)) MessageBox.Show("Please Enter Password ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else if (User.VerifyUser(txt_Username.Text, txt_Password.Text))
             {
                 this.Hide();
                 var frm = new frm_Dashboard();
@@ -44,8 +46,10 @@ namespace DatasheetGenerator
             }
             else
             {
-               MessageBox.Show("Invalid username or password","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Invalid username or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
         }
 
         private void frm_Login_Load(object sender, EventArgs e)
@@ -56,7 +60,7 @@ namespace DatasheetGenerator
         private void lab_CreateUser_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var frm = new frm_CreateUser    ();
+            var frm = new frm_CreateUser();
             frm.ShowDialog();
             this.Close();
         }

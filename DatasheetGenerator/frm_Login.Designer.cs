@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Login));
             this.xuiObjectEllipse1 = new XanderUI.XUIObjectEllipse();
             this.txt_Username = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txt_Passoword = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txt_Password = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btn_Login = new XanderUI.XUIButton();
             this.xuiButton1 = new XanderUI.XUIButton();
             this.label4 = new System.Windows.Forms.Label();
@@ -67,23 +67,23 @@
             this.txt_Username.TabStop = false;
             this.txt_Username.UseSystemPasswordChar = false;
             // 
-            // txt_Passoword
+            // txt_Password
             // 
-            this.txt_Passoword.Depth = 0;
-            this.txt_Passoword.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Passoword.Hint = "";
-            this.txt_Passoword.Location = new System.Drawing.Point(45, 325);
-            this.txt_Passoword.MaxLength = 32767;
-            this.txt_Passoword.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txt_Passoword.Name = "txt_Passoword";
-            this.txt_Passoword.PasswordChar = '•';
-            this.txt_Passoword.SelectedText = "";
-            this.txt_Passoword.SelectionLength = 0;
-            this.txt_Passoword.SelectionStart = 0;
-            this.txt_Passoword.Size = new System.Drawing.Size(344, 25);
-            this.txt_Passoword.TabIndex = 2;
-            this.txt_Passoword.TabStop = false;
-            this.txt_Passoword.UseSystemPasswordChar = false;
+            this.txt_Password.Depth = 0;
+            this.txt_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Password.Hint = "";
+            this.txt_Password.Location = new System.Drawing.Point(45, 325);
+            this.txt_Password.MaxLength = 32767;
+            this.txt_Password.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txt_Password.Name = "txt_Password";
+            this.txt_Password.PasswordChar = '•';
+            this.txt_Password.SelectedText = "";
+            this.txt_Password.SelectionLength = 0;
+            this.txt_Password.SelectionStart = 0;
+            this.txt_Password.Size = new System.Drawing.Size(344, 25);
+            this.txt_Password.TabIndex = 2;
+            this.txt_Password.TabStop = false;
+            this.txt_Password.UseSystemPasswordChar = false;
             // 
             // btn_Login
             // 
@@ -233,7 +233,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.xuiButton1);
             this.Controls.Add(this.btn_Login);
-            this.Controls.Add(this.txt_Passoword);
+            this.Controls.Add(this.txt_Password);
             this.Controls.Add(this.txt_Username);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_Login";
@@ -247,7 +247,7 @@
         #endregion
         private XanderUI.XUIObjectEllipse xuiObjectEllipse1;
         private MaterialSkin.Controls.MaterialSingleLineTextField txt_Username;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txt_Passoword;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txt_Password;
         private XanderUI.XUIButton btn_Login;
         private XanderUI.XUIButton xuiButton1;
         private System.Windows.Forms.Label label5;

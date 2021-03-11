@@ -17,7 +17,7 @@ namespace DatasheetGenerator
             SQL.con.Open();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_CreateUser());
+            Application.Run(new frm_Login());
         }
     }
 }
