@@ -103,11 +103,7 @@ namespace DatasheetGenerator
         {
             try
             {
-                if (Con.State == ConnectionState.Open)
-                {
-                    Con.Close();
-                }
-                Con.Open();
+                if (Con.State == ConnectionState.Closed)  Con.Open();
                 var cmd = new MySqlCommand(Query, Con);
                 cmd.ExecuteNonQuery();
             }

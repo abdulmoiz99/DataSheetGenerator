@@ -31,14 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_CreateDatasheet));
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txt_Name = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.cmb_ProductFamily = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.xuiObjectEllipse1 = new XanderUI.XUIObjectEllipse();
+            this.xuiObjectAnimator1 = new XanderUI.XUIObjectAnimator();
             this.btn_Cancel = new XanderUI.XUIButton();
             this.btn_Exit = new XanderUI.XUIButton();
             this.btn_Create = new XanderUI.XUIButton();
-            this.xuiObjectEllipse1 = new XanderUI.XUIObjectEllipse();
-            this.xuiObjectAnimator1 = new XanderUI.XUIObjectAnimator();
+            this.xuiButton1 = new XanderUI.XUIButton();
             this.SuspendLayout();
             // 
             // label7
@@ -63,24 +64,24 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "Product Family";
             // 
-            // materialSingleLineTextField2
+            // txt_Name
             // 
-            this.materialSingleLineTextField2.Depth = 0;
-            this.materialSingleLineTextField2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialSingleLineTextField2.Hint = "";
-            this.materialSingleLineTextField2.Location = new System.Drawing.Point(54, 126);
-            this.materialSingleLineTextField2.MaxLength = 32767;
-            this.materialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField2.Name = "materialSingleLineTextField2";
-            this.materialSingleLineTextField2.PasswordChar = '•';
-            this.materialSingleLineTextField2.SelectedText = "";
-            this.materialSingleLineTextField2.SelectionLength = 0;
-            this.materialSingleLineTextField2.SelectionStart = 0;
-            this.materialSingleLineTextField2.Size = new System.Drawing.Size(349, 25);
-            this.materialSingleLineTextField2.TabIndex = 22;
-            this.materialSingleLineTextField2.TabStop = false;
-            this.materialSingleLineTextField2.UseSystemPasswordChar = false;
-            this.materialSingleLineTextField2.Click += new System.EventHandler(this.materialSingleLineTextField2_Click);
+            this.txt_Name.Depth = 0;
+            this.txt_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Name.Hint = "";
+            this.txt_Name.Location = new System.Drawing.Point(54, 126);
+            this.txt_Name.MaxLength = 32767;
+            this.txt_Name.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txt_Name.Name = "txt_Name";
+            this.txt_Name.PasswordChar = '•';
+            this.txt_Name.SelectedText = "";
+            this.txt_Name.SelectionLength = 0;
+            this.txt_Name.SelectionStart = 0;
+            this.txt_Name.Size = new System.Drawing.Size(349, 25);
+            this.txt_Name.TabIndex = 22;
+            this.txt_Name.TabStop = false;
+            this.txt_Name.UseSystemPasswordChar = false;
+            this.txt_Name.Click += new System.EventHandler(this.materialSingleLineTextField2_Click);
             // 
             // cmb_ProductFamily
             // 
@@ -102,6 +103,12 @@
             this.label1.Size = new System.Drawing.Size(222, 39);
             this.label1.TabIndex = 25;
             this.label1.Text = "New Datasheet";
+            // 
+            // xuiObjectEllipse1
+            // 
+            this.xuiObjectEllipse1.CornerRadius = 10;
+            this.xuiObjectEllipse1.EffectedControl = this;
+            this.xuiObjectEllipse1.EffectedForm = this;
             // 
             // btn_Cancel
             // 
@@ -127,7 +134,7 @@
             // 
             // btn_Exit
             // 
-            this.btn_Exit.BackgroundColor = System.Drawing.Color.White;
+            this.btn_Exit.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.btn_Exit.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_Exit.ButtonImage")));
             this.btn_Exit.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
             this.btn_Exit.ButtonText = "";
@@ -139,7 +146,7 @@
             this.btn_Exit.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_Exit.HoverTextColor = System.Drawing.Color.White;
             this.btn_Exit.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btn_Exit.Location = new System.Drawing.Point(418, 12);
+            this.btn_Exit.Location = new System.Drawing.Point(447, 12);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(36, 36);
             this.btn_Exit.TabIndex = 27;
@@ -167,26 +174,43 @@
             this.btn_Create.TabIndex = 26;
             this.btn_Create.TextColor = System.Drawing.Color.White;
             this.btn_Create.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Create.Click += new System.EventHandler(this.btn_Create_Click);
             // 
-            // xuiObjectEllipse1
+            // xuiButton1
             // 
-            this.xuiObjectEllipse1.CornerRadius = 10;
-            this.xuiObjectEllipse1.EffectedControl = this;
-            this.xuiObjectEllipse1.EffectedForm = this;
+            this.xuiButton1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.xuiButton1.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton1.ButtonImage")));
+            this.xuiButton1.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
+            this.xuiButton1.ButtonText = "";
+            this.xuiButton1.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.xuiButton1.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.xuiButton1.CornerRadius = 50;
+            this.xuiButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.xuiButton1.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton1.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.xuiButton1.HoverTextColor = System.Drawing.Color.White;
+            this.xuiButton1.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.xuiButton1.Location = new System.Drawing.Point(411, 214);
+            this.xuiButton1.Name = "xuiButton1";
+            this.xuiButton1.Size = new System.Drawing.Size(36, 36);
+            this.xuiButton1.TabIndex = 29;
+            this.xuiButton1.TextColor = System.Drawing.Color.White;
+            this.xuiButton1.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             // 
             // frm_CreateDatasheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(466, 356);
+            this.ClientSize = new System.Drawing.Size(495, 356);
+            this.Controls.Add(this.xuiButton1);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Create);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmb_ProductFamily);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.materialSingleLineTextField2);
+            this.Controls.Add(this.txt_Name);
             this.Controls.Add(this.label7);
             this.Font = new System.Drawing.Font("Roboto", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -204,7 +228,7 @@
 
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txt_Name;
         private System.Windows.Forms.ComboBox cmb_ProductFamily;
         private System.Windows.Forms.Label label1;
         private XanderUI.XUIButton btn_Cancel;
@@ -212,5 +236,6 @@
         private XanderUI.XUIButton btn_Create;
         private XanderUI.XUIObjectEllipse xuiObjectEllipse1;
         private XanderUI.XUIObjectAnimator xuiObjectAnimator1;
+        private XanderUI.XUIButton xuiButton1;
     }
 }

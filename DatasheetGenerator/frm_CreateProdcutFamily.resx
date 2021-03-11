@@ -117,24 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="xuiObjectEllipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="xuiButton1.ButtonImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAH8SURBVFhH7ZZLTsJgFIVZg8+xj6mPoTpwirQUWhV3o6Ab0EDcBAlt0S3oTFEX4SNxAVIH6rnk
-        JpXb+2NLccaXnITQ89/T/u/ClHFwrp25SreyXg6rlhO4JSusrnm+N8uP/wcErtph9bQcuI/Qt0EPUKMU
-        uCvcLD8IXrQD9xJf+inCjGJvC72ywGXGo+x72+jmVxmQQe9Wt7LL5bKBrzhCgb4oOI76tu/VuGw6MNY7
-        1FAUyqModU/QmKPBmyiQXxjKUrs2zzFmaMKpBYRunm+HpHmkMKxNjtGhpZZ2tks0j6LI7hwsc1wShJ8p
-        jVRJNI9BdY5LgmX3pDRQJdE8BvU4bhjaXhWzURLNY9BXsV2b4dgYK3A3FfNANMmyMmpi0jnCsTEY/5Jm
-        Jk36BSzf2+PYGPpTM5Mm/QLY6IocG4MJuKGZSRPvARzfHBtD57lmNkmieQzSJyGBh3Sea40Skmgeg+44
-        LgkeNoTZKInm0YSt/pjjktBNBqZINtIk0TyKIufKWeI4HZhaopEqmmS/pXmksNTPOcYMXaNy3oJUIfyF
-        dluOGc3gKjbJC0lY/XA6+1tcPh10jULj/C+BcOiQy2aD3jrPcAy6PeuXS+gahUJNFEy1OljkvUg95mmg
-        mwyK1qEeh2i6d3zv5M+llhfaSmk/pxOURL+N2+uUkRQKP9ES1TY+8pFIAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="btn_Cancel.ButtonImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
@@ -216,7 +199,7 @@
         RG+aSiN221wfdHMRXy/I2ziZRu7WWQaRm6cHMd3b54PGf8r8RSXobLDvAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btn_Create.ButtonImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_Add.ButtonImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxMAAAsTAQCanBgAAAyTSURBVHhe7dx5eFXFGcfx0SQE
@@ -276,7 +259,7 @@
         NEoxCxulmIWNUszCRilmYaNQ3P0PzTHwOokEAVIAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="xuiObjectAnimator1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>169, 17</value>
+  <metadata name="xuiObjectEllipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
 </root>

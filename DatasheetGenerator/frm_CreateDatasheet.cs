@@ -42,5 +42,22 @@ namespace DatasheetGenerator
         {
             Main.fillComboWithoutCondition(cmb_ProductFamily, "ProductFamily", "Name", "ID");
         }
+
+        private void btn_Create_Click(object sender, EventArgs e)
+        {
+            if (txt_Name.Text == "")
+            {
+                MessageBox.Show("Please enter datasheet name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (cmb_ProductFamily.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select product family", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                SQL.NonScalarQuery("Insert into ProductFamily(Name)" +
+                                                    " values ('" + txt_Name.Text + "');");
+            }
+        }
     }
 }

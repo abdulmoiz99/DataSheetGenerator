@@ -85,6 +85,12 @@
     <Compile Include="frm_CreateDatasheet.Designer.cs">
       <DependentUpon>frm_CreateDatasheet.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_CreateProdcutFamily.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_CreateProdcutFamily.Designer.cs">
+      <DependentUpon>frm_CreateProdcutFamily.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_CreateDatasheet.resx">
       <DependentUpon>frm_CreateDatasheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_CreateProdcutFamily.resx">
+      <DependentUpon>frm_CreateProdcutFamily.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Home.resx">
       <DependentUpon>frm_Home.cs</DependentUpon>
