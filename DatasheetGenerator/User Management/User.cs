@@ -36,7 +36,7 @@ namespace DatasheetGenerator
         {
             try
             {
-                MailAddress m = new MailAddress(emailaddress);
+                var m = new MailAddress(emailaddress);
                 return true;
             }
             catch (FormatException)
