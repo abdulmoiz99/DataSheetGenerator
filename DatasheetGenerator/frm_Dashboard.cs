@@ -26,7 +26,7 @@ namespace DatasheetGenerator
         {
             CloseAllForm();
             var frm = new frm_CreateDatasheet();
-            frm.Show();
+            frm.ShowDialog();
             //frm.MdiParent = this;
             //frm.Dock = DockStyle.Fill;
             //frm.Show();
@@ -63,7 +63,6 @@ namespace DatasheetGenerator
             }
             else if (Datasheet.IsEditing)
             {
-                MessageBox.Show("JHERE");
                 Datasheet.IsEditing = false;
                 CloseAllForm();
                 var frm = new frm_Editor1();
@@ -77,7 +76,6 @@ namespace DatasheetGenerator
         {
             CloseAllForm();
             var frm = new frm_Home(); // latest datasheet
-
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             frm.Show();
