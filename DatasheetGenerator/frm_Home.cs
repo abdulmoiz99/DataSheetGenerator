@@ -20,38 +20,44 @@ namespace DatasheetGenerator
 
         private void Delete_Item_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Copy_Item_Click(object sender, EventArgs e)
         {
-            
+
         }
 
 
         private void frm_Home_Load(object sender, EventArgs e)
         {
-            var datasheets = Datasheet.GetDataTable("SELECT DateModified, Name FROM sql6397749.Datasheet");
+            var datasheets = Datasheet.GetDataTable("SELECT DateModified, Name, Id FROM sql6397749.Datasheet");
 
-            foreach (DataRow row in datasheets.Rows) 
+            foreach (DataRow row in datasheets.Rows)
             {
                 Label label = new Label();
                 label.AutoSize = false;
                 label.Size = new Size(402, 27);
-                label.Font = new Font("Roboto", 9.75f);
+                label.Font = new Font("Roboto", 11f);
                 label.ForeColor = Color.FromArgb(117, 117, 117);
                 label.Text = row[0] + " | " + row[1];
+                label.Tag = row[2].ToString();
                 label.MouseDown += Label_MouseDown;
                 label.MouseEnter += Label_MouseEnter;
                 label.MouseLeave += Label_MouseLeave;
+                label.Click += Label_Click;
                 datasheetPanel.Controls.Add(label);
             }
         }
-
+        private void Label_Click(object sender, EventArgs e)
+        {
+            var label = sender as Label;
+            MessageBox.Show(label.Tag.ToString());
+        }
         private void Label_MouseLeave(object sender, EventArgs e)
         {
             var label = sender as Label;
-            label.ForeColor = Color.FromArgb(117, 117, 117);
+            label.ForeColor = Color.FromArgb(117, 117, 117); //gray
         }
 
         private void Label_MouseEnter(object sender, EventArgs e)

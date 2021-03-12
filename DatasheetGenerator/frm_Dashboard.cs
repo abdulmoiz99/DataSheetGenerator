@@ -61,5 +61,15 @@ namespace DatasheetGenerator
                 frm.Show();
             }
         }
+
+        private void btn_LatestDatasheet_Click(object sender, EventArgs e)
+        {
+            CloseAllForm();
+            var frm = new frm_Home(); // latest datasheet
+
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
     }
 }

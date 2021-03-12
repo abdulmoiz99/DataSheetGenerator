@@ -11,15 +11,14 @@ namespace DatasheetGenerator
     class Datasheet
     {
         public static bool IsCreated = false;
+        public static bool IsEditing = false;
+        public static string Id { get; set; }
         public static string ProductFamilly { get; set; }
         public static string Name { get; set; }
 
         public static DataTable GetDataTable(string Query)
         {
-            if (SQL.con.State == ConnectionState.Closed)
-            {
-                SQL.con.Open();
-            }
+            if (SQL.con.State == ConnectionState.Closed) SQL.con.Open();
             DataTable datasheets = new DataTable();
             MySqlCommand command = new MySqlCommand(Query, SQL.con);
             var adapter = new MySqlDataAdapter(command);

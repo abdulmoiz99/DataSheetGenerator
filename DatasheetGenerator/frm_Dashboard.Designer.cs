@@ -33,16 +33,17 @@
             this.btn_MediaLinrary = new XanderUI.XUIButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_LatestDatasheet = new XanderUI.XUIButton();
             this.panel1.SuspendLayout();
-            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_NewDatasheet
@@ -111,6 +112,17 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Datasheet Generator";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(295, 99);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
@@ -130,6 +142,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.btn_LatestDatasheet);
             this.panel5.Controls.Add(this.btn_NewDatasheet);
             this.panel5.Controls.Add(this.btn_MediaLinrary);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
@@ -164,16 +177,27 @@
             this.panel8.Size = new System.Drawing.Size(20, 766);
             this.panel8.TabIndex = 10;
             // 
-            // pictureBox1
+            // btn_LatestDatasheet
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(295, 99);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.btn_LatestDatasheet.BackgroundColor = System.Drawing.Color.White;
+            this.btn_LatestDatasheet.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_LatestDatasheet.ButtonImage")));
+            this.btn_LatestDatasheet.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_LatestDatasheet.ButtonText = "Datasheets";
+            this.btn_LatestDatasheet.ClickBackColor = System.Drawing.Color.Gray;
+            this.btn_LatestDatasheet.ClickTextColor = System.Drawing.Color.Gray;
+            this.btn_LatestDatasheet.CornerRadius = 5;
+            this.btn_LatestDatasheet.Font = new System.Drawing.Font("Roboto Slab", 14.26415F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_LatestDatasheet.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_LatestDatasheet.HoverBackgroundColor = System.Drawing.Color.Gray;
+            this.btn_LatestDatasheet.HoverTextColor = System.Drawing.Color.White;
+            this.btn_LatestDatasheet.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_LatestDatasheet.Location = new System.Drawing.Point(32, 153);
+            this.btn_LatestDatasheet.Name = "btn_LatestDatasheet";
+            this.btn_LatestDatasheet.Size = new System.Drawing.Size(263, 50);
+            this.btn_LatestDatasheet.TabIndex = 2;
+            this.btn_LatestDatasheet.TextColor = System.Drawing.Color.Gray;
+            this.btn_LatestDatasheet.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_LatestDatasheet.Click += new System.EventHandler(this.btn_LatestDatasheet_Click);
             // 
             // frm_Dashboard
             // 
@@ -196,8 +220,8 @@
             this.Load += new System.EventHandler(this.frm_Dashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -215,5 +239,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private XanderUI.XUIButton btn_LatestDatasheet;
     }
 }

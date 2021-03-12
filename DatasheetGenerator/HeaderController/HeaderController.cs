@@ -24,7 +24,11 @@ namespace DatasheetGenerator.HeaderController
         {
             return HeaderText;
         }
-        public static void SetHeaderText(string headerText) => HeaderText = headerText ;
+        public static string GetHeaderText(string ID)
+        {
+            return SQL.ScalarQuery("select Name from Header where ID = " + ID + "");
+        }
+        public static void SetHeaderText(string headerText) => HeaderText = headerText;
 
         public static void AddNewHeader() => NewHeaderAdded = true;
         public static void DisableNewHeader() => NewHeaderAdded = false;
