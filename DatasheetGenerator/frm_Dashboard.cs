@@ -54,8 +54,19 @@ namespace DatasheetGenerator
             if (this.MdiChildren.Length > 0) this.ActivateMdiChild(this.MdiChildren[0]);
             if (Datasheet.IsCreated)
             {
+                Datasheet.IsCreated = false;
                 CloseAllForm();
                 var frm = new frm_Editor();
+                frm.MdiParent = this;
+                frm.Dock = DockStyle.Fill;
+                frm.Show();
+            }
+            else if (Datasheet.IsEditing)
+            {
+                MessageBox.Show("JHERE");
+                Datasheet.IsEditing = false;
+                CloseAllForm();
+                var frm = new frm_Editor1();
                 frm.MdiParent = this;
                 frm.Dock = DockStyle.Fill;
                 frm.Show();

@@ -51,8 +51,17 @@ namespace DatasheetGenerator
         }
         private void Label_Click(object sender, EventArgs e)
         {
+            
             var label = sender as Label;
-            MessageBox.Show(label.Tag.ToString());
+            Datasheet.Id = label.Tag.ToString();
+            DialogResult YorN =  MessageBox.Show("Are you sure to view/edit datasheet? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (YorN == DialogResult.Yes)
+            {
+                Datasheet.IsEditing = true;
+                this.Refresh();
+                this.Close();
+            }
+          
         }
         private void Label_MouseLeave(object sender, EventArgs e)
         {

@@ -67,12 +67,6 @@
       <DependentUpon>CustomMessageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Datasheet.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_AddSymbol.cs">
       <SubType>Form</SubType>
     </Compile>

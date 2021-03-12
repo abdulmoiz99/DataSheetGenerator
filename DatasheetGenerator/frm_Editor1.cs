@@ -83,7 +83,6 @@ namespace DatasheetGenerator
         {
             lab_ProductFamily.Text = Datasheet.ProductFamilly;
 
-            Datasheet.Id = "2";
             var Header = Datasheet.GetDataTable("select Id,Name from Header where DS_ID = " + Datasheet.Id + "");
 
             string headerID = ""; 
