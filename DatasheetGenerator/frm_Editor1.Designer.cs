@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Editor1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_HeaderDetails = new System.Windows.Forms.DataGridView();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.xuiCustomGroupbox1 = new XanderUI.XUICustomGroupbox();
+            this.xuiButton5 = new XanderUI.XUIButton();
+            this.btn_AddHeader = new XanderUI.XUIButton();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.xuiButton6 = new XanderUI.XUIButton();
             this.xuiCheckBox4 = new XanderUI.XUICheckBox();
             this.xuiCheckBox5 = new XanderUI.XUICheckBox();
             this.xuiCheckBox9 = new XanderUI.XUICheckBox();
@@ -50,16 +54,12 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lab_ProductFamily = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.xuiButton5 = new XanderUI.XUIButton();
-            this.btn_AddHeader = new XanderUI.XUIButton();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.xuiButton6 = new XanderUI.XUIButton();
             this.btn_CopyToDraft = new XanderUI.XUIButton();
             this.btn_Save = new XanderUI.XUIButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_DownloadPDF = new XanderUI.XUIButton();
             this.btn_SaveAsDraft = new XanderUI.XUIButton();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HeaderDetails)).BeginInit();
             this.xuiCustomGroupbox1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -102,6 +102,22 @@
             this.dgv_HeaderDetails.Size = new System.Drawing.Size(324, 456);
             this.dgv_HeaderDetails.TabIndex = 1;
             // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Delete.FillWeight = 10F;
+            this.Delete.HeaderText = "";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // xuiCustomGroupbox1
             // 
             this.xuiCustomGroupbox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -119,6 +135,49 @@
             this.xuiCustomGroupbox1.TabStop = false;
             this.xuiCustomGroupbox1.Text = "Headers";
             this.xuiCustomGroupbox1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            // 
+            // xuiButton5
+            // 
+            this.xuiButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.xuiButton5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.xuiButton5.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton5.ButtonImage")));
+            this.xuiButton5.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.xuiButton5.ButtonText = "Update";
+            this.xuiButton5.ClickBackColor = System.Drawing.Color.White;
+            this.xuiButton5.ClickTextColor = System.Drawing.Color.White;
+            this.xuiButton5.CornerRadius = 5;
+            this.xuiButton5.Font = new System.Drawing.Font("Roboto Slab", 13F);
+            this.xuiButton5.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton5.HoverBackgroundColor = System.Drawing.Color.White;
+            this.xuiButton5.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.xuiButton5.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.xuiButton5.Location = new System.Drawing.Point(170, 505);
+            this.xuiButton5.Name = "xuiButton5";
+            this.xuiButton5.Size = new System.Drawing.Size(133, 39);
+            this.xuiButton5.TabIndex = 20;
+            this.xuiButton5.TextColor = System.Drawing.Color.White;
+            this.xuiButton5.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            // 
+            // btn_AddHeader
+            // 
+            this.btn_AddHeader.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_AddHeader.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_AddHeader.ButtonImage")));
+            this.btn_AddHeader.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_AddHeader.ButtonText = "Add";
+            this.btn_AddHeader.ClickBackColor = System.Drawing.Color.White;
+            this.btn_AddHeader.ClickTextColor = System.Drawing.Color.White;
+            this.btn_AddHeader.CornerRadius = 5;
+            this.btn_AddHeader.Font = new System.Drawing.Font("Roboto Slab", 12F);
+            this.btn_AddHeader.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_AddHeader.HoverBackgroundColor = System.Drawing.Color.White;
+            this.btn_AddHeader.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_AddHeader.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_AddHeader.Location = new System.Drawing.Point(13, 505);
+            this.btn_AddHeader.Name = "btn_AddHeader";
+            this.btn_AddHeader.Size = new System.Drawing.Size(133, 39);
+            this.btn_AddHeader.TabIndex = 19;
+            this.btn_AddHeader.TextColor = System.Drawing.Color.White;
+            this.btn_AddHeader.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             // 
             // label2
             // 
@@ -143,6 +202,28 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(546, 50);
             this.panel3.TabIndex = 0;
+            // 
+            // xuiButton6
+            // 
+            this.xuiButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.xuiButton6.BackgroundColor = System.Drawing.Color.White;
+            this.xuiButton6.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton6.ButtonImage")));
+            this.xuiButton6.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.xuiButton6.ButtonText = "+ Add a New Symbol";
+            this.xuiButton6.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.xuiButton6.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.xuiButton6.CornerRadius = 5;
+            this.xuiButton6.Font = new System.Drawing.Font("Roboto Slab", 9F);
+            this.xuiButton6.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton6.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.xuiButton6.HoverTextColor = System.Drawing.Color.White;
+            this.xuiButton6.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.xuiButton6.Location = new System.Drawing.Point(364, 11);
+            this.xuiButton6.Name = "xuiButton6";
+            this.xuiButton6.Size = new System.Drawing.Size(177, 31);
+            this.xuiButton6.TabIndex = 46;
+            this.xuiButton6.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.xuiButton6.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             // 
             // xuiCheckBox4
             // 
@@ -345,114 +426,6 @@
             this.panel1.Size = new System.Drawing.Size(1500, 100);
             this.panel1.TabIndex = 3;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto Slab", 19.69811F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.label1.Location = new System.Drawing.Point(12, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 39);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Product Family:";
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle7.NullValue")));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridViewImageColumn1.FillWeight = 10F;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // xuiButton5
-            // 
-            this.xuiButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.xuiButton5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.xuiButton5.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton5.ButtonImage")));
-            this.xuiButton5.ButtonStyle = XanderUI.XUIButton.Style.Invert;
-            this.xuiButton5.ButtonText = "Update";
-            this.xuiButton5.ClickBackColor = System.Drawing.Color.White;
-            this.xuiButton5.ClickTextColor = System.Drawing.Color.White;
-            this.xuiButton5.CornerRadius = 5;
-            this.xuiButton5.Font = new System.Drawing.Font("Roboto Slab", 13F);
-            this.xuiButton5.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton5.HoverBackgroundColor = System.Drawing.Color.White;
-            this.xuiButton5.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.xuiButton5.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton5.Location = new System.Drawing.Point(170, 505);
-            this.xuiButton5.Name = "xuiButton5";
-            this.xuiButton5.Size = new System.Drawing.Size(133, 39);
-            this.xuiButton5.TabIndex = 20;
-            this.xuiButton5.TextColor = System.Drawing.Color.White;
-            this.xuiButton5.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            // 
-            // btn_AddHeader
-            // 
-            this.btn_AddHeader.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
-            this.btn_AddHeader.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_AddHeader.ButtonImage")));
-            this.btn_AddHeader.ButtonStyle = XanderUI.XUIButton.Style.Invert;
-            this.btn_AddHeader.ButtonText = "Add";
-            this.btn_AddHeader.ClickBackColor = System.Drawing.Color.White;
-            this.btn_AddHeader.ClickTextColor = System.Drawing.Color.White;
-            this.btn_AddHeader.CornerRadius = 5;
-            this.btn_AddHeader.Font = new System.Drawing.Font("Roboto Slab", 12F);
-            this.btn_AddHeader.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_AddHeader.HoverBackgroundColor = System.Drawing.Color.White;
-            this.btn_AddHeader.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
-            this.btn_AddHeader.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btn_AddHeader.Location = new System.Drawing.Point(13, 505);
-            this.btn_AddHeader.Name = "btn_AddHeader";
-            this.btn_AddHeader.Size = new System.Drawing.Size(133, 39);
-            this.btn_AddHeader.TabIndex = 19;
-            this.btn_AddHeader.TextColor = System.Drawing.Color.White;
-            this.btn_AddHeader.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            // 
-            // Delete
-            // 
-            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle8.NullValue")));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Delete.FillWeight = 10F;
-            this.Delete.HeaderText = "";
-            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // xuiButton6
-            // 
-            this.xuiButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.xuiButton6.BackgroundColor = System.Drawing.Color.White;
-            this.xuiButton6.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton6.ButtonImage")));
-            this.xuiButton6.ButtonStyle = XanderUI.XUIButton.Style.Invert;
-            this.xuiButton6.ButtonText = "+ Add a New Symbol";
-            this.xuiButton6.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.xuiButton6.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.xuiButton6.CornerRadius = 5;
-            this.xuiButton6.Font = new System.Drawing.Font("Roboto Slab", 9F);
-            this.xuiButton6.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton6.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.xuiButton6.HoverTextColor = System.Drawing.Color.White;
-            this.xuiButton6.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton6.Location = new System.Drawing.Point(364, 11);
-            this.xuiButton6.Name = "xuiButton6";
-            this.xuiButton6.Size = new System.Drawing.Size(177, 31);
-            this.xuiButton6.TabIndex = 46;
-            this.xuiButton6.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.xuiButton6.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            // 
             // btn_CopyToDraft
             // 
             this.btn_CopyToDraft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -496,6 +469,18 @@
             this.btn_Save.TabIndex = 5;
             this.btn_Save.TextColor = System.Drawing.Color.White;
             this.btn_Save.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Roboto Slab", 19.69811F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.label1.Location = new System.Drawing.Point(12, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(235, 39);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Product Family:";
             // 
             // btn_DownloadPDF
             // 
@@ -540,6 +525,22 @@
             this.btn_SaveAsDraft.TabIndex = 2;
             this.btn_SaveAsDraft.TextColor = System.Drawing.Color.White;
             this.btn_SaveAsDraft.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewImageColumn1.FillWeight = 10F;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // frm_Editor1
             // 
