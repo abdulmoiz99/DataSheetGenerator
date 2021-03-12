@@ -19,7 +19,6 @@ namespace DatasheetGenerator
                 row.Cells[1].Value = row.Index + 1;
             }
         }
-
         public static Dictionary<string, Dictionary<string, string>> GetHeaders(FlowLayoutPanel panel) 
         {
             Dictionary<string, Dictionary<string, string>> headers = new Dictionary<string, Dictionary<string, string>>();
@@ -40,7 +39,6 @@ namespace DatasheetGenerator
                     headers.Add(dgv.Columns[0].HeaderText, subHeader);
                 }
             }
-
             return headers;
         }
     }

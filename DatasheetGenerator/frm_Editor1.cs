@@ -84,7 +84,6 @@ namespace DatasheetGenerator
             lab_ProductFamily.Text = Datasheet.ProductFamilly;
 
             var Header = Datasheet.GetDataTable("select Id,Name from Header where DS_ID = " + Datasheet.Id + "");
-
             string headerID = ""; 
             string headerText = "";
             foreach (DataRow header in Header.Rows)
@@ -102,6 +101,11 @@ namespace DatasheetGenerator
                 dgv_HeaderDetails.ClearSelection();
 
             }
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

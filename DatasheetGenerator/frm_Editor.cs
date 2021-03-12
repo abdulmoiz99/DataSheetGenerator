@@ -15,15 +15,25 @@ namespace DatasheetGenerator
     {
         int HeaderChangedIndex = 0;
         int count = 1;
+        public void DisplayAddHeaderPanel()
+        {
+            pnl_AddHeader.Location = new Point(this.ClientSize.Width / 2 - pnl_AddHeader.Size.Width / 2, this.ClientSize.Height / 2 - pnl_AddHeader.Size.Height / 2);
+            pnl_AddHeader.Anchor = AnchorStyles.None;
+            pnl_AddHeader.Visible = true;
+            pnl_AddHeader.BringToFront();
+            txt_HeaderName.Text = "Header text";
+        }
         public frm_Editor()
         {
             InitializeComponent();
         }
+
         private void btn_AddHeader_Click(object sender, EventArgs e)
         {
-            var frm = new frm_AddHeaderPopup();
-            frm.ShowDialog();
-            this.Refresh();
+            DisplayAddHeaderPanel();
+            //var frm = new frm_AddHeaderPopup();
+            //frm.ShowDialog();
+            //this.Refresh();
         }
         private void GenerateGrid(DataGridView dataGridView, string HeaderText)
         {
@@ -85,17 +95,7 @@ namespace DatasheetGenerator
         }
         private void frm_Editor_Activated(object sender, EventArgs e)
         {
-            if (HeaderController.Header.CheckNewHeader())
-            {
-                var dgv = new DataGridView();
-                dgv.Size = new Size(546, 277);
-                GenerateGrid(dgv, HeaderController.Header.GetHeaderText());
-                UpdateHeaderDetails(dgv_HeaderDetails, HeaderController.Header.GetHeaderText(), count, dgv);
-                dgv.Tag = count++;
-                flowLayoutPanel1.Controls.Add(dgv);
-                HeaderController.Header.DisableNewHeader();
-                dgv_HeaderDetails.ClearSelection();
-            }
+
         }
         private void dgv_HeaderDetails_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
@@ -185,6 +185,8 @@ namespace DatasheetGenerator
         }
         private void xuiButton5_Click_1(object sender, EventArgs e)
         {
+
+
             if (dgv_HeaderDetails.IsCurrentCellInEditMode)
             {
                 dgv_HeaderDetails.EndEdit();
@@ -282,6 +284,36 @@ namespace DatasheetGenerator
         private void frm_Editor_Load(object sender, EventArgs e)
         {
             lab_ProductFamily.Text = Datasheet.ProductFamilly;
+        }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            pnl_AddHeader.Visible = false;
+        }
+
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            pnl_AddHeader.Visible = true;
+        }
+
+        private void btn_AddNewHeader_Click(object sender, EventArgs e)
+        {
+
+            HeaderController.Header.AddNewHeader();
+            HeaderController.Header.SetHeaderText(txt_HeaderName.Text);
+
+            if (HeaderController.Header.CheckNewHeader())
+            {
+                var dgv = new DataGridView();
+                dgv.Size = new Size(546, 277);
+                GenerateGrid(dgv, HeaderController.Header.GetHeaderText());
+                UpdateHeaderDetails(dgv_HeaderDetails, HeaderController.Header.GetHeaderText(), count, dgv);
+                dgv.Tag = count++;
+                flowLayoutPanel1.Controls.Add(dgv);
+                HeaderController.Header.DisableNewHeader();
+                dgv_HeaderDetails.ClearSelection();
+            }
+            pnl_AddHeader.Visible = false;
         }
     }
 }
