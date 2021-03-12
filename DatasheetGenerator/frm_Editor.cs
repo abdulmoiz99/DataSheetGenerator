@@ -15,6 +15,7 @@ namespace DatasheetGenerator
     {
         int HeaderChangedIndex = 0;
         int count = 1;
+        AutoCompleteStringCollection data;
         public void DisplayAddHeaderPanel()
         {
             pnl_AddHeader.Location = new Point(this.ClientSize.Width / 2 - pnl_AddHeader.Size.Width / 2, this.ClientSize.Height / 2 - pnl_AddHeader.Size.Height / 2);
@@ -27,7 +28,33 @@ namespace DatasheetGenerator
         {
             InitializeComponent();
         }
+        public AutoCompleteStringCollection AutoCompleteLoadValue1()
+        {
+            if (SQL.con.State == ConnectionState.Closed) SQL.con.Open();
+            var cmd = new MySqlCommand("select value1,value2 from Subheader;", SQL.con);
+            MySqlDataReader dr = cmd.ExecuteReader();
+            AutoCompleteStringCollection mycoll = new AutoCompleteStringCollection();
+            while (dr.Read())
+            {
+                mycoll.Add(dr["Value1"].ToString());
+                mycoll.Add(dr["Value2"].ToString());
+            }
+            return mycoll;
+        }
+        private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            var dataGridView = sender as DataGridView;
+            int column = dataGridView.CurrentCell.ColumnIndex;
+            string headerText = dataGridView.Columns[column].HeaderText;
+            TextBox tb = e.Control as TextBox;
 
+            if (tb != null)
+            {
+                tb.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                tb.AutoCompleteCustomSource = data;
+                tb.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            }
+        }
         private void btn_AddHeader_Click(object sender, EventArgs e)
         {
             DisplayAddHeaderPanel();
@@ -86,6 +113,8 @@ namespace DatasheetGenerator
             //Disabling Selection Color
             dataGridView.DefaultCellStyle.SelectionBackColor = dataGridView.DefaultCellStyle.BackColor;
             dataGridView.DefaultCellStyle.SelectionForeColor = dataGridView.DefaultCellStyle.ForeColor;
+
+            dataGridView.EditingControlShowing += dataGridView1_EditingControlShowing;
 
         }
         private void UpdateHeaderDetails(DataGridView dataGridView, string HeaderText, int Position, DataGridView refGrid)
@@ -221,7 +250,11 @@ namespace DatasheetGenerator
             string HeaderID = "0";
 
 
-            if (SQL.Con.State == ConnectionState.Closed) SQL.Con.Open();
+            if (SQL.Con.State == ConnectionState.Open)
+            {
+                SQL.Con.Close();
+            }
+            SQL.Con.Open();
 
 
             MySqlCommand myCommand = SQL.con.CreateCommand();
@@ -284,6 +317,7 @@ namespace DatasheetGenerator
         private void frm_Editor_Load(object sender, EventArgs e)
         {
             lab_ProductFamily.Text = Datasheet.ProductFamilly;
+            data = AutoCompleteLoadValue1();
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
