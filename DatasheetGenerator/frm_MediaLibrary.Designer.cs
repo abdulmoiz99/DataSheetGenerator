@@ -32,30 +32,35 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.xuiButton4 = new XanderUI.XUIButton();
-            this.xuiButton1 = new XanderUI.XUIButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.xuiButton2 = new XanderUI.XUIButton();
+            this.symbolBox = new System.Windows.Forms.PictureBox();
+            this.btn_AddSymbol = new XanderUI.XUIButton();
+            this.btn_ReplaceSymbol = new XanderUI.XUIButton();
+            this.btn_DeleteSymbol = new System.Windows.Forms.Button();
+            this.txt_Symbol = new System.Windows.Forms.TextBox();
+            this.btn_UpdateSymbol = new XanderUI.XUIButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.xuiButton3 = new XanderUI.XUIButton();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.xuiButton5 = new XanderUI.XUIButton();
-            this.xuiButton6 = new XanderUI.XUIButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_UpdateImage = new XanderUI.XUIButton();
+            this.txt_Image = new System.Windows.Forms.TextBox();
+            this.btn_DeleteImage = new System.Windows.Forms.Button();
+            this.btn_ReplaceImage = new XanderUI.XUIButton();
+            this.btn_AddImage = new XanderUI.XUIButton();
+            this.imageBox = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.dgv_Symbol = new System.Windows.Forms.DataGridView();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.image = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgv_Image = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dialog = new System.Windows.Forms.OpenFileDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.symbolBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Symbol)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Image)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -91,98 +96,105 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Name of the Symbol";
             // 
-            // pictureBox1
+            // symbolBox
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(406, 218);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(245, 201);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.symbolBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.symbolBox.Image = ((System.Drawing.Image)(resources.GetObject("symbolBox.Image")));
+            this.symbolBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("symbolBox.InitialImage")));
+            this.symbolBox.Location = new System.Drawing.Point(427, 218);
+            this.symbolBox.Name = "symbolBox";
+            this.symbolBox.Size = new System.Drawing.Size(200, 200);
+            this.symbolBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.symbolBox.TabIndex = 4;
+            this.symbolBox.TabStop = false;
             // 
-            // xuiButton4
+            // btn_AddSymbol
             // 
-            this.xuiButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
-            this.xuiButton4.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton4.ButtonImage")));
-            this.xuiButton4.ButtonStyle = XanderUI.XUIButton.Style.Invert;
-            this.xuiButton4.ButtonText = "+ Add";
-            this.xuiButton4.ClickBackColor = System.Drawing.Color.White;
-            this.xuiButton4.ClickTextColor = System.Drawing.Color.White;
-            this.xuiButton4.CornerRadius = 5;
-            this.xuiButton4.Font = new System.Drawing.Font("Roboto Slab", 12F);
-            this.xuiButton4.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton4.HoverBackgroundColor = System.Drawing.Color.White;
-            this.xuiButton4.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
-            this.xuiButton4.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton4.Location = new System.Drawing.Point(150, 133);
-            this.xuiButton4.Name = "xuiButton4";
-            this.xuiButton4.Size = new System.Drawing.Size(112, 36);
-            this.xuiButton4.TabIndex = 6;
-            this.xuiButton4.TextColor = System.Drawing.Color.White;
-            this.xuiButton4.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_AddSymbol.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_AddSymbol.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_AddSymbol.ButtonImage")));
+            this.btn_AddSymbol.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_AddSymbol.ButtonText = "+ Add";
+            this.btn_AddSymbol.ClickBackColor = System.Drawing.Color.White;
+            this.btn_AddSymbol.ClickTextColor = System.Drawing.Color.White;
+            this.btn_AddSymbol.CornerRadius = 5;
+            this.btn_AddSymbol.Font = new System.Drawing.Font("Roboto Slab", 12F);
+            this.btn_AddSymbol.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_AddSymbol.HoverBackgroundColor = System.Drawing.Color.White;
+            this.btn_AddSymbol.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_AddSymbol.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_AddSymbol.Location = new System.Drawing.Point(150, 133);
+            this.btn_AddSymbol.Name = "btn_AddSymbol";
+            this.btn_AddSymbol.Size = new System.Drawing.Size(112, 36);
+            this.btn_AddSymbol.TabIndex = 6;
+            this.btn_AddSymbol.TextColor = System.Drawing.Color.White;
+            this.btn_AddSymbol.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_AddSymbol.Click += new System.EventHandler(this.xuiButton4_Click);
             // 
-            // xuiButton1
+            // btn_ReplaceSymbol
             // 
-            this.xuiButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.xuiButton1.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton1.ButtonImage")));
-            this.xuiButton1.ButtonStyle = XanderUI.XUIButton.Style.Invert;
-            this.xuiButton1.ButtonText = "Replace the Image";
-            this.xuiButton1.ClickBackColor = System.Drawing.Color.White;
-            this.xuiButton1.ClickTextColor = System.Drawing.Color.White;
-            this.xuiButton1.CornerRadius = 5;
-            this.xuiButton1.Font = new System.Drawing.Font("Roboto Slab", 12F);
-            this.xuiButton1.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton1.HoverBackgroundColor = System.Drawing.Color.White;
-            this.xuiButton1.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.xuiButton1.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton1.Location = new System.Drawing.Point(406, 426);
-            this.xuiButton1.Name = "xuiButton1";
-            this.xuiButton1.Size = new System.Drawing.Size(245, 36);
-            this.xuiButton1.TabIndex = 7;
-            this.xuiButton1.TextColor = System.Drawing.Color.White;
-            this.xuiButton1.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_ReplaceSymbol.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.btn_ReplaceSymbol.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_ReplaceSymbol.ButtonImage")));
+            this.btn_ReplaceSymbol.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_ReplaceSymbol.ButtonText = "Replace the Symbol";
+            this.btn_ReplaceSymbol.ClickBackColor = System.Drawing.Color.White;
+            this.btn_ReplaceSymbol.ClickTextColor = System.Drawing.Color.White;
+            this.btn_ReplaceSymbol.CornerRadius = 5;
+            this.btn_ReplaceSymbol.Font = new System.Drawing.Font("Roboto Slab", 12F);
+            this.btn_ReplaceSymbol.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_ReplaceSymbol.HoverBackgroundColor = System.Drawing.Color.White;
+            this.btn_ReplaceSymbol.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.btn_ReplaceSymbol.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_ReplaceSymbol.Location = new System.Drawing.Point(406, 426);
+            this.btn_ReplaceSymbol.Name = "btn_ReplaceSymbol";
+            this.btn_ReplaceSymbol.Size = new System.Drawing.Size(245, 36);
+            this.btn_ReplaceSymbol.TabIndex = 7;
+            this.btn_ReplaceSymbol.TextColor = System.Drawing.Color.White;
+            this.btn_ReplaceSymbol.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_ReplaceSymbol.Click += new System.EventHandler(this.btn_ReplaceSymbol_Click);
             // 
-            // button1
+            // btn_DeleteSymbol
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(621, 529);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 36);
-            this.button1.TabIndex = 8;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_DeleteSymbol.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_DeleteSymbol.BackgroundImage")));
+            this.btn_DeleteSymbol.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_DeleteSymbol.FlatAppearance.BorderSize = 0;
+            this.btn_DeleteSymbol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DeleteSymbol.Location = new System.Drawing.Point(621, 529);
+            this.btn_DeleteSymbol.Name = "btn_DeleteSymbol";
+            this.btn_DeleteSymbol.Size = new System.Drawing.Size(30, 36);
+            this.btn_DeleteSymbol.TabIndex = 8;
+            this.btn_DeleteSymbol.UseVisualStyleBackColor = true;
+            this.btn_DeleteSymbol.Click += new System.EventHandler(this.btn_DeleteSymbol_Click);
             // 
-            // textBox1
+            // txt_Symbol
             // 
-            this.textBox1.Font = new System.Drawing.Font("Roboto Slab", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.textBox1.Location = new System.Drawing.Point(406, 492);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(245, 29);
-            this.textBox1.TabIndex = 9;
+            this.txt_Symbol.Font = new System.Drawing.Font("Roboto Slab", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Symbol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.txt_Symbol.Location = new System.Drawing.Point(406, 492);
+            this.txt_Symbol.Name = "txt_Symbol";
+            this.txt_Symbol.Size = new System.Drawing.Size(245, 29);
+            this.txt_Symbol.TabIndex = 9;
+            this.txt_Symbol.TextChanged += new System.EventHandler(this.txt_Symbol_TextChanged);
             // 
-            // xuiButton2
+            // btn_UpdateSymbol
             // 
-            this.xuiButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
-            this.xuiButton2.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton2.ButtonImage")));
-            this.xuiButton2.ButtonStyle = XanderUI.XUIButton.Style.Invert;
-            this.xuiButton2.ButtonText = "Update";
-            this.xuiButton2.ClickBackColor = System.Drawing.Color.White;
-            this.xuiButton2.ClickTextColor = System.Drawing.Color.White;
-            this.xuiButton2.CornerRadius = 5;
-            this.xuiButton2.Font = new System.Drawing.Font("Roboto Slab", 12F);
-            this.xuiButton2.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton2.HoverBackgroundColor = System.Drawing.Color.White;
-            this.xuiButton2.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
-            this.xuiButton2.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton2.Location = new System.Drawing.Point(406, 529);
-            this.xuiButton2.Name = "xuiButton2";
-            this.xuiButton2.Size = new System.Drawing.Size(209, 36);
-            this.xuiButton2.TabIndex = 10;
-            this.xuiButton2.TextColor = System.Drawing.Color.White;
-            this.xuiButton2.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_UpdateSymbol.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_UpdateSymbol.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_UpdateSymbol.ButtonImage")));
+            this.btn_UpdateSymbol.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_UpdateSymbol.ButtonText = "Sync";
+            this.btn_UpdateSymbol.ClickBackColor = System.Drawing.Color.White;
+            this.btn_UpdateSymbol.ClickTextColor = System.Drawing.Color.White;
+            this.btn_UpdateSymbol.CornerRadius = 5;
+            this.btn_UpdateSymbol.Font = new System.Drawing.Font("Roboto Slab", 12F);
+            this.btn_UpdateSymbol.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_UpdateSymbol.HoverBackgroundColor = System.Drawing.Color.White;
+            this.btn_UpdateSymbol.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_UpdateSymbol.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_UpdateSymbol.Location = new System.Drawing.Point(406, 529);
+            this.btn_UpdateSymbol.Name = "btn_UpdateSymbol";
+            this.btn_UpdateSymbol.Size = new System.Drawing.Size(209, 36);
+            this.btn_UpdateSymbol.TabIndex = 10;
+            this.btn_UpdateSymbol.TextColor = System.Drawing.Color.White;
+            this.btn_UpdateSymbol.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             // 
             // label4
             // 
@@ -194,15 +206,6 @@
             this.label4.Size = new System.Drawing.Size(131, 26);
             this.label4.TabIndex = 11;
             this.label4.Text = "Symbols List";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(34, 218);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(354, 362);
-            this.dataGridView1.TabIndex = 12;
             // 
             // panel1
             // 
@@ -220,15 +223,6 @@
             this.panel2.Size = new System.Drawing.Size(3, 447);
             this.panel2.TabIndex = 14;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(750, 218);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(354, 362);
-            this.dataGridView2.TabIndex = 24;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -236,102 +230,109 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label5.Location = new System.Drawing.Point(745, 187);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 26);
+            this.label5.Size = new System.Drawing.Size(118, 26);
             this.label5.TabIndex = 23;
-            this.label5.Text = "Image List";
+            this.label5.Text = "Images List";
             // 
-            // xuiButton3
+            // btn_UpdateImage
             // 
-            this.xuiButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
-            this.xuiButton3.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton3.ButtonImage")));
-            this.xuiButton3.ButtonStyle = XanderUI.XUIButton.Style.Invert;
-            this.xuiButton3.ButtonText = "Update";
-            this.xuiButton3.ClickBackColor = System.Drawing.Color.White;
-            this.xuiButton3.ClickTextColor = System.Drawing.Color.White;
-            this.xuiButton3.CornerRadius = 5;
-            this.xuiButton3.Font = new System.Drawing.Font("Roboto Slab", 12F);
-            this.xuiButton3.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton3.HoverBackgroundColor = System.Drawing.Color.White;
-            this.xuiButton3.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
-            this.xuiButton3.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton3.Location = new System.Drawing.Point(1122, 529);
-            this.xuiButton3.Name = "xuiButton3";
-            this.xuiButton3.Size = new System.Drawing.Size(209, 36);
-            this.xuiButton3.TabIndex = 22;
-            this.xuiButton3.TextColor = System.Drawing.Color.White;
-            this.xuiButton3.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_UpdateImage.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_UpdateImage.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_UpdateImage.ButtonImage")));
+            this.btn_UpdateImage.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_UpdateImage.ButtonText = "Sync";
+            this.btn_UpdateImage.ClickBackColor = System.Drawing.Color.White;
+            this.btn_UpdateImage.ClickTextColor = System.Drawing.Color.White;
+            this.btn_UpdateImage.CornerRadius = 5;
+            this.btn_UpdateImage.Font = new System.Drawing.Font("Roboto Slab", 12F);
+            this.btn_UpdateImage.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_UpdateImage.HoverBackgroundColor = System.Drawing.Color.White;
+            this.btn_UpdateImage.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_UpdateImage.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_UpdateImage.Location = new System.Drawing.Point(1122, 529);
+            this.btn_UpdateImage.Name = "btn_UpdateImage";
+            this.btn_UpdateImage.Size = new System.Drawing.Size(209, 36);
+            this.btn_UpdateImage.TabIndex = 22;
+            this.btn_UpdateImage.TextColor = System.Drawing.Color.White;
+            this.btn_UpdateImage.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             // 
-            // textBox2
+            // txt_Image
             // 
-            this.textBox2.Font = new System.Drawing.Font("Roboto Slab", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.textBox2.Location = new System.Drawing.Point(1122, 492);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(245, 29);
-            this.textBox2.TabIndex = 21;
+            this.txt_Image.Font = new System.Drawing.Font("Roboto Slab", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Image.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.txt_Image.Location = new System.Drawing.Point(1122, 492);
+            this.txt_Image.Name = "txt_Image";
+            this.txt_Image.Size = new System.Drawing.Size(245, 29);
+            this.txt_Image.TabIndex = 21;
+            this.txt_Image.TextChanged += new System.EventHandler(this.txt_Image_TextChanged);
             // 
-            // button2
+            // btn_DeleteImage
             // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(1337, 529);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 36);
-            this.button2.TabIndex = 20;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_DeleteImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_DeleteImage.BackgroundImage")));
+            this.btn_DeleteImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_DeleteImage.FlatAppearance.BorderSize = 0;
+            this.btn_DeleteImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DeleteImage.Location = new System.Drawing.Point(1337, 529);
+            this.btn_DeleteImage.Name = "btn_DeleteImage";
+            this.btn_DeleteImage.Size = new System.Drawing.Size(30, 36);
+            this.btn_DeleteImage.TabIndex = 20;
+            this.btn_DeleteImage.UseVisualStyleBackColor = true;
+            this.btn_DeleteImage.Click += new System.EventHandler(this.btn_DeleteImage_Click);
             // 
-            // xuiButton5
+            // btn_ReplaceImage
             // 
-            this.xuiButton5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.xuiButton5.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton5.ButtonImage")));
-            this.xuiButton5.ButtonStyle = XanderUI.XUIButton.Style.Invert;
-            this.xuiButton5.ButtonText = "Replace the Image";
-            this.xuiButton5.ClickBackColor = System.Drawing.Color.White;
-            this.xuiButton5.ClickTextColor = System.Drawing.Color.White;
-            this.xuiButton5.CornerRadius = 5;
-            this.xuiButton5.Font = new System.Drawing.Font("Roboto Slab", 12F);
-            this.xuiButton5.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton5.HoverBackgroundColor = System.Drawing.Color.White;
-            this.xuiButton5.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.xuiButton5.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton5.Location = new System.Drawing.Point(1122, 426);
-            this.xuiButton5.Name = "xuiButton5";
-            this.xuiButton5.Size = new System.Drawing.Size(245, 36);
-            this.xuiButton5.TabIndex = 19;
-            this.xuiButton5.TextColor = System.Drawing.Color.White;
-            this.xuiButton5.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_ReplaceImage.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.btn_ReplaceImage.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_ReplaceImage.ButtonImage")));
+            this.btn_ReplaceImage.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_ReplaceImage.ButtonText = "Replace the Image";
+            this.btn_ReplaceImage.ClickBackColor = System.Drawing.Color.White;
+            this.btn_ReplaceImage.ClickTextColor = System.Drawing.Color.White;
+            this.btn_ReplaceImage.CornerRadius = 5;
+            this.btn_ReplaceImage.Font = new System.Drawing.Font("Roboto Slab", 12F);
+            this.btn_ReplaceImage.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_ReplaceImage.HoverBackgroundColor = System.Drawing.Color.White;
+            this.btn_ReplaceImage.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.btn_ReplaceImage.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_ReplaceImage.Location = new System.Drawing.Point(1122, 426);
+            this.btn_ReplaceImage.Name = "btn_ReplaceImage";
+            this.btn_ReplaceImage.Size = new System.Drawing.Size(245, 36);
+            this.btn_ReplaceImage.TabIndex = 19;
+            this.btn_ReplaceImage.TextColor = System.Drawing.Color.White;
+            this.btn_ReplaceImage.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_ReplaceImage.Click += new System.EventHandler(this.btn_ReplaceImage_Click);
             // 
-            // xuiButton6
+            // btn_AddImage
             // 
-            this.xuiButton6.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
-            this.xuiButton6.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton6.ButtonImage")));
-            this.xuiButton6.ButtonStyle = XanderUI.XUIButton.Style.Invert;
-            this.xuiButton6.ButtonText = "+ Add";
-            this.xuiButton6.ClickBackColor = System.Drawing.Color.White;
-            this.xuiButton6.ClickTextColor = System.Drawing.Color.White;
-            this.xuiButton6.CornerRadius = 5;
-            this.xuiButton6.Font = new System.Drawing.Font("Roboto Slab", 12F);
-            this.xuiButton6.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton6.HoverBackgroundColor = System.Drawing.Color.White;
-            this.xuiButton6.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
-            this.xuiButton6.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton6.Location = new System.Drawing.Point(846, 133);
-            this.xuiButton6.Name = "xuiButton6";
-            this.xuiButton6.Size = new System.Drawing.Size(112, 36);
-            this.xuiButton6.TabIndex = 18;
-            this.xuiButton6.TextColor = System.Drawing.Color.White;
-            this.xuiButton6.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_AddImage.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_AddImage.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_AddImage.ButtonImage")));
+            this.btn_AddImage.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_AddImage.ButtonText = "+ Add";
+            this.btn_AddImage.ClickBackColor = System.Drawing.Color.White;
+            this.btn_AddImage.ClickTextColor = System.Drawing.Color.White;
+            this.btn_AddImage.CornerRadius = 5;
+            this.btn_AddImage.Font = new System.Drawing.Font("Roboto Slab", 12F);
+            this.btn_AddImage.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_AddImage.HoverBackgroundColor = System.Drawing.Color.White;
+            this.btn_AddImage.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_AddImage.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_AddImage.Location = new System.Drawing.Point(846, 133);
+            this.btn_AddImage.Name = "btn_AddImage";
+            this.btn_AddImage.Size = new System.Drawing.Size(112, 36);
+            this.btn_AddImage.TabIndex = 18;
+            this.btn_AddImage.TextColor = System.Drawing.Color.White;
+            this.btn_AddImage.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_AddImage.Click += new System.EventHandler(this.btn_AddImage_Click);
             // 
-            // pictureBox2
+            // imageBox
             // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(1122, 218);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(245, 201);
-            this.pictureBox2.TabIndex = 17;
-            this.pictureBox2.TabStop = false;
+            this.imageBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imageBox.Image = ((System.Drawing.Image)(resources.GetObject("imageBox.Image")));
+            this.imageBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("imageBox.InitialImage")));
+            this.imageBox.Location = new System.Drawing.Point(1142, 218);
+            this.imageBox.Name = "imageBox";
+            this.imageBox.Size = new System.Drawing.Size(200, 200);
+            this.imageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imageBox.TabIndex = 17;
+            this.imageBox.TabStop = false;
             // 
             // label6
             // 
@@ -340,9 +341,9 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label6.Location = new System.Drawing.Point(1122, 465);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(164, 22);
+            this.label6.Size = new System.Drawing.Size(120, 22);
             this.label6.TabIndex = 16;
-            this.label6.Text = "Name of the Symbol";
+            this.label6.Text = "Image Caption";
             // 
             // label7
             // 
@@ -355,32 +356,122 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Images";
             // 
+            // dgv_Symbol
+            // 
+            this.dgv_Symbol.AllowUserToAddRows = false;
+            this.dgv_Symbol.AllowUserToDeleteRows = false;
+            this.dgv_Symbol.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Symbol.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_Symbol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Symbol.ColumnHeadersVisible = false;
+            this.dgv_Symbol.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.name,
+            this.image});
+            this.dgv_Symbol.Location = new System.Drawing.Point(34, 218);
+            this.dgv_Symbol.MultiSelect = false;
+            this.dgv_Symbol.Name = "dgv_Symbol";
+            this.dgv_Symbol.ReadOnly = true;
+            this.dgv_Symbol.RowHeadersVisible = false;
+            this.dgv_Symbol.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Roboto Slab Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_Symbol.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.dgv_Symbol.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.dgv_Symbol.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dgv_Symbol.RowTemplate.Height = 30;
+            this.dgv_Symbol.RowTemplate.ReadOnly = true;
+            this.dgv_Symbol.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Symbol.Size = new System.Drawing.Size(357, 347);
+            this.dgv_Symbol.TabIndex = 24;
+            this.dgv_Symbol.SelectionChanged += new System.EventHandler(this.dgv_Symbol_SelectionChanged);
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // image
+            // 
+            this.image.HeaderText = "Symbol";
+            this.image.Name = "image";
+            this.image.ReadOnly = true;
+            this.image.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.image.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.image.Visible = false;
+            // 
+            // dgv_Image
+            // 
+            this.dgv_Image.AllowUserToAddRows = false;
+            this.dgv_Image.AllowUserToDeleteRows = false;
+            this.dgv_Image.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Image.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_Image.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Image.ColumnHeadersVisible = false;
+            this.dgv_Image.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewImageColumn1});
+            this.dgv_Image.Location = new System.Drawing.Point(750, 216);
+            this.dgv_Image.MultiSelect = false;
+            this.dgv_Image.Name = "dgv_Image";
+            this.dgv_Image.ReadOnly = true;
+            this.dgv_Image.RowHeadersVisible = false;
+            this.dgv_Image.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Roboto Slab Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_Image.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.dgv_Image.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.dgv_Image.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dgv_Image.RowTemplate.Height = 30;
+            this.dgv_Image.RowTemplate.ReadOnly = true;
+            this.dgv_Image.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Image.Size = new System.Drawing.Size(357, 347);
+            this.dgv_Image.TabIndex = 25;
+            this.dgv_Image.SelectionChanged += new System.EventHandler(this.dgv_Image_SelectionChanged);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Symbol";
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn1.Visible = false;
+            // 
+            // dialog
+            // 
+            this.dialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif;" +
+    " *.png";
+            this.dialog.RestoreDirectory = true;
+            // 
             // frm_MediaLibrary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1391, 846);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgv_Image);
+            this.Controls.Add(this.dgv_Symbol);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.xuiButton3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.xuiButton5);
-            this.Controls.Add(this.xuiButton6);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.btn_UpdateImage);
+            this.Controls.Add(this.txt_Image);
+            this.Controls.Add(this.btn_DeleteImage);
+            this.Controls.Add(this.btn_ReplaceImage);
+            this.Controls.Add(this.btn_AddImage);
+            this.Controls.Add(this.imageBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.xuiButton2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.xuiButton1);
-            this.Controls.Add(this.xuiButton4);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btn_UpdateSymbol);
+            this.Controls.Add(this.txt_Symbol);
+            this.Controls.Add(this.btn_DeleteSymbol);
+            this.Controls.Add(this.btn_ReplaceSymbol);
+            this.Controls.Add(this.btn_AddSymbol);
+            this.Controls.Add(this.symbolBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -388,10 +479,11 @@
             this.Name = "frm_MediaLibrary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Media Library";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.Load += new System.EventHandler(this.frm_MediaLibrary_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.symbolBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Symbol)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,25 +494,30 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private XanderUI.XUIButton xuiButton4;
-        private XanderUI.XUIButton xuiButton1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private XanderUI.XUIButton xuiButton2;
+        private System.Windows.Forms.PictureBox symbolBox;
+        private XanderUI.XUIButton btn_AddSymbol;
+        private XanderUI.XUIButton btn_ReplaceSymbol;
+        private System.Windows.Forms.Button btn_DeleteSymbol;
+        private System.Windows.Forms.TextBox txt_Symbol;
+        private XanderUI.XUIButton btn_UpdateSymbol;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label5;
-        private XanderUI.XUIButton xuiButton3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button2;
-        private XanderUI.XUIButton xuiButton5;
-        private XanderUI.XUIButton xuiButton6;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private XanderUI.XUIButton btn_UpdateImage;
+        private System.Windows.Forms.TextBox txt_Image;
+        private System.Windows.Forms.Button btn_DeleteImage;
+        private XanderUI.XUIButton btn_ReplaceImage;
+        private XanderUI.XUIButton btn_AddImage;
+        private System.Windows.Forms.PictureBox imageBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dgv_Symbol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewImageColumn image;
+        private System.Windows.Forms.DataGridView dgv_Image;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.OpenFileDialog dialog;
     }
 }
