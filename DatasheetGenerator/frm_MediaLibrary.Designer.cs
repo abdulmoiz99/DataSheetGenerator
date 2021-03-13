@@ -70,7 +70,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(126)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(289, 53);
+            this.label1.Size = new System.Drawing.Size(318, 58);
             this.label1.TabIndex = 1;
             this.label1.Text = "Media Library";
             // 
@@ -81,7 +81,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(126)))), ((int)(((byte)(192)))));
             this.label2.Location = new System.Drawing.Point(16, 133);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 32);
+            this.label2.Size = new System.Drawing.Size(128, 36);
             this.label2.TabIndex = 2;
             this.label2.Text = "Symbols";
             // 
@@ -92,7 +92,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label3.Location = new System.Drawing.Point(406, 465);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(164, 22);
+            this.label3.Size = new System.Drawing.Size(180, 24);
             this.label3.TabIndex = 3;
             this.label3.Text = "Name of the Symbol";
             // 
@@ -171,7 +171,7 @@
             this.txt_Symbol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.txt_Symbol.Location = new System.Drawing.Point(406, 492);
             this.txt_Symbol.Name = "txt_Symbol";
-            this.txt_Symbol.Size = new System.Drawing.Size(245, 29);
+            this.txt_Symbol.Size = new System.Drawing.Size(245, 31);
             this.txt_Symbol.TabIndex = 9;
             this.txt_Symbol.TextChanged += new System.EventHandler(this.txt_Symbol_TextChanged);
             // 
@@ -195,6 +195,7 @@
             this.btn_UpdateSymbol.TabIndex = 10;
             this.btn_UpdateSymbol.TextColor = System.Drawing.Color.White;
             this.btn_UpdateSymbol.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_UpdateSymbol.Click += new System.EventHandler(this.btn_UpdateSymbol_Click);
             // 
             // label4
             // 
@@ -203,7 +204,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label4.Location = new System.Drawing.Point(29, 187);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(131, 26);
+            this.label4.Size = new System.Drawing.Size(143, 28);
             this.label4.TabIndex = 11;
             this.label4.Text = "Symbols List";
             // 
@@ -230,7 +231,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label5.Location = new System.Drawing.Point(745, 187);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 26);
+            this.label5.Size = new System.Drawing.Size(128, 28);
             this.label5.TabIndex = 23;
             this.label5.Text = "Images List";
             // 
@@ -254,6 +255,7 @@
             this.btn_UpdateImage.TabIndex = 22;
             this.btn_UpdateImage.TextColor = System.Drawing.Color.White;
             this.btn_UpdateImage.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_UpdateImage.Click += new System.EventHandler(this.btn_UpdateImage_Click);
             // 
             // txt_Image
             // 
@@ -261,7 +263,7 @@
             this.txt_Image.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.txt_Image.Location = new System.Drawing.Point(1122, 492);
             this.txt_Image.Name = "txt_Image";
-            this.txt_Image.Size = new System.Drawing.Size(245, 29);
+            this.txt_Image.Size = new System.Drawing.Size(245, 31);
             this.txt_Image.TabIndex = 21;
             this.txt_Image.TextChanged += new System.EventHandler(this.txt_Image_TextChanged);
             // 
@@ -341,7 +343,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label6.Location = new System.Drawing.Point(1122, 465);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 22);
+            this.label6.Size = new System.Drawing.Size(133, 24);
             this.label6.TabIndex = 16;
             this.label6.Text = "Image Caption";
             // 
@@ -352,7 +354,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(126)))), ((int)(((byte)(192)))));
             this.label7.Location = new System.Drawing.Point(732, 133);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 32);
+            this.label7.Size = new System.Drawing.Size(108, 36);
             this.label7.TabIndex = 15;
             this.label7.Text = "Images";
             // 

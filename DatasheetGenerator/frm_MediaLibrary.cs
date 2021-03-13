@@ -144,5 +144,15 @@ namespace DatasheetGenerator
         {
             //
         }
+
+        private void btn_UpdateSymbol_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_UpdateImage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

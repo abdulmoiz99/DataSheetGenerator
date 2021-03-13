@@ -51,7 +51,26 @@ namespace DatasheetGenerator
 
         private void frm_Dashboard_Activated(object sender, EventArgs e)
         {
-            if (this.MdiChildren.Length > 0) this.ActivateMdiChild(this.MdiChildren[0]);
+            //Display product family 
+            var ProductFamily =  Datasheet.GetDataTable("select * from ProductFamily;");
+            foreach (DataRow productfamily in ProductFamily.Rows)
+            {
+                var label = new Label();
+                label.AutoSize = false;
+                label.Text = productfamily["Name"].ToString();
+                label.Tag = productfamily["ID"].ToString();
+
+                label.ForeColor = Color.FromArgb(117, 117, 117);
+                label.Size = new Size(225, 33);
+                label.Font = new Font("Roboto Medium", 12);
+                flowLayoutPanel1.Controls.Add(label);
+
+                label.MouseDown += Label_Click;
+                label.MouseEnter += Label_MouseEnter;
+                label.MouseLeave += Label_MouseLeave;
+            }
+
+            //if (this.MdiChildren.Length > 0) this.ActivateMdiChild(this.MdiChildren[0]);
             if (Datasheet.IsCreated)
             {
                 Datasheet.IsCreated = false;
@@ -71,14 +90,34 @@ namespace DatasheetGenerator
                 frm.Show();
             }
         }
-
-        private void btn_LatestDatasheet_Click(object sender, EventArgs e)
+        private void Label_Click(object sender, EventArgs e)
         {
+            var label = sender as Label;
             CloseAllForm();
-            var frm = new frm_Home(); // latest datasheet
+            var frm = new frm_Home(label.Tag.ToString()); // Product family id is stored in tag
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             frm.Show();
+        }
+        private void Label_MouseLeave(object sender, EventArgs e)
+        {
+            var label = sender as Label;
+            label.ForeColor = Color.FromArgb(117, 117, 117); //gray
+        }
+
+        private void Label_MouseEnter(object sender, EventArgs e)
+        {
+            var label = sender as Label;
+            label.ForeColor = Color.FromArgb(0, 101, 177); //blue
+        }
+
+        private void Label_MouseDown(object sender, MouseEventArgs e)
+        {
+            
+        }
+        private void btn_LatestDatasheet_Click(object sender, EventArgs e)
+        {
+          
         }
     }
 }

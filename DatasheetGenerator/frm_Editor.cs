@@ -349,5 +349,10 @@ namespace DatasheetGenerator
             }
             pnl_AddHeader.Visible = false;
         }
+
+        private void pnl_AddHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

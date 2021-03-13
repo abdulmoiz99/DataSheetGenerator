@@ -13,9 +13,11 @@ namespace DatasheetGenerator
 {
     public partial class frm_Home : Form
     {
-        public frm_Home()
+        string productFamilyID = "";
+        public frm_Home(string productFamilyID)
         {
             InitializeComponent();
+            this.productFamilyID = productFamilyID;
         }
 
         private void Delete_Item_Click(object sender, EventArgs e)
@@ -31,7 +33,7 @@ namespace DatasheetGenerator
 
         private void frm_Home_Load(object sender, EventArgs e)
         {
-            var datasheets = Datasheet.GetDataTable("SELECT DateModified, Name, Id FROM sql6397749.Datasheet");
+            var datasheets = Datasheet.GetDataTable("SELECT DateModified, Name, Id FROM Datasheet where PF_ID = " + productFamilyID + "");
 
             foreach (DataRow row in datasheets.Rows)
             {
@@ -51,17 +53,17 @@ namespace DatasheetGenerator
         }
         private void Label_Click(object sender, EventArgs e)
         {
-            
+
             var label = sender as Label;
             Datasheet.Id = label.Tag.ToString();
-            DialogResult YorN =  MessageBox.Show("Are you sure to view/edit datasheet? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult YorN = MessageBox.Show("Are you sure to view/edit datasheet? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (YorN == DialogResult.Yes)
             {
                 Datasheet.IsEditing = true;
                 this.Refresh();
                 this.Close();
             }
-          
+
         }
         private void Label_MouseLeave(object sender, EventArgs e)
         {
