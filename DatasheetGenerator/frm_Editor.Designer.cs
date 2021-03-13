@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Editor));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lab_ProductFamily = new System.Windows.Forms.Label();
@@ -60,14 +60,13 @@
             this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pnl_AddHeader = new System.Windows.Forms.Panel();
-            this.btn_Cancel = new XanderUI.XUIButton();
-            this.btn_Exit = new XanderUI.XUIButton();
-            this.btn_AddNewHeader = new XanderUI.XUIButton();
-            this.txt_HeaderName = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.xuiObjectEllipse1 = new XanderUI.XUIObjectEllipse();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_HeaderName = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btn_AddNewHeader = new XanderUI.XUIButton();
+            this.btn_Exit = new XanderUI.XUIButton();
+            this.btn_Cancel = new XanderUI.XUIButton();
+            this.pnl_AddHeader = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -75,8 +74,8 @@
             this.panel3.SuspendLayout();
             this.xuiCustomGroupbox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HeaderDetails)).BeginInit();
-            this.pnl_AddHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnl_AddHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -531,11 +530,11 @@
             // Delete
             // 
             this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle35.NullValue")));
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.White;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle1;
             this.Delete.FillWeight = 10F;
             this.Delete.HeaderText = "";
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
@@ -547,11 +546,11 @@
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle36.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle36.NullValue")));
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewImageColumn1.FillWeight = 10F;
             this.dataGridViewImageColumn1.HeaderText = "";
             this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
@@ -560,64 +559,47 @@
             this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // pnl_AddHeader
+            // pictureBox1
             // 
-            this.pnl_AddHeader.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnl_AddHeader.Controls.Add(this.btn_Cancel);
-            this.pnl_AddHeader.Controls.Add(this.btn_Exit);
-            this.pnl_AddHeader.Controls.Add(this.btn_AddNewHeader);
-            this.pnl_AddHeader.Controls.Add(this.txt_HeaderName);
-            this.pnl_AddHeader.Controls.Add(this.label3);
-            this.pnl_AddHeader.Controls.Add(this.pictureBox1);
-            this.pnl_AddHeader.Location = new System.Drawing.Point(1179, 342);
-            this.pnl_AddHeader.Name = "pnl_AddHeader";
-            this.pnl_AddHeader.Size = new System.Drawing.Size(545, 203);
-            this.pnl_AddHeader.TabIndex = 3;
-            this.pnl_AddHeader.Visible = false;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(19, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(151, 119);
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
             // 
-            // btn_Cancel
+            // label3
             // 
-            this.btn_Cancel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(79)))), ((int)(((byte)(95)))));
-            this.btn_Cancel.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_Cancel.ButtonImage")));
-            this.btn_Cancel.ButtonStyle = XanderUI.XUIButton.Style.Invert;
-            this.btn_Cancel.ButtonText = "Cancel";
-            this.btn_Cancel.ClickBackColor = System.Drawing.Color.White;
-            this.btn_Cancel.ClickTextColor = System.Drawing.Color.White;
-            this.btn_Cancel.CornerRadius = 5;
-            this.btn_Cancel.Font = new System.Drawing.Font("Roboto Slab", 12F);
-            this.btn_Cancel.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_Cancel.HoverBackgroundColor = System.Drawing.Color.White;
-            this.btn_Cancel.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(79)))), ((int)(((byte)(95)))));
-            this.btn_Cancel.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btn_Cancel.Location = new System.Drawing.Point(315, 133);
-            this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(123, 36);
-            this.btn_Cancel.TabIndex = 27;
-            this.btn_Cancel.TextColor = System.Drawing.Color.White;
-            this.btn_Cancel.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto Slab", 19.69811F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.label3.Location = new System.Drawing.Point(186, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(178, 39);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Add Header";
             // 
-            // btn_Exit
+            // txt_HeaderName
             // 
-            this.btn_Exit.BackgroundColor = System.Drawing.Color.White;
-            this.btn_Exit.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_Exit.ButtonImage")));
-            this.btn_Exit.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
-            this.btn_Exit.ButtonText = "";
-            this.btn_Exit.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btn_Exit.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btn_Exit.CornerRadius = 50;
-            this.btn_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btn_Exit.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_Exit.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btn_Exit.HoverTextColor = System.Drawing.Color.White;
-            this.btn_Exit.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btn_Exit.Location = new System.Drawing.Point(497, 7);
-            this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(36, 36);
-            this.btn_Exit.TabIndex = 26;
-            this.btn_Exit.TextColor = System.Drawing.Color.White;
-            this.btn_Exit.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
+            this.txt_HeaderName.Depth = 0;
+            this.txt_HeaderName.Font = new System.Drawing.Font("Roboto Slab", 6.792453F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_HeaderName.ForeColor = System.Drawing.Color.Coral;
+            this.txt_HeaderName.Hint = "";
+            this.txt_HeaderName.Location = new System.Drawing.Point(186, 87);
+            this.txt_HeaderName.MaxLength = 32767;
+            this.txt_HeaderName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txt_HeaderName.Name = "txt_HeaderName";
+            this.txt_HeaderName.PasswordChar = '\0';
+            this.txt_HeaderName.SelectedText = "";
+            this.txt_HeaderName.SelectionLength = 0;
+            this.txt_HeaderName.SelectionStart = 0;
+            this.txt_HeaderName.Size = new System.Drawing.Size(257, 25);
+            this.txt_HeaderName.TabIndex = 24;
+            this.txt_HeaderName.TabStop = false;
+            this.txt_HeaderName.Text = "Header Name";
+            this.txt_HeaderName.UseSystemPasswordChar = false;
             // 
             // btn_AddNewHeader
             // 
@@ -641,53 +623,65 @@
             this.btn_AddNewHeader.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.btn_AddNewHeader.Click += new System.EventHandler(this.btn_AddNewHeader_Click);
             // 
-            // txt_HeaderName
+            // btn_Exit
             // 
-            this.txt_HeaderName.Depth = 0;
-            this.txt_HeaderName.Font = new System.Drawing.Font("Roboto Slab", 6.792453F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_HeaderName.ForeColor = System.Drawing.Color.Coral;
-            this.txt_HeaderName.Hint = "";
-            this.txt_HeaderName.Location = new System.Drawing.Point(186, 87);
-            this.txt_HeaderName.MaxLength = 32767;
-            this.txt_HeaderName.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txt_HeaderName.Name = "txt_HeaderName";
-            this.txt_HeaderName.PasswordChar = '\0';
-            this.txt_HeaderName.SelectedText = "";
-            this.txt_HeaderName.SelectionLength = 0;
-            this.txt_HeaderName.SelectionStart = 0;
-            this.txt_HeaderName.Size = new System.Drawing.Size(257, 25);
-            this.txt_HeaderName.TabIndex = 24;
-            this.txt_HeaderName.TabStop = false;
-            this.txt_HeaderName.Text = "Header Name";
-            this.txt_HeaderName.UseSystemPasswordChar = false;
+            this.btn_Exit.BackgroundColor = System.Drawing.Color.White;
+            this.btn_Exit.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_Exit.ButtonImage")));
+            this.btn_Exit.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
+            this.btn_Exit.ButtonText = "";
+            this.btn_Exit.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_Exit.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_Exit.CornerRadius = 50;
+            this.btn_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btn_Exit.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Exit.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_Exit.HoverTextColor = System.Drawing.Color.White;
+            this.btn_Exit.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_Exit.Location = new System.Drawing.Point(497, 7);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(36, 36);
+            this.btn_Exit.TabIndex = 26;
+            this.btn_Exit.TextColor = System.Drawing.Color.White;
+            this.btn_Exit.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
-            // label3
+            // btn_Cancel
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto Slab", 19.69811F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.label3.Location = new System.Drawing.Point(186, 21);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(178, 39);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "Add Header";
+            this.btn_Cancel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(79)))), ((int)(((byte)(95)))));
+            this.btn_Cancel.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_Cancel.ButtonImage")));
+            this.btn_Cancel.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_Cancel.ButtonText = "Cancel";
+            this.btn_Cancel.ClickBackColor = System.Drawing.Color.White;
+            this.btn_Cancel.ClickTextColor = System.Drawing.Color.White;
+            this.btn_Cancel.CornerRadius = 5;
+            this.btn_Cancel.Font = new System.Drawing.Font("Roboto Slab", 12F);
+            this.btn_Cancel.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Cancel.HoverBackgroundColor = System.Drawing.Color.White;
+            this.btn_Cancel.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(79)))), ((int)(((byte)(95)))));
+            this.btn_Cancel.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_Cancel.Location = new System.Drawing.Point(315, 133);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(123, 36);
+            this.btn_Cancel.TabIndex = 27;
+            this.btn_Cancel.TextColor = System.Drawing.Color.White;
+            this.btn_Cancel.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
-            // pictureBox1
+            // pnl_AddHeader
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(151, 119);
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
-            // 
-            // xuiObjectEllipse1
-            // 
-            this.xuiObjectEllipse1.CornerRadius = 20;
-            this.xuiObjectEllipse1.EffectedControl = this.pnl_AddHeader;
-            this.xuiObjectEllipse1.EffectedForm = null;
+            this.pnl_AddHeader.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnl_AddHeader.Controls.Add(this.btn_Cancel);
+            this.pnl_AddHeader.Controls.Add(this.btn_Exit);
+            this.pnl_AddHeader.Controls.Add(this.btn_AddNewHeader);
+            this.pnl_AddHeader.Controls.Add(this.txt_HeaderName);
+            this.pnl_AddHeader.Controls.Add(this.label3);
+            this.pnl_AddHeader.Controls.Add(this.pictureBox1);
+            this.pnl_AddHeader.Location = new System.Drawing.Point(1179, 342);
+            this.pnl_AddHeader.Name = "pnl_AddHeader";
+            this.pnl_AddHeader.Size = new System.Drawing.Size(545, 203);
+            this.pnl_AddHeader.TabIndex = 3;
+            this.pnl_AddHeader.Visible = false;
+            this.pnl_AddHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_AddHeader_Paint);
             // 
             // frm_Editor
             // 
@@ -716,9 +710,9 @@
             this.xuiCustomGroupbox1.ResumeLayout(false);
             this.xuiCustomGroupbox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HeaderDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnl_AddHeader.ResumeLayout(false);
             this.pnl_AddHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -754,13 +748,12 @@
         private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.Label lab_ProductFamily;
-        private System.Windows.Forms.Panel pnl_AddHeader;
-        private XanderUI.XUIButton btn_Cancel;
-        private XanderUI.XUIButton btn_Exit;
-        private XanderUI.XUIButton btn_AddNewHeader;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txt_HeaderName;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private XanderUI.XUIObjectEllipse xuiObjectEllipse1;
+        private System.Windows.Forms.Label label3;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txt_HeaderName;
+        private XanderUI.XUIButton btn_AddNewHeader;
+        private XanderUI.XUIButton btn_Exit;
+        private XanderUI.XUIButton btn_Cancel;
+        private System.Windows.Forms.Panel pnl_AddHeader;
     }
 }
