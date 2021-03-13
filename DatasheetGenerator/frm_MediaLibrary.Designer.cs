@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_MediaLibrary));
             this.dgv_Media = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Image = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Image1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Active = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_New = new XanderUI.XUIButton();
             this.btn_ReplaceImage = new XanderUI.XUIButton();
@@ -58,18 +61,26 @@
             this.dgv_Media.AllowUserToDeleteRows = false;
             this.dgv_Media.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Media.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Media.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Media.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Media.ColumnHeadersVisible = false;
             this.dgv_Media.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Name,
             this.Description,
-            this.Image});
+            this.Image1,
+            this.Type,
+            this.Active});
             this.dgv_Media.Location = new System.Drawing.Point(40, 359);
             this.dgv_Media.MultiSelect = false;
             this.dgv_Media.Name = "dgv_Media";
             this.dgv_Media.ReadOnly = true;
-            this.dgv_Media.RowHeadersVisible = false;
             this.dgv_Media.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Roboto Slab Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgv_Media.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.dgv_Media.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(177)))));
@@ -87,10 +98,12 @@
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
             // Name
             // 
             this.Name.DataPropertyName = "Name";
+            this.Name.FillWeight = 101.5228F;
             this.Name.HeaderText = "Name";
             this.Name.Name = "Name";
             this.Name.ReadOnly = true;
@@ -98,16 +111,34 @@
             // Description
             // 
             this.Description.DataPropertyName = "Description";
+            this.Description.FillWeight = 98.47716F;
             this.Description.HeaderText = "Description";
             this.Description.Name = "Description";
             this.Description.ReadOnly = true;
             // 
-            // Image
+            // Image1
             // 
-            this.Image.DataPropertyName = "Image";
-            this.Image.HeaderText = "Image";
-            this.Image.Name = "Image";
-            this.Image.ReadOnly = true;
+            this.Image1.DataPropertyName = "Image";
+            this.Image1.HeaderText = "Image";
+            this.Image1.Name = "Image1";
+            this.Image1.ReadOnly = true;
+            this.Image1.Visible = false;
+            // 
+            // Type
+            // 
+            this.Type.DataPropertyName = "Type";
+            this.Type.HeaderText = "Type";
+            this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
+            this.Type.Visible = false;
+            // 
+            // Active
+            // 
+            this.Active.DataPropertyName = "Active";
+            this.Active.HeaderText = "Active";
+            this.Active.Name = "Active";
+            this.Active.ReadOnly = true;
+            this.Active.Visible = false;
             // 
             // label3
             // 
@@ -296,7 +327,6 @@
             this.btn_Delete.ClickBackColor = System.Drawing.Color.Gainsboro;
             this.btn_Delete.ClickTextColor = System.Drawing.Color.White;
             this.btn_Delete.CornerRadius = 5;
-            this.btn_Delete.Enabled = false;
             this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.btn_Delete.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
             this.btn_Delete.HoverBackgroundColor = System.Drawing.Color.Gainsboro;
@@ -380,6 +410,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.DataGridViewImageColumn Image;
+        private System.Windows.Forms.DataGridViewImageColumn Image1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Active;
     }
 }
