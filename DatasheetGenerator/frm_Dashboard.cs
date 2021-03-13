@@ -16,22 +16,16 @@ namespace DatasheetGenerator
         {
             InitializeComponent();
         }
-
         private void frm_Dashboard_Load(object sender, EventArgs e)
         {
             Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.White;
         }
-
         private void btn_NewDatasheet_Click(object sender, EventArgs e)
         {
             CloseAllForm();
             var frm = new frm_CreateDatasheet();
             frm.ShowDialog();
-            //frm.MdiParent = this;
-            //frm.Dock = DockStyle.Fill;
-            //frm.Show();
         }
-
         private void CloseAllForm()
         {
             foreach (Form form in MdiChildren)
@@ -39,16 +33,14 @@ namespace DatasheetGenerator
                 form.Close();
             }
         }
-
         private void btn_MediaLinrary_Click(object sender, EventArgs e)
         {
             CloseAllForm();
-            var frm = new frm_MediaLibrary();
+            var frm = new frm_MediaLibrary1();
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             frm.Show();
         }
-
         private void frm_Dashboard_Activated(object sender, EventArgs e)
         {
             //Display product family 
@@ -104,20 +96,10 @@ namespace DatasheetGenerator
             var label = sender as Label;
             label.ForeColor = Color.FromArgb(117, 117, 117); //gray
         }
-
         private void Label_MouseEnter(object sender, EventArgs e)
         {
             var label = sender as Label;
             label.ForeColor = Color.FromArgb(0, 101, 177); //blue
-        }
-
-        private void Label_MouseDown(object sender, MouseEventArgs e)
-        {
-            
-        }
-        private void btn_LatestDatasheet_Click(object sender, EventArgs e)
-        {
-          
         }
     }
 }

@@ -91,6 +91,12 @@
     <Compile Include="frm_Editor1.Designer.cs">
       <DependentUpon>frm_Editor1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_MediaLibrary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MediaLibrary.Designer.cs">
+      <DependentUpon>frm_MediaLibrary.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Management\frm_CreateUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,11 +133,11 @@
     <Compile Include="User Management\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_MediaLibrary.cs">
+    <Compile Include="frm_MediaLibrary1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_MediaLibrary.Designer.cs">
-      <DependentUpon>frm_MediaLibrary.cs</DependentUpon>
+    <Compile Include="frm_MediaLibrary1.Designer.cs">
+      <DependentUpon>frm_MediaLibrary1.cs</DependentUpon>
     </Compile>
     <Compile Include="frn_TestForm.cs">
       <SubType>Form</SubType>
@@ -161,6 +167,9 @@
     <EmbeddedResource Include="frm_Editor1.resx">
       <DependentUpon>frm_Editor1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_MediaLibrary.resx">
+      <DependentUpon>frm_MediaLibrary.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Management\frm_CreateUser.resx">
       <DependentUpon>frm_CreateUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,8 +188,8 @@
     <EmbeddedResource Include="User Management\frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_MediaLibrary.resx">
-      <DependentUpon>frm_MediaLibrary.cs</DependentUpon>
+    <EmbeddedResource Include="frm_MediaLibrary1.resx">
+      <DependentUpon>frm_MediaLibrary1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frn_TestForm.resx">
       <DependentUpon>frn_TestForm.cs</DependentUpon>
