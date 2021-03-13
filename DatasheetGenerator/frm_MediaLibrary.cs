@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,132 +19,142 @@ namespace DatasheetGenerator
             InitializeComponent();
         }
 
-        private void xuiButton4_Click(object sender, EventArgs e)
-        {
-            dgv_Symbol.Rows.Add("New Symbol");
-            dgv_Symbol.CurrentCell = dgv_Symbol.Rows[dgv_Symbol.RowCount - 1].Cells[0];
-            dgv_Symbol.ClearSelection();
-            dgv_Symbol.Rows[dgv_Symbol.RowCount - 1].Selected = true;
-        }
-
-
-        private void btn_ReplaceSymbol_Click(object sender, EventArgs e)
-        {
-            if (dgv_Symbol.CurrentRow != null) 
-            {
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    Image symbol = Image.FromFile(dialog.FileName);
-                    dgv_Symbol.CurrentRow.Cells[1].Value = symbol;
-                    symbolBox.Image = symbol;
-                }
-            }
-        }
-
-        private void txt_Symbol_TextChanged(object sender, EventArgs e)
-        {
-            if (dgv_Symbol.CurrentRow != null) dgv_Symbol.CurrentCell.Value = txt_Symbol.Text;
-        }
-
-        private void btn_DeleteSymbol_Click(object sender, EventArgs e)
-        {
-            if (dgv_Symbol.CurrentRow != null) 
-            {
-                dgv_Symbol.Rows.Remove(dgv_Symbol.CurrentRow);
-                if (dgv_Symbol.RowCount <= 0) 
-                {
-                    symbolBox.Image = symbolBox.InitialImage;
-                    txt_Symbol.Clear();
-                } 
-            }
-        }
-
-        private void dgv_Symbol_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgv_Symbol.Rows.Count > 0) 
-            {
-                DataGridViewRow row = dgv_Symbol.CurrentRow;
-
-                txt_Symbol.Text = row.Cells[0].Value.ToString();
-
-                if (row.Cells[1].Value != null)
-                {
-                    symbolBox.Image = (Image)row.Cells[1].Value;
-                }
-                else
-                {
-                    symbolBox.Image = symbolBox.InitialImage;
-                }
-            }
-
-            txt_Symbol.Focus();
-            txt_Symbol.SelectAll();
-        }
-
-        private void btn_AddImage_Click(object sender, EventArgs e)
-        {
-            dgv_Image.Rows.Add("New Image");
-            dgv_Image.CurrentCell = dgv_Image.Rows[dgv_Image.RowCount - 1].Cells[0];
-            dgv_Image.ClearSelection();
-            dgv_Image.Rows[dgv_Image.RowCount - 1].Selected = true;
-        }
-
-        private void btn_ReplaceImage_Click(object sender, EventArgs e)
-        {
-            if (dgv_Image.CurrentRow != null)
-            {
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    Image image = Image.FromFile(dialog.FileName);
-                    dgv_Image.CurrentRow.Cells[1].Value = image;
-                    imageBox.Image = image;
-                }
-            }
-        }
-
-        private void txt_Image_TextChanged(object sender, EventArgs e)
-        {
-            if (dgv_Image.CurrentRow != null) dgv_Image.CurrentCell.Value = txt_Image.Text;
-        }
-
-        private void btn_DeleteImage_Click(object sender, EventArgs e)
-        {
-            if (dgv_Image.CurrentRow != null)
-            {
-                dgv_Image.Rows.Remove(dgv_Image.CurrentRow);
-                if (dgv_Image.RowCount <= 0)
-                {
-                    imageBox.Image = imageBox.InitialImage;
-                    txt_Image.Clear();
-                }
-            }
-        }
-
-        private void dgv_Image_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgv_Image.Rows.Count > 0)
-            {
-                DataGridViewRow row = dgv_Image.CurrentRow;
-
-                txt_Image.Text = row.Cells[0].Value.ToString();
-
-                if (row.Cells[1].Value != null)
-                {
-                    imageBox.Image = (Image)row.Cells[1].Value;
-                }
-                else
-                {
-                    imageBox.Image = imageBox.InitialImage;
-                }
-            }
-
-            txt_Image.Focus();
-            txt_Image.SelectAll();
-        }
 
         private void frm_MediaLibrary_Load(object sender, EventArgs e)
         {
-            //
+            Main.fillDgv(dgv_Images, "SELECT ID, Name, Description, Type, Image FROM MediaLibrary WHERE Active = 1;");
+            cmb_Types.SelectedIndex = 0;
+        }
+
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            txt_Name.Clear();
+            txt_Description.Clear();
+            imageBox.Image = null;
+            cmb_Types.SelectedIndex = 0;
+            dgv_Images.ClearSelection();
+        }
+
+        private void btn_Insert_Click(object sender, EventArgs e)
+        {
+            if (txt_Name.Text == String.Empty)
+            {
+                MessageBox.Show("Please enter name!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (imageBox.Image == null)
+            {
+                MessageBox.Show("Please upload Image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
+                {
+                    if (SQL.con.State == ConnectionState.Closed) SQL.con.Open();
+                    var query = new MySqlCommand("Insert into MediaLibrary (Name, Image, Description, Active, Type) Values ('" + txt_Name.Text + "', @pic, '" + txt_Description.Text + "', 1," + cmb_Types.SelectedIndex + ");", SQL.con);
+                    var stream = new MemoryStream();
+                    imageBox.Image.Save(stream, imageBox.Image.RawFormat);
+                    byte[] data = stream.GetBuffer();
+                    MySqlParameter parameter = new MySqlParameter("@pic", MySqlDbType.Blob);
+                    parameter.Value = data;
+                    query.Parameters.Add(parameter);
+                    query.ExecuteNonQuery();
+                    MessageBox.Show("Data Inserted Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    SQL.con.Close();
+                    Main.fillDgv(dgv_Images, "SELECT ID, Name, Description, Type, Image FROM MediaLibrary WHERE Active = 1;");
+                    dgv_Images.ClearSelection();
+                    txt_Name.Clear();
+                    cmb_Types.SelectedIndex = 0;
+                    txt_Description.Clear();
+                    imageBox.Image = null;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
+        }
+
+        private void btn_Upload_Click(object sender, EventArgs e)
+        {
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                imageBox.Image = Image.FromFile(dialog.FileName);
+            }
+        }
+
+        private void dgv_Images_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridView dgv = (DataGridView)sender;
+
+            if (dgv.SelectedRows.Count > 0)
+            {
+                txt_ID.Text = dgv.SelectedRows[0].Cells["id"].Value.ToString();
+                txt_Name.Text = dgv.SelectedRows[0].Cells["name"].Value.ToString();
+                txt_Description.Text = dgv.SelectedRows[0].Cells["description"].Value.ToString();
+                cmb_Types.SelectedIndex = (int)dgv.SelectedRows[0].Cells["type"].Value;
+                imageBox.Image = ByteToImage((byte[])dgv.SelectedRows[0].Cells["image"].Value);
+            }
+        }
+
+        public static Bitmap ByteToImage(byte[] blob)
+        {
+            MemoryStream mStream = new MemoryStream();
+            byte[] pData = blob;
+            mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+            Bitmap bm = new Bitmap(mStream, false);
+            mStream.Dispose();
+            return bm;
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            if (dgv_Images.SelectedRows.Count > 0)
+            {
+                SQL.NonScalarQuery("UPDATE MediaLibrary SET Active = 0 WHERE ID = " + txt_ID.Text + ";");
+                MessageBox.Show("Data Deleted Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Main.fillDgv(dgv_Images, "SELECT ID, Name, Description, Type, Image FROM MediaLibrary WHERE Active = 1;");
+                dgv_Images.ClearSelection();
+                txt_Name.Clear();
+                txt_Description.Clear();
+                imageBox.Image = null;
+            }
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            if (txt_Name.Text == String.Empty)
+            {
+                MessageBox.Show("Please enter name!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (imageBox.Image == null)
+            {
+                MessageBox.Show("Please upload Image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else 
+            {
+                try
+                {
+                    if (SQL.con.State == ConnectionState.Closed) SQL.con.Open();
+                    var query = new MySqlCommand("UPDATE MediaLibrary SET Name = '" + txt_Name.Text + "', Description = '" + txt_Description.Text + "', Type = " + cmb_Types.SelectedIndex + ", Image = @pic WHERE ID = " + txt_ID.Text + ";", SQL.con);
+                    var stream = new MemoryStream();
+                    imageBox.Image.Save(stream, imageBox.Image.RawFormat);
+                    byte[] data = stream.GetBuffer();
+                    MySqlParameter parameter = new MySqlParameter("@pic", MySqlDbType.Blob);
+                    parameter.Value = data;
+                    query.Parameters.Add(parameter);
+                    query.ExecuteNonQuery();
+                    MessageBox.Show("Data Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    SQL.con.Close();
+                    int tempIndex = dgv_Images.SelectedRows[0].Index;
+                    Main.fillDgv(dgv_Images, "SELECT ID, Name, Description, Type, Image FROM MediaLibrary WHERE Active = 1;");
+                    dgv_Images.ClearSelection();
+                    dgv_Images.Rows[tempIndex].Selected = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
         }
     }
 }

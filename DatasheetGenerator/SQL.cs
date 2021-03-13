@@ -14,7 +14,7 @@ namespace DatasheetGenerator
         //public static MySqlConnection con = new MySqlConnection(@"Data Source=.\Abdul; AttachDbFilename=" + Application.StartupPath + "\\KonvekaSelectionProgram.mdf; Integrated Security=True; Connect Timeout=10;User Instance=True");
 
         // public static MySqlConnection con = new MySqlConnection(@"Data Source=.\Abdul; AttachDbFilename=" + Application.StartupPath + "\\KonvekaSelectionProgram.mdf; Integrated Security=True; Connect Timeout=10;User Instance=True");
-        public static MySqlConnection con = new MySqlConnection(@"server=sql6.freemysqlhosting.net;port=3306;user id=sql6397749; password=CU6wE3Q1ve; database=sql6397749;");
+        public static MySqlConnection con = new MySqlConnection(@"server=sql6.freemysqlhosting.net;port=3306; user id=sql6397749; password=CU6wE3Q1ve; database=sql6397749;");
 
         //public static String DataSource = ReadCS();
         //  private static readonly SqlConnection con = new SqlConnection(DataSource);// ReadCS().ToString()); 
