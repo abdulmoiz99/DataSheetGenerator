@@ -35,12 +35,12 @@
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Image = new System.Windows.Forms.DataGridViewImageColumn();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_Add = new XanderUI.XUIButton();
-            this.btn_ReplaceSymbol = new XanderUI.XUIButton();
-            this.symbolBox = new System.Windows.Forms.PictureBox();
+            this.btn_New = new XanderUI.XUIButton();
+            this.btn_ReplaceImage = new XanderUI.XUIButton();
+            this.pb_Image = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txt_Name = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txt_Description = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btn_Save = new XanderUI.XUIButton();
             this.btn_Edit = new XanderUI.XUIButton();
             this.btn_Cancel = new XanderUI.XUIButton();
@@ -48,7 +48,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Media)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.symbolBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Image)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,6 +79,7 @@
             this.dgv_Media.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_Media.Size = new System.Drawing.Size(581, 299);
             this.dgv_Media.TabIndex = 31;
+            this.dgv_Media.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Media_CellContentClick);
             // 
             // Id
             // 
@@ -119,59 +120,61 @@
             this.label3.TabIndex = 25;
             this.label3.Text = "Name";
             // 
-            // btn_Add
+            // btn_New
             // 
-            this.btn_Add.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(177)))));
-            this.btn_Add.ButtonImage = null;
-            this.btn_Add.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
-            this.btn_Add.ButtonText = "Add";
-            this.btn_Add.ClickBackColor = System.Drawing.Color.Gainsboro;
-            this.btn_Add.ClickTextColor = System.Drawing.Color.White;
-            this.btn_Add.CornerRadius = 5;
-            this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btn_Add.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_Add.HoverBackgroundColor = System.Drawing.Color.Gainsboro;
-            this.btn_Add.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(177)))));
-            this.btn_Add.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btn_Add.Location = new System.Drawing.Point(3, 3);
-            this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(209, 36);
-            this.btn_Add.TabIndex = 29;
-            this.btn_Add.TextColor = System.Drawing.Color.White;
-            this.btn_Add.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_New.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(126)))), ((int)(((byte)(192)))));
+            this.btn_New.ButtonImage = null;
+            this.btn_New.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
+            this.btn_New.ButtonText = "New";
+            this.btn_New.ClickBackColor = System.Drawing.Color.Gainsboro;
+            this.btn_New.ClickTextColor = System.Drawing.Color.White;
+            this.btn_New.CornerRadius = 5;
+            this.btn_New.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btn_New.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_New.HoverBackgroundColor = System.Drawing.Color.Gainsboro;
+            this.btn_New.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(177)))));
+            this.btn_New.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_New.Location = new System.Drawing.Point(3, 3);
+            this.btn_New.Name = "btn_New";
+            this.btn_New.Size = new System.Drawing.Size(209, 36);
+            this.btn_New.TabIndex = 29;
+            this.btn_New.TextColor = System.Drawing.Color.White;
+            this.btn_New.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
             // 
-            // btn_ReplaceSymbol
+            // btn_ReplaceImage
             // 
-            this.btn_ReplaceSymbol.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.btn_ReplaceSymbol.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_ReplaceSymbol.ButtonImage")));
-            this.btn_ReplaceSymbol.ButtonStyle = XanderUI.XUIButton.Style.Invert;
-            this.btn_ReplaceSymbol.ButtonText = "Replace";
-            this.btn_ReplaceSymbol.ClickBackColor = System.Drawing.Color.White;
-            this.btn_ReplaceSymbol.ClickTextColor = System.Drawing.Color.White;
-            this.btn_ReplaceSymbol.CornerRadius = 5;
-            this.btn_ReplaceSymbol.Font = new System.Drawing.Font("Roboto Slab", 12F);
-            this.btn_ReplaceSymbol.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_ReplaceSymbol.HoverBackgroundColor = System.Drawing.Color.White;
-            this.btn_ReplaceSymbol.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.btn_ReplaceSymbol.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btn_ReplaceSymbol.Location = new System.Drawing.Point(443, 307);
-            this.btn_ReplaceSymbol.Name = "btn_ReplaceSymbol";
-            this.btn_ReplaceSymbol.Size = new System.Drawing.Size(178, 36);
-            this.btn_ReplaceSymbol.TabIndex = 27;
-            this.btn_ReplaceSymbol.TextColor = System.Drawing.Color.White;
-            this.btn_ReplaceSymbol.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_ReplaceImage.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.btn_ReplaceImage.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_ReplaceImage.ButtonImage")));
+            this.btn_ReplaceImage.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_ReplaceImage.ButtonText = "Replace";
+            this.btn_ReplaceImage.ClickBackColor = System.Drawing.Color.White;
+            this.btn_ReplaceImage.ClickTextColor = System.Drawing.Color.White;
+            this.btn_ReplaceImage.CornerRadius = 5;
+            this.btn_ReplaceImage.Font = new System.Drawing.Font("Roboto Slab", 12F);
+            this.btn_ReplaceImage.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_ReplaceImage.HoverBackgroundColor = System.Drawing.Color.White;
+            this.btn_ReplaceImage.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.btn_ReplaceImage.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_ReplaceImage.Location = new System.Drawing.Point(443, 307);
+            this.btn_ReplaceImage.Name = "btn_ReplaceImage";
+            this.btn_ReplaceImage.Size = new System.Drawing.Size(178, 36);
+            this.btn_ReplaceImage.TabIndex = 27;
+            this.btn_ReplaceImage.TextColor = System.Drawing.Color.White;
+            this.btn_ReplaceImage.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_ReplaceImage.Click += new System.EventHandler(this.btn_ReplaceImage_Click);
             // 
-            // symbolBox
+            // pb_Image
             // 
-            this.symbolBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.symbolBox.Image = ((System.Drawing.Image)(resources.GetObject("symbolBox.Image")));
-            this.symbolBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("symbolBox.InitialImage")));
-            this.symbolBox.Location = new System.Drawing.Point(443, 128);
-            this.symbolBox.Name = "symbolBox";
-            this.symbolBox.Size = new System.Drawing.Size(178, 173);
-            this.symbolBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.symbolBox.TabIndex = 26;
-            this.symbolBox.TabStop = false;
+            this.pb_Image.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb_Image.Image = ((System.Drawing.Image)(resources.GetObject("pb_Image.Image")));
+            this.pb_Image.InitialImage = ((System.Drawing.Image)(resources.GetObject("pb_Image.InitialImage")));
+            this.pb_Image.Location = new System.Drawing.Point(443, 128);
+            this.pb_Image.Name = "pb_Image";
+            this.pb_Image.Size = new System.Drawing.Size(178, 173);
+            this.pb_Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_Image.TabIndex = 26;
+            this.pb_Image.TabStop = false;
             // 
             // label1
             // 
@@ -184,45 +187,43 @@
             this.label1.TabIndex = 32;
             this.label1.Text = "Description";
             // 
-            // materialSingleLineTextField1
+            // txt_Name
             // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(40, 168);
-            this.materialSingleLineTextField1.MaxLength = 32767;
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(356, 25);
-            this.materialSingleLineTextField1.TabIndex = 33;
-            this.materialSingleLineTextField1.TabStop = false;
-            this.materialSingleLineTextField1.Text = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
+            this.txt_Name.Depth = 0;
+            this.txt_Name.Hint = "";
+            this.txt_Name.Location = new System.Drawing.Point(40, 168);
+            this.txt_Name.MaxLength = 32767;
+            this.txt_Name.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txt_Name.Name = "txt_Name";
+            this.txt_Name.PasswordChar = '\0';
+            this.txt_Name.SelectedText = "";
+            this.txt_Name.SelectionLength = 0;
+            this.txt_Name.SelectionStart = 0;
+            this.txt_Name.Size = new System.Drawing.Size(356, 25);
+            this.txt_Name.TabIndex = 1;
+            this.txt_Name.TabStop = false;
+            this.txt_Name.UseSystemPasswordChar = false;
             // 
-            // materialSingleLineTextField2
+            // txt_Description
             // 
-            this.materialSingleLineTextField2.Depth = 0;
-            this.materialSingleLineTextField2.Hint = "";
-            this.materialSingleLineTextField2.Location = new System.Drawing.Point(40, 249);
-            this.materialSingleLineTextField2.MaxLength = 32767;
-            this.materialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField2.Name = "materialSingleLineTextField2";
-            this.materialSingleLineTextField2.PasswordChar = '\0';
-            this.materialSingleLineTextField2.SelectedText = "";
-            this.materialSingleLineTextField2.SelectionLength = 0;
-            this.materialSingleLineTextField2.SelectionStart = 0;
-            this.materialSingleLineTextField2.Size = new System.Drawing.Size(356, 25);
-            this.materialSingleLineTextField2.TabIndex = 34;
-            this.materialSingleLineTextField2.TabStop = false;
-            this.materialSingleLineTextField2.Text = "materialSingleLineTextField2";
-            this.materialSingleLineTextField2.UseSystemPasswordChar = false;
+            this.txt_Description.Depth = 0;
+            this.txt_Description.Hint = "";
+            this.txt_Description.Location = new System.Drawing.Point(40, 249);
+            this.txt_Description.MaxLength = 32767;
+            this.txt_Description.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txt_Description.Name = "txt_Description";
+            this.txt_Description.PasswordChar = '\0';
+            this.txt_Description.SelectedText = "";
+            this.txt_Description.SelectionLength = 0;
+            this.txt_Description.SelectionStart = 0;
+            this.txt_Description.Size = new System.Drawing.Size(356, 25);
+            this.txt_Description.TabIndex = 2;
+            this.txt_Description.TabStop = false;
+            this.txt_Description.UseSystemPasswordChar = false;
             // 
             // btn_Save
             // 
-            this.btn_Save.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(177)))));
+            this.btn_Save.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(126)))), ((int)(((byte)(192)))));
             this.btn_Save.ButtonImage = null;
             this.btn_Save.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
             this.btn_Save.ButtonText = "Save";
@@ -240,10 +241,11 @@
             this.btn_Save.TabIndex = 35;
             this.btn_Save.TextColor = System.Drawing.Color.White;
             this.btn_Save.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_Edit
             // 
-            this.btn_Edit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(177)))));
+            this.btn_Edit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(126)))), ((int)(((byte)(192)))));
             this.btn_Edit.ButtonImage = null;
             this.btn_Edit.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
             this.btn_Edit.ButtonText = "Edit";
@@ -261,10 +263,11 @@
             this.btn_Edit.TabIndex = 36;
             this.btn_Edit.TextColor = System.Drawing.Color.White;
             this.btn_Edit.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(177)))));
+            this.btn_Cancel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(126)))), ((int)(((byte)(192)))));
             this.btn_Cancel.ButtonImage = null;
             this.btn_Cancel.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
             this.btn_Cancel.ButtonText = "Cancel";
@@ -282,11 +285,11 @@
             this.btn_Cancel.TabIndex = 37;
             this.btn_Cancel.TextColor = System.Drawing.Color.White;
             this.btn_Cancel.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_Cancel.Click += new System.EventHandler(this.xuiButton3_Click);
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // btn_Delete
             // 
-            this.btn_Delete.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(177)))));
+            this.btn_Delete.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(126)))), ((int)(((byte)(192)))));
             this.btn_Delete.ButtonImage = null;
             this.btn_Delete.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
             this.btn_Delete.ButtonText = "Delete";
@@ -297,7 +300,7 @@
             this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.btn_Delete.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
             this.btn_Delete.HoverBackgroundColor = System.Drawing.Color.Gainsboro;
-            this.btn_Delete.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(177)))));
+            this.btn_Delete.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(126)))), ((int)(((byte)(192)))));
             this.btn_Delete.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
             this.btn_Delete.Location = new System.Drawing.Point(3, 171);
             this.btn_Delete.Name = "btn_Delete";
@@ -306,10 +309,11 @@
             this.btn_Delete.TextColor = System.Drawing.Color.White;
             this.btn_Delete.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.btn_Delete.Visible = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.btn_Add);
+            this.flowLayoutPanel1.Controls.Add(this.btn_New);
             this.flowLayoutPanel1.Controls.Add(this.btn_Edit);
             this.flowLayoutPanel1.Controls.Add(this.btn_Save);
             this.flowLayoutPanel1.Controls.Add(this.btn_Cancel);
@@ -338,19 +342,19 @@
             this.ClientSize = new System.Drawing.Size(1128, 779);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.materialSingleLineTextField2);
-            this.Controls.Add(this.materialSingleLineTextField1);
+            this.Controls.Add(this.txt_Description);
+            this.Controls.Add(this.txt_Name);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv_Media);
-            this.Controls.Add(this.btn_ReplaceSymbol);
-            this.Controls.Add(this.symbolBox);
+            this.Controls.Add(this.btn_ReplaceImage);
+            this.Controls.Add(this.pb_Image);
             this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_MediaLibrary";
             this.Load += new System.EventHandler(this.frm_MediaLibrary_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Media)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.symbolBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Image)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -360,13 +364,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_Media;
-        private XanderUI.XUIButton btn_Add;
-        private XanderUI.XUIButton btn_ReplaceSymbol;
-        private System.Windows.Forms.PictureBox symbolBox;
+        private XanderUI.XUIButton btn_New;
+        private XanderUI.XUIButton btn_ReplaceImage;
+        private System.Windows.Forms.PictureBox pb_Image;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txt_Name;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txt_Description;
         private XanderUI.XUIButton btn_Save;
         private XanderUI.XUIButton btn_Edit;
         private XanderUI.XUIButton btn_Cancel;

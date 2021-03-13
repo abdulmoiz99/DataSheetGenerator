@@ -130,7 +130,7 @@
     <value>True</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btn_ReplaceSymbol.ButtonImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_ReplaceImage.ButtonImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxMAAAsTAQCanBgAAAyTSURBVHhe7dx5eFXFGcfx0SQE
@@ -190,7 +190,7 @@
         NEoxCxulmIWNUszCRilmYaNQ3P0PzTHwOokEAVIAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="symbolBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pb_Image.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAMAAAD8CC+4AAAABGdBTUEAALGPC/xhBQAAAAlQTFRF4eHh
         9PT06urqPgudIAAADDdJREFUeF7t3e2S27YSRdF43v+ho4+T2G6IEkl0U2SfvfznxiAhovdwplLlG//z
@@ -248,7 +248,7 @@
         6IaIbojohohuiOiGiG6I6HZ+/foXN2/8qLNA9D4AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="symbolBox.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pb_Image.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAMAAAD8CC+4AAAABGdBTUEAALGPC/xhBQAAAAlQTFRF4eHh
         9PT06urqPgudIAAADDdJREFUeF7t3e2S27YSRdF43v+ho4+T2G6IEkl0U2SfvfznxiAhovdwplLlG//z
