@@ -46,8 +46,7 @@ namespace DatasheetGenerator
             var dataGridView = sender as DataGridView;
             int column = dataGridView.CurrentCell.ColumnIndex;
             string headerText = dataGridView.Columns[column].HeaderText;
-            TextBox tb = e.Control as TextBox;
-
+            var tb = e.Control as TextBox;
             if (tb != null)
             {
                 tb.AutoCompleteMode = AutoCompleteMode.SuggestAppend;

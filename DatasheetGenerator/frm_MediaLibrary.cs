@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +25,7 @@ namespace DatasheetGenerator
             btnm_WiringDrawings.BackgroundColor = (selectedImageType == 4) ? Color.FromArgb(117, 117, 117) : Color.Gainsboro;
 
             Main.fillDgv(dgv_Media, "select * from MediaLibrary where active = 1 and type = " + selectedImageType.ToString() + " ");
+
         }
         private void AllClear()
         {
@@ -147,7 +149,6 @@ namespace DatasheetGenerator
                     var data = (Byte[])(selectedrow.Cells["Image1"].Value);
                     var stream = new MemoryStream(data);
                     pb_Image.Image = Image.FromStream(stream);
-
                 }
                 index = 0;
 
@@ -157,7 +158,6 @@ namespace DatasheetGenerator
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void btn_Save_Click(object sender, EventArgs e)
         {
             if (txt_Name.Text == "")
@@ -166,23 +166,82 @@ namespace DatasheetGenerator
             }
             else if (mode == 1)
             {
+                try
+                {
+
+                    if (SQL.con.State == ConnectionState.Closed) SQL.con.Open();
+                    var mySqlCommand = new MySqlCommand(" Insert Into MediaLibrary (Name                     ,Description                   , Image, Active , Type)" +
+                                                                " values ( '" + txt_Name.Text + "' ,'" + txt_Description.Text + "', @pic, 1       ," + selectedImageType + ")", SQL.Con);
+
+                    var memoryStream = new MemoryStream();
+                    pb_Image.Image.Save(memoryStream, pb_Image.Image.RawFormat);
+                    byte[] data = memoryStream.GetBuffer();
+                    MySqlParameter parameter = new MySqlParameter("@pic", MySqlDbType.Blob);
+                    parameter.Value = data;
+                    mySqlCommand.Parameters.Add(parameter);
+                    mySqlCommand.ExecuteNonQuery();
+                    MessageBox.Show("Record Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    AllClear();
+                    btn_Cancel_Click(sender, e);
+                    frm_MediaLibrary_Load(sender, e);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Unable to save record", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+
                 // SQL.NonScalarQuery("Insert Into FormSetup(FormName) values ('" + txt_Name.Text + "')");
-                MessageBox.Show("Record Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                AllClear();
-                btn_Cancel_Click(sender, e);
-                frm_MediaLibrary_Load(sender, e);
+
             }
             else if (mode == 2)
             {
+
+
                 if (selectedIndex == -1)
                 {
                     MessageBox.Show("No Record Selected", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                // SQL.NonScalarQuery("Update FormSetup set FormName = '" + txt_Name.Text + "' where FormID=" + txt_DataGridViewIndex.Text + "");
-                MessageBox.Show("Record Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                AllClear();
-                btn_Cancel_Click(sender, e);
-                frm_MediaLibrary_Load(sender, e);
+                else
+                {
+                    try
+                    {
+
+                     
+
+
+
+
+
+
+
+
+
+
+                        if (SQL.con.State == ConnectionState.Closed) SQL.con.Open();
+                        var query = new MySqlCommand("UPDATE MediaLibrary SET Name = '" + txt_Name.Text + "', Description = '" + txt_Description.Text + "', Image = @pic WHERE ID = " + selectedImageType + ";", SQL.con);
+                        var stream = new MemoryStream();
+                        pb_Image.Image.Save(stream, pb_Image.Image.RawFormat);
+                        byte[] data =  stream.GetBuffer();
+                        MySqlParameter parameter = new MySqlParameter("@pic", MySqlDbType.Blob);
+                        parameter.Value = data;
+                        query.Parameters.Add(parameter);
+                        query.ExecuteNonQuery();
+
+                        AllClear();
+                        btn_Cancel_Click(sender, e);
+                        frm_MediaLibrary_Load(sender, e);
+
+                    }
+                        catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        MessageBox.Show("Unable to update the record", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
             }
         }
 
