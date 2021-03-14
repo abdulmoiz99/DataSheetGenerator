@@ -36,7 +36,7 @@ namespace DatasheetGenerator
         private void btn_MediaLinrary_Click(object sender, EventArgs e)
         {
             CloseAllForm();
-            var frm = new frm_MediaLibrary1();
+            var frm = new frm_MediaLibrary();
             frm.MdiParent = this;
             frm.Dock = DockStyle.Fill;
             frm.Show();
@@ -45,6 +45,7 @@ namespace DatasheetGenerator
         {
             //Display product family 
             var ProductFamily =  Datasheet.GetDataTable("select * from ProductFamily;");
+            flowLayoutPanel1.Controls.Clear();
             foreach (DataRow productfamily in ProductFamily.Rows)
             {
                 var label = new Label();

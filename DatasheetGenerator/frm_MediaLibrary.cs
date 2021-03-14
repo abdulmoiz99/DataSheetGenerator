@@ -15,6 +15,16 @@ namespace DatasheetGenerator
     {
         int mode;
         int selectedIndex = -1;
+        int selectedImageType = 1; // 1- Symbol, 2-Dimensional Drawing, 3-Product Images, 4-Wiring Drawings
+        private void ImageSelection()
+        {
+            btn_Symbol.BackgroundColor = (selectedImageType == 1) ? Color.FromArgb(117, 117, 117) : Color.Gainsboro;
+            btn_DimensionalDrawings.BackgroundColor = (selectedImageType == 2) ? Color.FromArgb(117, 117, 117) : Color.Gainsboro;
+            btn_ProductImages.BackgroundColor = (selectedImageType == 3) ? Color.FromArgb(117, 117, 117) : Color.Gainsboro;
+            btnm_WiringDrawings.BackgroundColor = (selectedImageType == 4) ? Color.FromArgb(117, 117, 117) : Color.Gainsboro;
+
+            Main.fillDgv(dgv_Media, "select * from MediaLibrary where active = 1 and type = " + selectedImageType.ToString() + " ");
+        }
         private void AllClear()
         {
             txt_Name.Text = "";
@@ -41,7 +51,7 @@ namespace DatasheetGenerator
             dgv_Media.Enabled = false;
             txt_Name.Focus();
 
-            Main.fillDgv(dgv_Media, "select * from MediaLibrary where active = 1");
+            ImageSelection();
         }
 
         private void btn_ReplaceImage_Click(object sender, EventArgs e)
@@ -86,16 +96,23 @@ namespace DatasheetGenerator
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            DialogResult YorN = MessageBox.Show("Are you sure to deleted the selected Image?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question); ;
-            if (YorN == DialogResult.Yes)
+            if (selectedIndex == -1)
             {
-                if (SQL.NonScalarQuery("Update MediaLibrary set active = 0 where Id = " + selectedIndex + ""))
+                MessageBox.Show("No Record Selected", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DialogResult YorN = MessageBox.Show("Are you sure to deleted the selected Image?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question); ;
+                if (YorN == DialogResult.Yes)
                 {
-                    MessageBox.Show("Record Deleted Successfully", "Success");
-                }
-                else
-                {
-                    MessageBox.Show("Unable to Delete Selected Record ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (SQL.NonScalarQuery("Update MediaLibrary set active = 0 where Id = " + selectedIndex + ""))
+                    {
+                        MessageBox.Show("Record Deleted Successfully", "Success");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Unable to Delete Selected Record ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
@@ -124,7 +141,7 @@ namespace DatasheetGenerator
                     selectedIndex = index;
                     DataGridViewRow selectedrow = dgv_Media.Rows[index];
                     selectedIndex = Convert.ToInt32(selectedrow.Cells["ID"].Value.ToString());
-                    txt_Name.Text = selectedrow.Cells["Name"].Value.ToString();
+                    txt_Name.Text = selectedrow.Cells["Name1"].Value.ToString();
                     txt_Description.Text = selectedrow.Cells["Description"].Value.ToString();
 
                     var data = (Byte[])(selectedrow.Cells["Image1"].Value);
@@ -167,6 +184,35 @@ namespace DatasheetGenerator
                 btn_Cancel_Click(sender, e);
                 frm_MediaLibrary_Load(sender, e);
             }
+        }
+
+        private void btn_Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_Symbol_Click(object sender, EventArgs e)
+        {
+            selectedImageType = 1;
+            ImageSelection();
+        }
+
+        private void btn_DimensionalDrawings_Click(object sender, EventArgs e)
+        {
+            selectedImageType = 2;
+            ImageSelection();
+        }
+
+        private void btn_ProductImages_Click(object sender, EventArgs e)
+        {
+            selectedImageType = 3;
+            ImageSelection();
+        }
+
+        private void btnm_WiringDrawings_Click(object sender, EventArgs e)
+        {
+            selectedImageType = 4;
+            ImageSelection();
         }
     }
 }
