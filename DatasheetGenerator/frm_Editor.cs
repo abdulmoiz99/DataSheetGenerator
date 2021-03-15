@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using XanderUI;
 
 namespace DatasheetGenerator
 {
@@ -27,6 +28,25 @@ namespace DatasheetGenerator
         public frm_Editor()
         {
             InitializeComponent();
+        }
+        public static void AddSymbol(FlowLayoutPanel flowLayoutPanel)
+        {
+            //Display product family 
+            var symbol = Datasheet.GetDataTable("select * from MediaLibrary where Type = 1");
+            flowLayoutPanel.Controls.Clear();
+            foreach (DataRow productfamily in symbol.Rows)
+            {
+                var checkBox = new XUICheckBox();
+                checkBox.AutoSize = false;
+                checkBox.CheckboxStyle = XUICheckBox.Style.iOS;
+                checkBox.Text = productfamily["Name"].ToString();
+                checkBox.Tag = productfamily["ID"].ToString();
+
+                checkBox.ForeColor = Color.FromArgb(117, 117, 117);
+                checkBox.Size = new Size(251, 36);
+                checkBox.Font = new Font("Roboto Medium", 10);
+                flowLayoutPanel.Controls.Add(checkBox);
+            }
         }
         public AutoCompleteStringCollection AutoCompleteLoadValue1()
         {
@@ -317,6 +337,7 @@ namespace DatasheetGenerator
         {
             lab_ProductFamily.Text = Datasheet.ProductFamilly;
             data = AutoCompleteLoadValue1();
+            AddSymbol(flowPanel_Symbol);
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)

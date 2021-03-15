@@ -18,11 +18,17 @@ namespace DatasheetGenerator
 
         public static DataTable GetDataTable(string Query)
         {
-            if (SQL.con.State == ConnectionState.Closed) SQL.con.Open();
+            if (SQL.con.State == ConnectionState.Open)
+            {
+                SQL.con.Close();
+
+            }
+            SQL.con.Open();
             DataTable datasheets = new DataTable();
             MySqlCommand command = new MySqlCommand(Query, SQL.con);
             var adapter = new MySqlDataAdapter(command);
             adapter.Fill(datasheets);
+            adapter.Dispose();
             return datasheets;
         }
         public static bool Exist(string datasheetName)

@@ -40,7 +40,7 @@
             this.btn_SaveAsDraft = new XanderUI.XUIButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowPanel_Symbol = new System.Windows.Forms.FlowLayoutPanel();
             this.xuiCheckBox4 = new XanderUI.XUICheckBox();
             this.xuiCheckBox5 = new XanderUI.XUICheckBox();
             this.xuiCheckBox9 = new XanderUI.XUICheckBox();
@@ -70,7 +70,7 @@
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
+            this.flowPanel_Symbol.SuspendLayout();
             this.panel3.SuspendLayout();
             this.xuiCustomGroupbox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HeaderDetails)).BeginInit();
@@ -218,30 +218,30 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.flowLayoutPanel2);
+            this.panel2.Controls.Add(this.flowPanel_Symbol);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(546, 277);
             this.panel2.TabIndex = 46;
             // 
-            // flowLayoutPanel2
+            // flowPanel_Symbol
             // 
-            this.flowLayoutPanel2.AutoScroll = true;
-            this.flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel2.Controls.Add(this.xuiCheckBox4);
-            this.flowLayoutPanel2.Controls.Add(this.xuiCheckBox5);
-            this.flowLayoutPanel2.Controls.Add(this.xuiCheckBox9);
-            this.flowLayoutPanel2.Controls.Add(this.xuiCheckBox10);
-            this.flowLayoutPanel2.Controls.Add(this.xuiCheckBox11);
-            this.flowLayoutPanel2.Controls.Add(this.xuiCheckBox12);
-            this.flowLayoutPanel2.Controls.Add(this.xuiCheckBox13);
-            this.flowLayoutPanel2.Controls.Add(this.xuiCheckBox16);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 50);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(546, 227);
-            this.flowLayoutPanel2.TabIndex = 1;
+            this.flowPanel_Symbol.AutoScroll = true;
+            this.flowPanel_Symbol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowPanel_Symbol.Controls.Add(this.xuiCheckBox4);
+            this.flowPanel_Symbol.Controls.Add(this.xuiCheckBox5);
+            this.flowPanel_Symbol.Controls.Add(this.xuiCheckBox9);
+            this.flowPanel_Symbol.Controls.Add(this.xuiCheckBox10);
+            this.flowPanel_Symbol.Controls.Add(this.xuiCheckBox11);
+            this.flowPanel_Symbol.Controls.Add(this.xuiCheckBox12);
+            this.flowPanel_Symbol.Controls.Add(this.xuiCheckBox13);
+            this.flowPanel_Symbol.Controls.Add(this.xuiCheckBox16);
+            this.flowPanel_Symbol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowPanel_Symbol.Location = new System.Drawing.Point(0, 50);
+            this.flowPanel_Symbol.Name = "flowPanel_Symbol";
+            this.flowPanel_Symbol.Size = new System.Drawing.Size(546, 227);
+            this.flowPanel_Symbol.TabIndex = 1;
             // 
             // xuiCheckBox4
             // 
@@ -705,7 +705,7 @@
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowPanel_Symbol.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.xuiCustomGroupbox1.ResumeLayout(false);
             this.xuiCustomGroupbox1.PerformLayout();
@@ -731,7 +731,7 @@
         private XanderUI.XUIButton xuiButton5;
         private XanderUI.XUIButton btn_AddHeader;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flowPanel_Symbol;
         private XanderUI.XUICheckBox xuiCheckBox4;
         private XanderUI.XUICheckBox xuiCheckBox5;
         private XanderUI.XUICheckBox xuiCheckBox9;
