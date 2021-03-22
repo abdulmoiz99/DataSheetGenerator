@@ -21,18 +21,7 @@ namespace DatasheetGenerator
 
         private void frn_TestForm_Load(object sender, EventArgs e)
         {
-            DataGridViewTextBoxColumn dgvslno = new DataGridViewTextBoxColumn();
-            dgvslno.HeaderText = "ID";
-            dgvslno.Width = 150;
-            dataGridView1.Columns.Add(dgvslno);
-
-            DataGridViewTextBoxColumn dgvpro = new DataGridViewTextBoxColumn();
-            dgvpro.HeaderText = "Value";
-            dgvpro.Width = 150;
-            dataGridView1.Columns.Add(dgvpro);
-
-
-            data = AutoCompleteLoad();
+           
         }
         public AutoCompleteStringCollection AutoCompleteLoad()
         {
@@ -98,28 +87,7 @@ namespace DatasheetGenerator
 
         private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            int column = dataGridView1.CurrentCell.ColumnIndex;
-            string headerText = dataGridView1.Columns[column].HeaderText;
-
-            if (headerText.Equals("Value"))
-            {
-                TextBox tb = e.Control as TextBox;
-
-                if (tb != null)
-                {
-                    tb.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                    tb.AutoCompleteCustomSource = data;
-                    tb.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                }
-            }
-            else
-            {
-                TextBox tb = e.Control as TextBox;
-                if (tb != null)
-                {
-                    tb.AutoCompleteMode = AutoCompleteMode.None;
-                }
-            }
+          
         }
     }
 }
