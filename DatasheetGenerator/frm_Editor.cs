@@ -29,25 +29,7 @@ namespace DatasheetGenerator
         {
             InitializeComponent();
         }
-        public static void AddSymbol(FlowLayoutPanel flowLayoutPanel)
-        {
-            //Display product family 
-            var symbol = Datasheet.GetDataTable("select * from MediaLibrary where Type = 1");
-            flowLayoutPanel.Controls.Clear();
-            foreach (DataRow productfamily in symbol.Rows)
-            {
-                var checkBox = new XUICheckBox();
-                checkBox.AutoSize = false;
-                checkBox.CheckboxStyle = XUICheckBox.Style.iOS;
-                checkBox.Text = productfamily["Name"].ToString();
-                checkBox.Tag = productfamily["ID"].ToString();
-
-                checkBox.ForeColor = Color.FromArgb(117, 117, 117);
-                checkBox.Size = new Size(251, 36);
-                checkBox.Font = new Font("Roboto Medium", 10);
-                flowLayoutPanel.Controls.Add(checkBox);
-            }
-        }
+       
         public AutoCompleteStringCollection AutoCompleteLoadValue1()
         {
             if (SQL.con.State == ConnectionState.Closed) SQL.con.Open();
@@ -343,7 +325,7 @@ namespace DatasheetGenerator
             lab_ProductFamily.Text = Datasheet.ProductFamilly;
             data = AutoCompleteLoadValue1();
 
-            AddSymbol(flowPanel_Symbol);
+            Datasheet.AddSymbolList(flowPanel_Symbol,false);
 
             try { cmb_Category.SelectedIndex = 0; }
             catch (Exception) { }
