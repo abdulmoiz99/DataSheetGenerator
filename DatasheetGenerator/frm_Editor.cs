@@ -23,7 +23,7 @@ namespace DatasheetGenerator
             pnl_AddHeader.Anchor = AnchorStyles.None;
             pnl_AddHeader.Visible = true;
             pnl_AddHeader.BringToFront();
-            txt_HeaderName.Text = "Header text";
+            txt_HeaderName.Focus();
         }
         public frm_Editor()
         {
@@ -255,7 +255,6 @@ namespace DatasheetGenerator
                 dgv_HeaderDetails.ClearSelection();
             }
         }
-
         private void btn_Save_Click(object sender, EventArgs e)
         {
             if (count <= 1)
@@ -273,7 +272,6 @@ namespace DatasheetGenerator
                 SQL.Con.Close();
             }
             SQL.Con.Open();
-
 
             MySqlCommand myCommand = SQL.con.CreateCommand();
             MySqlTransaction transaction;
