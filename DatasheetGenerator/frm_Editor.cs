@@ -88,6 +88,14 @@ namespace DatasheetGenerator
             dataGridView.Columns.Add("newColumnName", HeaderText);
             dataGridView.Columns.Add("newColumnName1", "");
 
+            DataGridViewImageColumn column = new DataGridViewImageColumn();
+            column.Name = "newColumnName2";
+            column.HeaderText = "";
+            column.FillWeight = 10;
+            column.Image = Properties.Resources.icons8_multiply_24;
+            column.DefaultCellStyle.NullValue = null;
+
+            dataGridView.Columns.Add(column);
 
             //COLUMN HEADER
             //Set Header height
@@ -121,12 +129,12 @@ namespace DatasheetGenerator
             //GRID BORDER
             dataGridView.BorderStyle = BorderStyle.Fixed3D;
             dataGridView.RowHeadersVisible = false;
-
+        
             dataGridView.DefaultCellStyle.Font = new Font("Roboto", 10);
 
-            dataGridView.Rows.Add("Product Name", "Text Field");
-            dataGridView.Rows.Add("Product Code", "Text Field");
-            dataGridView.Rows.Add("Prodcut Description", "Text Field");
+            dataGridView.Rows.Add("Product Name", "Text Field", Properties.Resources.icons8_multiply_24);
+            dataGridView.Rows.Add("Product Code", "Text Field", Properties.Resources.icons8_multiply_24);
+            dataGridView.Rows.Add("Product Description", "Text Field", Properties.Resources.icons8_multiply_24);
             dataGridView.AllowUserToAddRows = true;
 
             //Disabling Selection Color
@@ -134,8 +142,19 @@ namespace DatasheetGenerator
             dataGridView.DefaultCellStyle.SelectionForeColor = dataGridView.DefaultCellStyle.ForeColor;
 
             dataGridView.EditingControlShowing += dataGridView1_EditingControlShowing;
-
+            dataGridView.CellClick += DataGridView_CellClick;
         }
+
+        private void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var dgv = sender as DataGridView;
+            if (e.ColumnIndex == 2 && e.RowIndex >= 0 && e.RowIndex != dgv.RowCount - 1)
+            {
+                DataGridViewRow row = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningRow;
+                dgv.Rows.Remove(row);
+            }
+        }
+
         private void UpdateHeaderDetails(DataGridView dataGridView, string HeaderText, int Position, DataGridView refGrid)
         {
             int rowIndex = dataGridView.Rows.Add(HeaderText, Position);
@@ -221,6 +240,7 @@ namespace DatasheetGenerator
                 {
                     flowLayoutPanel1.Controls.Add((DataGridView)row.Tag);
                 }
+                //3 panels 
             }
         }
         private void frm_Editor_KeyDown(object sender, KeyEventArgs e)
@@ -357,12 +377,12 @@ namespace DatasheetGenerator
 
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
-            pnl_AddHeader.Visible = true;
+            txt_HeaderName.Clear();
+            pnl_AddHeader.Visible = false;
         }
 
         private void btn_AddNewHeader_Click(object sender, EventArgs e)
         {
-
             HeaderController.Header.AddNewHeader();
             HeaderController.Header.SetHeaderText(txt_HeaderName.Text);
 
@@ -374,8 +394,10 @@ namespace DatasheetGenerator
                 UpdateHeaderDetails(dgv_HeaderDetails, HeaderController.Header.GetHeaderText(), count, dgv);
                 dgv.Tag = count++;
                 flowLayoutPanel1.Controls.Add(dgv);
+                flowLayoutPanel1.Controls.SetChildIndex(dgv, count - 1);
                 HeaderController.Header.DisableNewHeader();
                 dgv_HeaderDetails.ClearSelection();
+                txt_HeaderName.Clear();
             }
             pnl_AddHeader.Visible = false;
         }
@@ -391,8 +413,7 @@ namespace DatasheetGenerator
         }
 
         private void btn_AddImage_Click(object sender, EventArgs e)
-        {
-
+        {           
             if (cmb_Image.SelectedIndex < 0)
             {
                 MessageBox.Show("No Image Selcted", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -400,36 +421,53 @@ namespace DatasheetGenerator
             }
             string ImageID = cmb_Image.SelectedValue.ToString();
             int category = cmb_Category.SelectedIndex;
-            if (Datasheet.ContainsImage(ImageID, flowPanel_ProductImages))
+            if (category == 0) //Dimensional Drawings
             {
-                MessageBox.Show("Image Already Added", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (category == 0) //Dimensional Drawings
-            {
-                Datasheet.AddImage(cmb_Image.SelectedValue.ToString(), Button_Click, flowPanel_DimensionalDrawings);
-            }
-            else if (category == 0) //Product Images
-            {
-                Datasheet.AddImage(cmb_Image.SelectedValue.ToString(), Button_Click, flowPanel_ProductImages);
-            }
-            else if (category == 0) //Wiring Diagrams
-            {
-                Datasheet.AddImage(cmb_Image.SelectedValue.ToString(), Button_Click, flowPanel_WiringDiagrams);
-            }
-
-        }
-        private void Button_Click(object sender, EventArgs e)
-        {
-            var panel = sender as FlowLayoutPanel;
-            foreach (Control control in panel.Controls)
-            {
-                if (control.Tag.ToString() == "2")
+                if (Datasheet.ContainsImage(ImageID, flowPanel_DimensionalDrawings))
                 {
-                    panel.Controls.Remove(control);
+                    MessageBox.Show("Image Already Added", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else 
+                {
+                    Datasheet.AddImage(cmb_Image.SelectedValue.ToString(), Button_Click, flowPanel_DimensionalDrawings);
                 }
             }
-
+            else if (category == 1) //Product Images
+            {
+                if (Datasheet.ContainsImage(ImageID, flowPanel_ProductImages))
+                {
+                    MessageBox.Show("Image Already Added", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    Datasheet.AddImage(cmb_Image.SelectedValue.ToString(), Button_Click, flowPanel_ProductImages);
+                }
+            }
+            else if (category == 2) //Wiring Diagrams
+            {
+                if (Datasheet.ContainsImage(ImageID, flowPanel_WiringDiagrams))
+                {
+                    MessageBox.Show("Image Already Added", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    Datasheet.AddImage(cmb_Image.SelectedValue.ToString(), Button_Click, flowPanel_WiringDiagrams);
+                }
+            }
         }
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            var button = sender as XUIButton;
+
+            if (button != null) 
+            {
+                var control = button.Tag as Control;
+                var panel = control.Parent as FlowLayoutPanel;
+                panel.Controls.Remove(control);
+            }
+        }
+
         private void cmb_Category_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateImageDetails();

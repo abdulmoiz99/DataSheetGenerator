@@ -224,5 +224,13 @@
   <ItemGroup>
     <None Include="Resources\pngtree-geometric-gradient-background-poster-image_62045.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-multiply-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\icons8-multiply-12.png" />
+    <None Include="Resources\icons8-multiply-24.png" />
+    <None Include="Resources\icons8-multiply-121.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

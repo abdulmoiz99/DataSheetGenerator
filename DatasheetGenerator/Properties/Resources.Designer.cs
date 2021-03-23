@@ -63,6 +63,36 @@ namespace DatasheetGenerator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_multiply_12 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-multiply-12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_multiply_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-multiply-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_multiply_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-multiply-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngtree_geometric_gradient_background_poster_image_62045 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-geometric-gradient-background-poster-image_62045", resourceCulture);
