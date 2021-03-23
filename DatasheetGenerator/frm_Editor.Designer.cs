@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Editor));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lab_ProductFamily = new System.Windows.Forms.Label();
@@ -52,6 +53,18 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.xuiButton6 = new XanderUI.XUIButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.flowPanel_ProductImages = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.flowPanel_DimensionalDrawings = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.flowPanel_WiringDiagrams = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.xuiCustomGroupbox1 = new XanderUI.XUICustomGroupbox();
             this.xuiButton5 = new XanderUI.XUIButton();
             this.btn_AddHeader = new XanderUI.XUIButton();
@@ -67,15 +80,28 @@
             this.btn_Exit = new XanderUI.XUIButton();
             this.btn_Cancel = new XanderUI.XUIButton();
             this.pnl_AddHeader = new System.Windows.Forms.Panel();
+            this.xuiCustomGroupbox2 = new XanderUI.XUICustomGroupbox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmb_Image = new SergeUtils.EasyCompletionComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmb_Category = new SergeUtils.EasyCompletionComboBox();
+            this.btn_AddImage = new XanderUI.XUIButton();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowPanel_Symbol.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.xuiCustomGroupbox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HeaderDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_AddHeader.SuspendLayout();
+            this.xuiCustomGroupbox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -211,6 +237,9 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.Controls.Add(this.panel2);
+            this.flowLayoutPanel1.Controls.Add(this.panel4);
+            this.flowLayoutPanel1.Controls.Add(this.panel6);
+            this.flowLayoutPanel1.Controls.Add(this.panel8);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(19, 121);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1154, 739);
@@ -425,6 +454,132 @@
             this.label2.Text = "  Symbols";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.flowPanel_ProductImages);
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Location = new System.Drawing.Point(555, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(546, 277);
+            this.panel4.TabIndex = 47;
+            // 
+            // flowPanel_ProductImages
+            // 
+            this.flowPanel_ProductImages.AutoScroll = true;
+            this.flowPanel_ProductImages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowPanel_ProductImages.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowPanel_ProductImages.Location = new System.Drawing.Point(0, 50);
+            this.flowPanel_ProductImages.Name = "flowPanel_ProductImages";
+            this.flowPanel_ProductImages.Size = new System.Drawing.Size(546, 227);
+            this.flowPanel_ProductImages.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(177)))));
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(546, 50);
+            this.panel5.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label6.Font = new System.Drawing.Font("Roboto Medium", 12.90566F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(219, 48);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "  Product Images";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.flowPanel_DimensionalDrawings);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Location = new System.Drawing.Point(3, 286);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(546, 277);
+            this.panel6.TabIndex = 48;
+            // 
+            // flowPanel_DimensionalDrawings
+            // 
+            this.flowPanel_DimensionalDrawings.AutoScroll = true;
+            this.flowPanel_DimensionalDrawings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowPanel_DimensionalDrawings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowPanel_DimensionalDrawings.Location = new System.Drawing.Point(0, 50);
+            this.flowPanel_DimensionalDrawings.Name = "flowPanel_DimensionalDrawings";
+            this.flowPanel_DimensionalDrawings.Size = new System.Drawing.Size(546, 227);
+            this.flowPanel_DimensionalDrawings.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(177)))));
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.label7);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(546, 50);
+            this.panel7.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label7.Font = new System.Drawing.Font("Roboto Medium", 12.90566F);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(219, 48);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "  Dimensional Drawings";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.flowPanel_WiringDiagrams);
+            this.panel8.Controls.Add(this.panel9);
+            this.panel8.Location = new System.Drawing.Point(555, 286);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(546, 277);
+            this.panel8.TabIndex = 49;
+            // 
+            // flowPanel_WiringDiagrams
+            // 
+            this.flowPanel_WiringDiagrams.AutoScroll = true;
+            this.flowPanel_WiringDiagrams.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowPanel_WiringDiagrams.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowPanel_WiringDiagrams.Location = new System.Drawing.Point(0, 50);
+            this.flowPanel_WiringDiagrams.Name = "flowPanel_WiringDiagrams";
+            this.flowPanel_WiringDiagrams.Size = new System.Drawing.Size(546, 227);
+            this.flowPanel_WiringDiagrams.TabIndex = 1;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(177)))));
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.label8);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(546, 50);
+            this.panel9.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label8.Font = new System.Drawing.Font("Roboto Medium", 12.90566F);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(219, 48);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "  Wiring Diagram";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // xuiCustomGroupbox1
             // 
             this.xuiCustomGroupbox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -434,10 +589,10 @@
             this.xuiCustomGroupbox1.Controls.Add(this.btn_AddHeader);
             this.xuiCustomGroupbox1.Controls.Add(this.dgv_HeaderDetails);
             this.xuiCustomGroupbox1.Font = new System.Drawing.Font("Roboto Slab Medium", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xuiCustomGroupbox1.Location = new System.Drawing.Point(1204, 173);
+            this.xuiCustomGroupbox1.Location = new System.Drawing.Point(1204, 121);
             this.xuiCustomGroupbox1.Name = "xuiCustomGroupbox1";
             this.xuiCustomGroupbox1.ShowText = true;
-            this.xuiCustomGroupbox1.Size = new System.Drawing.Size(336, 555);
+            this.xuiCustomGroupbox1.Size = new System.Drawing.Size(336, 406);
             this.xuiCustomGroupbox1.TabIndex = 2;
             this.xuiCustomGroupbox1.TabStop = false;
             this.xuiCustomGroupbox1.Text = "Headers";
@@ -458,7 +613,7 @@
             this.xuiButton5.HoverBackgroundColor = System.Drawing.Color.White;
             this.xuiButton5.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.xuiButton5.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton5.Location = new System.Drawing.Point(170, 500);
+            this.xuiButton5.Location = new System.Drawing.Point(171, 345);
             this.xuiButton5.Name = "xuiButton5";
             this.xuiButton5.Size = new System.Drawing.Size(133, 39);
             this.xuiButton5.TabIndex = 20;
@@ -480,7 +635,7 @@
             this.btn_AddHeader.HoverBackgroundColor = System.Drawing.Color.White;
             this.btn_AddHeader.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
             this.btn_AddHeader.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btn_AddHeader.Location = new System.Drawing.Point(13, 500);
+            this.btn_AddHeader.Location = new System.Drawing.Point(14, 345);
             this.btn_AddHeader.Name = "btn_AddHeader";
             this.btn_AddHeader.Size = new System.Drawing.Size(133, 39);
             this.btn_AddHeader.TabIndex = 19;
@@ -493,19 +648,28 @@
             this.dgv_HeaderDetails.AllowUserToAddRows = false;
             this.dgv_HeaderDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_HeaderDetails.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto Slab Medium", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_HeaderDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_HeaderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_HeaderDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Position,
             this.Delete});
-            this.dgv_HeaderDetails.Location = new System.Drawing.Point(6, 34);
+            this.dgv_HeaderDetails.Location = new System.Drawing.Point(12, 29);
             this.dgv_HeaderDetails.Name = "dgv_HeaderDetails";
             this.dgv_HeaderDetails.RowHeadersVisible = false;
             this.dgv_HeaderDetails.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_HeaderDetails.Size = new System.Drawing.Size(324, 456);
+            this.dgv_HeaderDetails.Size = new System.Drawing.Size(315, 310);
             this.dgv_HeaderDetails.TabIndex = 1;
             this.dgv_HeaderDetails.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgv_HeaderDetails_CellBeginEdit);
             this.dgv_HeaderDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_HeaderDetails_CellClick);
+            this.dgv_HeaderDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_HeaderDetails_CellContentClick);
             this.dgv_HeaderDetails.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_HeaderDetails_CellEndEdit);
             this.dgv_HeaderDetails.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_HeaderDetails_CellValueChanged);
             this.dgv_HeaderDetails.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_HeaderDetails_EditingControlShowing);
@@ -530,11 +694,11 @@
             // Delete
             // 
             this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle2;
             this.Delete.FillWeight = 10F;
             this.Delete.HeaderText = "";
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
@@ -546,11 +710,11 @@
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewImageColumn1.FillWeight = 10F;
             this.dataGridViewImageColumn1.HeaderText = "";
             this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
@@ -676,12 +840,101 @@
             this.pnl_AddHeader.Controls.Add(this.txt_HeaderName);
             this.pnl_AddHeader.Controls.Add(this.label3);
             this.pnl_AddHeader.Controls.Add(this.pictureBox1);
-            this.pnl_AddHeader.Location = new System.Drawing.Point(1179, 342);
+            this.pnl_AddHeader.Location = new System.Drawing.Point(1179, 220);
             this.pnl_AddHeader.Name = "pnl_AddHeader";
             this.pnl_AddHeader.Size = new System.Drawing.Size(545, 203);
             this.pnl_AddHeader.TabIndex = 3;
             this.pnl_AddHeader.Visible = false;
             this.pnl_AddHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_AddHeader_Paint);
+            // 
+            // xuiCustomGroupbox2
+            // 
+            this.xuiCustomGroupbox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.xuiCustomGroupbox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.xuiCustomGroupbox2.BorderWidth = 1;
+            this.xuiCustomGroupbox2.Controls.Add(this.label5);
+            this.xuiCustomGroupbox2.Controls.Add(this.cmb_Image);
+            this.xuiCustomGroupbox2.Controls.Add(this.label4);
+            this.xuiCustomGroupbox2.Controls.Add(this.cmb_Category);
+            this.xuiCustomGroupbox2.Controls.Add(this.btn_AddImage);
+            this.xuiCustomGroupbox2.Font = new System.Drawing.Font("Roboto Slab Medium", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xuiCustomGroupbox2.Location = new System.Drawing.Point(1204, 533);
+            this.xuiCustomGroupbox2.Name = "xuiCustomGroupbox2";
+            this.xuiCustomGroupbox2.ShowText = true;
+            this.xuiCustomGroupbox2.Size = new System.Drawing.Size(336, 237);
+            this.xuiCustomGroupbox2.TabIndex = 3;
+            this.xuiCustomGroupbox2.TabStop = false;
+            this.xuiCustomGroupbox2.Text = "Images";
+            this.xuiCustomGroupbox2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.xuiCustomGroupbox2.Enter += new System.EventHandler(this.xuiCustomGroupbox2_Enter);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.label5.Location = new System.Drawing.Point(10, 105);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 22);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Image";
+            // 
+            // cmb_Image
+            // 
+            this.cmb_Image.Font = new System.Drawing.Font("Roboto Medium", 10.18868F);
+            this.cmb_Image.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.cmb_Image.FormattingEnabled = true;
+            this.cmb_Image.Location = new System.Drawing.Point(10, 132);
+            this.cmb_Image.Name = "cmb_Image";
+            this.cmb_Image.Size = new System.Drawing.Size(317, 26);
+            this.cmb_Image.TabIndex = 24;
+            this.cmb_Image.SelectedIndexChanged += new System.EventHandler(this.cmb_Image_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.label4.Location = new System.Drawing.Point(10, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 22);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Category";
+            // 
+            // cmb_Category
+            // 
+            this.cmb_Category.Font = new System.Drawing.Font("Roboto Medium", 10.18868F);
+            this.cmb_Category.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.cmb_Category.FormattingEnabled = true;
+            this.cmb_Category.Items.AddRange(new object[] {
+            "Dimensional Drawings",
+            "Product Images",
+            "Wiring Diagrams"});
+            this.cmb_Category.Location = new System.Drawing.Point(10, 62);
+            this.cmb_Category.Name = "cmb_Category";
+            this.cmb_Category.Size = new System.Drawing.Size(317, 26);
+            this.cmb_Category.TabIndex = 22;
+            this.cmb_Category.SelectedIndexChanged += new System.EventHandler(this.cmb_Category_SelectedIndexChanged);
+            // 
+            // btn_AddImage
+            // 
+            this.btn_AddImage.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_AddImage.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_AddImage.ButtonImage")));
+            this.btn_AddImage.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_AddImage.ButtonText = "Add";
+            this.btn_AddImage.ClickBackColor = System.Drawing.Color.White;
+            this.btn_AddImage.ClickTextColor = System.Drawing.Color.White;
+            this.btn_AddImage.CornerRadius = 5;
+            this.btn_AddImage.Font = new System.Drawing.Font("Roboto Slab", 12F);
+            this.btn_AddImage.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_AddImage.HoverBackgroundColor = System.Drawing.Color.White;
+            this.btn_AddImage.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_AddImage.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_AddImage.Location = new System.Drawing.Point(12, 169);
+            this.btn_AddImage.Name = "btn_AddImage";
+            this.btn_AddImage.Size = new System.Drawing.Size(133, 39);
+            this.btn_AddImage.TabIndex = 19;
+            this.btn_AddImage.TextColor = System.Drawing.Color.White;
+            this.btn_AddImage.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_AddImage.Click += new System.EventHandler(this.btn_AddImage_Click);
             // 
             // frm_Editor
             // 
@@ -689,8 +942,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1552, 886);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.xuiCustomGroupbox2);
             this.Controls.Add(this.pnl_AddHeader);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.xuiCustomGroupbox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -707,12 +961,20 @@
             this.panel2.ResumeLayout(false);
             this.flowPanel_Symbol.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
             this.xuiCustomGroupbox1.ResumeLayout(false);
             this.xuiCustomGroupbox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HeaderDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnl_AddHeader.ResumeLayout(false);
             this.pnl_AddHeader.PerformLayout();
+            this.xuiCustomGroupbox2.ResumeLayout(false);
+            this.xuiCustomGroupbox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -755,5 +1017,23 @@
         private XanderUI.XUIButton btn_Exit;
         private XanderUI.XUIButton btn_Cancel;
         private System.Windows.Forms.Panel pnl_AddHeader;
+        private XanderUI.XUICustomGroupbox xuiCustomGroupbox2;
+        private System.Windows.Forms.Label label5;
+        private SergeUtils.EasyCompletionComboBox cmb_Image;
+        private System.Windows.Forms.Label label4;
+        private SergeUtils.EasyCompletionComboBox cmb_Category;
+        private XanderUI.XUIButton btn_AddImage;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.FlowLayoutPanel flowPanel_ProductImages;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.FlowLayoutPanel flowPanel_DimensionalDrawings;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.FlowLayoutPanel flowPanel_WiringDiagrams;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label8;
     }
 }

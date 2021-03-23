@@ -121,11 +121,7 @@ namespace DatasheetGenerator
         {
             try
             {
-                if (SQL.Con.State == ConnectionState.Open)
-                {
-                    SQL.Con.Close();
-                }
-                SQL.Con.Open();
+                if (SQL.Con.State == ConnectionState.Closed) SQL.Con.Open();
                 var tb1 = new DataTable();
                 var cmd1 = new MySqlCommand("select " + ValueMember + " , " + DisplayMember + " from " + TableName + " where " + Condition + "", SQL.Con);
                 MySqlDataReader d1;
@@ -134,7 +130,6 @@ namespace DatasheetGenerator
                 combo.DisplayMember = DisplayMember;
                 combo.ValueMember = ValueMember;
                 combo.DataSource = tb1;
-                SQL.Con.Close();
             }
             catch (NullReferenceException ex)
             {

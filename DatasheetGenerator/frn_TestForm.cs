@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace DatasheetGenerator
 {
     public partial class frn_TestForm : Form
     {
-        AutoCompleteStringCollection data; 
+        AutoCompleteStringCollection data;
         public frn_TestForm()
         {
             InitializeComponent();
@@ -21,7 +22,7 @@ namespace DatasheetGenerator
 
         private void frn_TestForm_Load(object sender, EventArgs e)
         {
-           
+
         }
         public AutoCompleteStringCollection AutoCompleteLoad()
         {
@@ -87,7 +88,80 @@ namespace DatasheetGenerator
 
         private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-          
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GetImage();
+
+        }
+
+        private static Image GetImage()
+        {
+            Image image = new Bitmap(420, 420); ;
+            try
+            {
+                if (SQL.con.State == ConnectionState.Closed) SQL.con.Open();
+                //Retrieve BLOB from database into DataSet.
+                MySqlCommand cmd = new MySqlCommand("select Id,Image from MediaLibrary where ID = 3", SQL.con);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "MediaLibrary");
+                int c = ds.Tables["MediaLibrary"].Rows.Count;
+
+                if (c > 0)
+                {
+                    Byte[] byteBLOBData = new Byte[0];
+                    byteBLOBData = (Byte[])(ds.Tables["MediaLibrary"].Rows[c - 1]["Image"]);
+                    MemoryStream stmBLOBData = new MemoryStream(byteBLOBData);
+                    image = Image.FromStream(stmBLOBData);
+                    
+                }
+                return image;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return image;
+            }
+        }
+
+        private void AddImage(string ImageId, string labelText, Image image, FlowLayoutPanel flowLayoutPanel)
+        {
+            var panel = new Panel();
+            panel.Size = new Size(203, 210);
+            panel.Tag = ImageId;
+
+            var label = new Label();
+            label.Text = labelText;
+            label.Font = new Font("Roboto", 11);
+            label.ForeColor = Color.FromArgb(117, 117, 117);
+            label.AutoSize = false;
+            label.TextAlign = ContentAlignment.MiddleCenter;
+            label.Size = new Size(203, 37);
+            label.Dock = DockStyle.Top;
+
+            var pictureBox = new PictureBox();
+            pictureBox.Size = new Size(203, 164);
+            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox.BackColor = Color.Beige;
+            pictureBox.Image = image;
+
+            var button = new XanderUI.XUIButton();
+            button.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            button.Font = new Font("Roboto Slab", 12);
+            button.ButtonText = "Remove";
+            button.Size = new Size(203, 36);
+            button.BackgroundColor = Color.FromArgb(117, 117, 117);
+            button.TextColor = Color.White;
+            button.Dock = DockStyle.Bottom;
+
+            panel.Controls.Add(label);
+            panel.Controls.Add(pictureBox);
+            panel.Controls.Add(button);
+
+            flowLayoutPanel.Controls.Add(panel);
         }
     }
 }

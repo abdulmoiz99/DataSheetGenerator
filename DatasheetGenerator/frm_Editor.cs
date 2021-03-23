@@ -234,7 +234,6 @@ namespace DatasheetGenerator
         private void xuiButton5_Click_1(object sender, EventArgs e)
         {
 
-
             if (dgv_HeaderDetails.IsCurrentCellInEditMode)
             {
                 dgv_HeaderDetails.EndEdit();
@@ -332,12 +331,25 @@ namespace DatasheetGenerator
             }
 
         }
-
+        public void UpdateImageDetails()
+        {
+            int type = 0;
+            if (cmb_Category.SelectedIndex == 0) type = 2;
+            else if (cmb_Category.SelectedIndex == 1) type = 3;
+            else if (cmb_Category.SelectedIndex == 2) type = 4;
+            cmb_Image.SelectedIndex = -1;
+            Main.fillCombo(cmb_Image, "MediaLibrary", "Name", "ID", "Type = " + type + "");
+        }
         private void frm_Editor_Load(object sender, EventArgs e)
         {
             lab_ProductFamily.Text = Datasheet.ProductFamilly;
             data = AutoCompleteLoadValue1();
+
             AddSymbol(flowPanel_Symbol);
+
+            try { cmb_Category.SelectedIndex = 0; }
+            catch (Exception) { }
+            UpdateImageDetails();
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
@@ -371,6 +383,66 @@ namespace DatasheetGenerator
         }
 
         private void pnl_AddHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void xuiCustomGroupbox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_AddImage_Click(object sender, EventArgs e)
+        {
+
+            if (cmb_Image.SelectedIndex < 0)
+            {
+                MessageBox.Show("No Image Selcted", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            string ImageID = cmb_Image.SelectedValue.ToString();
+            int category = cmb_Category.SelectedIndex;
+            if (Datasheet.ContainsImage(ImageID, flowPanel_ProductImages))
+            {
+                MessageBox.Show("Image Already Added", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (category == 0) //Dimensional Drawings
+            {
+                Datasheet.AddImage(cmb_Image.SelectedValue.ToString(), Button_Click, flowPanel_DimensionalDrawings);
+            }
+            else if (category == 0) //Product Images
+            {
+                Datasheet.AddImage(cmb_Image.SelectedValue.ToString(), Button_Click, flowPanel_ProductImages);
+            }
+            else if (category == 0) //Wiring Diagrams
+            {
+                Datasheet.AddImage(cmb_Image.SelectedValue.ToString(), Button_Click, flowPanel_WiringDiagrams);
+            }
+
+        }
+        private void Button_Click(object sender, EventArgs e)
+        {
+            var panel = sender as FlowLayoutPanel;
+            foreach (Control control in panel.Controls)
+            {
+                if (control.Tag.ToString() == "2")
+                {
+                    panel.Controls.Remove(control);
+                }
+            }
+
+        }
+        private void cmb_Category_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateImageDetails();
+        }
+
+        private void cmb_Image_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_HeaderDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

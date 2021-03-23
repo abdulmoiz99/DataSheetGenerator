@@ -145,13 +145,11 @@ namespace DatasheetGenerator
                     selectedIndex = Convert.ToInt32(selectedrow.Cells["ID"].Value.ToString());
                     txt_Name.Text = selectedrow.Cells["Name1"].Value.ToString();
                     txt_Description.Text = selectedrow.Cells["Description"].Value.ToString();
-
                     var data = (Byte[])(selectedrow.Cells["Image1"].Value);
                     var stream = new MemoryStream(data);
                     pb_Image.Image = Image.FromStream(stream);
                 }
                 index = 0;
-
             }
             catch (Exception ex)
             {
@@ -190,15 +188,9 @@ namespace DatasheetGenerator
                 {
                     MessageBox.Show("Unable to save record", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-
-
-                // SQL.NonScalarQuery("Insert Into FormSetup(FormName) values ('" + txt_Name.Text + "')");
-
             }
             else if (mode == 2)
             {
-
 
                 if (selectedIndex == -1)
                 {
@@ -208,18 +200,6 @@ namespace DatasheetGenerator
                 {
                     try
                     {
-
-                     
-
-
-
-
-
-
-
-
-
-
                         if (SQL.con.State == ConnectionState.Closed) SQL.con.Open();
                         var query = new MySqlCommand("UPDATE MediaLibrary SET Name = '" + txt_Name.Text + "', Description = '" + txt_Description.Text + "', Image = @pic WHERE ID = " + selectedImageType + ";", SQL.con);
                         var stream = new MemoryStream();
@@ -229,7 +209,7 @@ namespace DatasheetGenerator
                         parameter.Value = data;
                         query.Parameters.Add(parameter);
                         query.ExecuteNonQuery();
-
+                        MessageBox.Show("Record Updates Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         AllClear();
                         btn_Cancel_Click(sender, e);
                         frm_MediaLibrary_Load(sender, e);
@@ -244,30 +224,25 @@ namespace DatasheetGenerator
 
             }
         }
-
         private void btn_Close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btn_Symbol_Click(object sender, EventArgs e)
         {
             selectedImageType = 1;
             ImageSelection();
         }
-
         private void btn_DimensionalDrawings_Click(object sender, EventArgs e)
         {
             selectedImageType = 2;
             ImageSelection();
         }
-
         private void btn_ProductImages_Click(object sender, EventArgs e)
         {
             selectedImageType = 3;
             ImageSelection();
         }
-
         private void btnm_WiringDrawings_Click(object sender, EventArgs e)
         {
             selectedImageType = 4;

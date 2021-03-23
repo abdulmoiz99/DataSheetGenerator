@@ -10,8 +10,6 @@ namespace DatasheetGenerator.HeaderController
     {
         static bool NewHeaderAdded = false;
         static string HeaderText;
-
-
         public static bool CheckNewHeader()
         {
             if (NewHeaderAdded)
