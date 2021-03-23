@@ -160,6 +160,8 @@ namespace DatasheetGenerator
             panel.Controls.Add(pictureBox);
             panel.Controls.Add(button);
 
+            button.Tag = panel;
+
             panel.BringToFront();
 
             flowLayoutPanel.Controls.Add(panel);
