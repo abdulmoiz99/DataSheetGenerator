@@ -35,6 +35,10 @@ namespace DatasheetGenerator
             adapter.Dispose();
             return datasheets;
         }
+        public static  string GetLatestId()
+        {
+            return SQL.ScalarQuery("SELECT MAX(id) FROM Datasheet;");
+        }
         public static bool Exist(string datasheetName)
         {
             string result = "0";
