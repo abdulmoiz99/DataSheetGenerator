@@ -314,6 +314,7 @@ namespace DatasheetGenerator
                     }
 
                 }
+                //Saving Header and Sub-Headers
                 foreach (string header in headers.Keys)
                 {
 
@@ -341,6 +342,27 @@ namespace DatasheetGenerator
                         myCommand.ExecuteNonQuery();
                     }
                 }
+                //Saving Images to Database
+                foreach (Control Image in flowPanel_DimensionalDrawings.Controls) //Dimensional Drawings
+                {
+                    myCommand.CommandText = @"Insert into DatasheetImages(ImageID             ,DatasheetID           ,Description     ,Type) 
+                                                                   values('" + Image.Tag + "'," + Datasheet.Id + ",'Description'   , 2)";
+                    myCommand.ExecuteNonQuery();
+
+                }
+                foreach (Control Image in flowPanel_ProductImages.Controls)//Prodcut Images
+                {
+                    myCommand.CommandText = @"Insert into DatasheetImages(ImageID             ,DatasheetID           ,Description     ,Type) 
+                                                                   values(" + Image.Tag + "," + Datasheet.Id + ",'Description'   , 3)";
+                    myCommand.ExecuteNonQuery();
+                }
+                foreach (Control Image in flowPanel_WiringDiagrams.Controls) //Wiring Diagrams
+                {
+                    myCommand.CommandText = @"Insert into DatasheetImages(ImageID             ,DatasheetID           ,Description     ,Type) 
+                                                                   values(" + Image.Tag + "," + Datasheet.Id + ",'Description'   , 4)";
+                    myCommand.ExecuteNonQuery();
+                }
+               
                 transaction.Commit();
                 MessageBox.Show("Record Added Successfully");
                 this.Close();
@@ -477,7 +499,7 @@ namespace DatasheetGenerator
                 panel.Controls.Remove(control);
             }
         }
-        
+
         private void cmb_Category_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateImageDetails();
