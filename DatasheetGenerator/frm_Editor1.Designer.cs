@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Editor1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_HeaderDetails = new System.Windows.Forms.DataGridView();
@@ -43,13 +43,11 @@
             this.xuiButton6 = new XanderUI.XUIButton();
             this.xuiCheckBox4 = new XanderUI.XUICheckBox();
             this.xuiCheckBox5 = new XanderUI.XUICheckBox();
-            this.xuiCheckBox9 = new XanderUI.XUICheckBox();
             this.xuiCheckBox10 = new XanderUI.XUICheckBox();
             this.xuiCheckBox11 = new XanderUI.XUICheckBox();
             this.xuiCheckBox12 = new XanderUI.XUICheckBox();
             this.xuiCheckBox13 = new XanderUI.XUICheckBox();
-            this.xuiCheckBox16 = new XanderUI.XUICheckBox();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowPanel_Symbols = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lab_ProductFamily = new System.Windows.Forms.Label();
@@ -63,7 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HeaderDetails)).BeginInit();
             this.xuiCustomGroupbox1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
+            this.flowPanel_Symbols.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -105,11 +103,11 @@
             // Delete
             // 
             this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle1;
             this.Delete.FillWeight = 10F;
             this.Delete.HeaderText = "";
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
@@ -259,23 +257,6 @@
             this.xuiCheckBox5.Text = "Optic 90 / Type V";
             this.xuiCheckBox5.TickThickness = 2;
             // 
-            // xuiCheckBox9
-            // 
-            this.xuiCheckBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.xuiCheckBox9.CheckboxCheckColor = System.Drawing.Color.White;
-            this.xuiCheckBox9.CheckboxColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.xuiCheckBox9.CheckboxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(55)))), ((int)(((byte)(98)))));
-            this.xuiCheckBox9.CheckboxStyle = XanderUI.XUICheckBox.Style.iOS;
-            this.xuiCheckBox9.Checked = false;
-            this.xuiCheckBox9.Font = new System.Drawing.Font("Roboto Medium", 10.18868F);
-            this.xuiCheckBox9.ForeColor = System.Drawing.Color.DimGray;
-            this.xuiCheckBox9.Location = new System.Drawing.Point(3, 45);
-            this.xuiCheckBox9.Name = "xuiCheckBox9";
-            this.xuiCheckBox9.Size = new System.Drawing.Size(251, 36);
-            this.xuiCheckBox9.TabIndex = 56;
-            this.xuiCheckBox9.Text = "Optic 90 / Type V";
-            this.xuiCheckBox9.TickThickness = 2;
-            // 
             // xuiCheckBox10
             // 
             this.xuiCheckBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -286,7 +267,7 @@
             this.xuiCheckBox10.Checked = false;
             this.xuiCheckBox10.Font = new System.Drawing.Font("Roboto Medium", 10.18868F);
             this.xuiCheckBox10.ForeColor = System.Drawing.Color.DimGray;
-            this.xuiCheckBox10.Location = new System.Drawing.Point(260, 45);
+            this.xuiCheckBox10.Location = new System.Drawing.Point(3, 45);
             this.xuiCheckBox10.Name = "xuiCheckBox10";
             this.xuiCheckBox10.Size = new System.Drawing.Size(251, 36);
             this.xuiCheckBox10.TabIndex = 57;
@@ -303,7 +284,7 @@
             this.xuiCheckBox11.Checked = false;
             this.xuiCheckBox11.Font = new System.Drawing.Font("Roboto Medium", 10.18868F);
             this.xuiCheckBox11.ForeColor = System.Drawing.Color.DimGray;
-            this.xuiCheckBox11.Location = new System.Drawing.Point(3, 87);
+            this.xuiCheckBox11.Location = new System.Drawing.Point(260, 45);
             this.xuiCheckBox11.Name = "xuiCheckBox11";
             this.xuiCheckBox11.Size = new System.Drawing.Size(251, 36);
             this.xuiCheckBox11.TabIndex = 58;
@@ -320,7 +301,7 @@
             this.xuiCheckBox12.Checked = false;
             this.xuiCheckBox12.Font = new System.Drawing.Font("Roboto Medium", 10.18868F);
             this.xuiCheckBox12.ForeColor = System.Drawing.Color.DimGray;
-            this.xuiCheckBox12.Location = new System.Drawing.Point(260, 87);
+            this.xuiCheckBox12.Location = new System.Drawing.Point(3, 87);
             this.xuiCheckBox12.Name = "xuiCheckBox12";
             this.xuiCheckBox12.Size = new System.Drawing.Size(251, 36);
             this.xuiCheckBox12.TabIndex = 59;
@@ -337,51 +318,32 @@
             this.xuiCheckBox13.Checked = false;
             this.xuiCheckBox13.Font = new System.Drawing.Font("Roboto Medium", 10.18868F);
             this.xuiCheckBox13.ForeColor = System.Drawing.Color.DimGray;
-            this.xuiCheckBox13.Location = new System.Drawing.Point(3, 129);
+            this.xuiCheckBox13.Location = new System.Drawing.Point(260, 87);
             this.xuiCheckBox13.Name = "xuiCheckBox13";
             this.xuiCheckBox13.Size = new System.Drawing.Size(251, 36);
             this.xuiCheckBox13.TabIndex = 60;
             this.xuiCheckBox13.Text = "Optic 90 / Type V";
             this.xuiCheckBox13.TickThickness = 2;
             // 
-            // xuiCheckBox16
+            // flowPanel_Symbols
             // 
-            this.xuiCheckBox16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.xuiCheckBox16.CheckboxCheckColor = System.Drawing.Color.WhiteSmoke;
-            this.xuiCheckBox16.CheckboxColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.xuiCheckBox16.CheckboxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(55)))), ((int)(((byte)(98)))));
-            this.xuiCheckBox16.CheckboxStyle = XanderUI.XUICheckBox.Style.iOS;
-            this.xuiCheckBox16.Checked = false;
-            this.xuiCheckBox16.Font = new System.Drawing.Font("Roboto Medium", 10.18868F);
-            this.xuiCheckBox16.ForeColor = System.Drawing.Color.DimGray;
-            this.xuiCheckBox16.Location = new System.Drawing.Point(260, 129);
-            this.xuiCheckBox16.Name = "xuiCheckBox16";
-            this.xuiCheckBox16.Size = new System.Drawing.Size(251, 36);
-            this.xuiCheckBox16.TabIndex = 61;
-            this.xuiCheckBox16.Text = "Optic 90 / Type V";
-            this.xuiCheckBox16.TickThickness = 2;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.AutoScroll = true;
-            this.flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flowLayoutPanel2.Controls.Add(this.xuiCheckBox4);
-            this.flowLayoutPanel2.Controls.Add(this.xuiCheckBox5);
-            this.flowLayoutPanel2.Controls.Add(this.xuiCheckBox9);
-            this.flowLayoutPanel2.Controls.Add(this.xuiCheckBox10);
-            this.flowLayoutPanel2.Controls.Add(this.xuiCheckBox11);
-            this.flowLayoutPanel2.Controls.Add(this.xuiCheckBox12);
-            this.flowLayoutPanel2.Controls.Add(this.xuiCheckBox13);
-            this.flowLayoutPanel2.Controls.Add(this.xuiCheckBox16);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 50);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(546, 227);
-            this.flowLayoutPanel2.TabIndex = 1;
+            this.flowPanel_Symbols.AutoScroll = true;
+            this.flowPanel_Symbols.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowPanel_Symbols.Controls.Add(this.xuiCheckBox4);
+            this.flowPanel_Symbols.Controls.Add(this.xuiCheckBox5);
+            this.flowPanel_Symbols.Controls.Add(this.xuiCheckBox10);
+            this.flowPanel_Symbols.Controls.Add(this.xuiCheckBox11);
+            this.flowPanel_Symbols.Controls.Add(this.xuiCheckBox12);
+            this.flowPanel_Symbols.Controls.Add(this.xuiCheckBox13);
+            this.flowPanel_Symbols.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowPanel_Symbols.Location = new System.Drawing.Point(0, 50);
+            this.flowPanel_Symbols.Name = "flowPanel_Symbols";
+            this.flowPanel_Symbols.Size = new System.Drawing.Size(546, 227);
+            this.flowPanel_Symbols.TabIndex = 1;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.flowLayoutPanel2);
+            this.panel2.Controls.Add(this.flowPanel_Symbols);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
@@ -530,11 +492,11 @@
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle4.NullValue")));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewImageColumn1.FillWeight = 10F;
             this.dataGridViewImageColumn1.HeaderText = "";
             this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
@@ -561,7 +523,7 @@
             this.xuiCustomGroupbox1.ResumeLayout(false);
             this.xuiCustomGroupbox1.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowPanel_Symbols.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -585,13 +547,11 @@
         private System.Windows.Forms.Panel panel3;
         private XanderUI.XUICheckBox xuiCheckBox4;
         private XanderUI.XUICheckBox xuiCheckBox5;
-        private XanderUI.XUICheckBox xuiCheckBox9;
         private XanderUI.XUICheckBox xuiCheckBox10;
         private XanderUI.XUICheckBox xuiCheckBox11;
         private XanderUI.XUICheckBox xuiCheckBox12;
         private XanderUI.XUICheckBox xuiCheckBox13;
-        private XanderUI.XUICheckBox xuiCheckBox16;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flowPanel_Symbols;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label lab_ProductFamily;

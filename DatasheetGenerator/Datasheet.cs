@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using XanderUI;
 
 namespace DatasheetGenerator
 {
@@ -85,6 +86,44 @@ namespace DatasheetGenerator
                 }
             }
             return false;
+        }
+        public static void AddSymbolList(FlowLayoutPanel flowLayoutPanel, bool editSheet) // If the sheet is for adding purpose or editing 
+        {
+            //Display product family 
+            var symbol = Datasheet.GetDataTable("select * from MediaLibrary where Type = 1 and Active = 1");
+            flowLayoutPanel.Controls.Clear();
+            foreach (DataRow media in symbol.Rows)
+            {
+                var checkBox = new XUICheckBox();
+                checkBox.AutoSize = false;
+                checkBox.CheckboxStyle = XUICheckBox.Style.iOS;
+                checkBox.Text = media["Name"].ToString();
+                checkBox.Tag = media["ID"].ToString();
+                if (editSheet == true && CheckSymbol(media["ID"].ToString()) == true)
+                {
+                    checkBox.Checked = true;
+                }
+                checkBox.ForeColor = Color.FromArgb(117, 117, 117);
+                checkBox.Size = new Size(251, 36);
+                checkBox.Font = new Font("Roboto Medium", 10);
+                flowLayoutPanel.Controls.Add(checkBox);
+            }
+        }
+        public static bool VerifyUser(string username, string password)
+        {
+            string result = "0";
+            result = SQL.ScalarQuery("SELECT EXISTS(SELECT * FROM Login WHERE username = '" + username + "' and  password = '" + password + "' and  active = '1');");
+            if (result == "1") return true;
+            else return false;
+        }
+        private static bool CheckSymbol(string symbolID)
+        {
+
+            string result = "0";
+            result = SQL.ScalarQuery("SELECT EXISTS(SELECT * FROM DatasheetSymbol WHERE  D_ID= " + Id + " and S_ID =" + symbolID + ");");
+            if (result == "1") return true;
+            else return false;
+
         }
         public static void AddImage(string ImageId, EventHandler Button_Click, FlowLayoutPanel flowLayoutPanel)
         {
