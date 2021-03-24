@@ -66,6 +66,7 @@ namespace DatasheetGenerator
                     Datasheet.ProductFamilly = cmb_ProductFamily.Text;
                     Datasheet.Name = txt_Name.Text;
                     Datasheet.IsCreated = true;
+                    Datasheet.Id = Datasheet.GetLatestId();
                     this.Close();
                     
                 }
