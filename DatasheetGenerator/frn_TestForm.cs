@@ -22,8 +22,8 @@ namespace DatasheetGenerator
 
         private void frn_TestForm_Load(object sender, EventArgs e)
         {
-
         }
+
         public AutoCompleteStringCollection AutoCompleteLoad()
         {
             var conn = new MySqlConnection(@"server=sql6.freemysqlhosting.net;port=3306;user id=sql6397749; password=CU6wE3Q1ve; database=sql6397749;");
