@@ -235,12 +235,12 @@ namespace DatasheetGenerator
             {
                 dgv_HeaderDetails.Sort(dgv_HeaderDetails.Columns[1], ListSortDirection.Ascending);
                 Header.ReOrder(dgv_HeaderDetails);
-
-                foreach (DataGridViewRow row in dgv_HeaderDetails.Rows)
+                for (int i = 0; i < dgv_HeaderDetails.RowCount; i++) 
                 {
-                    flowLayoutPanel1.Controls.Add((DataGridView)row.Tag);
+                    var dgv = (DataGridView)dgv_HeaderDetails.Rows[i].Tag;
+                    flowLayoutPanel1.Controls.Add(dgv);
+                    flowLayoutPanel1.Controls.SetChildIndex(dgv, i + 1);
                 }
-                //3 panels 
             }
         }
         private void frm_Editor_KeyDown(object sender, KeyEventArgs e)
