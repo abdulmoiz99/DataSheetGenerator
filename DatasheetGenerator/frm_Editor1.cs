@@ -81,7 +81,6 @@ namespace DatasheetGenerator
         }
         private void frm_Editor1_Load(object sender, EventArgs e)
         {
-            Datasheet.Id = "2";
             lab_ProductFamily.Text = Datasheet.ProductFamilly;
             Datasheet.AddSymbolList(flowPanel_Symbols, true);
 

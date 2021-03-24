@@ -322,10 +322,10 @@ namespace DatasheetGenerator
 
                     //Inserting values into Header Table
                     myCommand.CommandText = @"Insert Into Header(Name           ,DS_ID) 
-                                                          values('" + header + "'," + Header.DatasheetID + ")";
+                                                          values('" + header + "'," + Datasheet.Id + ")";
                     myCommand.ExecuteNonQuery();
                     //Get the latest value from headerTable
-                    myCommand.CommandText = "Select  MAX(ID) from Header where DS_ID =  " + Header.DatasheetID + "";
+                    myCommand.CommandText = "Select  MAX(ID) from Header where DS_ID =  " + Datasheet.Id + "";
                     HeaderID = myCommand.ExecuteScalar().ToString(); ;
 
 
@@ -343,6 +343,7 @@ namespace DatasheetGenerator
                 }
                 transaction.Commit();
                 MessageBox.Show("Record Added Successfully");
+                this.Close();
             }
             catch (Exception ex)
             {
