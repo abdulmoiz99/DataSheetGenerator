@@ -109,9 +109,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto Slab", 19.69811F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.label1.Location = new System.Drawing.Point(12, 37);
+            this.label1.Location = new System.Drawing.Point(12, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 36);
+            this.label1.Size = new System.Drawing.Size(235, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Product Family:";
             // 
@@ -126,7 +126,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1552, 100);
+            this.panel1.Size = new System.Drawing.Size(1552, 73);
             this.panel1.TabIndex = 1;
             // 
             // lab_ProductFamily
@@ -134,9 +134,9 @@
             this.lab_ProductFamily.AutoSize = true;
             this.lab_ProductFamily.Font = new System.Drawing.Font("Roboto Slab", 16F);
             this.lab_ProductFamily.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.lab_ProductFamily.Location = new System.Drawing.Point(253, 41);
+            this.lab_ProductFamily.Location = new System.Drawing.Point(253, 19);
             this.lab_ProductFamily.Name = "lab_ProductFamily";
-            this.lab_ProductFamily.Size = new System.Drawing.Size(121, 30);
+            this.lab_ProductFamily.Size = new System.Drawing.Size(131, 32);
             this.lab_ProductFamily.TabIndex = 6;
             this.lab_ProductFamily.Text = "FL-CC-MG";
             // 
@@ -155,7 +155,7 @@
             this.btn_CopyToDraft.HoverBackgroundColor = System.Drawing.Color.White;
             this.btn_CopyToDraft.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.btn_CopyToDraft.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btn_CopyToDraft.Location = new System.Drawing.Point(1000, 50);
+            this.btn_CopyToDraft.Location = new System.Drawing.Point(1000, 16);
             this.btn_CopyToDraft.Name = "btn_CopyToDraft";
             this.btn_CopyToDraft.Size = new System.Drawing.Size(222, 39);
             this.btn_CopyToDraft.TabIndex = 3;
@@ -177,7 +177,7 @@
             this.btn_Save.HoverBackgroundColor = System.Drawing.Color.White;
             this.btn_Save.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
             this.btn_Save.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btn_Save.Location = new System.Drawing.Point(1228, 50);
+            this.btn_Save.Location = new System.Drawing.Point(1228, 16);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(133, 39);
             this.btn_Save.TabIndex = 5;
@@ -200,7 +200,7 @@
             this.btn_DownloadPDF.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(115)))), ((int)(((byte)(160)))));
             this.btn_DownloadPDF.HoverTextColor = System.Drawing.Color.White;
             this.btn_DownloadPDF.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btn_DownloadPDF.Location = new System.Drawing.Point(1367, 50);
+            this.btn_DownloadPDF.Location = new System.Drawing.Point(1367, 16);
             this.btn_DownloadPDF.Name = "btn_DownloadPDF";
             this.btn_DownloadPDF.Size = new System.Drawing.Size(173, 39);
             this.btn_DownloadPDF.TabIndex = 4;
@@ -223,7 +223,7 @@
             this.btn_SaveAsDraft.HoverBackgroundColor = System.Drawing.Color.White;
             this.btn_SaveAsDraft.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.btn_SaveAsDraft.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btn_SaveAsDraft.Location = new System.Drawing.Point(785, 50);
+            this.btn_SaveAsDraft.Location = new System.Drawing.Point(785, 16);
             this.btn_SaveAsDraft.Name = "btn_SaveAsDraft";
             this.btn_SaveAsDraft.Size = new System.Drawing.Size(209, 39);
             this.btn_SaveAsDraft.TabIndex = 2;
@@ -241,9 +241,9 @@
             this.flowLayoutPanel1.Controls.Add(this.panel4);
             this.flowLayoutPanel1.Controls.Add(this.panel6);
             this.flowLayoutPanel1.Controls.Add(this.panel8);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(19, 121);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(19, 83);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1154, 739);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1154, 708);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // panel2
@@ -590,7 +590,7 @@
             this.xuiCustomGroupbox1.Controls.Add(this.btn_AddHeader);
             this.xuiCustomGroupbox1.Controls.Add(this.dgv_HeaderDetails);
             this.xuiCustomGroupbox1.Font = new System.Drawing.Font("Roboto Slab Medium", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xuiCustomGroupbox1.Location = new System.Drawing.Point(1204, 121);
+            this.xuiCustomGroupbox1.Location = new System.Drawing.Point(1204, 83);
             this.xuiCustomGroupbox1.Name = "xuiCustomGroupbox1";
             this.xuiCustomGroupbox1.ShowText = true;
             this.xuiCustomGroupbox1.Size = new System.Drawing.Size(336, 303);
@@ -716,7 +716,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label3.Location = new System.Drawing.Point(186, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 36);
+            this.label3.Size = new System.Drawing.Size(178, 39);
             this.label3.TabIndex = 23;
             this.label3.Text = "Add Header";
             // 
@@ -734,7 +734,7 @@
             this.txt_HeaderName.SelectedText = "";
             this.txt_HeaderName.SelectionLength = 0;
             this.txt_HeaderName.SelectionStart = 0;
-            this.txt_HeaderName.Size = new System.Drawing.Size(257, 23);
+            this.txt_HeaderName.Size = new System.Drawing.Size(257, 25);
             this.txt_HeaderName.TabIndex = 24;
             this.txt_HeaderName.TabStop = false;
             this.txt_HeaderName.UseSystemPasswordChar = false;
@@ -748,7 +748,7 @@
             this.pnl_AddHeader.Controls.Add(this.txt_HeaderName);
             this.pnl_AddHeader.Controls.Add(this.label3);
             this.pnl_AddHeader.Controls.Add(this.pictureBox1);
-            this.pnl_AddHeader.Location = new System.Drawing.Point(1179, 121);
+            this.pnl_AddHeader.Location = new System.Drawing.Point(1179, 83);
             this.pnl_AddHeader.Name = "pnl_AddHeader";
             this.pnl_AddHeader.Size = new System.Drawing.Size(545, 203);
             this.pnl_AddHeader.TabIndex = 3;
@@ -842,7 +842,7 @@
             this.xuiCustomGroupbox2.Controls.Add(this.cmb_Category);
             this.xuiCustomGroupbox2.Controls.Add(this.btn_AddImage);
             this.xuiCustomGroupbox2.Font = new System.Drawing.Font("Roboto Slab Medium", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xuiCustomGroupbox2.Location = new System.Drawing.Point(1204, 430);
+            this.xuiCustomGroupbox2.Location = new System.Drawing.Point(1204, 392);
             this.xuiCustomGroupbox2.Name = "xuiCustomGroupbox2";
             this.xuiCustomGroupbox2.ShowText = true;
             this.xuiCustomGroupbox2.Size = new System.Drawing.Size(336, 200);
@@ -858,7 +858,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label5.Location = new System.Drawing.Point(10, 89);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 21);
+            this.label5.Size = new System.Drawing.Size(56, 22);
             this.label5.TabIndex = 25;
             this.label5.Text = "Image";
             // 
@@ -869,7 +869,7 @@
             this.cmb_Image.FormattingEnabled = true;
             this.cmb_Image.Location = new System.Drawing.Point(10, 116);
             this.cmb_Image.Name = "cmb_Image";
-            this.cmb_Image.Size = new System.Drawing.Size(317, 25);
+            this.cmb_Image.Size = new System.Drawing.Size(317, 26);
             this.cmb_Image.TabIndex = 24;
             this.cmb_Image.SelectedIndexChanged += new System.EventHandler(this.cmb_Image_SelectedIndexChanged);
             // 
@@ -879,7 +879,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label4.Location = new System.Drawing.Point(10, 29);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 21);
+            this.label4.Size = new System.Drawing.Size(78, 22);
             this.label4.TabIndex = 23;
             this.label4.Text = "Category";
             // 
@@ -894,7 +894,7 @@
             "Wiring Diagrams"});
             this.cmb_Category.Location = new System.Drawing.Point(10, 57);
             this.cmb_Category.Name = "cmb_Category";
-            this.cmb_Category.Size = new System.Drawing.Size(317, 25);
+            this.cmb_Category.Size = new System.Drawing.Size(317, 26);
             this.cmb_Category.TabIndex = 22;
             this.cmb_Category.SelectedIndexChanged += new System.EventHandler(this.cmb_Category_SelectedIndexChanged);
             // 
@@ -941,7 +941,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1552, 886);
+            this.ClientSize = new System.Drawing.Size(1552, 816);
             this.Controls.Add(this.xuiCustomGroupbox2);
             this.Controls.Add(this.pnl_AddHeader);
             this.Controls.Add(this.flowLayoutPanel1);

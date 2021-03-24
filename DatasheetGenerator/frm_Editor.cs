@@ -29,7 +29,7 @@ namespace DatasheetGenerator
         {
             InitializeComponent();
         }
-       
+
         public AutoCompleteStringCollection AutoCompleteLoadValue1()
         {
             if (SQL.con.State == ConnectionState.Closed) SQL.con.Open();
@@ -110,7 +110,7 @@ namespace DatasheetGenerator
             //GRID BORDER
             dataGridView.BorderStyle = BorderStyle.Fixed3D;
             dataGridView.RowHeadersVisible = false;
-        
+
             dataGridView.DefaultCellStyle.Font = new Font("Roboto", 10);
 
             dataGridView.Rows.Add("Product Name", "Text Field", Properties.Resources.icons8_multiply_24);
@@ -233,7 +233,7 @@ namespace DatasheetGenerator
             {
                 dgv_HeaderDetails.Sort(dgv_HeaderDetails.Columns[1], ListSortDirection.Ascending);
                 Header.ReOrder(dgv_HeaderDetails);
-                for (int i = 0; i < dgv_HeaderDetails.RowCount; i++) 
+                for (int i = 0; i < dgv_HeaderDetails.RowCount; i++)
                 {
                     var dgv = (DataGridView)dgv_HeaderDetails.Rows[i].Tag;
                     flowLayoutPanel1.Controls.Add(dgv);
@@ -303,6 +303,18 @@ namespace DatasheetGenerator
 
             try
             {
+                //Saving Symbol to the database
+                foreach (XUICheckBox symbol in flowPanel_Symbol.Controls.OfType<XUICheckBox>())
+                {
+                    if (symbol.Checked == true)
+                    {
+                        myCommand.CommandText = @"Insert Into DatasheetSymbol(D_ID                  ,S_ID) 
+                                                                   values('" + Datasheet.Id + "'," + symbol.Tag + ")";
+                        myCommand.ExecuteNonQuery();
+                    }
+
+                }
+                //Saving Header and Sub-Headers
                 foreach (string header in headers.Keys)
                 {
 
@@ -311,10 +323,10 @@ namespace DatasheetGenerator
 
                     //Inserting values into Header Table
                     myCommand.CommandText = @"Insert Into Header(Name           ,DS_ID) 
-                                                          values('" + header + "'," + Header.DatasheetID + ")";
+                                                          values('" + header + "'," + Datasheet.Id + ")";
                     myCommand.ExecuteNonQuery();
                     //Get the latest value from headerTable
-                    myCommand.CommandText = "Select  MAX(ID) from Header where DS_ID =  " + Header.DatasheetID + "";
+                    myCommand.CommandText = "Select  MAX(ID) from Header where DS_ID =  " + Datasheet.Id + "";
                     HeaderID = myCommand.ExecuteScalar().ToString(); ;
 
 
@@ -330,8 +342,30 @@ namespace DatasheetGenerator
                         myCommand.ExecuteNonQuery();
                     }
                 }
+                //Saving Images to Database
+                foreach (Control Image in flowPanel_DimensionalDrawings.Controls) //Dimensional Drawings
+                {
+                    myCommand.CommandText = @"Insert into DatasheetImages(ImageID             ,DatasheetID           ,Description     ,Type) 
+                                                                   values('" + Image.Tag + "'," + Datasheet.Id + ",'Description'   , 2)";
+                    myCommand.ExecuteNonQuery();
+
+                }
+                foreach (Control Image in flowPanel_ProductImages.Controls)//Prodcut Images
+                {
+                    myCommand.CommandText = @"Insert into DatasheetImages(ImageID             ,DatasheetID           ,Description     ,Type) 
+                                                                   values(" + Image.Tag + "," + Datasheet.Id + ",'Description'   , 3)";
+                    myCommand.ExecuteNonQuery();
+                }
+                foreach (Control Image in flowPanel_WiringDiagrams.Controls) //Wiring Diagrams
+                {
+                    myCommand.CommandText = @"Insert into DatasheetImages(ImageID             ,DatasheetID           ,Description     ,Type) 
+                                                                   values(" + Image.Tag + "," + Datasheet.Id + ",'Description'   , 4)";
+                    myCommand.ExecuteNonQuery();
+                }
+               
                 transaction.Commit();
                 MessageBox.Show("Record Added Successfully");
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -361,7 +395,7 @@ namespace DatasheetGenerator
             lab_ProductFamily.Text = Datasheet.ProductFamilly;
             data = AutoCompleteLoadValue1();
 
-            Datasheet.AddSymbolList(flowPanel_Symbol,false);
+            Datasheet.AddSymbolList(flowPanel_Symbol, false);
 
             try { cmb_Category.SelectedIndex = 0; }
             catch (Exception) { }
@@ -411,7 +445,7 @@ namespace DatasheetGenerator
         }
 
         private void btn_AddImage_Click(object sender, EventArgs e)
-        {           
+        {
             if (cmb_Image.SelectedIndex < 0)
             {
                 MessageBox.Show("No Image Selcted", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -425,7 +459,7 @@ namespace DatasheetGenerator
                 {
                     MessageBox.Show("Image Already Added", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else 
+                else
                 {
                     Datasheet.AddImage(cmb_Image.SelectedValue.ToString(), Button_Click, flowPanel_DimensionalDrawings);
                 }
@@ -458,7 +492,7 @@ namespace DatasheetGenerator
         {
             var button = sender as XUIButton;
 
-            if (button != null) 
+            if (button != null)
             {
                 var control = button.Tag as Control;
                 var panel = control.Parent as FlowLayoutPanel;
