@@ -476,7 +476,7 @@ namespace DatasheetGenerator
                 panel.Controls.Remove(control);
             }
         }
-
+        
         private void cmb_Category_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateImageDetails();
