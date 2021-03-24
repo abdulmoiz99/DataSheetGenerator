@@ -141,11 +141,11 @@ namespace DatasheetGenerator
             label.ForeColor = Color.FromArgb(117, 117, 117);
             label.AutoSize = false;
             label.TextAlign = ContentAlignment.MiddleCenter;
-            label.Size = new Size(150, 30);
+            label.Size = new Size(150, 20);
             label.Dock = DockStyle.Top;
 
             var pictureBox = new PictureBox();
-            pictureBox.Size = new Size(150, 120);
+            pictureBox.Size = new Size(150, 100);
             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox.Image = GetImage(ImageId);
             pictureBox.Dock = DockStyle.Top;
@@ -160,9 +160,17 @@ namespace DatasheetGenerator
             button.Dock = DockStyle.Bottom;
             button.Click += Button_Click;
 
+            var textBox = new TextBox();
+            textBox.Size = new Size(150, 40);
+            textBox.Multiline = true;
+            textBox.Font = new Font("Roboto", 10);
+            textBox.ForeColor = Color.FromArgb(117, 117, 117);
+            button.Dock = DockStyle.Bottom;
+
             panel.Controls.Add(label);
             panel.Controls.Add(pictureBox);
             panel.Controls.Add(button);
+            panel.Controls.Add(textBox);
 
             button.Tag = panel;
 
