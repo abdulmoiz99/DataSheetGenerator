@@ -74,7 +74,6 @@ namespace DatasheetGenerator
             column.Name = "newColumnName2";
             column.HeaderText = "";
             column.FillWeight = 10;
-            column.Image = Properties.Resources.icons8_multiply_24;
             column.DefaultCellStyle.NullValue = null;
 
             dataGridView.Columns.Add(column);
@@ -125,6 +124,23 @@ namespace DatasheetGenerator
 
             dataGridView.EditingControlShowing += dataGridView1_EditingControlShowing;
             dataGridView.CellClick += DataGridView_CellClick;
+            dataGridView.CellFormatting += DataGridView_CellFormatting;
+            dataGridView.RowsAdded += DataGridView_RowsAdded;
+        }
+
+        private void DataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            var dgv = sender as DataGridView;
+            dgv.Rows[dgv.RowCount - 2].Cells[2].Value = Properties.Resources.icons8_multiply_24;
+        }
+
+        private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            var dgv = sender as DataGridView;
+            if (dgv.Rows[e.RowIndex].IsNewRow && e.ColumnIndex == 2)
+            {
+                e.Value = null;
+            }
         }
 
         private void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
