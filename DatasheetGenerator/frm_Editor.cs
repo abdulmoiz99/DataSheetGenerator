@@ -342,24 +342,31 @@ namespace DatasheetGenerator
                         myCommand.ExecuteNonQuery();
                     }
                 }
+                
                 //Saving Images to Database
-                foreach (Control Image in flowPanel_DimensionalDrawings.Controls) //Dimensional Drawings
+                foreach (Control panel in flowPanel_DimensionalDrawings.Controls) //Dimensional Drawings
                 {
+                    List<object> values = (List<object>)panel.Tag;
+                    TextBox textBox = (TextBox)values[1];
                     myCommand.CommandText = @"Insert into DatasheetImages(ImageID             ,DatasheetID           ,Description     ,Type) 
-                                                                   values('" + Image.Tag + "'," + Datasheet.Id + ",'Description'   , 2)";
+                                                                   values('" + values[0].ToString() + "'," + Datasheet.Id + ",'" + textBox.Text  + "', 2)";
                     myCommand.ExecuteNonQuery();
 
                 }
-                foreach (Control Image in flowPanel_ProductImages.Controls)//Prodcut Images
+                foreach (Control panel in flowPanel_ProductImages.Controls)//Prodcut Images
                 {
+                    List<object> values = (List<object>)panel.Tag;
+                    TextBox textBox = (TextBox)values[1];
                     myCommand.CommandText = @"Insert into DatasheetImages(ImageID             ,DatasheetID           ,Description     ,Type) 
-                                                                   values(" + Image.Tag + "," + Datasheet.Id + ",'Description'   , 3)";
+                                                                   values(" + values[0].ToString() + "," + Datasheet.Id + ",'" + textBox.Text + "', 3)";
                     myCommand.ExecuteNonQuery();
                 }
-                foreach (Control Image in flowPanel_WiringDiagrams.Controls) //Wiring Diagrams
+                foreach (Control panel in flowPanel_WiringDiagrams.Controls) //Wiring Diagrams
                 {
+                    List<object> values = (List<object>)panel.Tag;
+                    TextBox textBox = (TextBox)values[1];
                     myCommand.CommandText = @"Insert into DatasheetImages(ImageID             ,DatasheetID           ,Description     ,Type) 
-                                                                   values(" + Image.Tag + "," + Datasheet.Id + ",'Description'   , 4)";
+                                                                   values(" + values[0].ToString() + "," + Datasheet.Id + ",'" + textBox.Text + "', 4)";
                     myCommand.ExecuteNonQuery();
                 }
                
@@ -518,6 +525,12 @@ namespace DatasheetGenerator
         private void btn_DownloadPDF_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void btn_UploadImages_Click(object sender, EventArgs e)
+        {
+            var frm = new frm_MediaLibrary();
+            frm.ShowDialog(); 
         }
     }
 }

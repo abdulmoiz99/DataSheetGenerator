@@ -131,9 +131,10 @@ namespace DatasheetGenerator
         }
         public static void AddImage(string ImageId, EventHandler Button_Click, FlowLayoutPanel flowLayoutPanel)
         {
+            List<object> values = new List<object>();
+
             var panel = new FlowLayoutPanel();
-            panel.Size = new Size(155, 210);
-            panel.Tag = ImageId;
+            panel.Size = new Size(155, 210);          
 
             var label = new Label();
             label.Text = getImageLabelText(ImageId);
@@ -150,6 +151,12 @@ namespace DatasheetGenerator
             pictureBox.Image = GetImage(ImageId);
             pictureBox.Dock = DockStyle.Top;
 
+            var textBox = new TextBox();
+            textBox.Size = new Size(150, 40);
+            textBox.Multiline = true;
+            textBox.Font = new Font("Roboto", 10);
+            textBox.ForeColor = Color.FromArgb(117, 117, 117);
+            
             var button = new XanderUI.XUIButton();
             button.ButtonStyle = XanderUI.XUIButton.Style.Invert;
             button.Font = new Font("Roboto Slab", 12);
@@ -160,17 +167,15 @@ namespace DatasheetGenerator
             button.Dock = DockStyle.Bottom;
             button.Click += Button_Click;
 
-            var textBox = new TextBox();
-            textBox.Size = new Size(150, 40);
-            textBox.Multiline = true;
-            textBox.Font = new Font("Roboto", 10);
-            textBox.ForeColor = Color.FromArgb(117, 117, 117);
-            button.Dock = DockStyle.Bottom;
-
             panel.Controls.Add(label);
             panel.Controls.Add(pictureBox);
-            panel.Controls.Add(button);
             panel.Controls.Add(textBox);
+            panel.Controls.Add(button);           
+
+            values.Add(ImageId);
+            values.Add(textBox);
+
+            panel.Tag = values;
 
             button.Tag = panel;
 
