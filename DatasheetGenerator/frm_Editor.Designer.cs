@@ -80,13 +80,13 @@
             this.btn_AddNewHeader = new XanderUI.XUIButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.xuiCustomGroupbox2 = new XanderUI.XUICustomGroupbox();
+            this.btn_UploadImages = new XanderUI.XUIButton();
             this.label5 = new System.Windows.Forms.Label();
             this.cmb_Image = new SergeUtils.EasyCompletionComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cmb_Category = new SergeUtils.EasyCompletionComboBox();
             this.btn_AddImage = new XanderUI.XUIButton();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btn_UploadImages = new XanderUI.XUIButton();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -112,7 +112,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label1.Location = new System.Drawing.Point(12, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 36);
+            this.label1.Size = new System.Drawing.Size(235, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Product Family:";
             // 
@@ -137,7 +137,7 @@
             this.lab_ProductFamily.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.lab_ProductFamily.Location = new System.Drawing.Point(253, 19);
             this.lab_ProductFamily.Name = "lab_ProductFamily";
-            this.lab_ProductFamily.Size = new System.Drawing.Size(121, 30);
+            this.lab_ProductFamily.Size = new System.Drawing.Size(131, 32);
             this.lab_ProductFamily.TabIndex = 6;
             this.lab_ProductFamily.Text = "FL-CC-MG";
             // 
@@ -207,7 +207,6 @@
             this.btn_DownloadPDF.TabIndex = 4;
             this.btn_DownloadPDF.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(115)))), ((int)(((byte)(160)))));
             this.btn_DownloadPDF.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_DownloadPDF.Click += new System.EventHandler(this.btn_DownloadPDF_Click);
             // 
             // btn_SaveAsDraft
             // 
@@ -671,7 +670,6 @@
             this.dgv_HeaderDetails.TabIndex = 1;
             this.dgv_HeaderDetails.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgv_HeaderDetails_CellBeginEdit);
             this.dgv_HeaderDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_HeaderDetails_CellClick);
-            this.dgv_HeaderDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_HeaderDetails_CellContentClick);
             this.dgv_HeaderDetails.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_HeaderDetails_CellEndEdit);
             this.dgv_HeaderDetails.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_HeaderDetails_CellValueChanged);
             this.dgv_HeaderDetails.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_HeaderDetails_EditingControlShowing);
@@ -717,7 +715,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label3.Location = new System.Drawing.Point(186, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 36);
+            this.label3.Size = new System.Drawing.Size(178, 39);
             this.label3.TabIndex = 23;
             this.label3.Text = "Add Header";
             // 
@@ -735,7 +733,7 @@
             this.txt_HeaderName.SelectedText = "";
             this.txt_HeaderName.SelectionLength = 0;
             this.txt_HeaderName.SelectionStart = 0;
-            this.txt_HeaderName.Size = new System.Drawing.Size(257, 23);
+            this.txt_HeaderName.Size = new System.Drawing.Size(257, 25);
             this.txt_HeaderName.TabIndex = 24;
             this.txt_HeaderName.TabStop = false;
             this.txt_HeaderName.UseSystemPasswordChar = false;
@@ -754,7 +752,6 @@
             this.pnl_AddHeader.Size = new System.Drawing.Size(545, 203);
             this.pnl_AddHeader.TabIndex = 3;
             this.pnl_AddHeader.Visible = false;
-            this.pnl_AddHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_AddHeader_Paint);
             // 
             // btn_Cancel
             // 
@@ -852,7 +849,28 @@
             this.xuiCustomGroupbox2.TabStop = false;
             this.xuiCustomGroupbox2.Text = "Images";
             this.xuiCustomGroupbox2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.xuiCustomGroupbox2.Enter += new System.EventHandler(this.xuiCustomGroupbox2_Enter);
+            // 
+            // btn_UploadImages
+            // 
+            this.btn_UploadImages.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_UploadImages.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_UploadImages.ButtonImage")));
+            this.btn_UploadImages.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_UploadImages.ButtonText = "Upload Images";
+            this.btn_UploadImages.ClickBackColor = System.Drawing.Color.White;
+            this.btn_UploadImages.ClickTextColor = System.Drawing.Color.White;
+            this.btn_UploadImages.CornerRadius = 5;
+            this.btn_UploadImages.Font = new System.Drawing.Font("Roboto Slab", 12F);
+            this.btn_UploadImages.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_UploadImages.HoverBackgroundColor = System.Drawing.Color.White;
+            this.btn_UploadImages.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_UploadImages.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_UploadImages.Location = new System.Drawing.Point(167, 149);
+            this.btn_UploadImages.Name = "btn_UploadImages";
+            this.btn_UploadImages.Size = new System.Drawing.Size(133, 39);
+            this.btn_UploadImages.TabIndex = 27;
+            this.btn_UploadImages.TextColor = System.Drawing.Color.White;
+            this.btn_UploadImages.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_UploadImages.Click += new System.EventHandler(this.btn_UploadImages_Click);
             // 
             // label5
             // 
@@ -860,7 +878,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label5.Location = new System.Drawing.Point(10, 89);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 21);
+            this.label5.Size = new System.Drawing.Size(56, 22);
             this.label5.TabIndex = 25;
             this.label5.Text = "Image";
             // 
@@ -871,7 +889,7 @@
             this.cmb_Image.FormattingEnabled = true;
             this.cmb_Image.Location = new System.Drawing.Point(10, 116);
             this.cmb_Image.Name = "cmb_Image";
-            this.cmb_Image.Size = new System.Drawing.Size(317, 25);
+            this.cmb_Image.Size = new System.Drawing.Size(317, 26);
             this.cmb_Image.TabIndex = 24;
             this.cmb_Image.SelectedIndexChanged += new System.EventHandler(this.cmb_Image_SelectedIndexChanged);
             // 
@@ -881,7 +899,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label4.Location = new System.Drawing.Point(10, 29);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 21);
+            this.label4.Size = new System.Drawing.Size(78, 22);
             this.label4.TabIndex = 23;
             this.label4.Text = "Category";
             // 
@@ -896,7 +914,7 @@
             "Wiring Diagrams"});
             this.cmb_Category.Location = new System.Drawing.Point(10, 57);
             this.cmb_Category.Name = "cmb_Category";
-            this.cmb_Category.Size = new System.Drawing.Size(317, 25);
+            this.cmb_Category.Size = new System.Drawing.Size(317, 26);
             this.cmb_Category.TabIndex = 22;
             this.cmb_Category.SelectedIndexChanged += new System.EventHandler(this.cmb_Category_SelectedIndexChanged);
             // 
@@ -937,28 +955,6 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // btn_UploadImages
-            // 
-            this.btn_UploadImages.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
-            this.btn_UploadImages.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_UploadImages.ButtonImage")));
-            this.btn_UploadImages.ButtonStyle = XanderUI.XUIButton.Style.Invert;
-            this.btn_UploadImages.ButtonText = "Upload Images";
-            this.btn_UploadImages.ClickBackColor = System.Drawing.Color.White;
-            this.btn_UploadImages.ClickTextColor = System.Drawing.Color.White;
-            this.btn_UploadImages.CornerRadius = 5;
-            this.btn_UploadImages.Font = new System.Drawing.Font("Roboto Slab", 12F);
-            this.btn_UploadImages.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_UploadImages.HoverBackgroundColor = System.Drawing.Color.White;
-            this.btn_UploadImages.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
-            this.btn_UploadImages.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btn_UploadImages.Location = new System.Drawing.Point(167, 149);
-            this.btn_UploadImages.Name = "btn_UploadImages";
-            this.btn_UploadImages.Size = new System.Drawing.Size(133, 39);
-            this.btn_UploadImages.TabIndex = 27;
-            this.btn_UploadImages.TextColor = System.Drawing.Color.White;
-            this.btn_UploadImages.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_UploadImages.Click += new System.EventHandler(this.btn_UploadImages_Click);
             // 
             // frm_Editor
             // 

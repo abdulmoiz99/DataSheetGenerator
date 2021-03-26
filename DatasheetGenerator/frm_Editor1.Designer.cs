@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Editor1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_HeaderDetails = new System.Windows.Forms.DataGridView();
@@ -58,6 +58,18 @@
             this.btn_DownloadPDF = new XanderUI.XUIButton();
             this.btn_SaveAsDraft = new XanderUI.XUIButton();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.flowPanel_ProductImages = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.flowPanel_DimensionalDrawings = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.flowPanel_WiringDiagrams = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HeaderDetails)).BeginInit();
             this.xuiCustomGroupbox1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -65,6 +77,12 @@
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // Position
@@ -103,11 +121,11 @@
             // Delete
             // 
             this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle3;
             this.Delete.FillWeight = 10F;
             this.Delete.HeaderText = "";
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
@@ -358,9 +376,12 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.Controls.Add(this.panel2);
+            this.flowLayoutPanel1.Controls.Add(this.panel4);
+            this.flowLayoutPanel1.Controls.Add(this.panel6);
+            this.flowLayoutPanel1.Controls.Add(this.panel8);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(17, 116);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1118, 752);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1132, 752);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // lab_ProductFamily
@@ -387,7 +408,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1500, 100);
             this.panel1.TabIndex = 3;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btn_CopyToDraft
             // 
@@ -432,7 +452,6 @@
             this.btn_Save.TabIndex = 5;
             this.btn_Save.TextColor = System.Drawing.Color.White;
             this.btn_Save.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // label1
             // 
@@ -492,11 +511,11 @@
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle4.NullValue")));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewImageColumn1.FillWeight = 10F;
             this.dataGridViewImageColumn1.HeaderText = "";
             this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
@@ -504,6 +523,132 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.flowPanel_ProductImages);
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Location = new System.Drawing.Point(555, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(546, 277);
+            this.panel4.TabIndex = 50;
+            // 
+            // flowPanel_ProductImages
+            // 
+            this.flowPanel_ProductImages.AutoScroll = true;
+            this.flowPanel_ProductImages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowPanel_ProductImages.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowPanel_ProductImages.Location = new System.Drawing.Point(0, 50);
+            this.flowPanel_ProductImages.Name = "flowPanel_ProductImages";
+            this.flowPanel_ProductImages.Size = new System.Drawing.Size(546, 227);
+            this.flowPanel_ProductImages.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(177)))));
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(546, 50);
+            this.panel5.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label6.Font = new System.Drawing.Font("Roboto Medium", 12.90566F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(219, 48);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "  Product Images";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.flowPanel_DimensionalDrawings);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Location = new System.Drawing.Point(3, 286);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(546, 277);
+            this.panel6.TabIndex = 51;
+            // 
+            // flowPanel_DimensionalDrawings
+            // 
+            this.flowPanel_DimensionalDrawings.AutoScroll = true;
+            this.flowPanel_DimensionalDrawings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowPanel_DimensionalDrawings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowPanel_DimensionalDrawings.Location = new System.Drawing.Point(0, 50);
+            this.flowPanel_DimensionalDrawings.Name = "flowPanel_DimensionalDrawings";
+            this.flowPanel_DimensionalDrawings.Size = new System.Drawing.Size(546, 227);
+            this.flowPanel_DimensionalDrawings.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(177)))));
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.label7);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(546, 50);
+            this.panel7.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label7.Font = new System.Drawing.Font("Roboto Medium", 12.90566F);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(219, 48);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "  Dimensional Drawings";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.flowPanel_WiringDiagrams);
+            this.panel8.Controls.Add(this.panel9);
+            this.panel8.Location = new System.Drawing.Point(555, 286);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(546, 277);
+            this.panel8.TabIndex = 52;
+            // 
+            // flowPanel_WiringDiagrams
+            // 
+            this.flowPanel_WiringDiagrams.AutoScroll = true;
+            this.flowPanel_WiringDiagrams.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flowPanel_WiringDiagrams.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowPanel_WiringDiagrams.Location = new System.Drawing.Point(0, 50);
+            this.flowPanel_WiringDiagrams.Name = "flowPanel_WiringDiagrams";
+            this.flowPanel_WiringDiagrams.Size = new System.Drawing.Size(546, 227);
+            this.flowPanel_WiringDiagrams.TabIndex = 1;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(177)))));
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.label8);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(546, 50);
+            this.panel9.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label8.Font = new System.Drawing.Font("Roboto Medium", 12.90566F);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(219, 48);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "  Wiring Diagram";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frm_Editor1
             // 
@@ -528,6 +673,12 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -561,5 +712,17 @@
         private XanderUI.XUIButton btn_SaveAsDraft;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.FlowLayoutPanel flowPanel_ProductImages;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.FlowLayoutPanel flowPanel_DimensionalDrawings;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.FlowLayoutPanel flowPanel_WiringDiagrams;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label8;
     }
 }

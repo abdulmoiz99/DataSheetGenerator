@@ -251,7 +251,6 @@ namespace DatasheetGenerator
         }
         private void xuiButton5_Click_1(object sender, EventArgs e)
         {
-
             if (dgv_HeaderDetails.IsCurrentCellInEditMode)
             {
                 dgv_HeaderDetails.EndEdit();
@@ -391,9 +390,9 @@ namespace DatasheetGenerator
         public void UpdateImageDetails()
         {
             int type = 0;
-            if (cmb_Category.SelectedIndex == 0) type = 2;
-            else if (cmb_Category.SelectedIndex == 1) type = 3;
-            else if (cmb_Category.SelectedIndex == 2) type = 4;
+            if (cmb_Category.SelectedIndex == 0) type = 2; //Dimensional Drawings
+            else if (cmb_Category.SelectedIndex == 1) type = 3; //Product Images
+            else if (cmb_Category.SelectedIndex == 2) type = 4; //Wiring Diagrams
             cmb_Image.SelectedIndex = -1;
             Main.fillCombo(cmb_Image, "MediaLibrary", "Name", "ID", "Type = " + type + "");
         }
@@ -441,16 +440,6 @@ namespace DatasheetGenerator
             pnl_AddHeader.Visible = false;
         }
 
-        private void pnl_AddHeader_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void xuiCustomGroupbox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_AddImage_Click(object sender, EventArgs e)
         {
             if (cmb_Image.SelectedIndex < 0)
@@ -468,7 +457,7 @@ namespace DatasheetGenerator
                 }
                 else
                 {
-                    Datasheet.AddImage(cmb_Image.SelectedValue.ToString(), Button_Click, flowPanel_DimensionalDrawings);
+                    Datasheet.AddImage(cmb_Image.SelectedValue.ToString(),"", Button_Click, flowPanel_DimensionalDrawings);
                 }
             }
             else if (category == 1) //Product Images
@@ -479,7 +468,7 @@ namespace DatasheetGenerator
                 }
                 else
                 {
-                    Datasheet.AddImage(cmb_Image.SelectedValue.ToString(), Button_Click, flowPanel_ProductImages);
+                    Datasheet.AddImage(cmb_Image.SelectedValue.ToString(), "", Button_Click, flowPanel_ProductImages);
                 }
             }
             else if (category == 2) //Wiring Diagrams
@@ -490,7 +479,7 @@ namespace DatasheetGenerator
                 }
                 else
                 {
-                    Datasheet.AddImage(cmb_Image.SelectedValue.ToString(), Button_Click, flowPanel_WiringDiagrams);
+                    Datasheet.AddImage(cmb_Image.SelectedValue.ToString(), "", Button_Click, flowPanel_WiringDiagrams);
                 }
             }
         }
@@ -511,26 +500,16 @@ namespace DatasheetGenerator
         {
             UpdateImageDetails();
         }
-
-        private void cmb_Image_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgv_HeaderDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btn_DownloadPDF_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+   
         private void btn_UploadImages_Click(object sender, EventArgs e)
         {
             var frm = new frm_MediaLibrary();
             frm.ShowDialog(); 
+        }
+
+        private void cmb_Image_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

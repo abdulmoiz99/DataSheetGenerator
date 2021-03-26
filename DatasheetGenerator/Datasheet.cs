@@ -35,7 +35,7 @@ namespace DatasheetGenerator
             adapter.Dispose();
             return datasheets;
         }
-        public static  string GetLatestId()
+        public static string GetLatestId()
         {
             return SQL.ScalarQuery("SELECT MAX(id) FROM Datasheet;");
         }
@@ -124,17 +124,17 @@ namespace DatasheetGenerator
         {
 
             string result = "0";
-            result = SQL.ScalarQuery("SELECT EXISTS(SELECT * FROM DatasheetSymbol WHERE  D_ID= " + Id + " and S_ID =" + symbolID + ");");
+            result = SQL.ScalarQuery("SELECT EXISTS(SELECT * FROM DatasheetSymbol WHERE  D_ID= " + Convert.ToInt32(Datasheet.Id) + " and S_ID = " + Convert.ToInt32(symbolID) + " ) ;");
             if (result == "1") return true;
             else return false;
 
         }
-        public static void AddImage(string ImageId, EventHandler Button_Click, FlowLayoutPanel flowLayoutPanel)
+        public static void AddImage(string ImageId,string description, EventHandler Button_Click, FlowLayoutPanel flowLayoutPanel)
         {
             List<object> values = new List<object>();
 
             var panel = new FlowLayoutPanel();
-            panel.Size = new Size(155, 210);          
+            panel.Size = new Size(155, 210);
 
             var label = new Label();
             label.Text = getImageLabelText(ImageId);
@@ -156,7 +156,8 @@ namespace DatasheetGenerator
             textBox.Multiline = true;
             textBox.Font = new Font("Roboto", 10);
             textBox.ForeColor = Color.FromArgb(117, 117, 117);
-            
+            textBox.Text = description;
+
             var button = new XanderUI.XUIButton();
             button.ButtonStyle = XanderUI.XUIButton.Style.Invert;
             button.Font = new Font("Roboto Slab", 12);
@@ -170,7 +171,7 @@ namespace DatasheetGenerator
             panel.Controls.Add(label);
             panel.Controls.Add(pictureBox);
             panel.Controls.Add(textBox);
-            panel.Controls.Add(button);           
+            panel.Controls.Add(button);
 
             values.Add(ImageId);
             values.Add(textBox);
