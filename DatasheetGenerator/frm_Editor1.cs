@@ -263,5 +263,10 @@ namespace DatasheetGenerator
                 Datasheet.AddImage(Images["ImageID"].ToString(), Images["Description"].ToString(), Button_Click, flowPanel_WiringDiagrams);
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

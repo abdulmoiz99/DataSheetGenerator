@@ -112,7 +112,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label1.Location = new System.Drawing.Point(12, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 39);
+            this.label1.Size = new System.Drawing.Size(221, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Product Family:";
             // 
@@ -129,6 +129,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1552, 73);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lab_ProductFamily
             // 
@@ -137,7 +138,7 @@
             this.lab_ProductFamily.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.lab_ProductFamily.Location = new System.Drawing.Point(253, 19);
             this.lab_ProductFamily.Name = "lab_ProductFamily";
-            this.lab_ProductFamily.Size = new System.Drawing.Size(131, 32);
+            this.lab_ProductFamily.Size = new System.Drawing.Size(121, 30);
             this.lab_ProductFamily.TabIndex = 6;
             this.lab_ProductFamily.Text = "FL-CC-MG";
             // 
@@ -715,7 +716,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label3.Location = new System.Drawing.Point(186, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(178, 39);
+            this.label3.Size = new System.Drawing.Size(166, 36);
             this.label3.TabIndex = 23;
             this.label3.Text = "Add Header";
             // 
@@ -733,7 +734,7 @@
             this.txt_HeaderName.SelectedText = "";
             this.txt_HeaderName.SelectionLength = 0;
             this.txt_HeaderName.SelectionStart = 0;
-            this.txt_HeaderName.Size = new System.Drawing.Size(257, 25);
+            this.txt_HeaderName.Size = new System.Drawing.Size(257, 23);
             this.txt_HeaderName.TabIndex = 24;
             this.txt_HeaderName.TabStop = false;
             this.txt_HeaderName.UseSystemPasswordChar = false;
@@ -878,7 +879,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label5.Location = new System.Drawing.Point(10, 89);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 22);
+            this.label5.Size = new System.Drawing.Size(54, 21);
             this.label5.TabIndex = 25;
             this.label5.Text = "Image";
             // 
@@ -889,7 +890,7 @@
             this.cmb_Image.FormattingEnabled = true;
             this.cmb_Image.Location = new System.Drawing.Point(10, 116);
             this.cmb_Image.Name = "cmb_Image";
-            this.cmb_Image.Size = new System.Drawing.Size(317, 26);
+            this.cmb_Image.Size = new System.Drawing.Size(317, 25);
             this.cmb_Image.TabIndex = 24;
             this.cmb_Image.SelectedIndexChanged += new System.EventHandler(this.cmb_Image_SelectedIndexChanged);
             // 
@@ -899,7 +900,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label4.Location = new System.Drawing.Point(10, 29);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 22);
+            this.label4.Size = new System.Drawing.Size(73, 21);
             this.label4.TabIndex = 23;
             this.label4.Text = "Category";
             // 
@@ -914,7 +915,7 @@
             "Wiring Diagrams"});
             this.cmb_Category.Location = new System.Drawing.Point(10, 57);
             this.cmb_Category.Name = "cmb_Category";
-            this.cmb_Category.Size = new System.Drawing.Size(317, 26);
+            this.cmb_Category.Size = new System.Drawing.Size(317, 25);
             this.cmb_Category.TabIndex = 22;
             this.cmb_Category.SelectedIndexChanged += new System.EventHandler(this.cmb_Category_SelectedIndexChanged);
             // 

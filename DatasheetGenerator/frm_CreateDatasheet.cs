@@ -67,8 +67,7 @@ namespace DatasheetGenerator
                     Datasheet.Name = txt_Name.Text;
                     Datasheet.IsCreated = true;
                     Datasheet.Id = Datasheet.GetLatestId();
-                    this.Close();
-                    
+                    this.Close();                   
                 }
                 else
                 {
