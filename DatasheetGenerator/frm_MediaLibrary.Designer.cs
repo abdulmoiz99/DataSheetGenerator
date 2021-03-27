@@ -95,7 +95,7 @@
             this.dgv_Media.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_Media.Size = new System.Drawing.Size(694, 299);
             this.dgv_Media.TabIndex = 31;
-            this.dgv_Media.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Media_CellContentClick);
+            this.dgv_Media.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Media_CellClick);
             // 
             // Id
             // 
@@ -152,7 +152,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label3.Location = new System.Drawing.Point(50, 214);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 24);
+            this.label3.Size = new System.Drawing.Size(55, 22);
             this.label3.TabIndex = 25;
             this.label3.Text = "Name";
             // 
@@ -219,7 +219,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label1.Location = new System.Drawing.Point(50, 300);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 24);
+            this.label1.Size = new System.Drawing.Size(97, 22);
             this.label1.TabIndex = 32;
             this.label1.Text = "Description";
             // 
@@ -235,7 +235,7 @@
             this.txt_Name.SelectedText = "";
             this.txt_Name.SelectionLength = 0;
             this.txt_Name.SelectionStart = 0;
-            this.txt_Name.Size = new System.Drawing.Size(482, 25);
+            this.txt_Name.Size = new System.Drawing.Size(482, 23);
             this.txt_Name.TabIndex = 1;
             this.txt_Name.TabStop = false;
             this.txt_Name.UseSystemPasswordChar = false;
@@ -252,7 +252,7 @@
             this.txt_Description.SelectedText = "";
             this.txt_Description.SelectionLength = 0;
             this.txt_Description.SelectionStart = 0;
-            this.txt_Description.Size = new System.Drawing.Size(482, 25);
+            this.txt_Description.Size = new System.Drawing.Size(482, 23);
             this.txt_Description.TabIndex = 2;
             this.txt_Description.TabStop = false;
             this.txt_Description.UseSystemPasswordChar = false;
@@ -365,7 +365,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(126)))), ((int)(((byte)(192)))));
             this.label2.Location = new System.Drawing.Point(30, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(318, 58);
+            this.label2.Size = new System.Drawing.Size(289, 53);
             this.label2.TabIndex = 40;
             this.label2.Text = "Media Library";
             // 
@@ -503,6 +503,7 @@
             this.Name = "frm_MediaLibrary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_MediaLibrary";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_MediaLibrary_FormClosing);
             this.Load += new System.EventHandler(this.frm_MediaLibrary_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Media)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Image)).EndInit();

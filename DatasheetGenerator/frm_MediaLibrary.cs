@@ -131,31 +131,6 @@ namespace DatasheetGenerator
             txt_Description.Enabled = false;
             dgv_Media.Enabled = false;
         }
-
-        private void dgv_Media_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                txt_Name.Text = "";
-                int index = e.RowIndex;
-                if (index > -1)
-                {
-                    selectedIndex = index;
-                    DataGridViewRow selectedrow = dgv_Media.Rows[index];
-                    selectedIndex = Convert.ToInt32(selectedrow.Cells["ID"].Value.ToString());
-                    txt_Name.Text = selectedrow.Cells["Name1"].Value.ToString();
-                    txt_Description.Text = selectedrow.Cells["Description"].Value.ToString();
-                    var data = (Byte[])(selectedrow.Cells["Image1"].Value);
-                    var stream = new MemoryStream(data);
-                    pb_Image.Image = Image.FromStream(stream);
-                }
-                index = 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
         private void btn_Save_Click(object sender, EventArgs e)
         {
             if (txt_Name.Text == "")
@@ -247,6 +222,37 @@ namespace DatasheetGenerator
         {
             selectedImageType = 4;
             ImageSelection();
+        }
+
+        private void frm_MediaLibrary_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FlowLayoutPanel symbolPanel = (FlowLayoutPanel)Tag;
+            Datasheet.AddSymbolList(symbolPanel, true);
+        }
+
+        private void dgv_Media_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                txt_Name.Text = "";
+                int index = e.RowIndex;
+                if (index > -1)
+                {
+                    selectedIndex = index;
+                    DataGridViewRow selectedrow = dgv_Media.Rows[index];
+                    selectedIndex = Convert.ToInt32(selectedrow.Cells["ID"].Value.ToString());
+                    txt_Name.Text = selectedrow.Cells["Name1"].Value.ToString();
+                    txt_Description.Text = selectedrow.Cells["Description"].Value.ToString();
+                    var data = (Byte[])(selectedrow.Cells["Image1"].Value);
+                    var stream = new MemoryStream(data);
+                    pb_Image.Image = Image.FromStream(stream);
+                }
+                index = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

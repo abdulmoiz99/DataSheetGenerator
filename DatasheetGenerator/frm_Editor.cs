@@ -337,6 +337,7 @@ namespace DatasheetGenerator
                 Editor.UpdateImageDetails(cmb_Category, cmb_Image);
             }
             Cursor.Current = Cursors.WaitCursor;
+            Datasheet.IsEditing = false;
         }
         private void AddExistingImages()
         {
@@ -445,13 +446,20 @@ namespace DatasheetGenerator
         }
         private void btn_UploadImages_Click(object sender, EventArgs e)
         {
-            var frm = new frm_MediaLibrary();
+            var frm = new frm_MediaLibrary();          
             frm.ShowDialog();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btn_AddSymbol_Click(object sender, EventArgs e)
+        {
+            frm_MediaLibrary frm = new frm_MediaLibrary();
+            frm.Tag = flowPanel_Symbol;
+            frm.ShowDialog();
         }
     }
 }
