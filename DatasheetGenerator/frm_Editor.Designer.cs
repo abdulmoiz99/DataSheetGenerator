@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Editor));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lab_ProductFamily = new System.Windows.Forms.Label();
@@ -615,9 +615,9 @@
             this.xuiButton5.HoverBackgroundColor = System.Drawing.Color.White;
             this.xuiButton5.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.xuiButton5.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton5.Location = new System.Drawing.Point(167, 256);
+            this.xuiButton5.Location = new System.Drawing.Point(151, 256);
             this.xuiButton5.Name = "xuiButton5";
-            this.xuiButton5.Size = new System.Drawing.Size(133, 39);
+            this.xuiButton5.Size = new System.Drawing.Size(160, 39);
             this.xuiButton5.TabIndex = 20;
             this.xuiButton5.TextColor = System.Drawing.Color.White;
             this.xuiButton5.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -637,7 +637,7 @@
             this.btn_AddHeader.HoverBackgroundColor = System.Drawing.Color.White;
             this.btn_AddHeader.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
             this.btn_AddHeader.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btn_AddHeader.Location = new System.Drawing.Point(28, 256);
+            this.btn_AddHeader.Location = new System.Drawing.Point(12, 256);
             this.btn_AddHeader.Name = "btn_AddHeader";
             this.btn_AddHeader.Size = new System.Drawing.Size(133, 39);
             this.btn_AddHeader.TabIndex = 19;
@@ -650,14 +650,14 @@
             this.dgv_HeaderDetails.AllowUserToAddRows = false;
             this.dgv_HeaderDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_HeaderDetails.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto Slab Medium", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_HeaderDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Roboto Slab Medium", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_HeaderDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_HeaderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_HeaderDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -695,11 +695,11 @@
             // Delete
             // 
             this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle8.NullValue")));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle8;
             this.Delete.FillWeight = 10F;
             this.Delete.HeaderText = "";
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
@@ -853,23 +853,23 @@
             // 
             // btn_UploadImages
             // 
-            this.btn_UploadImages.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_UploadImages.BackgroundColor = System.Drawing.Color.White;
             this.btn_UploadImages.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_UploadImages.ButtonImage")));
             this.btn_UploadImages.ButtonStyle = XanderUI.XUIButton.Style.Invert;
             this.btn_UploadImages.ButtonText = "Upload Images";
-            this.btn_UploadImages.ClickBackColor = System.Drawing.Color.White;
-            this.btn_UploadImages.ClickTextColor = System.Drawing.Color.White;
+            this.btn_UploadImages.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.btn_UploadImages.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.btn_UploadImages.CornerRadius = 5;
-            this.btn_UploadImages.Font = new System.Drawing.Font("Roboto Slab", 12F);
+            this.btn_UploadImages.Font = new System.Drawing.Font("Roboto Slab", 10F);
             this.btn_UploadImages.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_UploadImages.HoverBackgroundColor = System.Drawing.Color.White;
-            this.btn_UploadImages.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_UploadImages.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.btn_UploadImages.HoverTextColor = System.Drawing.Color.White;
             this.btn_UploadImages.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btn_UploadImages.Location = new System.Drawing.Point(167, 149);
+            this.btn_UploadImages.Location = new System.Drawing.Point(151, 149);
             this.btn_UploadImages.Name = "btn_UploadImages";
-            this.btn_UploadImages.Size = new System.Drawing.Size(133, 39);
+            this.btn_UploadImages.Size = new System.Drawing.Size(160, 39);
             this.btn_UploadImages.TabIndex = 27;
-            this.btn_UploadImages.TextColor = System.Drawing.Color.White;
+            this.btn_UploadImages.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.btn_UploadImages.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.btn_UploadImages.Click += new System.EventHandler(this.btn_UploadImages_Click);
             // 
@@ -892,8 +892,7 @@
             this.cmb_Image.Name = "cmb_Image";
             this.cmb_Image.Size = new System.Drawing.Size(317, 25);
             this.cmb_Image.TabIndex = 24;
-            this.cmb_Image.SelectedIndexChanged += new System.EventHandler(this.cmb_Image_SelectedIndexChanged);
-            // 
+            //  
             // label4
             // 
             this.label4.AutoSize = true;
@@ -944,11 +943,11 @@
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle9.NullValue")));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewImageColumn1.FillWeight = 10F;
             this.dataGridViewImageColumn1.HeaderText = "";
             this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
@@ -973,7 +972,6 @@
             this.Name = "frm_Editor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Editor";
-            this.Activated += new System.EventHandler(this.frm_Editor_Activated);
             this.Load += new System.EventHandler(this.frm_Editor_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_Editor_KeyDown);
             this.panel1.ResumeLayout(false);

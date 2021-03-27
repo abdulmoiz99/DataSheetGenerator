@@ -70,6 +70,7 @@
       <DependentUpon>CustomMessageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Datasheet.cs" />
+    <Compile Include="Editor.cs" />
     <Compile Include="frm_AddSymbol.cs">
       <SubType>Form</SubType>
     </Compile>
