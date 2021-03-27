@@ -439,7 +439,6 @@ namespace DatasheetGenerator
             }
             pnl_AddHeader.Visible = false;
         }
-
         private void btn_AddImage_Click(object sender, EventArgs e)
         {
             if (cmb_Image.SelectedIndex < 0)
