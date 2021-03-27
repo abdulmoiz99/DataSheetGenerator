@@ -40,7 +40,8 @@ namespace DatasheetGenerator
             int rowIndex = dataGridView.Rows.Add(HeaderText, Position);
             dataGridView.Rows[rowIndex].Tag = refGrid;
         }
-        private void GenerateGrid(DataGridView dataGridView, string HeaderID, string HeaderText, DataTable SubHeader)
+
+        private void GenerateGrid(DataGridView dataGridView, string HeaderID, string HeaderText)
         {
             dataGridView.AllowUserToAddRows = false;
             //Adding column names
@@ -232,13 +233,12 @@ namespace DatasheetGenerator
                 var dgv = new DataGridView();
                 dgv.Size = new Size(546, 277);
                 var subHeader = Datasheet.GetDataTable("select id,value1,value2 from Subheader where H_ID = " + headerID + ";");
-                GenerateGrid(dgv, Datasheet.Id, headerText, subHeader);
+                GenerateGrid(dgv, Datasheet.Id, headerText);
                 UpdateHeaderDetails(dgv_HeaderDetails, headerText, count, dgv);
                 dgv.Tag = count++;
                 flowLayoutPanel1.Controls.Add(dgv);
                 HeaderController.Header.DisableNewHeader();
                 dgv_HeaderDetails.ClearSelection();
-
             }
 
             AddExistingImages();

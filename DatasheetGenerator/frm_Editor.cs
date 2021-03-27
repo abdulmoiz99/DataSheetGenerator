@@ -17,32 +17,11 @@ namespace DatasheetGenerator
         int HeaderChangedIndex = 0;
         int count = 1;
         AutoCompleteStringCollection data;
-        public void DisplayAddHeaderPanel()
-        {
-            pnl_AddHeader.Location = new Point(this.ClientSize.Width / 2 - pnl_AddHeader.Size.Width / 2, this.ClientSize.Height / 2 - pnl_AddHeader.Size.Height / 2);
-            pnl_AddHeader.Anchor = AnchorStyles.None;
-            pnl_AddHeader.Visible = true;
-            pnl_AddHeader.BringToFront();
-            txt_HeaderName.Focus();
-        }
         public frm_Editor()
         {
             InitializeComponent();
         }
 
-        public AutoCompleteStringCollection AutoCompleteLoadValue1()
-        {
-            if (SQL.con.State == ConnectionState.Closed) SQL.con.Open();
-            var cmd = new MySqlCommand("select value1,value2 from Subheader;", SQL.con);
-            MySqlDataReader dr = cmd.ExecuteReader();
-            AutoCompleteStringCollection mycoll = new AutoCompleteStringCollection();
-            while (dr.Read())
-            {
-                mycoll.Add(dr["Value1"].ToString());
-                mycoll.Add(dr["Value2"].ToString());
-            }
-            return mycoll;
-        }
         private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             var dataGridView = sender as DataGridView;
@@ -58,75 +37,9 @@ namespace DatasheetGenerator
         }
         private void btn_AddHeader_Click(object sender, EventArgs e)
         {
-            DisplayAddHeaderPanel();
-            //var frm = new frm_AddHeaderPopup();
-            //frm.ShowDialog();
-            //this.Refresh();
+            Editor.DisplayAddHeaderPanel(pnl_AddHeader, txt_HeaderName, this);
         }
-        private void GenerateGrid(DataGridView dataGridView, string HeaderText)
-        {
-            dataGridView.AllowUserToAddRows = false;
-            //Adding column names
-            dataGridView.Columns.Add("newColumnName", HeaderText);
-            dataGridView.Columns.Add("newColumnName1", "");
-
-            DataGridViewImageColumn column = new DataGridViewImageColumn();
-            column.Name = "newColumnName2";
-            column.HeaderText = "";
-            column.FillWeight = 10;
-            column.DefaultCellStyle.NullValue = null;
-
-            dataGridView.Columns.Add(column);
-
-            //COLUMN HEADER
-            //Set Header height
-            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridView.ColumnHeadersHeight = 50;
-            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            //Header Font
-            dataGridView.Columns[0].HeaderCell.Style.Font = new Font("Roboto Medium", 13);
-            //Auto Size Column
-            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            //Header Border
-            dataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            //Header Color
-            dataGridView.EnableHeadersVisualStyles = false;
-            dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 101, 177);
-            dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
-            //ROW
-            //Row Height
-            dataGridView.RowTemplate.Height = 40;
-            //Row Fore Color
-            dataGridView.Columns[0].DefaultCellStyle.ForeColor = Color.FromArgb(82, 82, 84);
-            dataGridView.Columns[1].DefaultCellStyle.ForeColor = Color.FromArgb(82, 82, 84);
-            //Alternating Row Setup
-            dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(237, 238, 239);
-            dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridView.DefaultCellStyle.SelectionBackColor = Color.Gray;
-            dataGridView.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            dataGridView.BackgroundColor = Color.White;
-
-            //GRID BORDER
-            dataGridView.BorderStyle = BorderStyle.Fixed3D;
-            dataGridView.RowHeadersVisible = false;
-
-            dataGridView.DefaultCellStyle.Font = new Font("Roboto", 10);
-
-            dataGridView.Rows.Add("Product Name", "Text Field", Properties.Resources.icons8_multiply_24);
-            dataGridView.Rows.Add("Product Code", "Text Field", Properties.Resources.icons8_multiply_24);
-            dataGridView.Rows.Add("Product Description", "Text Field", Properties.Resources.icons8_multiply_24);
-            dataGridView.AllowUserToAddRows = true;
-
-            //Disabling Selection Color
-            dataGridView.DefaultCellStyle.SelectionBackColor = dataGridView.DefaultCellStyle.BackColor;
-            dataGridView.DefaultCellStyle.SelectionForeColor = dataGridView.DefaultCellStyle.ForeColor;
-
-            dataGridView.EditingControlShowing += dataGridView1_EditingControlShowing;
-            dataGridView.CellClick += DataGridView_CellClick;
-            dataGridView.CellFormatting += DataGridView_CellFormatting;
-            dataGridView.RowsAdded += DataGridView_RowsAdded;
-        }
+        //   private void GenerateGrid(DataGridView dataGridView, string HeaderID, string HeaderText, DataTable SubHeader)
 
         private void DataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
@@ -152,15 +65,10 @@ namespace DatasheetGenerator
                 dgv.Rows.Remove(row);
             }
         }
-
         private void UpdateHeaderDetails(DataGridView dataGridView, string HeaderText, int Position, DataGridView refGrid)
         {
             int rowIndex = dataGridView.Rows.Add(HeaderText, Position);
             dataGridView.Rows[rowIndex].Tag = refGrid;
-        }
-        private void frm_Editor_Activated(object sender, EventArgs e)
-        {
-
         }
         private void dgv_HeaderDetails_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
@@ -341,14 +249,14 @@ namespace DatasheetGenerator
                         myCommand.ExecuteNonQuery();
                     }
                 }
-                
+
                 //Saving Images to Database
                 foreach (Control panel in flowPanel_DimensionalDrawings.Controls) //Dimensional Drawings
                 {
                     List<object> values = (List<object>)panel.Tag;
                     TextBox textBox = (TextBox)values[1];
                     myCommand.CommandText = @"Insert into DatasheetImages(ImageID             ,DatasheetID           ,Description     ,Type) 
-                                                                   values('" + values[0].ToString() + "'," + Datasheet.Id + ",'" + textBox.Text  + "', 2)";
+                                                                   values('" + values[0].ToString() + "'," + Datasheet.Id + ",'" + textBox.Text + "', 2)";
                     myCommand.ExecuteNonQuery();
 
                 }
@@ -368,7 +276,7 @@ namespace DatasheetGenerator
                                                                    values(" + values[0].ToString() + "," + Datasheet.Id + ",'" + textBox.Text + "', 4)";
                     myCommand.ExecuteNonQuery();
                 }
-               
+
                 transaction.Commit();
                 MessageBox.Show("Record Added Successfully");
                 this.Close();
@@ -387,38 +295,74 @@ namespace DatasheetGenerator
             }
 
         }
-        public void UpdateImageDetails()
-        {
-            int type = 0;
-            if (cmb_Category.SelectedIndex == 0) type = 2; //Dimensional Drawings
-            else if (cmb_Category.SelectedIndex == 1) type = 3; //Product Images
-            else if (cmb_Category.SelectedIndex == 2) type = 4; //Wiring Diagrams
-            cmb_Image.SelectedIndex = -1;
-            Main.fillCombo(cmb_Image, "MediaLibrary", "Name", "ID", "Type = " + type + "");
-        }
         private void frm_Editor_Load(object sender, EventArgs e)
         {
+            Datasheet.Id = "55";
             lab_ProductFamily.Text = Datasheet.ProductFamilly;
-            data = AutoCompleteLoadValue1();
+            data = Editor.AutoCompleteLoadValue1();
+            Datasheet.IsEditing = true;
+            //When Editing the datasheet
+            if (Datasheet.IsEditing)
+            {
+                Datasheet.AddSymbolList(flowPanel_Symbol, true);
 
-            Datasheet.AddSymbolList(flowPanel_Symbol, false);
+                var Header = Datasheet.GetDataTable("select Id,Name from Header where DS_ID = " + Datasheet.Id + "");
+                string headerID = "";
+                string headerText = "";
+                foreach (DataRow header in Header.Rows)
+                {
+                    headerID = header[0].ToString();
+                    headerText = HeaderController.Header.GetHeaderText(headerID);
+                    var dgv = new DataGridView();
+                    dgv.Size = new Size(546, 277);
+                    var subHeader = Datasheet.GetDataTable("select id,value1,value2 from Subheader where H_ID = " + headerID + ";");
+                    Editor.GenerateGrid(dgv, Datasheet.Id, headerText, dataGridView1_EditingControlShowing, DataGridView_CellClick, DataGridView_CellFormatting, DataGridView_RowsAdded);
+                    UpdateHeaderDetails(dgv_HeaderDetails, headerText, count, dgv);
+                    dgv.Tag = count++;
+                    flowLayoutPanel1.Controls.Add(dgv);
+                    HeaderController.Header.DisableNewHeader();
+                    dgv_HeaderDetails.ClearSelection();
+                }
+                AddExistingImages();
+            }
+            else if (Datasheet.IsCreated)
+            {
+                //When Adding a New Datasheet
+                Datasheet.AddSymbolList(flowPanel_Symbol, false);
 
-            try { cmb_Category.SelectedIndex = 0; }
-            catch (Exception) { }
-            UpdateImageDetails();
+                try { cmb_Category.SelectedIndex = 0; }
+                catch (Exception) { }
+                Editor.UpdateImageDetails(cmb_Category, cmb_Image);
+            }
         }
-
+        private void AddExistingImages()
+        {
+            //Adding Images to FlowLayout
+            var DimensionalDrawings = Datasheet.GetDataTable("select * from DatasheetImages where ImageID = 2  and DatasheetId = " + Datasheet.Id + "; ");
+            foreach (DataRow Images in DimensionalDrawings.Rows)
+            {
+                Datasheet.AddImage(Images["ImageID"].ToString(), Images["Description"].ToString(), Button_Click, flowPanel_DimensionalDrawings);
+            }
+            var ProductImages = Datasheet.GetDataTable("select * from DatasheetImages where ImageID = 3  and DatasheetId = " + Datasheet.Id + "; ");
+            foreach (DataRow Images in ProductImages.Rows)
+            {
+                Datasheet.AddImage(Images["ImageID"].ToString(), Images["Description"].ToString(), Button_Click, flowPanel_ProductImages);
+            }
+            var WiringDiagrams = Datasheet.GetDataTable("select * from DatasheetImages where ImageID = 4 and DatasheetId = " + Datasheet.Id + " ; ");
+            foreach (DataRow Images in WiringDiagrams.Rows)
+            {
+                Datasheet.AddImage(Images["ImageID"].ToString(), Images["Description"].ToString(), Button_Click, flowPanel_WiringDiagrams);
+            }
+        }
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             pnl_AddHeader.Visible = false;
         }
-
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             txt_HeaderName.Clear();
             pnl_AddHeader.Visible = false;
         }
-
         private void btn_AddNewHeader_Click(object sender, EventArgs e)
         {
             HeaderController.Header.AddNewHeader();
@@ -428,7 +372,7 @@ namespace DatasheetGenerator
             {
                 var dgv = new DataGridView();
                 dgv.Size = new Size(546, 277);
-                GenerateGrid(dgv, HeaderController.Header.GetHeaderText());
+                Editor.GenerateGrid(dgv, "", HeaderController.Header.GetHeaderText(), dataGridView1_EditingControlShowing, DataGridView_CellClick, DataGridView_CellFormatting, DataGridView_RowsAdded);
                 UpdateHeaderDetails(dgv_HeaderDetails, HeaderController.Header.GetHeaderText(), count, dgv);
                 dgv.Tag = count++;
                 flowLayoutPanel1.Controls.Add(dgv);
@@ -456,7 +400,7 @@ namespace DatasheetGenerator
                 }
                 else
                 {
-                    Datasheet.AddImage(cmb_Image.SelectedValue.ToString(),"", Button_Click, flowPanel_DimensionalDrawings);
+                    Datasheet.AddImage(cmb_Image.SelectedValue.ToString(), "", Button_Click, flowPanel_DimensionalDrawings);
                 }
             }
             else if (category == 1) //Product Images
@@ -482,11 +426,9 @@ namespace DatasheetGenerator
                 }
             }
         }
-
         private void Button_Click(object sender, EventArgs e)
         {
             var button = sender as XUIButton;
-
             if (button != null)
             {
                 var control = button.Tag as Control;
@@ -494,21 +436,14 @@ namespace DatasheetGenerator
                 panel.Controls.Remove(control);
             }
         }
-
         private void cmb_Category_SelectedIndexChanged(object sender, EventArgs e)
         {
-            UpdateImageDetails();
+            Editor.UpdateImageDetails(cmb_Category, cmb_Image);
         }
-   
         private void btn_UploadImages_Click(object sender, EventArgs e)
         {
             var frm = new frm_MediaLibrary();
-            frm.ShowDialog(); 
-        }
-
-        private void cmb_Image_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            frm.ShowDialog();
         }
     }
 }

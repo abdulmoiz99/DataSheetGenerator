@@ -891,8 +891,7 @@
             this.cmb_Image.Name = "cmb_Image";
             this.cmb_Image.Size = new System.Drawing.Size(317, 26);
             this.cmb_Image.TabIndex = 24;
-            this.cmb_Image.SelectedIndexChanged += new System.EventHandler(this.cmb_Image_SelectedIndexChanged);
-            // 
+            //  
             // label4
             // 
             this.label4.AutoSize = true;
@@ -972,7 +971,6 @@
             this.Name = "frm_Editor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Editor";
-            this.Activated += new System.EventHandler(this.frm_Editor_Activated);
             this.Load += new System.EventHandler(this.frm_Editor_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_Editor_KeyDown);
             this.panel1.ResumeLayout(false);
