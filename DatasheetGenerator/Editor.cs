@@ -12,6 +12,7 @@ namespace DatasheetGenerator
 {
     class Editor
     {
+        private static Dictionary<string, List<string>> subHeaders = new Dictionary<string, List<string>>();
         public static void DisplayAddHeaderPanel(Panel panel, MaterialSkin.Controls.MaterialSingleLineTextField textBox, Form form)
         {
             panel.Location = new Point(form.ClientSize.Width / 2 - panel.Size.Width / 2, form.ClientSize.Height / 2 - panel.Size.Height / 2);
@@ -105,6 +106,38 @@ namespace DatasheetGenerator
             else if (CategoryComboBox.SelectedIndex == 2) type = 4; //Wiring Diagrams
             Main.fillCombo(ImageComboBox, "MediaLibrary", "Name", "ID", "Type = " + type + "");
 
+        }
+
+        public static void AddSubheader(string headerID, string subHeaderID) 
+        {
+            List<string> subHeader;
+
+            if (subHeaders.ContainsKey(headerID))
+            {
+                subHeader = subHeaders[headerID];
+            }
+            else 
+            {
+                subHeader = new List<string>();
+                subHeaders.Add(headerID, subHeader);             
+            }
+
+            subHeader.Add(subHeaderID);
+        }
+
+        public static void DeleteHeadersFromDatabase() 
+        {
+            foreach (string headerID in subHeaders.Keys) 
+            {
+                List<string> subHeader = subHeaders[headerID];
+                foreach (string subHeaderID in subHeader) 
+                {
+                    //Paste delete query here
+                    //Parameters given: headerID, subHeaderID
+                }
+            }
+
+            subHeaders.Clear();
         }
     }
 }
