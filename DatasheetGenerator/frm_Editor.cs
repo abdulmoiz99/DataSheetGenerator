@@ -62,6 +62,7 @@ namespace DatasheetGenerator
             if (e.ColumnIndex == 2 && e.RowIndex >= 0 && e.RowIndex != dgv.RowCount - 1)
             {
                 DataGridViewRow row = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningRow;
+                if (Datasheet.IsEditing) //Add Subheader function.
                 dgv.Rows.Remove(row);
             }
         }
@@ -320,6 +321,7 @@ namespace DatasheetGenerator
                     UpdateHeaderDetails(dgv_HeaderDetails, headerText, count, dgv);
                     dgv.Tag = count++;
                     flowLayoutPanel1.Controls.Add(dgv);
+                    flowLayoutPanel1.Controls.SetChildIndex(dgv, count - 1);
                     HeaderController.Header.DisableNewHeader();
                     dgv_HeaderDetails.ClearSelection();
                 }
@@ -334,6 +336,7 @@ namespace DatasheetGenerator
                 catch (Exception) { }
                 Editor.UpdateImageDetails(cmb_Category, cmb_Image);
             }
+            Cursor.Current = Cursors.WaitCursor;
         }
         private void AddExistingImages()
         {

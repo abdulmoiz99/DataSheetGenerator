@@ -22,7 +22,9 @@ namespace DatasheetGenerator
         private void Delete_Item_Click(object sender, EventArgs e)
         {
             var item = sender as MenuItem;
-            SQL.NonScalarQuery("Update Datasheet set Active = 0 where Id = " + item.Tag.ToString() + ";");
+            var label = (Label)item.Tag;
+            SQL.NonScalarQuery("Update Datasheet set Active = 0 where Id = " + label.Tag.ToString() + ";");
+            datasheetPanel.Controls.Remove(label);
         }
         private void Copy_Item_Click(object sender, EventArgs e)
         {
@@ -54,13 +56,14 @@ namespace DatasheetGenerator
             {
                 var label = sender as Label;
                 Datasheet.Id = label.Tag.ToString();
-                DialogResult YorN = MessageBox.Show("Are you sure to view/edit datasheet? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (YorN == DialogResult.Yes)
-                {
-                    Datasheet.IsEditing = true;
-                    this.Refresh();
-                    this.Close();
-                }
+                Cursor.Current = Cursors.WaitCursor;
+                Form parentForm = MdiParent;
+                frm_Editor form = new frm_Editor();
+                form.MdiParent = parentForm;
+                form.Dock = DockStyle.Fill;
+                Datasheet.IsEditing = true;
+                form.Show();
+                Close();
             }
         }
         private void Label_MouseLeave(object sender, EventArgs e)
@@ -88,9 +91,14 @@ namespace DatasheetGenerator
 
                 label.ContextMenu = menu;
 
-                copyItem.Tag = label.Tag;
-                deleteItem.Tag = label.Tag;
+                copyItem.Tag = label;
+                deleteItem.Tag = label;
             }
+        }
+
+        private void datasheetPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

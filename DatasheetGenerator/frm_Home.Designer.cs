@@ -39,7 +39,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(126)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(40, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(473, 58);
+            this.label1.Size = new System.Drawing.Size(433, 53);
             this.label1.TabIndex = 2;
             this.label1.Text = "The Latest Datasheets";
             // 
@@ -53,6 +53,7 @@
             this.datasheetPanel.Name = "datasheetPanel";
             this.datasheetPanel.Size = new System.Drawing.Size(1148, 675);
             this.datasheetPanel.TabIndex = 3;
+            this.datasheetPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.datasheetPanel_Paint);
             // 
             // frm_Home
             // 

@@ -77,7 +77,7 @@ namespace DatasheetGenerator
             {
                 Datasheet.IsEditing = false;
                 CloseAllForm();
-                var frm = new frm_Editor1();
+                var frm = new frm_Editor();
                 frm.MdiParent = this;
                 frm.Dock = DockStyle.Fill;
                 frm.Show();
