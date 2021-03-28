@@ -60,8 +60,9 @@ namespace DatasheetGenerator
             else
             {
 
-                if (SQL.NonScalarQuery("Insert into Datasheet (Name                   ,PF_ID                                  ,Flag ,Type  ,DateCreated                               ,DateModified                              ,Active) " +
-                                                  "values ('" + txt_Name.Text + "'," + cmb_ProductFamily.SelectedValue + ",0    ,1     ,'" + DateTime.Now.ToShortDateString() + "','" + DateTime.Now.ToShortDateString() + "',1);"))
+                string date = DateTime.Now.ToString("yyyy-MM-dd");
+                if (SQL.NonScalarQuery("Insert into Datasheet (Name                   ,PF_ID                                  ,Flag ,Type  ,DateCreated    ,DateModified    ,Active) " +
+                                                  "values ('" + txt_Name.Text + "'," + cmb_ProductFamily.SelectedValue + ",0    ,1         ,'" + date + "' ,'" + date + "'  ,1);"))
                 {
                     Datasheet.ProductFamilly = cmb_ProductFamily.Text;
                     Datasheet.Name = txt_Name.Text;
