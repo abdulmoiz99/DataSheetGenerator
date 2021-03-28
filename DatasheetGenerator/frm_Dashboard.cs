@@ -43,25 +43,30 @@ namespace DatasheetGenerator
         }
         private void frm_Dashboard_Activated(object sender, EventArgs e)
         {
-            //Display product family 
-            var ProductFamily =  Datasheet.GetDataTable("select * from ProductFamily;");
-            flowLayoutPanel1.Controls.Clear();
-            foreach (DataRow productfamily in ProductFamily.Rows)
+            if (Datasheet.NewProductFamilyCreated)
             {
-                var label = new Label();
-                label.AutoSize = false;
-                label.Text = productfamily["Name"].ToString();
-                label.Tag = productfamily["ID"].ToString();
+                //Display product family 
+                var ProductFamily = Datasheet.GetDataTable("select * from ProductFamily;");
+                flowLayoutPanel1.Controls.Clear();
+                foreach (DataRow productfamily in ProductFamily.Rows)
+                {
+                    var label = new Label();
+                    label.AutoSize = false;
+                    label.Text = productfamily["Name"].ToString();
+                    label.Tag = productfamily["ID"].ToString();
 
-                label.ForeColor = Color.FromArgb(117, 117, 117);
-                label.Size = new Size(225, 33);
-                label.Font = new Font("Roboto Medium", 12);
-                flowLayoutPanel1.Controls.Add(label);
+                    label.ForeColor = Color.FromArgb(117, 117, 117);
+                    label.Size = new Size(225, 33);
+                    label.Font = new Font("Roboto Medium", 12);
+                    flowLayoutPanel1.Controls.Add(label);
 
-                label.MouseDown += Label_Click;
-                label.MouseEnter += Label_MouseEnter;
-                label.MouseLeave += Label_MouseLeave;
+                    label.MouseDown += Label_Click;
+                    label.MouseEnter += Label_MouseEnter;
+                    label.MouseLeave += Label_MouseLeave;
+                }
+                Datasheet.NewProductFamilyCreated = false;
             }
+           
 
             //if (this.MdiChildren.Length > 0) this.ActivateMdiChild(this.MdiChildren[0]);
             if (Datasheet.IsCreated)

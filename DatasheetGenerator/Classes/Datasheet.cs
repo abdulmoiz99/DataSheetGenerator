@@ -16,6 +16,9 @@ namespace DatasheetGenerator
     {
         public static bool IsCreated = false;
         public static bool IsEditing = false;
+        public static bool NewProductFamilyCreated = false;
+
+
         public static string Id { get; set; }
         public static string ProductFamilly { get; set; }
         public static string Name { get; set; }

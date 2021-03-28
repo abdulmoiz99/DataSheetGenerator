@@ -28,6 +28,7 @@ namespace DatasheetGenerator
                 SQL.NonScalarQuery("Insert into ProductFamily(Name)" +
                                                     " values ('" + txt_Name.Text + "');");
                 txt_Name.Clear();
+                Datasheet.NewProductFamilyCreated = true;
                 MessageBox.Show("Product Family Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
