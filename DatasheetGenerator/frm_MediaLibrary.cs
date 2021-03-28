@@ -226,8 +226,13 @@ namespace DatasheetGenerator
 
         private void frm_MediaLibrary_FormClosing(object sender, FormClosingEventArgs e)
         {
-            FlowLayoutPanel symbolPanel = (FlowLayoutPanel)Tag;
-            Datasheet.AddSymbolList(symbolPanel, true);
+            if (this.Tag != null)
+            {
+                FlowLayoutPanel symbolPanel = (FlowLayoutPanel)Tag;
+
+                Datasheet.AddSymbolList(symbolPanel, true);
+            }
+            
         }
 
         private void dgv_Media_CellClick(object sender, DataGridViewCellEventArgs e)

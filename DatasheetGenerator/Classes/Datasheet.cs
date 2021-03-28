@@ -16,7 +16,7 @@ namespace DatasheetGenerator
     {
         public static bool IsCreated = false;
         public static bool IsEditing = false;
-        public static bool NewProductFamilyCreated = false;
+        public static bool NewProductFamilyCreated = true;  //Set true so that it will update the list when the form is loaded for the first time 
 
 
         public static string Id { get; set; }
@@ -97,7 +97,7 @@ namespace DatasheetGenerator
         public static void AddSymbolList(FlowLayoutPanel flowLayoutPanel, bool editSheet) // If the sheet is for adding purpose or editing 
         {
             //Display product family 
-            var symbol = Datasheet.GetDataTable("select * from MediaLibrary where Type = 1 and Active = 1");
+            var symbol = Datasheet.GetDataTable("select Id,Name from MediaLibrary where Type = 1 and Active = 1");
                 
             if (flowLayoutPanel.Controls != null) flowLayoutPanel.Controls.Clear();
             foreach (DataRow media in symbol.Rows)
