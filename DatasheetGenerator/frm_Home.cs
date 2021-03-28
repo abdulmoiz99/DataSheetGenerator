@@ -32,7 +32,7 @@ namespace DatasheetGenerator
 
         private void frm_Home_Load(object sender, EventArgs e)
         {
-            var datasheets = Datasheet.GetDataTable("SELECT DateModified, Name, Id FROM Datasheet where PF_ID = " + productFamilyID + " AND Active = 1;");
+            var datasheets = Datasheet.GetDataTable("SELECT DATE_FORMAT(DateModified, '%d-%m-%Y') AS DateModified, Name, Id FROM Datasheet where PF_ID = " + productFamilyID + " AND Active = 1  order by DateModified DESC;");
 
             foreach (DataRow row in datasheets.Rows)
             {
@@ -41,8 +41,8 @@ namespace DatasheetGenerator
                 label.Size = new Size(402, 27);
                 label.Font = new Font("Roboto", 11f);
                 label.ForeColor = Color.FromArgb(117, 117, 117);
-                label.Text = row[0] + " | " + row[1];
-                label.Tag = row[2].ToString();
+                label.Text = row["DateModified"] + " | " + row["Name"];
+                label.Tag = row["Id"].ToString();
                 label.MouseDown += Label_MouseDown;
                 label.MouseEnter += Label_MouseEnter;
                 label.MouseLeave += Label_MouseLeave;

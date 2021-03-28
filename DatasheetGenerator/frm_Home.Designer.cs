@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.datasheetPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.lab_ProductFamily = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -39,7 +40,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(126)))), ((int)(((byte)(192)))));
             this.label1.Location = new System.Drawing.Point(40, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(433, 53);
+            this.label1.Size = new System.Drawing.Size(473, 58);
             this.label1.TabIndex = 2;
             this.label1.Text = "The Latest Datasheets";
             // 
@@ -49,11 +50,22 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.datasheetPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.datasheetPanel.Location = new System.Drawing.Point(49, 114);
+            this.datasheetPanel.Location = new System.Drawing.Point(49, 134);
             this.datasheetPanel.Name = "datasheetPanel";
-            this.datasheetPanel.Size = new System.Drawing.Size(1148, 675);
+            this.datasheetPanel.Size = new System.Drawing.Size(1148, 655);
             this.datasheetPanel.TabIndex = 3;
             this.datasheetPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.datasheetPanel_Paint);
+            // 
+            // lab_ProductFamily
+            // 
+            this.lab_ProductFamily.AutoSize = true;
+            this.lab_ProductFamily.Font = new System.Drawing.Font("Roboto Slab", 14F);
+            this.lab_ProductFamily.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.lab_ProductFamily.Location = new System.Drawing.Point(45, 92);
+            this.lab_ProductFamily.Name = "lab_ProductFamily";
+            this.lab_ProductFamily.Size = new System.Drawing.Size(313, 28);
+            this.lab_ProductFamily.TabIndex = 8;
+            this.lab_ProductFamily.Text = "Format: Date | Datasheet Name";
             // 
             // frm_Home
             // 
@@ -61,6 +73,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1500, 847);
+            this.Controls.Add(this.lab_ProductFamily);
             this.Controls.Add(this.datasheetPanel);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -77,5 +90,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel datasheetPanel;
+        private System.Windows.Forms.Label lab_ProductFamily;
     }
 }

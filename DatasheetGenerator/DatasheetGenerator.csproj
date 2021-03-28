@@ -78,6 +78,12 @@
     <Compile Include="frm_AddSymbol.Designer.cs">
       <DependentUpon>frm_AddSymbol.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_CopyToANewDraft.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_CopyToANewDraft.Designer.cs">
+      <DependentUpon>frm_CopyToANewDraft.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_CreateDatasheet.cs">
       <SubType>Form</SubType>
     </Compile>
