@@ -38,7 +38,7 @@ namespace DatasheetGenerator
         }
         private void btn_AddHeader_Click(object sender, EventArgs e)
         {
-            Editor.DisplayAddHeaderPanel(pnl_AddHeader, txt_HeaderName, this);
+            Editor.DisplayCenterPanel(pnl_AddHeader, txt_HeaderName, this);
         }
         //   private void GenerateGrid(DataGridView dataGridView, string HeaderID, string HeaderText, DataTable SubHeader)
 
@@ -64,7 +64,7 @@ namespace DatasheetGenerator
             {
                 DataGridViewRow row = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningRow;
                 //if (Datasheet.IsEditing) //Add Subheader function.
-                    dgv.Rows.Remove(row);
+                dgv.Rows.Remove(row);
             }
         }
         private void UpdateHeaderDetails(DataGridView dataGridView, string HeaderText, int Position, DataGridView refGrid)
@@ -291,7 +291,7 @@ namespace DatasheetGenerator
             }
             catch (Exception ex)
             {
-              
+
                 transaction.Rollback();
                 MessageBox.Show(ex.Message);
 
@@ -305,7 +305,7 @@ namespace DatasheetGenerator
 
         private void frm_Editor_Load(object sender, EventArgs e)
         {
-            Datasheet.Id = "57";
+            Datasheet.Id = "16";
             lab_ProductFamily.Text = Datasheet.ProductFamilly;
             data = Editor.AutoCompleteLoadValue1();
             Datasheet.IsEditing = true;
@@ -353,6 +353,10 @@ namespace DatasheetGenerator
             }
             Cursor.Current = Cursors.WaitCursor;
             Datasheet.IsEditing = false;
+
+            //Fill combobox for copying to a new draft
+
+            Main.fillComboWithoutCondition(cmb_ProductFamily, "ProductFamily", "Name", "ID");
         }
         private void AddExistingImages()
         {
@@ -492,10 +496,46 @@ namespace DatasheetGenerator
             {
                 MessageBox.Show("Enter Draft Name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if (cmb_ProductFamily.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select product family", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (Datasheet.Exist(txt_NewDraftName.Text))
+            {
+                MessageBox.Show("Datasheet With Same Name Already Exisit", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else
             {
-                SaveRecord(true);
+                string date = DateTime.Now.ToShortDateString();
+                if (SQL.NonScalarQuery("Insert into Datasheet (Name                          ,PF_ID                                  ,Flag ,Type  ,DateCreated    ,DateModified    ,Active ,UserID) " +
+                                                      "values ('" + txt_NewDraftName.Text + "'," + cmb_ProductFamily.SelectedValue + ",0    ,1     ,'" + date + "','" + date + "'  ,1     ," + User.Id + ");"))
+                {
+                    Datasheet.ProductFamilly = cmb_ProductFamily.Text;
+                    Datasheet.Name = txt_NewDraftName.Text;
+                    Datasheet.IsCreated = true;
+                    Datasheet.Id = Datasheet.GetLatestId();
+                    SaveRecord(true);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Unable To Create New New Draft", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+        }
+        private void btn_CopyToDraft_Click(object sender, EventArgs e)
+        {
+            Editor.DisplayCenterPanel(pnl_CopyToANewDraft, txt_NewDraftName, this);
+        }
+
+        private void btn_CloseDraft_Click(object sender, EventArgs e)
+        {
+            pnl_CopyToANewDraft.Hide();
+        }
+
+        private void btn_CloseNewDraft_Click(object sender, EventArgs e)
+        {
+            pnl_CopyToANewDraft.Hide();
         }
     }
 }

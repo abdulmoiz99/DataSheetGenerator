@@ -13,7 +13,7 @@ namespace DatasheetGenerator
     class Editor
     {
         private static Dictionary<string, List<string>> subHeaders = new Dictionary<string, List<string>>();
-        public static void DisplayAddHeaderPanel(Panel panel, MaterialSkin.Controls.MaterialSingleLineTextField textBox, Form form)
+        public static void DisplayCenterPanel(Panel panel, MaterialSkin.Controls.MaterialSingleLineTextField textBox, Form form)
         {
             panel.Location = new Point(form.ClientSize.Width / 2 - panel.Size.Width / 2, form.ClientSize.Height / 2 - panel.Size.Height / 2);
             panel.Anchor = AnchorStyles.None;
