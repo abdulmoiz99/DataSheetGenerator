@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using XanderUI;
 
+
 namespace DatasheetGenerator
 {
     public partial class frm_Editor : Form
@@ -22,7 +23,7 @@ namespace DatasheetGenerator
             InitializeComponent();
         }
 
-        private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        private void DataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             var dataGridView = sender as DataGridView;
             int column = dataGridView.CurrentCell.ColumnIndex;
@@ -59,11 +60,11 @@ namespace DatasheetGenerator
         private void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var dgv = sender as DataGridView;
-            if (e.ColumnIndex == 2 && e.RowIndex >= 0 && e.RowIndex != dgv.RowCount - 1)
+            if (e.ColumnIndex == 3 && e.RowIndex >= 0 && e.RowIndex != dgv.RowCount - 1)
             {
                 DataGridViewRow row = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningRow;
                 if (Datasheet.IsEditing) //Add Subheader function.
-                dgv.Rows.Remove(row);
+                    dgv.Rows.Remove(row);
             }
         }
         private void UpdateHeaderDetails(DataGridView dataGridView, string HeaderText, int Position, DataGridView refGrid)
@@ -188,9 +189,13 @@ namespace DatasheetGenerator
                 MessageBox.Show("No Record To Save");
                 return;
             }
+            SaveRecord();
+        }
+
+        private void SaveRecord(bool IsDraft = false)
+        {
             Cursor.Current = Cursors.WaitCursor;
             Dictionary<string, Dictionary<string, string>> headers = Header.GetHeaders(flowLayoutPanel1);
-            string HeaderID = "0";
 
 
             if (SQL.Con.State == ConnectionState.Open)
@@ -208,7 +213,13 @@ namespace DatasheetGenerator
             // to Command object for a pending local transaction
             myCommand.Connection = SQL.con;
             myCommand.Transaction = transaction;
+            string HeaderID = "0";
 
+            if (IsDraft)
+            {
+                myCommand.CommandText = @"update Datasheet set userID = " + User.Id + " where ID = " + Datasheet.Id + "";
+                myCommand.ExecuteNonQuery();
+            }
             try
             {
                 //Saving Symbol to the database
@@ -220,13 +231,10 @@ namespace DatasheetGenerator
                                                                    values('" + Datasheet.Id + "'," + symbol.Tag + ")";
                         myCommand.ExecuteNonQuery();
                     }
-
                 }
                 //Saving Header and Sub-Headers
                 foreach (string header in headers.Keys)
                 {
-
-
                     string headerText = header;
 
                     //Inserting values into Header Table
@@ -236,7 +244,6 @@ namespace DatasheetGenerator
                     //Get the latest value from headerTable
                     myCommand.CommandText = "Select  MAX(ID) from Header where DS_ID =  " + Datasheet.Id + "";
                     HeaderID = myCommand.ExecuteScalar().ToString(); ;
-
 
                     foreach (string subHeader in headers[header].Keys)
                     {
@@ -284,21 +291,21 @@ namespace DatasheetGenerator
             }
             catch (Exception ex)
             {
-
+              
                 transaction.Rollback();
-
                 MessageBox.Show(ex.Message);
+
             }
             finally
             {
                 SQL.con.Close();
                 Cursor.Current = Cursors.Default;
             }
-
         }
+
         private void frm_Editor_Load(object sender, EventArgs e)
         {
-            Datasheet.Id = "55";
+            Datasheet.Id = "57";
             lab_ProductFamily.Text = Datasheet.ProductFamilly;
             data = Editor.AutoCompleteLoadValue1();
             Datasheet.IsEditing = true;
@@ -312,18 +319,26 @@ namespace DatasheetGenerator
                 string headerText = "";
                 foreach (DataRow header in Header.Rows)
                 {
-                    headerID = header[0].ToString();
-                    headerText = HeaderController.Header.GetHeaderText(headerID);
+                    headerID = header["ID"].ToString();
+                    headerText = header["Name"].ToString(); //HeaderController.Header.GetHeaderText(headerID);
                     var dgv = new DataGridView();
                     dgv.Size = new Size(546, 277);
-                    var subHeader = Datasheet.GetDataTable("select id,value1,value2 from Subheader where H_ID = " + headerID + ";");
-                    Editor.GenerateGrid(dgv, Datasheet.Id, headerText, dataGridView1_EditingControlShowing, DataGridView_CellClick, DataGridView_CellFormatting, DataGridView_RowsAdded);
+                    var subHeader = Datasheet.GetDataTable("select * from Subheader where H_Id = " + headerID + ";");
+
+                    //Generating Grid with existing data
+                    Editor.GenerateGrid(dgv, Datasheet.Id, headerText,
+                        DataGridView_EditingControlShowing,
+                        DataGridView_CellClick,
+                        DataGridView_CellFormatting,
+                        DataGridView_RowsAdded,
+                        subHeader, true);
+
                     UpdateHeaderDetails(dgv_HeaderDetails, headerText, count, dgv);
                     dgv.Tag = count++;
                     flowLayoutPanel1.Controls.Add(dgv);
                     flowLayoutPanel1.Controls.SetChildIndex(dgv, count - 1);
-                    HeaderController.Header.DisableNewHeader();
-                    dgv_HeaderDetails.ClearSelection();
+                    //HeaderController.Header.DisableNewHeader();
+                    //dgv_HeaderDetails.ClearSelection();
                 }
                 AddExistingImages();
             }
@@ -369,22 +384,28 @@ namespace DatasheetGenerator
         }
         private void btn_AddNewHeader_Click(object sender, EventArgs e)
         {
-            HeaderController.Header.AddNewHeader();
-            HeaderController.Header.SetHeaderText(txt_HeaderName.Text);
+            // HeaderController.Header.AddNewHeader();
+            //  HeaderController.Header.SetHeaderText(txt_HeaderName.Text);
 
-            if (HeaderController.Header.CheckNewHeader())
-            {
-                var dgv = new DataGridView();
-                dgv.Size = new Size(546, 277);
-                Editor.GenerateGrid(dgv, "", HeaderController.Header.GetHeaderText(), dataGridView1_EditingControlShowing, DataGridView_CellClick, DataGridView_CellFormatting, DataGridView_RowsAdded);
-                UpdateHeaderDetails(dgv_HeaderDetails, HeaderController.Header.GetHeaderText(), count, dgv);
-                dgv.Tag = count++;
-                flowLayoutPanel1.Controls.Add(dgv);
-                flowLayoutPanel1.Controls.SetChildIndex(dgv, count - 1);
-                HeaderController.Header.DisableNewHeader();
-                dgv_HeaderDetails.ClearSelection();
-                txt_HeaderName.Clear();
-            }
+            // if (HeaderController.Header.CheckNewHeader())
+            //      {
+            var dgv = new DataGridView();
+            dgv.Size = new Size(546, 277);
+
+            Editor.GenerateGrid(dgv, "", txt_HeaderName.Text,
+                DataGridView_EditingControlShowing,
+                DataGridView_CellClick,
+                DataGridView_CellFormatting,
+                DataGridView_RowsAdded);
+
+            UpdateHeaderDetails(dgv_HeaderDetails, HeaderController.Header.GetHeaderText(), count, dgv);
+            dgv.Tag = count++;
+            flowLayoutPanel1.Controls.Add(dgv);
+            flowLayoutPanel1.Controls.SetChildIndex(dgv, count - 1);
+            HeaderController.Header.DisableNewHeader();
+            dgv_HeaderDetails.ClearSelection();
+            txt_HeaderName.Clear();
+            // }
             pnl_AddHeader.Visible = false;
         }
         private void btn_AddImage_Click(object sender, EventArgs e)
@@ -446,20 +467,35 @@ namespace DatasheetGenerator
         }
         private void btn_UploadImages_Click(object sender, EventArgs e)
         {
-            var frm = new frm_MediaLibrary();          
+            var frm = new frm_MediaLibrary();
             frm.ShowDialog();
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btn_AddSymbol_Click(object sender, EventArgs e)
         {
             frm_MediaLibrary frm = new frm_MediaLibrary();
             frm.Tag = flowPanel_Symbol;
             frm.ShowDialog();
+        }
+        private void btn_SaveAsDraft_Click(object sender, EventArgs e)
+        {
+            if (count <= 1)
+            {
+                MessageBox.Show("No Record To Save");
+                return;
+            }
+            SaveRecord(true); // isDraft = true
+        }
+
+        private void btn_SaveNewDraft_Click(object sender, EventArgs e)
+        {
+            if (txt_NewDraftName.Text == "")
+            {
+                MessageBox.Show("Enter Draft Name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                SaveRecord(true);
+            }
         }
     }
 }

@@ -9,7 +9,7 @@ namespace DatasheetGenerator
 {
     class User
     {
-        public static int UserId { get; set; }
+        public static int Id { get; set; }
         public static string UserName { get; set; }
 
         public static bool Exist(string username)

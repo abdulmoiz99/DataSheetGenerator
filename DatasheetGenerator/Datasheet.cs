@@ -95,7 +95,8 @@ namespace DatasheetGenerator
         {
             //Display product family 
             var symbol = Datasheet.GetDataTable("select * from MediaLibrary where Type = 1 and Active = 1");
-            flowLayoutPanel.Controls.Clear();
+                
+            if (flowLayoutPanel.Controls != null) flowLayoutPanel.Controls.Clear();
             foreach (DataRow media in symbol.Rows)
             {
                 var checkBox = new XUICheckBox();
@@ -129,7 +130,7 @@ namespace DatasheetGenerator
             else return false;
 
         }
-        public static void AddImage(string ImageId,string description, EventHandler Button_Click, FlowLayoutPanel flowLayoutPanel)
+        public static void AddImage(string ImageId, string description, EventHandler Button_Click, FlowLayoutPanel flowLayoutPanel)
         {
             List<object> values = new List<object>();
 

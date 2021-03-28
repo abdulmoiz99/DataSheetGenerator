@@ -16,8 +16,6 @@ namespace DatasheetGenerator
     {
         int count = 1;
         AutoCompleteStringCollection data;
-
-
         public frm_Editor1()
         {
             InitializeComponent();
@@ -40,14 +38,14 @@ namespace DatasheetGenerator
             int rowIndex = dataGridView.Rows.Add(HeaderText, Position);
             dataGridView.Rows[rowIndex].Tag = refGrid;
         }
-
         private void GenerateGrid(DataGridView dataGridView, string HeaderID, string HeaderText)
         {
             dataGridView.AllowUserToAddRows = false;
             //Adding column names
+            dataGridView.Columns.Add("ID", HeaderID);
             dataGridView.Columns.Add("Value1", HeaderText);
             dataGridView.Columns.Add("value2", "");
-            dataGridView.Columns.Add("ID", HeaderID);
+            
 
             DataGridViewImageColumn column = new DataGridViewImageColumn();
             column.Name = "newColumnName2";

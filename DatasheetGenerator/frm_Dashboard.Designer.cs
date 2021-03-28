@@ -35,13 +35,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_NewDatasheet = new XanderUI.XUIButton();
             this.btn_MediaLinrary = new XanderUI.XUIButton();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
@@ -108,6 +108,24 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(309, 630);
             this.panel5.TabIndex = 6;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.panel7.Location = new System.Drawing.Point(21, 148);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(267, 3);
+            this.panel7.TabIndex = 13;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(21, 168);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(263, 362);
+            this.flowLayoutPanel1.TabIndex = 12;
             // 
             // btn_NewDatasheet
             // 
@@ -178,24 +196,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(20, 766);
             this.panel8.TabIndex = 10;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(21, 168);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(263, 362);
-            this.flowLayoutPanel1.TabIndex = 12;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.panel7.Location = new System.Drawing.Point(21, 148);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(267, 3);
-            this.panel7.TabIndex = 13;
             // 
             // frm_Dashboard
             // 

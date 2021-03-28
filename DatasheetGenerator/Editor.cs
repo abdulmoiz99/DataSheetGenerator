@@ -34,15 +34,21 @@ namespace DatasheetGenerator
             }
             return mycoll;
         }
-        public static void GenerateGrid(DataGridView dataGridView, string HeaderID, string HeaderText, DataGridViewEditingControlShowingEventHandler EditingControlShowing, DataGridViewCellEventHandler CellClick, DataGridViewCellFormattingEventHandler CellFormatting, DataGridViewRowsAddedEventHandler RowAdded, DataTable SubHeader = null, bool IsEditing = false)
+        public static void GenerateGrid(DataGridView dataGridView, string HeaderID,  string HeaderText,
+            DataGridViewEditingControlShowingEventHandler EditingControlShowing,
+            DataGridViewCellEventHandler CellClick,
+            DataGridViewCellFormattingEventHandler CellFormatting,
+            DataGridViewRowsAddedEventHandler RowAdded,
+            DataTable SubHeader = null, bool IsEditing = false)
         {
             dataGridView.AllowUserToAddRows = false;
             //Adding column names
-            dataGridView.Columns.Add("newColumnName", HeaderText);
-            dataGridView.Columns.Add("newColumnName1", HeaderID);
+            dataGridView.Columns.Add("ID", HeaderID);
+            dataGridView.Columns.Add("Value1", HeaderText);
+            dataGridView.Columns.Add("value2", "");
 
             DataGridViewImageColumn column = new DataGridViewImageColumn();
-            column.Name = "newColumnName2";
+            column.Name = "deleteCell";
             column.HeaderText = "";
             column.FillWeight = 10;
             column.DefaultCellStyle.NullValue = null;
@@ -55,7 +61,7 @@ namespace DatasheetGenerator
             dataGridView.ColumnHeadersHeight = 50;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             //Header Font
-            dataGridView.Columns[0].HeaderCell.Style.Font = new Font("Roboto Medium", 13);
+            dataGridView.Columns["Value1"].HeaderCell.Style.Font = new Font("Roboto Medium", 13);//Header
             //Auto Size Column
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             //Header Border
@@ -84,14 +90,25 @@ namespace DatasheetGenerator
 
             dataGridView.DefaultCellStyle.Font = new Font("Roboto", 10);
 
-            dataGridView.Rows.Add("Product Name", "Text Field", Properties.Resources.icons8_multiply_24);
-            dataGridView.Rows.Add("Product Code", "Text Field", Properties.Resources.icons8_multiply_24);
-            dataGridView.Rows.Add("Product Description", "Text Field", Properties.Resources.icons8_multiply_24);
+            if (IsEditing)
+            {
+                foreach (DataRow subheader in SubHeader.Rows)
+                {
+                    dataGridView.Rows.Add(subheader["ID"].ToString(),  subheader["Value1"].ToString(),subheader["Value2"].ToString(), Properties.Resources.icons8_multiply_24);
+                }
+            }
+
+            //dataGridView.Rows.Add("Product Name", "Text Field", Properties.Resources.icons8_multiply_24);
+            //dataGridView.Rows.Add("Product Code", "Text Field", Properties.Resources.icons8_multiply_24);
+            //dataGridView.Rows.Add("Product Description", "Text Field", Properties.Resources.icons8_multiply_24);
             dataGridView.AllowUserToAddRows = true;
 
             //Disabling Selection Color
             dataGridView.DefaultCellStyle.SelectionBackColor = dataGridView.DefaultCellStyle.BackColor;
             dataGridView.DefaultCellStyle.SelectionForeColor = dataGridView.DefaultCellStyle.ForeColor;
+
+            //Hiding ID column
+            dataGridView.Columns["ID"].Visible = false;
 
             dataGridView.EditingControlShowing += EditingControlShowing;
             dataGridView.CellClick += CellClick;

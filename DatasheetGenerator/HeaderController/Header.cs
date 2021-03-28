@@ -33,10 +33,10 @@ namespace DatasheetGenerator
 
                     foreach (DataGridViewRow row in dgv.Rows)
                     {
-                        if (row.Cells[0].Value != null && row.Cells[1].Value != null) subHeader.Add(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString());
+                        if (row.Cells["value1"].Value != null && row.Cells["value2"].Value != null) subHeader.Add(row.Cells["value1"].Value.ToString(), row.Cells["value2"].Value.ToString());
                     }
 
-                    headers.Add(dgv.Columns[0].HeaderText, subHeader);
+                    headers.Add(dgv.Columns["value1"].HeaderText, subHeader);
                 }
             }
             return headers;
