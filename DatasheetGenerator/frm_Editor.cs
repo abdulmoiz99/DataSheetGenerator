@@ -195,7 +195,7 @@ namespace DatasheetGenerator
             }
             else if (Datasheet.IsEditing)
             {
-                MessageBox.Show("Will be done soon.."); 
+                MessageBox.Show("Will be done soon..");
             }
         }
 
@@ -512,13 +512,13 @@ namespace DatasheetGenerator
             {
                 MessageBox.Show("Please select product family", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (Datasheet.Exist(txt_NewDraftName.Text))
+            else if (Datasheet.Exist(txt_NewDraftName.Text, cmb_ProductFamily.SelectedValue.ToString()))
             {
                 MessageBox.Show("Datasheet With Same Name Already Exisit", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                string date = DateTime.Now.ToShortDateString();
+                string date = DateTime.Now.ToString("yyyy-MM-dd");
                 if (SQL.NonScalarQuery("Insert into Datasheet (Name                          ,PF_ID                                  ,Flag ,Type  ,DateCreated    ,DateModified    ,Active ,UserID) " +
                                                       "values ('" + txt_NewDraftName.Text + "'," + cmb_ProductFamily.SelectedValue + ",0    ,1     ,'" + date + "','" + date + "'  ,1     ," + User.Id + ");"))
                 {

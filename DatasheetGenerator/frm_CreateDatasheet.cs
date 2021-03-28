@@ -53,21 +53,22 @@ namespace DatasheetGenerator
             {
                 MessageBox.Show("Please select product family", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (Datasheet.Exist(txt_Name.Text))
+            else if (Datasheet.Exist(txt_Name.Text, cmb_ProductFamily.SelectedValue.ToString()))
             {
                 MessageBox.Show("Datasheet With Same Name Already Exisit", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
 
-                if (SQL.NonScalarQuery("Insert into Datasheet (Name                   ,PF_ID                                  ,Flag ,Type  ,DateCreated                               ,DateModified                              ,Active) " +
-                                                  "values ('" + txt_Name.Text + "'," + cmb_ProductFamily.SelectedValue + ",0    ,1     ,'" + DateTime.Now.ToShortDateString() + "','" + DateTime.Now.ToShortDateString() + "',1);"))
+                string date = DateTime.Now.ToString("yyyy-MM-dd");
+                if (SQL.NonScalarQuery("Insert into Datasheet (Name                   ,PF_ID                                  ,Flag ,Type  ,DateCreated    ,DateModified    ,Active) " +
+                                                  "values ('" + txt_Name.Text + "'," + cmb_ProductFamily.SelectedValue + ",0    ,1         ,'" + date + "' ,'" + date + "'  ,1);"))
                 {
                     Datasheet.ProductFamilly = cmb_ProductFamily.Text;
                     Datasheet.Name = txt_Name.Text;
                     Datasheet.IsCreated = true;
                     Datasheet.Id = Datasheet.GetLatestId();
-                    this.Close();                   
+                    this.Close();
                 }
                 else
                 {
