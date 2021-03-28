@@ -108,12 +108,12 @@ namespace DatasheetGenerator
 
                 if (dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
                 {
-                    dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = dataGridView.Columns[0].HeaderText;
+                    dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = dataGridView.Columns["Value1"].HeaderText;
                 }
                 else
                 {
-                    dataGridView.Columns[0].HeaderText = dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                }
+                    dataGridView.Columns["Value1"].HeaderText = dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                }              
             }
             //Position Change
             else if (e.ColumnIndex == 1)
@@ -393,13 +393,26 @@ namespace DatasheetGenerator
             txt_HeaderName.Clear();
             pnl_AddHeader.Visible = false;
         }
+        private bool IsHeaderNameExists(string name) 
+        {
+            foreach (DataGridViewRow row in dgv_HeaderDetails.Rows) 
+            {
+                if (row.Cells[0].Value.ToString() == name) 
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         private void btn_AddNewHeader_Click(object sender, EventArgs e)
         {
             if (txt_HeaderName.Text == "")
             {
                 MessageBox.Show("Please Enter Header Name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (false) //Header Name Already Exist
+            else if (IsHeaderNameExists(txt_HeaderName.Text)) //Header Name Already Exist
             {
                 MessageBox.Show("Header Name Alreay Exist", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -414,7 +427,7 @@ namespace DatasheetGenerator
                     DataGridView_CellFormatting,
                     DataGridView_RowsAdded);
 
-                UpdateHeaderDetails(dgv_HeaderDetails, HeaderController.Header.GetHeaderText(), count, dgv);
+                UpdateHeaderDetails(dgv_HeaderDetails, txt_HeaderName.Text, count, dgv);
                 dgv.Tag = count++;
                 flowLayoutPanel1.Controls.Add(dgv);
                 flowLayoutPanel1.Controls.SetChildIndex(dgv, count - 1);
