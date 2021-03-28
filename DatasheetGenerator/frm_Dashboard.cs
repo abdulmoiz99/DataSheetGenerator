@@ -107,5 +107,14 @@ namespace DatasheetGenerator
             var label = sender as Label;
             label.ForeColor = Color.FromArgb(0, 101, 177); //blue
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            CloseAllForm();
+            var frm = new frm_Drafts();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
     }
 }

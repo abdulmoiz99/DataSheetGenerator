@@ -90,6 +90,12 @@
     <Compile Include="frm_CreateProdcutFamily.Designer.cs">
       <DependentUpon>frm_CreateProdcutFamily.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Drafts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Drafts.Designer.cs">
+      <DependentUpon>frm_Drafts.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Editor1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_CreateProdcutFamily.resx">
       <DependentUpon>frm_CreateProdcutFamily.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Drafts.resx">
+      <DependentUpon>frm_Drafts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Editor1.resx">
       <DependentUpon>frm_Editor1.cs</DependentUpon>

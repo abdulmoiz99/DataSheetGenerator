@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,28 +10,16 @@ using System.Windows.Forms;
 
 namespace DatasheetGenerator
 {
-    public partial class frm_Home : Form
+    public partial class frm_Drafts : Form
     {
-        string productFamilyID = "";
-        public frm_Home(string productFamilyID)
+        public frm_Drafts()
         {
             InitializeComponent();
-            this.productFamilyID = productFamilyID;
-        }
-        private void Delete_Item_Click(object sender, EventArgs e)
-        {
-            var item = sender as MenuItem;
-            var label = (Label)item.Tag;
-            SQL.NonScalarQuery("Update Datasheet set Active = 0 where Id = " + label.Tag.ToString() + ";");
-            datasheetPanel.Controls.Remove(label);
-        }
-        private void Copy_Item_Click(object sender, EventArgs e)
-        {
         }
 
-        private void frm_Home_Load(object sender, EventArgs e)
+        private void frm_Drafts_Load(object sender, EventArgs e)
         {
-            var datasheets = Datasheet.GetDataTable("SELECT DateModified, Name, Id FROM Datasheet where PF_ID = " + productFamilyID + " AND Active = 1;");
+            var datasheets = Datasheet.GetDataTable("SELECT DateModified, Name, Id FROM Datasheet where userID = " + User.Id + " AND Active = 1;");
 
             foreach (DataRow row in datasheets.Rows)
             {
@@ -47,13 +34,14 @@ namespace DatasheetGenerator
                 label.MouseEnter += Label_MouseEnter;
                 label.MouseLeave += Label_MouseLeave;
                 label.Click += Label_Click;
-                datasheetPanel.Controls.Add(label);
+                draftsPanel.Controls.Add(label);
             }
         }
+
         private void Label_Click(object sender, EventArgs e)
         {
             MouseEventArgs me = (MouseEventArgs)e;
-            if (me.Button == MouseButtons.Left) 
+            if (me.Button == MouseButtons.Left)
             {
                 var label = sender as Label;
                 Datasheet.Id = label.Tag.ToString();
@@ -67,16 +55,19 @@ namespace DatasheetGenerator
                 Close();
             }
         }
+
         private void Label_MouseLeave(object sender, EventArgs e)
         {
             var label = sender as Label;
             label.ForeColor = Color.FromArgb(117, 117, 117); //gray
         }
+
         private void Label_MouseEnter(object sender, EventArgs e)
         {
             var label = sender as Label;
             label.ForeColor = Color.FromArgb(140, 192, 99);
         }
+
         private void Label_MouseDown(object sender, MouseEventArgs e)
         {
             var label = sender as Label;
@@ -97,9 +88,17 @@ namespace DatasheetGenerator
             }
         }
 
-        private void datasheetPanel_Paint(object sender, PaintEventArgs e)
+        private void Delete_Item_Click(object sender, EventArgs e)
         {
+            var item = sender as MenuItem;
+            var label = (Label)item.Tag;
+            SQL.NonScalarQuery("Update Datasheet set Active = 0 where Id = " + label.Tag.ToString() + ";");
+            draftsPanel.Controls.Remove(label);
+        }
 
+        private void Copy_Item_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
