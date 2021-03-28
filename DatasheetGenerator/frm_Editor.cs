@@ -189,7 +189,14 @@ namespace DatasheetGenerator
                 MessageBox.Show("No Record To Save");
                 return;
             }
-            SaveRecord();
+            else if (!Datasheet.IsEditing)
+            {
+                SaveRecord();
+            }
+            else if (Datasheet.IsEditing)
+            {
+                MessageBox.Show("Will be done soon.."); 
+            }
         }
 
         private void SaveRecord(bool IsDraft = false)
@@ -388,29 +395,34 @@ namespace DatasheetGenerator
         }
         private void btn_AddNewHeader_Click(object sender, EventArgs e)
         {
-            // HeaderController.Header.AddNewHeader();
-            //  HeaderController.Header.SetHeaderText(txt_HeaderName.Text);
+            if (txt_HeaderName.Text == "")
+            {
+                MessageBox.Show("Please Enter Header Name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (false) //Header Name Already Exist
+            {
+                MessageBox.Show("Header Name Alreay Exist", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                var dgv = new DataGridView();
+                dgv.Size = new Size(546, 277);
 
-            // if (HeaderController.Header.CheckNewHeader())
-            //      {
-            var dgv = new DataGridView();
-            dgv.Size = new Size(546, 277);
+                Editor.GenerateGrid(dgv, "", txt_HeaderName.Text,
+                    DataGridView_EditingControlShowing,
+                    DataGridView_CellClick,
+                    DataGridView_CellFormatting,
+                    DataGridView_RowsAdded);
 
-            Editor.GenerateGrid(dgv, "", txt_HeaderName.Text,
-                DataGridView_EditingControlShowing,
-                DataGridView_CellClick,
-                DataGridView_CellFormatting,
-                DataGridView_RowsAdded);
-
-            UpdateHeaderDetails(dgv_HeaderDetails, HeaderController.Header.GetHeaderText(), count, dgv);
-            dgv.Tag = count++;
-            flowLayoutPanel1.Controls.Add(dgv);
-            flowLayoutPanel1.Controls.SetChildIndex(dgv, count - 1);
-            HeaderController.Header.DisableNewHeader();
-            dgv_HeaderDetails.ClearSelection();
-            txt_HeaderName.Clear();
-            // }
-            pnl_AddHeader.Visible = false;
+                UpdateHeaderDetails(dgv_HeaderDetails, HeaderController.Header.GetHeaderText(), count, dgv);
+                dgv.Tag = count++;
+                flowLayoutPanel1.Controls.Add(dgv);
+                flowLayoutPanel1.Controls.SetChildIndex(dgv, count - 1);
+                HeaderController.Header.DisableNewHeader();
+                dgv_HeaderDetails.ClearSelection();
+                txt_HeaderName.Clear();
+                pnl_AddHeader.Visible = false;
+            }
         }
         private void btn_AddImage_Click(object sender, EventArgs e)
         {
