@@ -45,7 +45,7 @@ namespace DatasheetGenerator
             //Adding column names
             dataGridView.Columns.Add("ID", HeaderID);
             dataGridView.Columns.Add("Value1", HeaderText);
-            dataGridView.Columns.Add("value2", "");
+            dataGridView.Columns.Add("Value2", "");
 
             DataGridViewImageColumn column = new DataGridViewImageColumn();
             column.Name = "deleteCell";
@@ -75,8 +75,8 @@ namespace DatasheetGenerator
             //Row Height
             dataGridView.RowTemplate.Height = 40;
             //Row Fore Color
-            dataGridView.Columns[0].DefaultCellStyle.ForeColor = Color.FromArgb(82, 82, 84);
-            dataGridView.Columns[1].DefaultCellStyle.ForeColor = Color.FromArgb(82, 82, 84);
+            dataGridView.Columns["Value1"].DefaultCellStyle.ForeColor = Color.FromArgb(82, 82, 84);
+            dataGridView.Columns["Value2"].DefaultCellStyle.ForeColor = Color.FromArgb(82, 82, 84);
             //Alternating Row Setup
             dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(237, 238, 239);
             dataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;

@@ -45,13 +45,13 @@ namespace DatasheetGenerator
         private void DataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             var dgv = sender as DataGridView;
-            dgv.Rows[dgv.RowCount - 2].Cells[2].Value = Properties.Resources.icons8_multiply_24;
+            dgv.Rows[dgv.RowCount - 2].Cells["deleteCell"].Value = Properties.Resources.icons8_multiply_24;
         }
 
         private void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             var dgv = sender as DataGridView;
-            if (dgv.Rows[e.RowIndex].IsNewRow && e.ColumnIndex == 2)
+            if (dgv.Rows[e.RowIndex].IsNewRow && e.ColumnIndex == 3)
             {
                 e.Value = null;
             }
@@ -63,7 +63,7 @@ namespace DatasheetGenerator
             if (e.ColumnIndex == 3 && e.RowIndex >= 0 && e.RowIndex != dgv.RowCount - 1)
             {
                 DataGridViewRow row = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningRow;
-                if (Datasheet.IsEditing) //Add Subheader function.
+                //if (Datasheet.IsEditing) //Add Subheader function.
                     dgv.Rows.Remove(row);
             }
         }
