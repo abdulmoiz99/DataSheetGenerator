@@ -53,7 +53,7 @@ namespace DatasheetGenerator
             {
                 MessageBox.Show("Please select product family", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (Datasheet.Exist(txt_Name.Text))
+            else if (Datasheet.Exist(txt_Name.Text, cmb_ProductFamily.SelectedValue.ToString()))
             {
                 MessageBox.Show("Datasheet With Same Name Already Exisit", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -67,7 +67,7 @@ namespace DatasheetGenerator
                     Datasheet.Name = txt_Name.Text;
                     Datasheet.IsCreated = true;
                     Datasheet.Id = Datasheet.GetLatestId();
-                    this.Close();                   
+                    this.Close();
                 }
                 else
                 {

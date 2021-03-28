@@ -42,10 +42,10 @@ namespace DatasheetGenerator
         {
             return SQL.ScalarQuery("SELECT MAX(id) FROM Datasheet;");
         }
-        public static bool Exist(string datasheetName)
+        public static bool Exist(string datasheetName, string productFamilyId)
         {
             string result = "0";
-            result = SQL.ScalarQuery("SELECT EXISTS(SELECT * FROM Datasheet WHERE name = '" + datasheetName + "' and active = 1)");
+            result = SQL.ScalarQuery("SELECT EXISTS(SELECT * FROM Datasheet WHERE name = '" + datasheetName + "' and PF_ID = " + productFamilyId + "  and  active = 1)");
             if (result == "1")
             {
                 return true;
@@ -98,7 +98,7 @@ namespace DatasheetGenerator
         {
             //Display product family 
             var symbol = Datasheet.GetDataTable("select Id,Name from MediaLibrary where Type = 1 and Active = 1");
-                
+
             if (flowLayoutPanel.Controls != null) flowLayoutPanel.Controls.Clear();
             foreach (DataRow media in symbol.Rows)
             {
