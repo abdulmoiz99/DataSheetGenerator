@@ -344,8 +344,6 @@ namespace DatasheetGenerator
                     dgv.Tag = count++;
                     flowLayoutPanel1.Controls.Add(dgv);
                     flowLayoutPanel1.Controls.SetChildIndex(dgv, count - 1);
-                    //HeaderController.Header.DisableNewHeader();
-                    //dgv_HeaderDetails.ClearSelection();
                 }
                 AddExistingImages();
             }
@@ -499,7 +497,10 @@ namespace DatasheetGenerator
                 MessageBox.Show("No Record To Save");
                 return;
             }
-            SaveRecord(true); // isDraft = true
+            else if (!Datasheet.IsEditing)
+            {
+                SaveRecord(true); // isDraft = true
+            }
         }
 
         private void btn_SaveNewDraft_Click(object sender, EventArgs e)
@@ -548,6 +549,11 @@ namespace DatasheetGenerator
         private void btn_CloseNewDraft_Click(object sender, EventArgs e)
         {
             pnl_CopyToANewDraft.Hide();
+        }
+
+        private void btn_DownloadPDF_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Download PDF file feature will be added in the second milestore", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
