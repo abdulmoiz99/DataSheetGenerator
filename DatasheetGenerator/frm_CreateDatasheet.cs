@@ -45,6 +45,7 @@ namespace DatasheetGenerator
 
         private void btn_Create_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (txt_Name.Text == "")
             {
                 MessageBox.Show("Please enter datasheet name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -59,7 +60,7 @@ namespace DatasheetGenerator
             }
             else
             {
-
+                Cursor.Current = Cursors.Default;
                 string date = DateTime.Now.ToString("yyyy-MM-dd");
                 if (SQL.NonScalarQuery("Insert into Datasheet (Name                   ,PF_ID                                  ,Flag ,Type  ,DateCreated    ,DateModified    ,Active) " +
                                                   "values ('" + txt_Name.Text + "'," + cmb_ProductFamily.SelectedValue + ",0    ,1         ,'" + date + "' ,'" + date + "'  ,1);"))
@@ -75,6 +76,7 @@ namespace DatasheetGenerator
                     MessageBox.Show("Unable To Create New Datasheet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            Cursor.Current = Cursors.Default;
         }
 
         private void btn_AddNewProductFamily_Click(object sender, EventArgs e)

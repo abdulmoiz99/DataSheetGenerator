@@ -113,7 +113,7 @@ namespace DatasheetGenerator
                 else
                 {
                     dataGridView.Columns["Value1"].HeaderText = dgv_HeaderDetails.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                }              
+                }
             }
             //Position Change
             else if (e.ColumnIndex == 1)
@@ -312,56 +312,74 @@ namespace DatasheetGenerator
 
         private void frm_Editor_Load(object sender, EventArgs e)
         {
-            Datasheet.Id = "16";
-            lab_ProductFamily.Text = Datasheet.ProductFamilly;
-            data = Editor.AutoCompleteLoadValue1();
-            Datasheet.IsEditing = true;
-            //When Editing the datasheet
-            if (Datasheet.IsEditing)
+            try
             {
-                Datasheet.AddSymbolList(flowPanel_Symbol, true);
 
-                var Header = Datasheet.GetDataTable("select Id,Name from Header where DS_ID = " + Datasheet.Id + "");
-                string headerID = "";
-                string headerText = "";
-                foreach (DataRow header in Header.Rows)
+                Cursor.Current = Cursors.WaitCursor;
+
+                Datasheet.Id = "54";
+                Datasheet.IsEditing = true;
+
+
+                lab_ProductFamily.Text = Datasheet.ProductFamilly;
+                data = Editor.AutoCompleteLoadValue1();
+               
+                //When Editing the datasheet
+                if (Datasheet.IsEditing)
                 {
-                    headerID = header["ID"].ToString();
-                    headerText = header["Name"].ToString(); //HeaderController.Header.GetHeaderText(headerID);
-                    var dgv = new DataGridView();
-                    dgv.Size = new Size(546, 277);
-                    var subHeader = Datasheet.GetDataTable("select * from Subheader where H_Id = " + headerID + ";");
+                    Datasheet.AddSymbolList(flowPanel_Symbol, true);
 
-                    //Generating Grid with existing data
-                    Editor.GenerateGrid(dgv, Datasheet.Id, headerText,
-                        DataGridView_EditingControlShowing,
-                        DataGridView_CellClick,
-                        DataGridView_CellFormatting,
-                        DataGridView_RowsAdded,
-                        subHeader, true);
+                    var Header = Datasheet.GetDataTable("select Id,Name from Header where DS_ID = " + Datasheet.Id + "");
+                    string headerID = "";
+                    string headerText = "";
+                    foreach (DataRow header in Header.Rows)
+                    {
+                        headerID = header["ID"].ToString();
+                        headerText = header["Name"].ToString(); //HeaderController.Header.GetHeaderText(headerID);
+                        var dgv = new DataGridView();
+                        dgv.Size = new Size(500, 277);
+                        var subHeader = Datasheet.GetDataTable("select * from Subheader where H_Id = " + headerID + ";");
 
-                    UpdateHeaderDetails(dgv_HeaderDetails, headerText, count, dgv);
-                    dgv.Tag = count++;
-                    flowLayoutPanel1.Controls.Add(dgv);
-                    flowLayoutPanel1.Controls.SetChildIndex(dgv, count - 1);
+                        //Generating Grid with existing data
+                        Editor.GenerateGrid(dgv, Datasheet.Id, headerText,
+                            DataGridView_EditingControlShowing,
+                            DataGridView_CellClick,
+                            DataGridView_CellFormatting,
+                            DataGridView_RowsAdded,
+                            subHeader, true);
+
+                        UpdateHeaderDetails(dgv_HeaderDetails, headerText, count, dgv);
+                        dgv.Tag = count++;
+                        flowLayoutPanel1.Controls.Add(dgv);
+                        flowLayoutPanel1.Controls.SetChildIndex(dgv, count - 1);
+                    }
+                    AddExistingImages();
                 }
-                AddExistingImages();
+                else 
+                {
+                    //When Adding a New Datasheet
+                    Datasheet.AddSymbolList(flowPanel_Symbol, false);
+
+                    try { cmb_Category.SelectedIndex = 0; }
+                    catch (Exception) { }
+                    Editor.UpdateImageDetails(cmb_Category, cmb_Image);
+                }
+                Cursor.Current = Cursors.WaitCursor;
+                Datasheet.IsEditing = false;
+
+                //Fill combobox for copying to a new draft
+                Main.fillComboWithoutCondition(cmb_ProductFamily, "ProductFamily", "Name", "ID");
+
             }
-            else if (Datasheet.IsCreated)
+            catch (Exception ex)
             {
-                //When Adding a New Datasheet
-                Datasheet.AddSymbolList(flowPanel_Symbol, false);
 
-                try { cmb_Category.SelectedIndex = 0; }
-                catch (Exception) { }
-                Editor.UpdateImageDetails(cmb_Category, cmb_Image);
+                MessageBox.Show(ex.Message);
             }
-            Cursor.Current = Cursors.WaitCursor;
-            Datasheet.IsEditing = false;
-
-            //Fill combobox for copying to a new draft
-
-            Main.fillComboWithoutCondition(cmb_ProductFamily, "ProductFamily", "Name", "ID");
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
         private void AddExistingImages()
         {
@@ -391,11 +409,11 @@ namespace DatasheetGenerator
             txt_HeaderName.Clear();
             pnl_AddHeader.Visible = false;
         }
-        private bool IsHeaderNameExists(string name) 
+        private bool IsHeaderNameExists(string name)
         {
-            foreach (DataGridViewRow row in dgv_HeaderDetails.Rows) 
+            foreach (DataGridViewRow row in dgv_HeaderDetails.Rows)
             {
-                if (row.Cells[0].Value.ToString() == name) 
+                if (row.Cells[0].Value.ToString() == name)
                 {
                     return true;
                 }
@@ -417,7 +435,7 @@ namespace DatasheetGenerator
             else
             {
                 var dgv = new DataGridView();
-                dgv.Size = new Size(546, 277);
+                dgv.Size = new Size(500, 277);
 
                 Editor.GenerateGrid(dgv, "", txt_HeaderName.Text,
                     DataGridView_EditingControlShowing,

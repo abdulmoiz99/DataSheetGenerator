@@ -112,7 +112,7 @@ namespace DatasheetGenerator
                     checkBox.Checked = true;
                 }
                 checkBox.ForeColor = Color.FromArgb(117, 117, 117);
-                checkBox.Size = new Size(251, 36);
+                checkBox.Size = new Size(230, 36);
                 checkBox.Font = new Font("Roboto Medium", 10);
                 flowLayoutPanel.Controls.Add(checkBox);
             }

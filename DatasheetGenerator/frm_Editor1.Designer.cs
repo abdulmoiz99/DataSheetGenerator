@@ -517,7 +517,7 @@
             this.lab_ProductFamily.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.lab_ProductFamily.Location = new System.Drawing.Point(253, 46);
             this.lab_ProductFamily.Name = "lab_ProductFamily";
-            this.lab_ProductFamily.Size = new System.Drawing.Size(121, 30);
+            this.lab_ProductFamily.Size = new System.Drawing.Size(131, 32);
             this.lab_ProductFamily.TabIndex = 6;
             this.lab_ProductFamily.Text = "FL-CC-MG";
             // 
@@ -579,6 +579,7 @@
             this.btn_Save.TabIndex = 5;
             this.btn_Save.TextColor = System.Drawing.Color.White;
             this.btn_Save.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // label1
             // 
@@ -587,7 +588,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label1.Location = new System.Drawing.Point(12, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 36);
+            this.label1.Size = new System.Drawing.Size(235, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Product Family:";
             // 

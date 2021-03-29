@@ -211,10 +211,11 @@ namespace DatasheetGenerator
         {
             try
             {
-                if (SQL.Con.State == ConnectionState.Closed)
+                if (SQL.Con.State == ConnectionState.Open)
                 {
-                    SQL.Con.Open();
+                    SQL.Con.Close();
                 }
+                SQL.con.Open();
                 var tb1 = new DataTable();
                 var cmd1 = new MySqlCommand("select " + ValueMember + " , " + DisplayMember + " from " + TableName + "", SQL.Con);
                 MySqlDataReader d1;
