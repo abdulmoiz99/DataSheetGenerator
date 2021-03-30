@@ -9,7 +9,7 @@ namespace DatasheetGenerator
 {
     class User
     {
-        public static int Id { get; set; }
+        public static string Id { get; set; }
         public static string UserName { get; set; }
 
         public static bool Exist(string username)
@@ -31,6 +31,10 @@ namespace DatasheetGenerator
         {
             return SQL.NonScalarQuery("Insert into Login (Name          ,email          ,username          ,password          ,Active)" +
                                               "   values ('" + name + "','" + email + "','" + username + "','" + password + "',1);");
+        }
+        public static string GetUserID(string username, string password)
+        {
+            return SQL.ScalarQuery("SELECT ID FROM Login WHERE username = '" + username + "' and  password = '" + password + "' and  active = '1';");
         }
         public static bool IsEmailValid(string emailaddress)
         {

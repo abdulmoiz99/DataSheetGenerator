@@ -39,6 +39,7 @@ namespace DatasheetGenerator
             else if (string.IsNullOrEmpty(txt_Password.Text)) MessageBox.Show("Please Enter Password ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else if (User.VerifyUser(txt_Username.Text, txt_Password.Text))
             {
+                User.Id = User.GetUserID(txt_Username.Text, txt_Password.Text);
                 this.Hide();
                 var frm = new frm_Dashboard();
                 frm.ShowDialog();

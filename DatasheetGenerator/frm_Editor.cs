@@ -354,6 +354,7 @@ namespace DatasheetGenerator
                         flowLayoutPanel1.Controls.SetChildIndex(dgv, count - 1);
                     }
                     AddExistingImages();
+                    Datasheet.IsEditing = false;
                 }
                 else 
                 {
@@ -365,7 +366,12 @@ namespace DatasheetGenerator
                     Editor.UpdateImageDetails(cmb_Category, cmb_Image);
                 }
                 Cursor.Current = Cursors.WaitCursor;
-                Datasheet.IsEditing = false;
+              
+
+
+                try { cmb_Category.SelectedIndex = 0; }
+                catch (Exception) { }
+
 
                 //Fill combobox for copying to a new draft
                 Main.fillComboWithoutCondition(cmb_ProductFamily, "ProductFamily", "Name", "ID");
