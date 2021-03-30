@@ -120,7 +120,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label1.Location = new System.Drawing.Point(12, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 39);
+            this.label1.Size = new System.Drawing.Size(221, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Product Family:";
             // 
@@ -145,7 +145,7 @@
             this.lab_ProductFamily.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.lab_ProductFamily.Location = new System.Drawing.Point(253, 19);
             this.lab_ProductFamily.Name = "lab_ProductFamily";
-            this.lab_ProductFamily.Size = new System.Drawing.Size(131, 32);
+            this.lab_ProductFamily.Size = new System.Drawing.Size(121, 30);
             this.lab_ProductFamily.TabIndex = 6;
             this.lab_ProductFamily.Text = "FL-CC-MG";
             // 
@@ -523,6 +523,7 @@
             // 
             // xuiCustomGroupbox1
             // 
+            this.xuiCustomGroupbox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.xuiCustomGroupbox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.xuiCustomGroupbox1.BorderWidth = 1;
             this.xuiCustomGroupbox1.Controls.Add(this.xuiButton5);
@@ -655,7 +656,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label3.Location = new System.Drawing.Point(186, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(178, 39);
+            this.label3.Size = new System.Drawing.Size(166, 36);
             this.label3.TabIndex = 23;
             this.label3.Text = "Add Header";
             // 
@@ -673,7 +674,7 @@
             this.txt_HeaderName.SelectedText = "";
             this.txt_HeaderName.SelectionLength = 0;
             this.txt_HeaderName.SelectionStart = 0;
-            this.txt_HeaderName.Size = new System.Drawing.Size(257, 25);
+            this.txt_HeaderName.Size = new System.Drawing.Size(257, 23);
             this.txt_HeaderName.TabIndex = 24;
             this.txt_HeaderName.TabStop = false;
             this.txt_HeaderName.UseSystemPasswordChar = false;
@@ -687,7 +688,7 @@
             this.pnl_AddHeader.Controls.Add(this.txt_HeaderName);
             this.pnl_AddHeader.Controls.Add(this.label3);
             this.pnl_AddHeader.Controls.Add(this.pictureBox1);
-            this.pnl_AddHeader.Location = new System.Drawing.Point(1083, 331);
+            this.pnl_AddHeader.Location = new System.Drawing.Point(1083, 182);
             this.pnl_AddHeader.Name = "pnl_AddHeader";
             this.pnl_AddHeader.Size = new System.Drawing.Size(545, 203);
             this.pnl_AddHeader.TabIndex = 3;
@@ -771,6 +772,7 @@
             // 
             // xuiCustomGroupbox2
             // 
+            this.xuiCustomGroupbox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.xuiCustomGroupbox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.xuiCustomGroupbox2.BorderWidth = 1;
             this.xuiCustomGroupbox2.Controls.Add(this.btn_UploadImages);
@@ -817,7 +819,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label5.Location = new System.Drawing.Point(10, 89);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 22);
+            this.label5.Size = new System.Drawing.Size(54, 21);
             this.label5.TabIndex = 25;
             this.label5.Text = "Image";
             // 
@@ -828,7 +830,7 @@
             this.cmb_Image.FormattingEnabled = true;
             this.cmb_Image.Location = new System.Drawing.Point(10, 116);
             this.cmb_Image.Name = "cmb_Image";
-            this.cmb_Image.Size = new System.Drawing.Size(317, 26);
+            this.cmb_Image.Size = new System.Drawing.Size(317, 25);
             this.cmb_Image.TabIndex = 24;
             // 
             // label4
@@ -837,7 +839,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label4.Location = new System.Drawing.Point(10, 29);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 22);
+            this.label4.Size = new System.Drawing.Size(73, 21);
             this.label4.TabIndex = 23;
             this.label4.Text = "Category";
             // 
@@ -852,7 +854,7 @@
             "Wiring Diagrams"});
             this.cmb_Category.Location = new System.Drawing.Point(10, 57);
             this.cmb_Category.Name = "cmb_Category";
-            this.cmb_Category.Size = new System.Drawing.Size(317, 26);
+            this.cmb_Category.Size = new System.Drawing.Size(317, 25);
             this.cmb_Category.TabIndex = 22;
             this.cmb_Category.SelectedIndexChanged += new System.EventHandler(this.cmb_Category_SelectedIndexChanged);
             // 
@@ -905,7 +907,7 @@
             this.pnl_CopyToANewDraft.Controls.Add(this.txt_NewDraftName);
             this.pnl_CopyToANewDraft.Controls.Add(this.label9);
             this.pnl_CopyToANewDraft.Controls.Add(this.pictureBox2);
-            this.pnl_CopyToANewDraft.Location = new System.Drawing.Point(1095, 540);
+            this.pnl_CopyToANewDraft.Location = new System.Drawing.Point(1095, 500);
             this.pnl_CopyToANewDraft.Name = "pnl_CopyToANewDraft";
             this.pnl_CopyToANewDraft.Size = new System.Drawing.Size(545, 264);
             this.pnl_CopyToANewDraft.TabIndex = 4;
@@ -919,7 +921,7 @@
             this.cmb_ProductFamily.FormattingEnabled = true;
             this.cmb_ProductFamily.Location = new System.Drawing.Point(193, 169);
             this.cmb_ProductFamily.Name = "cmb_ProductFamily";
-            this.cmb_ProductFamily.Size = new System.Drawing.Size(340, 27);
+            this.cmb_ProductFamily.Size = new System.Drawing.Size(340, 26);
             this.cmb_ProductFamily.TabIndex = 29;
             // 
             // label10
@@ -929,7 +931,7 @@
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label10.Location = new System.Drawing.Point(189, 132);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(132, 22);
+            this.label10.Size = new System.Drawing.Size(117, 19);
             this.label10.TabIndex = 28;
             this.label10.Text = "Product Family";
             // 
@@ -1013,7 +1015,7 @@
             this.txt_NewDraftName.SelectedText = "";
             this.txt_NewDraftName.SelectionLength = 0;
             this.txt_NewDraftName.SelectionStart = 0;
-            this.txt_NewDraftName.Size = new System.Drawing.Size(257, 25);
+            this.txt_NewDraftName.Size = new System.Drawing.Size(257, 23);
             this.txt_NewDraftName.TabIndex = 24;
             this.txt_NewDraftName.TabStop = false;
             this.txt_NewDraftName.UseSystemPasswordChar = false;
@@ -1026,7 +1028,7 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label9.Location = new System.Drawing.Point(186, 21);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(158, 39);
+            this.label9.Size = new System.Drawing.Size(148, 36);
             this.label9.TabIndex = 23;
             this.label9.Text = "New Draft";
             // 
