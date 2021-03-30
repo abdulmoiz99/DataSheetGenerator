@@ -43,6 +43,10 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowPanel_Symbol = new System.Windows.Forms.FlowLayoutPanel();
+            this.xuiCheckBox3 = new XanderUI.XUICheckBox();
+            this.xuiCheckBox6 = new XanderUI.XUICheckBox();
+            this.xuiCheckBox7 = new XanderUI.XUICheckBox();
+            this.xuiCheckBox8 = new XanderUI.XUICheckBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_AddSymbol = new XanderUI.XUIButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -89,10 +93,6 @@
             this.txt_NewDraftName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.xuiCheckBox3 = new XanderUI.XUICheckBox();
-            this.xuiCheckBox6 = new XanderUI.XUICheckBox();
-            this.xuiCheckBox7 = new XanderUI.XUICheckBox();
-            this.xuiCheckBox8 = new XanderUI.XUICheckBox();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -279,6 +279,74 @@
             this.flowPanel_Symbol.Name = "flowPanel_Symbol";
             this.flowPanel_Symbol.Size = new System.Drawing.Size(498, 227);
             this.flowPanel_Symbol.TabIndex = 1;
+            // 
+            // xuiCheckBox3
+            // 
+            this.xuiCheckBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.xuiCheckBox3.CheckboxCheckColor = System.Drawing.Color.WhiteSmoke;
+            this.xuiCheckBox3.CheckboxColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.xuiCheckBox3.CheckboxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(55)))), ((int)(((byte)(98)))));
+            this.xuiCheckBox3.CheckboxStyle = XanderUI.XUICheckBox.Style.iOS;
+            this.xuiCheckBox3.Checked = false;
+            this.xuiCheckBox3.Font = new System.Drawing.Font("Roboto Medium", 10.18868F);
+            this.xuiCheckBox3.ForeColor = System.Drawing.Color.DimGray;
+            this.xuiCheckBox3.Location = new System.Drawing.Point(3, 3);
+            this.xuiCheckBox3.Name = "xuiCheckBox3";
+            this.xuiCheckBox3.Size = new System.Drawing.Size(230, 36);
+            this.xuiCheckBox3.TabIndex = 64;
+            this.xuiCheckBox3.Text = "Optic 90 / Type V";
+            this.xuiCheckBox3.TickThickness = 2;
+            // 
+            // xuiCheckBox6
+            // 
+            this.xuiCheckBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.xuiCheckBox6.CheckboxCheckColor = System.Drawing.Color.WhiteSmoke;
+            this.xuiCheckBox6.CheckboxColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.xuiCheckBox6.CheckboxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(55)))), ((int)(((byte)(98)))));
+            this.xuiCheckBox6.CheckboxStyle = XanderUI.XUICheckBox.Style.iOS;
+            this.xuiCheckBox6.Checked = false;
+            this.xuiCheckBox6.Font = new System.Drawing.Font("Roboto Medium", 10.18868F);
+            this.xuiCheckBox6.ForeColor = System.Drawing.Color.DimGray;
+            this.xuiCheckBox6.Location = new System.Drawing.Point(239, 3);
+            this.xuiCheckBox6.Name = "xuiCheckBox6";
+            this.xuiCheckBox6.Size = new System.Drawing.Size(230, 36);
+            this.xuiCheckBox6.TabIndex = 65;
+            this.xuiCheckBox6.Text = "Optic 90 / Type V";
+            this.xuiCheckBox6.TickThickness = 2;
+            // 
+            // xuiCheckBox7
+            // 
+            this.xuiCheckBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.xuiCheckBox7.CheckboxCheckColor = System.Drawing.Color.WhiteSmoke;
+            this.xuiCheckBox7.CheckboxColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.xuiCheckBox7.CheckboxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(55)))), ((int)(((byte)(98)))));
+            this.xuiCheckBox7.CheckboxStyle = XanderUI.XUICheckBox.Style.iOS;
+            this.xuiCheckBox7.Checked = false;
+            this.xuiCheckBox7.Font = new System.Drawing.Font("Roboto Medium", 10.18868F);
+            this.xuiCheckBox7.ForeColor = System.Drawing.Color.DimGray;
+            this.xuiCheckBox7.Location = new System.Drawing.Point(3, 45);
+            this.xuiCheckBox7.Name = "xuiCheckBox7";
+            this.xuiCheckBox7.Size = new System.Drawing.Size(230, 36);
+            this.xuiCheckBox7.TabIndex = 66;
+            this.xuiCheckBox7.Text = "Optic 90 / Type V";
+            this.xuiCheckBox7.TickThickness = 2;
+            // 
+            // xuiCheckBox8
+            // 
+            this.xuiCheckBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.xuiCheckBox8.CheckboxCheckColor = System.Drawing.Color.WhiteSmoke;
+            this.xuiCheckBox8.CheckboxColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.xuiCheckBox8.CheckboxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(55)))), ((int)(((byte)(98)))));
+            this.xuiCheckBox8.CheckboxStyle = XanderUI.XUICheckBox.Style.iOS;
+            this.xuiCheckBox8.Checked = false;
+            this.xuiCheckBox8.Font = new System.Drawing.Font("Roboto Medium", 10.18868F);
+            this.xuiCheckBox8.ForeColor = System.Drawing.Color.DimGray;
+            this.xuiCheckBox8.Location = new System.Drawing.Point(239, 45);
+            this.xuiCheckBox8.Name = "xuiCheckBox8";
+            this.xuiCheckBox8.Size = new System.Drawing.Size(230, 36);
+            this.xuiCheckBox8.TabIndex = 67;
+            this.xuiCheckBox8.Text = "Optic 90 / Type V";
+            this.xuiCheckBox8.TickThickness = 2;
             // 
             // panel3
             // 
@@ -521,8 +589,7 @@
             this.dgv_HeaderDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_HeaderDetails.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Empty;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto Slab Medium", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -538,7 +605,6 @@
             this.dgv_HeaderDetails.RowHeadersVisible = false;
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.dgv_HeaderDetails.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_HeaderDetails.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Empty;
             this.dgv_HeaderDetails.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_HeaderDetails.Size = new System.Drawing.Size(315, 221);
             this.dgv_HeaderDetails.TabIndex = 1;
@@ -973,74 +1039,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(151, 119);
             this.pictureBox2.TabIndex = 22;
             this.pictureBox2.TabStop = false;
-            // 
-            // xuiCheckBox3
-            // 
-            this.xuiCheckBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.xuiCheckBox3.CheckboxCheckColor = System.Drawing.Color.WhiteSmoke;
-            this.xuiCheckBox3.CheckboxColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.xuiCheckBox3.CheckboxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(55)))), ((int)(((byte)(98)))));
-            this.xuiCheckBox3.CheckboxStyle = XanderUI.XUICheckBox.Style.iOS;
-            this.xuiCheckBox3.Checked = false;
-            this.xuiCheckBox3.Font = new System.Drawing.Font("Roboto Medium", 10.18868F);
-            this.xuiCheckBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.xuiCheckBox3.Location = new System.Drawing.Point(3, 3);
-            this.xuiCheckBox3.Name = "xuiCheckBox3";
-            this.xuiCheckBox3.Size = new System.Drawing.Size(230, 36);
-            this.xuiCheckBox3.TabIndex = 64;
-            this.xuiCheckBox3.Text = "Optic 90 / Type V";
-            this.xuiCheckBox3.TickThickness = 2;
-            // 
-            // xuiCheckBox6
-            // 
-            this.xuiCheckBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.xuiCheckBox6.CheckboxCheckColor = System.Drawing.Color.WhiteSmoke;
-            this.xuiCheckBox6.CheckboxColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.xuiCheckBox6.CheckboxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(55)))), ((int)(((byte)(98)))));
-            this.xuiCheckBox6.CheckboxStyle = XanderUI.XUICheckBox.Style.iOS;
-            this.xuiCheckBox6.Checked = false;
-            this.xuiCheckBox6.Font = new System.Drawing.Font("Roboto Medium", 10.18868F);
-            this.xuiCheckBox6.ForeColor = System.Drawing.Color.DimGray;
-            this.xuiCheckBox6.Location = new System.Drawing.Point(239, 3);
-            this.xuiCheckBox6.Name = "xuiCheckBox6";
-            this.xuiCheckBox6.Size = new System.Drawing.Size(230, 36);
-            this.xuiCheckBox6.TabIndex = 65;
-            this.xuiCheckBox6.Text = "Optic 90 / Type V";
-            this.xuiCheckBox6.TickThickness = 2;
-            // 
-            // xuiCheckBox7
-            // 
-            this.xuiCheckBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.xuiCheckBox7.CheckboxCheckColor = System.Drawing.Color.WhiteSmoke;
-            this.xuiCheckBox7.CheckboxColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.xuiCheckBox7.CheckboxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(55)))), ((int)(((byte)(98)))));
-            this.xuiCheckBox7.CheckboxStyle = XanderUI.XUICheckBox.Style.iOS;
-            this.xuiCheckBox7.Checked = false;
-            this.xuiCheckBox7.Font = new System.Drawing.Font("Roboto Medium", 10.18868F);
-            this.xuiCheckBox7.ForeColor = System.Drawing.Color.DimGray;
-            this.xuiCheckBox7.Location = new System.Drawing.Point(3, 45);
-            this.xuiCheckBox7.Name = "xuiCheckBox7";
-            this.xuiCheckBox7.Size = new System.Drawing.Size(230, 36);
-            this.xuiCheckBox7.TabIndex = 66;
-            this.xuiCheckBox7.Text = "Optic 90 / Type V";
-            this.xuiCheckBox7.TickThickness = 2;
-            // 
-            // xuiCheckBox8
-            // 
-            this.xuiCheckBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.xuiCheckBox8.CheckboxCheckColor = System.Drawing.Color.WhiteSmoke;
-            this.xuiCheckBox8.CheckboxColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.xuiCheckBox8.CheckboxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(55)))), ((int)(((byte)(98)))));
-            this.xuiCheckBox8.CheckboxStyle = XanderUI.XUICheckBox.Style.iOS;
-            this.xuiCheckBox8.Checked = false;
-            this.xuiCheckBox8.Font = new System.Drawing.Font("Roboto Medium", 10.18868F);
-            this.xuiCheckBox8.ForeColor = System.Drawing.Color.DimGray;
-            this.xuiCheckBox8.Location = new System.Drawing.Point(239, 45);
-            this.xuiCheckBox8.Name = "xuiCheckBox8";
-            this.xuiCheckBox8.Size = new System.Drawing.Size(230, 36);
-            this.xuiCheckBox8.TabIndex = 67;
-            this.xuiCheckBox8.Text = "Optic 90 / Type V";
-            this.xuiCheckBox8.TickThickness = 2;
             // 
             // frm_Editor
             // 

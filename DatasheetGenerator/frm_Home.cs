@@ -28,6 +28,7 @@ namespace DatasheetGenerator
         }
         private void Copy_Item_Click(object sender, EventArgs e)
         {
+
         }
 
         private void frm_Home_Load(object sender, EventArgs e)
@@ -56,13 +57,15 @@ namespace DatasheetGenerator
             if (me.Button == MouseButtons.Left) 
             {
                 var label = sender as Label;
+
                 Datasheet.Id = label.Tag.ToString();
+                Datasheet.IsEditing = true;
+
                 Cursor.Current = Cursors.WaitCursor;
                 Form parentForm = MdiParent;
                 frm_Editor form = new frm_Editor();
                 form.MdiParent = parentForm;
                 form.Dock = DockStyle.Fill;
-                Datasheet.IsEditing = true;
                 form.Show();
                 Close();
             }

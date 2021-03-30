@@ -258,8 +258,8 @@ namespace DatasheetGenerator
                         string value2 = headers[header][subHeader];
 
                         //Inserting values into Sub - Header Table // H_ID = Header ID
-                        myCommand.CommandText = @"Insert into Subheader(Value1      ,Value2          ,H_ID) 
-                                                                 values('" + value1 + "','" + value2 + "'," + HeaderID + ")";
+                        myCommand.CommandText = @"Insert into Subheader(Value1      ,Value2          ,H_ID                ,DS_ID) 
+                                                                 values('" + value1 + "','" + value2 + "'," + HeaderID + "," + Datasheet.Id + ")";
 
                         myCommand.ExecuteNonQuery();
                     }
@@ -291,7 +291,6 @@ namespace DatasheetGenerator
                                                                    values(" + values[0].ToString() + "," + Datasheet.Id + ",'" + textBox.Text + "', 4)";
                     myCommand.ExecuteNonQuery();
                 }
-
                 transaction.Commit();
                 MessageBox.Show("Record Added Successfully");
                 this.Close();
@@ -317,13 +316,13 @@ namespace DatasheetGenerator
 
                 Cursor.Current = Cursors.WaitCursor;
 
-                Datasheet.Id = "54";
-                Datasheet.IsEditing = true;
+                //Datasheet.Id = "54";
+                //Datasheet.IsEditing = true;
 
 
                 lab_ProductFamily.Text = Datasheet.ProductFamilly;
                 data = Editor.AutoCompleteLoadValue1();
-               
+
                 //When Editing the datasheet
                 if (Datasheet.IsEditing)
                 {
@@ -356,7 +355,7 @@ namespace DatasheetGenerator
                     AddExistingImages();
                     Datasheet.IsEditing = false;
                 }
-                else 
+                else
                 {
                     //When Adding a New Datasheet
                     Datasheet.AddSymbolList(flowPanel_Symbol, false);
@@ -366,7 +365,7 @@ namespace DatasheetGenerator
                     Editor.UpdateImageDetails(cmb_Category, cmb_Image);
                 }
                 Cursor.Current = Cursors.WaitCursor;
-              
+
 
 
                 try { cmb_Category.SelectedIndex = 0; }
@@ -537,6 +536,10 @@ namespace DatasheetGenerator
             else if (!Datasheet.IsEditing)
             {
                 SaveRecord(true); // isDraft = true
+            }
+            else if (Datasheet.IsEditing)
+            {
+                MessageBox.Show("Will be done soon..");
             }
         }
 
