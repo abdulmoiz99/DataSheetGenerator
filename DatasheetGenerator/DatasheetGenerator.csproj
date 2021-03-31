@@ -58,8 +58,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="XanderUI">
-      <HintPath>C:\Users\moiza\Desktop\XanderUI.dll</HintPath>
+    <Reference Include="XanderUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\XanderUI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -245,6 +246,7 @@
     <None Include="Resources\icons8-multiply-30.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\default.jpg" />
     <Content Include="Resources\icons8-multiply-12.png" />
     <None Include="Resources\icons8-multiply-24.png" />
     <None Include="Resources\icons8-multiply-121.png" />

@@ -54,6 +54,8 @@ namespace DatasheetGenerator
             txt_Name.Focus();
 
             ImageSelection();
+
+            pb_Image.Image = Properties.Resources._default;
         }
 
         private void btn_ReplaceImage_Click(object sender, EventArgs e)
@@ -80,6 +82,7 @@ namespace DatasheetGenerator
             txt_Description.Enabled = true;
             dgv_Media.Enabled = false;
             txt_Name.Focus();
+            pb_Image.Image = Properties.Resources._default;
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)

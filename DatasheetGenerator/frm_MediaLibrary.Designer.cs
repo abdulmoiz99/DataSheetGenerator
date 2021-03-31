@@ -65,7 +65,7 @@
             this.dgv_Media.AllowUserToAddRows = false;
             this.dgv_Media.AllowUserToDeleteRows = false;
             this.dgv_Media.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_Media.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgv_Media.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 10.86792F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -152,7 +152,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label3.Location = new System.Drawing.Point(50, 214);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 22);
+            this.label3.Size = new System.Drawing.Size(60, 24);
             this.label3.TabIndex = 25;
             this.label3.Text = "Name";
             // 
@@ -203,7 +203,7 @@
             // pb_Image
             // 
             this.pb_Image.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb_Image.Image = ((System.Drawing.Image)(resources.GetObject("pb_Image.Image")));
+            this.pb_Image.Image = global::DatasheetGenerator.Properties.Resources._default;
             this.pb_Image.InitialImage = ((System.Drawing.Image)(resources.GetObject("pb_Image.InitialImage")));
             this.pb_Image.Location = new System.Drawing.Point(570, 203);
             this.pb_Image.Name = "pb_Image";
@@ -219,7 +219,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label1.Location = new System.Drawing.Point(50, 300);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 22);
+            this.label1.Size = new System.Drawing.Size(109, 24);
             this.label1.TabIndex = 32;
             this.label1.Text = "Description";
             // 
@@ -235,7 +235,7 @@
             this.txt_Name.SelectedText = "";
             this.txt_Name.SelectionLength = 0;
             this.txt_Name.SelectionStart = 0;
-            this.txt_Name.Size = new System.Drawing.Size(482, 23);
+            this.txt_Name.Size = new System.Drawing.Size(482, 25);
             this.txt_Name.TabIndex = 1;
             this.txt_Name.TabStop = false;
             this.txt_Name.UseSystemPasswordChar = false;
@@ -252,7 +252,7 @@
             this.txt_Description.SelectedText = "";
             this.txt_Description.SelectionLength = 0;
             this.txt_Description.SelectionStart = 0;
-            this.txt_Description.Size = new System.Drawing.Size(482, 23);
+            this.txt_Description.Size = new System.Drawing.Size(482, 25);
             this.txt_Description.TabIndex = 2;
             this.txt_Description.TabStop = false;
             this.txt_Description.UseSystemPasswordChar = false;
@@ -365,7 +365,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(126)))), ((int)(((byte)(192)))));
             this.label2.Location = new System.Drawing.Point(30, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(289, 53);
+            this.label2.Size = new System.Drawing.Size(318, 58);
             this.label2.TabIndex = 40;
             this.label2.Text = "Media Library";
             // 
@@ -483,7 +483,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(1064, 779);
             this.Controls.Add(this.btnm_WiringDrawings);
             this.Controls.Add(this.btn_DimensionalDrawings);
