@@ -556,8 +556,8 @@ namespace DatasheetGenerator
             else
             {
                 string date = DateTime.Now.ToString("yyyy-MM-dd");
-                if (SQL.NonScalarQuery("Insert into Datasheet (Name                          ,PF_ID                                  ,Flag ,Type  ,DateCreated    ,DateModified    ,Active ,UserID) " +
-                                                      "values ('" + txt_NewDraftName.Text + "'," + cmb_ProductFamily.SelectedValue + ",0    ,1     ,'" + date + "','" + date + "'  ,1     ," + User.Id + ");"))
+                if (SQL.NonScalarQuery("Insert into Datasheet (Name                           ,PF_ID                                  ,Flag ,Type  ,DateCreated    ,DateModified   ,Active  ,UserID) " +
+                                                      "values ('" + txt_NewDraftName.Text + "'," + cmb_ProductFamily.SelectedValue + ",0    ,1     ,'" + date + "','" + date + "'  ,1       ," + User.Id + ")"))
                 {
                     Datasheet.ProductFamilly = cmb_ProductFamily.Text;
                     Datasheet.Name = txt_NewDraftName.Text;

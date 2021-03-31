@@ -104,7 +104,7 @@ namespace DatasheetGenerator
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("SQL" + ex.Message);
+                MessageBox.Show("SQL" + ex.Message);
                 return false;
             }
             finally
