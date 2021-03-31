@@ -66,27 +66,30 @@ namespace DatasheetGenerator
                 }
                 Datasheet.NewProductFamilyCreated = false;
             }
-           
 
-            //if (this.MdiChildren.Length > 0) this.ActivateMdiChild(this.MdiChildren[0]);
-            if (Datasheet.IsCreated)
+            if (Datasheet.NewDataSheet == true)
             {
-                Datasheet.IsCreated = false;
-                CloseAllForm();
-                var frm = new frm_Editor();
-                frm.MdiParent = this;
-                frm.Dock = DockStyle.Fill;
-                frm.Show();
+                if (Datasheet.IsCreated)
+                {
+                    Datasheet.IsCreated = false;
+                    CloseAllForm();
+                    var frm = new frm_Editor();
+                    frm.MdiParent = this;
+                    frm.Dock = DockStyle.Fill;
+                    frm.Show();
+                }
+                else if (Datasheet.IsEditing)
+                {
+                    Datasheet.IsEditing = false;
+                    CloseAllForm();
+                    var frm = new frm_Editor();
+                    frm.MdiParent = this;
+                    frm.Dock = DockStyle.Fill;
+                    frm.Show();
+                }
             }
-            else if (Datasheet.IsEditing)
-            {
-                Datasheet.IsEditing = false;
-                CloseAllForm();
-                var frm = new frm_Editor();
-                frm.MdiParent = this;
-                frm.Dock = DockStyle.Fill;
-                frm.Show();
-            }
+            ////if (this.MdiChildren.Length > 0) this.ActivateMdiChild(this.MdiChildren[0]);
+
         }
         private void Label_Click(object sender, EventArgs e)
         {

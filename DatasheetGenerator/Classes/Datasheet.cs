@@ -16,6 +16,7 @@ namespace DatasheetGenerator
     {
         public static bool IsCreated = false;
         public static bool IsEditing = false;
+        public static bool NewDataSheet = false;
         public static bool NewProductFamilyCreated = true;  //Set true so that it will update the list when the form is loaded for the first time 
 
 

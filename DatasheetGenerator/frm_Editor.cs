@@ -189,14 +189,16 @@ namespace DatasheetGenerator
                 MessageBox.Show("No Record To Save");
                 return;
             }
-            else if (!Datasheet.IsEditing)
+            else if (Datasheet.IsEditing)
+            {
+                MessageBox.Show("Update Function Will be done soon..");
+                return;
+            }
+            else 
             {
                 SaveRecord();
             }
-            else if (Datasheet.IsEditing)
-            {
-                MessageBox.Show("Will be done soon..");
-            }
+           
         }
 
         private void SaveRecord(bool IsDraft = false)
@@ -315,11 +317,7 @@ namespace DatasheetGenerator
             {
 
                 Cursor.Current = Cursors.WaitCursor;
-
-                //Datasheet.Id = "54";
-                //Datasheet.IsEditing = true;
-
-
+                Datasheet.NewDataSheet = false;
                 lab_ProductFamily.Text = Datasheet.ProductFamilly;
                 data = Editor.AutoCompleteLoadValue1();
 
@@ -353,7 +351,6 @@ namespace DatasheetGenerator
                         flowLayoutPanel1.Controls.SetChildIndex(dgv, count - 1);
                     }
                     AddExistingImages();
-                    Datasheet.IsEditing = false;
                 }
                 else
                 {
@@ -365,8 +362,6 @@ namespace DatasheetGenerator
                     Editor.UpdateImageDetails(cmb_Category, cmb_Image);
                 }
                 Cursor.Current = Cursors.WaitCursor;
-
-
 
                 try { cmb_Category.SelectedIndex = 0; }
                 catch (Exception) { }
@@ -533,14 +528,15 @@ namespace DatasheetGenerator
                 MessageBox.Show("No Record To Save");
                 return;
             }
-            else if (!Datasheet.IsEditing)
-            {
-                SaveRecord(true); // isDraft = true
-            }
             else if (Datasheet.IsEditing)
             {
                 MessageBox.Show("Will be done soon..");
             }
+            else
+            {
+                SaveRecord(true); // isDraft = true
+            }
+           
         }
 
         private void btn_SaveNewDraft_Click(object sender, EventArgs e)
