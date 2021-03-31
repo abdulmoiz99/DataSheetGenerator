@@ -593,7 +593,7 @@ namespace DatasheetGenerator
 
         private void btn_DownloadPDF_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Download PDF file feature will be added in the second milestore", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Download PDF file feature will be added in the second milestone", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

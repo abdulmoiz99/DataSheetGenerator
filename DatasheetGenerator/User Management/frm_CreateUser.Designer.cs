@@ -100,7 +100,7 @@
             this.txt_ConfirmPassword.MaxLength = 32767;
             this.txt_ConfirmPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_ConfirmPassword.Name = "txt_ConfirmPassword";
-            this.txt_ConfirmPassword.PasswordChar = '\0';
+            this.txt_ConfirmPassword.PasswordChar = '•';
             this.txt_ConfirmPassword.SelectedText = "";
             this.txt_ConfirmPassword.SelectionLength = 0;
             this.txt_ConfirmPassword.SelectionStart = 0;
@@ -129,7 +129,7 @@
             this.txt_Password.MaxLength = 32767;
             this.txt_Password.MouseState = MaterialSkin.MouseState.HOVER;
             this.txt_Password.Name = "txt_Password";
-            this.txt_Password.PasswordChar = '\0';
+            this.txt_Password.PasswordChar = '•';
             this.txt_Password.SelectedText = "";
             this.txt_Password.SelectionLength = 0;
             this.txt_Password.SelectionStart = 0;
