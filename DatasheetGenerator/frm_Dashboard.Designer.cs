@@ -54,7 +54,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(20, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1432, 99);
+            this.panel1.Size = new System.Drawing.Size(1528, 99);
             this.panel1.TabIndex = 3;
             // 
             // label1
@@ -63,9 +63,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto Slab", 19.69811F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.label1.Location = new System.Drawing.Point(1118, 54);
+            this.label1.Location = new System.Drawing.Point(1214, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(277, 36);
+            this.label1.Size = new System.Drawing.Size(293, 39);
             this.label1.TabIndex = 9;
             this.label1.Text = "Datasheet Generator";
             // 
@@ -87,7 +87,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(20, 99);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1432, 3);
+            this.panel2.Size = new System.Drawing.Size(1528, 3);
             this.panel2.TabIndex = 4;
             // 
             // panel3
@@ -95,7 +95,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(20, 102);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1432, 14);
+            this.panel3.Size = new System.Drawing.Size(1528, 14);
             this.panel3.TabIndex = 5;
             // 
             // panel5
@@ -107,7 +107,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(20, 116);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(309, 630);
+            this.panel5.Size = new System.Drawing.Size(309, 695);
             this.panel5.TabIndex = 6;
             // 
             // panel7
@@ -125,7 +125,7 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(21, 168);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(263, 362);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(263, 427);
             this.flowLayoutPanel1.TabIndex = 12;
             // 
             // btn_NewDatasheet
@@ -175,18 +175,18 @@
             // panel6
             // 
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(20, 746);
+            this.panel6.Location = new System.Drawing.Point(20, 811);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1432, 20);
+            this.panel6.Size = new System.Drawing.Size(1528, 20);
             this.panel6.TabIndex = 7;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(1452, 0);
+            this.panel4.Location = new System.Drawing.Point(1548, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(20, 766);
+            this.panel4.Size = new System.Drawing.Size(20, 831);
             this.panel4.TabIndex = 9;
             // 
             // panel8
@@ -195,7 +195,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(20, 766);
+            this.panel8.Size = new System.Drawing.Size(20, 831);
             this.panel8.TabIndex = 10;
             // 
             // frm_Dashboard
@@ -203,7 +203,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1472, 766);
+            this.ClientSize = new System.Drawing.Size(1568, 831);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -212,6 +212,7 @@
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel4);
             this.IsMdiContainer = true;
+            this.MinimumSize = new System.Drawing.Size(1584, 872);
             this.Name = "frm_Dashboard";
             this.Text = "Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
