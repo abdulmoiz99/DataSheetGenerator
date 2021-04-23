@@ -33,7 +33,7 @@ namespace DatasheetGenerator
 
         private void frm_Home_Load(object sender, EventArgs e)
         {
-            var datasheets = Datasheet.GetDataTable(@"select Id, Name, DATE_FORMAT(DateModified, '%d-%m-%Y') AS DateModified from Datasheet where PF_ID = " + productFamilyID + " order by Date(DateModified) desc;");
+            var datasheets = Datasheet.GetDataTable(@"select Id, Name, DATE_FORMAT(DateModified, '%d-%m-%Y') AS DateModified from Datasheet where PF_ID = " + productFamilyID + " And Active = 1 order by Date(DateModified) desc;");
 
             foreach (DataRow row in datasheets.Rows)
             {
