@@ -99,7 +99,6 @@ namespace DatasheetGenerator
                 deleteItem.Tag = label;
             }
         }
-
         private void datasheetPanel_Paint(object sender, PaintEventArgs e)
         {
 

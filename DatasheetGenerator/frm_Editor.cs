@@ -194,11 +194,11 @@ namespace DatasheetGenerator
                 MessageBox.Show("Update Function Will be done soon..");
                 return;
             }
-            else 
+            else
             {
                 SaveRecord();
             }
-           
+
         }
 
         private void SaveRecord(bool IsDraft = false)
@@ -384,17 +384,17 @@ namespace DatasheetGenerator
         private void AddExistingImages()
         {
             //Adding Images to FlowLayout
-            var DimensionalDrawings = Datasheet.GetDataTable("select * from DatasheetImages where ImageID = 2  and DatasheetId = " + Datasheet.Id + "; ");
+            var DimensionalDrawings = Datasheet.GetDataTable("select * from DatasheetImages where Type = 2  and DatasheetId = " + Datasheet.Id + "; ");
             foreach (DataRow Images in DimensionalDrawings.Rows)
             {
                 Datasheet.AddImage(Images["ImageID"].ToString(), Images["Description"].ToString(), Button_Click, flowPanel_DimensionalDrawings);
             }
-            var ProductImages = Datasheet.GetDataTable("select * from DatasheetImages where ImageID = 3  and DatasheetId = " + Datasheet.Id + "; ");
+            var ProductImages = Datasheet.GetDataTable("select * from DatasheetImages where Type = 3  and DatasheetId = " + Datasheet.Id + "; ");
             foreach (DataRow Images in ProductImages.Rows)
             {
                 Datasheet.AddImage(Images["ImageID"].ToString(), Images["Description"].ToString(), Button_Click, flowPanel_ProductImages);
             }
-            var WiringDiagrams = Datasheet.GetDataTable("select * from DatasheetImages where ImageID = 4 and DatasheetId = " + Datasheet.Id + " ; ");
+            var WiringDiagrams = Datasheet.GetDataTable("select * from DatasheetImages where Type = 4 and DatasheetId = " + Datasheet.Id + " ; ");
             foreach (DataRow Images in WiringDiagrams.Rows)
             {
                 Datasheet.AddImage(Images["ImageID"].ToString(), Images["Description"].ToString(), Button_Click, flowPanel_WiringDiagrams);
@@ -536,7 +536,7 @@ namespace DatasheetGenerator
             {
                 SaveRecord(true); // isDraft = true
             }
-           
+
         }
 
         private void btn_SaveNewDraft_Click(object sender, EventArgs e)
