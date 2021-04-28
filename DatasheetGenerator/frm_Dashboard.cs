@@ -19,6 +19,7 @@ namespace DatasheetGenerator
         private void frm_Dashboard_Load(object sender, EventArgs e)
         {
             Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.White;
+            frm_Dashboard_Activated(sender, e);
         }
         private void btn_NewDatasheet_Click(object sender, EventArgs e)
         {

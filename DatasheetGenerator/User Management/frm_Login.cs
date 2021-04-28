@@ -35,6 +35,10 @@ namespace DatasheetGenerator
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
+
+            //To resolve login issue
+            Datasheet.NewProductFamilyCreated = true;
+
             if (string.IsNullOrEmpty(txt_Username.Text)) MessageBox.Show("Please Enter Username ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else if (string.IsNullOrEmpty(txt_Password.Text)) MessageBox.Show("Please Enter Password ", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else if (User.VerifyUser(txt_Username.Text, txt_Password.Text))
@@ -49,7 +53,6 @@ namespace DatasheetGenerator
             {
                 MessageBox.Show("Invalid username or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
 
         }
 
