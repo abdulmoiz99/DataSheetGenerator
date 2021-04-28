@@ -119,5 +119,14 @@ namespace DatasheetGenerator
             frm.Dock = DockStyle.Fill;
             frm.Show();
         }
+
+        private void btn_Logout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var frm = new frm_Login();
+            frm.ShowDialog();
+            this.Close();
+
+        }
     }
 }

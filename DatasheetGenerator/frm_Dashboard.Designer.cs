@@ -42,6 +42,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btn_Logout = new XanderUI.XUIButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
@@ -65,7 +66,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label1.Location = new System.Drawing.Point(1214, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(293, 39);
+            this.label1.Size = new System.Drawing.Size(277, 36);
             this.label1.TabIndex = 9;
             this.label1.Text = "Datasheet Generator";
             // 
@@ -100,6 +101,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.btn_Logout);
             this.panel5.Controls.Add(this.panel7);
             this.panel5.Controls.Add(this.flowLayoutPanel1);
             this.panel5.Controls.Add(this.btn_NewDatasheet);
@@ -107,7 +109,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(20, 116);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(309, 695);
+            this.panel5.Size = new System.Drawing.Size(309, 697);
             this.panel5.TabIndex = 6;
             // 
             // panel7
@@ -125,7 +127,7 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(21, 168);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(263, 427);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(263, 429);
             this.flowLayoutPanel1.TabIndex = 12;
             // 
             // btn_NewDatasheet
@@ -175,7 +177,7 @@
             // panel6
             // 
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(20, 811);
+            this.panel6.Location = new System.Drawing.Point(20, 813);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1528, 20);
             this.panel6.TabIndex = 7;
@@ -186,7 +188,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(1548, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(20, 831);
+            this.panel4.Size = new System.Drawing.Size(20, 833);
             this.panel4.TabIndex = 9;
             // 
             // panel8
@@ -195,15 +197,38 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(20, 831);
+            this.panel8.Size = new System.Drawing.Size(20, 833);
             this.panel8.TabIndex = 10;
+            // 
+            // btn_Logout
+            // 
+            this.btn_Logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_Logout.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(190)))));
+            this.btn_Logout.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_Logout.ButtonImage")));
+            this.btn_Logout.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_Logout.ButtonText = "Logout";
+            this.btn_Logout.ClickBackColor = System.Drawing.Color.White;
+            this.btn_Logout.ClickTextColor = System.Drawing.Color.White;
+            this.btn_Logout.CornerRadius = 5;
+            this.btn_Logout.Font = new System.Drawing.Font("Roboto Slab", 13F);
+            this.btn_Logout.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Logout.HoverBackgroundColor = System.Drawing.Color.White;
+            this.btn_Logout.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(190)))));
+            this.btn_Logout.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_Logout.Location = new System.Drawing.Point(21, 652);
+            this.btn_Logout.Name = "btn_Logout";
+            this.btn_Logout.Size = new System.Drawing.Size(267, 39);
+            this.btn_Logout.TabIndex = 14;
+            this.btn_Logout.TextColor = System.Drawing.Color.White;
+            this.btn_Logout.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
             // 
             // frm_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1568, 831);
+            this.ClientSize = new System.Drawing.Size(1568, 833);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -241,5 +266,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel7;
+        private XanderUI.XUIButton btn_Logout;
     }
 }
