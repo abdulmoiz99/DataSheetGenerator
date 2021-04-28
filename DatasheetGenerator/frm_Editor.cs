@@ -191,17 +191,21 @@ namespace DatasheetGenerator
             }
             else if (Datasheet.IsEditing)
             {
-                MessageBox.Show("Update Function Will be done soon..");
-                return;
+                UpdateRecord();
             }
-            else 
+            else
             {
-                SaveRecord();
+                SaveRecord(false);
+                MessageBox.Show("Record Save Successfully");
             }
-           
-        }
 
-        private void SaveRecord(bool IsDraft = false)
+        }
+        public void UpdateRecord()
+        {
+            SaveRecord(true);
+            MessageBox.Show("Record Updated Successfully");
+        }
+        private void SaveRecord(bool UpdateRecord, bool IsDraft = false)
         {
             Cursor.Current = Cursors.WaitCursor;
             Dictionary<string, Dictionary<string, string>> headers = Header.GetHeaders(flowLayoutPanel1);
@@ -228,6 +232,24 @@ namespace DatasheetGenerator
             {
                 myCommand.CommandText = @"update Datasheet set userID = " + User.Id + " where ID = " + Datasheet.Id + "";
                 myCommand.ExecuteNonQuery();
+            }
+            if (UpdateRecord)
+            {
+                //Remove Previous Record
+                myCommand.CommandText = @"update Datasheet set Active = 0  where ID = " + Datasheet.Id + "";
+                myCommand.ExecuteNonQuery();
+
+
+                //Add New Record
+                string date = DateTime.Now.ToString("yyyy-MM-dd");
+                myCommand.CommandText = "Insert into Datasheet (Name                    ,PF_ID                             ,Flag ,Type  ,DateCreated    ,DateModified    ,Active) " +
+                                                       "values ('" + Datasheet.Name + "'," + Datasheet.ProductFamillyID + ",0    ,1         ,'" + date + "' ,'" + date + "'  ,1);";
+                myCommand.ExecuteNonQuery();
+
+                myCommand.CommandText = "SELECT MAX(id) FROM Datasheet;";
+                Datasheet.Id  = myCommand.ExecuteScalar().ToString();
+
+
             }
             try
             {
@@ -294,7 +316,6 @@ namespace DatasheetGenerator
                     myCommand.ExecuteNonQuery();
                 }
                 transaction.Commit();
-                MessageBox.Show("Record Added Successfully");
                 this.Close();
             }
             catch (Exception ex)
@@ -534,9 +555,10 @@ namespace DatasheetGenerator
             }
             else
             {
-                SaveRecord(true); // isDraft = true
+                SaveRecord(false, true); // isDraft = true
+                MessageBox.Show("Draft Saved Successfully");
             }
-           
+
         }
 
         private void btn_SaveNewDraft_Click(object sender, EventArgs e)
@@ -563,7 +585,8 @@ namespace DatasheetGenerator
                     Datasheet.Name = txt_NewDraftName.Text;
                     Datasheet.IsCreated = true;
                     Datasheet.Id = Datasheet.GetLatestId();
-                    SaveRecord(true);
+                    SaveRecord(false, true);
+                    MessageBox.Show("Draft Saved Successfully");
                     this.Close();
                 }
                 else

@@ -22,6 +22,7 @@ namespace DatasheetGenerator
 
         public static string Id { get; set; }
         public static string ProductFamilly { get; set; }
+        public static int ProductFamillyID { get; set; }
         public static string Name { get; set; }
 
         public static DataTable GetDataTable(string Query)

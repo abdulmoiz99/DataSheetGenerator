@@ -66,6 +66,7 @@ namespace DatasheetGenerator
                                                   "values ('" + txt_Name.Text + "'," + cmb_ProductFamily.SelectedValue + ",0    ,1         ,'" + date + "' ,'" + date + "'  ,1);"))
                 {
                     Datasheet.ProductFamilly = cmb_ProductFamily.Text;
+                    Datasheet.ProductFamillyID = Convert.ToInt32(cmb_ProductFamily.SelectedValue.ToString());
                     Datasheet.Name = txt_Name.Text;
                     Datasheet.IsCreated = true;
                     Datasheet.IsEditing = false;

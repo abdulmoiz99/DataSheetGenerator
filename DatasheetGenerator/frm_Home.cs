@@ -54,11 +54,13 @@ namespace DatasheetGenerator
         private void Label_Click(object sender, EventArgs e)
         {
             MouseEventArgs me = (MouseEventArgs)e;
-            if (me.Button == MouseButtons.Left) 
+            if (me.Button == MouseButtons.Left)
             {
                 var label = sender as Label;
 
                 Datasheet.Id = label.Tag.ToString();
+                Datasheet.Name = SQL.ScalarQuery("select Name from Datasheet where ID =  " + Datasheet.Id + "");
+                Datasheet.ProductFamillyID = Convert.ToInt32(SQL.ScalarQuery("select PF_ID from Datasheet where ID =  " + Datasheet.Id + ""));
                 Datasheet.IsEditing = true;
 
                 Cursor.Current = Cursors.WaitCursor;
