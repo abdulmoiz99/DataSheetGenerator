@@ -371,6 +371,7 @@ namespace DatasheetGenerator
                         flowLayoutPanel1.Controls.Add(dgv);
                         flowLayoutPanel1.Controls.SetChildIndex(dgv, count - 1);
                     }
+                    //TO load existing images 
                     AddExistingImages();
                 }
                 else
@@ -405,17 +406,19 @@ namespace DatasheetGenerator
         private void AddExistingImages()
         {
             //Adding Images to FlowLayout
-            var DimensionalDrawings = Datasheet.GetDataTable("select * from DatasheetImages where ImageID = 2  and DatasheetId = " + Datasheet.Id + "; ");
+            var DimensionalDrawings = Datasheet.GetDataTable("select * from DatasheetImages where Type = 2  and DatasheetId = " + Datasheet.Id + "; ");
             foreach (DataRow Images in DimensionalDrawings.Rows)
             {
                 Datasheet.AddImage(Images["ImageID"].ToString(), Images["Description"].ToString(), Button_Click, flowPanel_DimensionalDrawings);
             }
-            var ProductImages = Datasheet.GetDataTable("select * from DatasheetImages where ImageID = 3  and DatasheetId = " + Datasheet.Id + "; ");
+
+            var ProductImages = Datasheet.GetDataTable("select * from DatasheetImages where Type = 3  and DatasheetId = " + Datasheet.Id + "; ");
             foreach (DataRow Images in ProductImages.Rows)
             {
                 Datasheet.AddImage(Images["ImageID"].ToString(), Images["Description"].ToString(), Button_Click, flowPanel_ProductImages);
             }
-            var WiringDiagrams = Datasheet.GetDataTable("select * from DatasheetImages where ImageID = 4 and DatasheetId = " + Datasheet.Id + " ; ");
+
+            var WiringDiagrams = Datasheet.GetDataTable("select * from DatasheetImages where Type = 4 and DatasheetId = " + Datasheet.Id + " ; ");
             foreach (DataRow Images in WiringDiagrams.Rows)
             {
                 Datasheet.AddImage(Images["ImageID"].ToString(), Images["Description"].ToString(), Button_Click, flowPanel_WiringDiagrams);
