@@ -179,7 +179,7 @@ namespace DatasheetGenerator
                     try
                     {
                         if (SQL.con.State == ConnectionState.Closed) SQL.con.Open();
-                        var query = new MySqlCommand("UPDATE MediaLibrary SET Name = '" + txt_Name.Text + "', Description = '" + txt_Description.Text + "', Image = @pic WHERE ID = " + selectedImageType + ";", SQL.con);
+                        var query = new MySqlCommand("UPDATE MediaLibrary SET Name = '" + txt_Name.Text + "', Description = '" + txt_Description.Text + "', Image = @pic WHERE ID = " + selectedIndex + ";", SQL.con);
                         var stream = new MemoryStream();
                         pb_Image.Image.Save(stream, pb_Image.Image.RawFormat);
                         byte[] data =  stream.GetBuffer();
@@ -261,6 +261,11 @@ namespace DatasheetGenerator
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void dgv_Media_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
