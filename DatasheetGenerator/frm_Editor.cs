@@ -617,5 +617,10 @@ namespace DatasheetGenerator
         {
             MessageBox.Show("Download PDF file feature will be added in the second milestone", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

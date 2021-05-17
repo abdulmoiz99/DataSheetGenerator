@@ -163,5 +163,111 @@ namespace DatasheetGenerator
 
             flowLayoutPanel.Controls.Add(panel);
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.RowCount > 1) 
+            {
+                if (e.ColumnIndex == 0)
+                {
+                    var valueBox = dataGridView1.Rows[e.RowIndex].Cells[1] as DataGridViewComboBoxCell;
+                    valueBox.Items.Clear();
+
+                    if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Day")
+                    {
+                        valueBox.Items.Add("Monday");
+                        valueBox.Items.Add("Tuesday");
+                        valueBox.Items.Add("Wednesday");
+                    }
+                    if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Color")
+                    {
+                        valueBox.Items.Add("Red");
+                        valueBox.Items.Add("Green");
+                        valueBox.Items.Add("Blue");
+                    }
+                }
+            }
+      
+        }
+
+        private void dataGridView1_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        {
+
+
+        }
+
+        private void dataGridView1_EditingControlShowing_1(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            //try
+            //{
+            //    ComboBox cb = e.Control as ComboBox;
+            //    if (cb != null)
+            //    {
+            //        cb.Tag = this.dataGridView1.CurrentCell.RowIndex;
+
+            //        // first remove event handler to keep from attaching multiple:
+            //        cb.SelectedIndexChanged -= new
+            //        EventHandler(cb_SelectedIndexChanged);
+
+            //        // now attach the event handler
+            //        cb.SelectedIndexChanged += new
+            //        EventHandler(cb_SelectedIndexChanged);
+            //    }
+            //}
+            //catch (Exception ex) { }
+            
+        }
+
+        private void cb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var comboBox = sender as ComboBox;
+                if (comboBox != null)
+                {
+                    var valueBox = dataGridView1.Rows[(int)comboBox.Tag].Cells[1] as DataGridViewComboBoxCell;
+                    
+                    //valueBox.Value = null;                    
+                    //valueBox.Items.Clear();
+
+                    if (comboBox.Text == "Day")
+                    {
+                        valueBox.Items.Add("Monday");
+                        valueBox.Items.Add("Tuesday");
+                        valueBox.Items.Add("Wednesday");
+                    }
+
+                    else if (comboBox.Text.ToString() == "Color")
+                    {
+                        if (comboBox.Text.ToString() == "Color")
+                        {
+                            valueBox.Items.Add("Red");
+                            valueBox.Items.Add("Green");
+                            valueBox.Items.Add("Blue");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) 
+            {
+
+            }
+
+        }
+
+        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
+        }
     }
 }

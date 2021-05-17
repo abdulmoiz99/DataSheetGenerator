@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Editor));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lab_ProductFamily = new System.Windows.Forms.Label();
@@ -85,14 +85,14 @@
             this.btn_AddImage = new XanderUI.XUIButton();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnl_CopyToANewDraft = new System.Windows.Forms.Panel();
+            this.cmb_ProductFamily = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.btn_CloseNewDraft = new XanderUI.XUIButton();
             this.btn_CloseDraft = new XanderUI.XUIButton();
             this.btn_SaveNewDraft = new XanderUI.XUIButton();
             this.txt_NewDraftName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cmb_ProductFamily = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -120,7 +120,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label1.Location = new System.Drawing.Point(12, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 39);
+            this.label1.Size = new System.Drawing.Size(221, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Product Family:";
             // 
@@ -137,6 +137,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1453, 73);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lab_ProductFamily
             // 
@@ -145,7 +146,7 @@
             this.lab_ProductFamily.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.lab_ProductFamily.Location = new System.Drawing.Point(253, 19);
             this.lab_ProductFamily.Name = "lab_ProductFamily";
-            this.lab_ProductFamily.Size = new System.Drawing.Size(131, 32);
+            this.lab_ProductFamily.Size = new System.Drawing.Size(121, 30);
             this.lab_ProductFamily.TabIndex = 6;
             this.lab_ProductFamily.Text = "FL-CC-MG";
             // 
@@ -589,13 +590,13 @@
             this.dgv_HeaderDetails.AllowUserToAddRows = false;
             this.dgv_HeaderDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_HeaderDetails.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto Slab Medium", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_HeaderDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto Slab Medium", 10.86792F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_HeaderDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_HeaderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_HeaderDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -604,8 +605,8 @@
             this.dgv_HeaderDetails.Location = new System.Drawing.Point(12, 29);
             this.dgv_HeaderDetails.Name = "dgv_HeaderDetails";
             this.dgv_HeaderDetails.RowHeadersVisible = false;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.dgv_HeaderDetails.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.dgv_HeaderDetails.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_HeaderDetails.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_HeaderDetails.Size = new System.Drawing.Size(315, 221);
             this.dgv_HeaderDetails.TabIndex = 1;
@@ -635,11 +636,11 @@
             // Delete
             // 
             this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle6.NullValue")));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle2;
             this.Delete.FillWeight = 10F;
             this.Delete.HeaderText = "";
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
@@ -656,7 +657,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label3.Location = new System.Drawing.Point(186, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(178, 39);
+            this.label3.Size = new System.Drawing.Size(166, 36);
             this.label3.TabIndex = 23;
             this.label3.Text = "Add Header";
             // 
@@ -674,7 +675,7 @@
             this.txt_HeaderName.SelectedText = "";
             this.txt_HeaderName.SelectionLength = 0;
             this.txt_HeaderName.SelectionStart = 0;
-            this.txt_HeaderName.Size = new System.Drawing.Size(257, 25);
+            this.txt_HeaderName.Size = new System.Drawing.Size(257, 23);
             this.txt_HeaderName.TabIndex = 24;
             this.txt_HeaderName.TabStop = false;
             this.txt_HeaderName.UseSystemPasswordChar = false;
@@ -819,7 +820,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label5.Location = new System.Drawing.Point(10, 89);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 22);
+            this.label5.Size = new System.Drawing.Size(54, 21);
             this.label5.TabIndex = 25;
             this.label5.Text = "Image";
             // 
@@ -830,7 +831,7 @@
             this.cmb_Image.FormattingEnabled = true;
             this.cmb_Image.Location = new System.Drawing.Point(10, 116);
             this.cmb_Image.Name = "cmb_Image";
-            this.cmb_Image.Size = new System.Drawing.Size(317, 26);
+            this.cmb_Image.Size = new System.Drawing.Size(317, 25);
             this.cmb_Image.TabIndex = 24;
             // 
             // label4
@@ -839,7 +840,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label4.Location = new System.Drawing.Point(10, 29);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 22);
+            this.label4.Size = new System.Drawing.Size(73, 21);
             this.label4.TabIndex = 23;
             this.label4.Text = "Category";
             // 
@@ -854,7 +855,7 @@
             "Wiring Diagrams"});
             this.cmb_Category.Location = new System.Drawing.Point(10, 57);
             this.cmb_Category.Name = "cmb_Category";
-            this.cmb_Category.Size = new System.Drawing.Size(317, 26);
+            this.cmb_Category.Size = new System.Drawing.Size(317, 25);
             this.cmb_Category.TabIndex = 22;
             this.cmb_Category.SelectedIndexChanged += new System.EventHandler(this.cmb_Category_SelectedIndexChanged);
             // 
@@ -883,11 +884,11 @@
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle8.NullValue")));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle4.NullValue")));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewImageColumn1.FillWeight = 10F;
             this.dataGridViewImageColumn1.HeaderText = "";
             this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
@@ -912,6 +913,28 @@
             this.pnl_CopyToANewDraft.Size = new System.Drawing.Size(545, 264);
             this.pnl_CopyToANewDraft.TabIndex = 4;
             this.pnl_CopyToANewDraft.Visible = false;
+            // 
+            // cmb_ProductFamily
+            // 
+            this.cmb_ProductFamily.CausesValidation = false;
+            this.cmb_ProductFamily.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmb_ProductFamily.Font = new System.Drawing.Font("Roboto", 10.18868F);
+            this.cmb_ProductFamily.FormattingEnabled = true;
+            this.cmb_ProductFamily.Location = new System.Drawing.Point(193, 169);
+            this.cmb_ProductFamily.Name = "cmb_ProductFamily";
+            this.cmb_ProductFamily.Size = new System.Drawing.Size(299, 26);
+            this.cmb_ProductFamily.TabIndex = 29;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Roboto Medium", 12F);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.label10.Location = new System.Drawing.Point(189, 132);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(117, 19);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "Product Family";
             // 
             // btn_CloseNewDraft
             // 
@@ -993,7 +1016,7 @@
             this.txt_NewDraftName.SelectedText = "";
             this.txt_NewDraftName.SelectionLength = 0;
             this.txt_NewDraftName.SelectionStart = 0;
-            this.txt_NewDraftName.Size = new System.Drawing.Size(306, 25);
+            this.txt_NewDraftName.Size = new System.Drawing.Size(306, 23);
             this.txt_NewDraftName.TabIndex = 24;
             this.txt_NewDraftName.TabStop = false;
             this.txt_NewDraftName.UseSystemPasswordChar = false;
@@ -1006,7 +1029,7 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label9.Location = new System.Drawing.Point(186, 21);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(158, 39);
+            this.label9.Size = new System.Drawing.Size(148, 36);
             this.label9.TabIndex = 23;
             this.label9.Text = "New Draft";
             // 
@@ -1019,28 +1042,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(151, 119);
             this.pictureBox2.TabIndex = 22;
             this.pictureBox2.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Roboto Medium", 12F);
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.label10.Location = new System.Drawing.Point(189, 132);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(132, 22);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Product Family";
-            // 
-            // cmb_ProductFamily
-            // 
-            this.cmb_ProductFamily.CausesValidation = false;
-            this.cmb_ProductFamily.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmb_ProductFamily.Font = new System.Drawing.Font("Roboto", 10.18868F);
-            this.cmb_ProductFamily.FormattingEnabled = true;
-            this.cmb_ProductFamily.Location = new System.Drawing.Point(193, 169);
-            this.cmb_ProductFamily.Name = "cmb_ProductFamily";
-            this.cmb_ProductFamily.Size = new System.Drawing.Size(299, 27);
-            this.cmb_ProductFamily.TabIndex = 29;
             // 
             // frm_Editor
             // 
