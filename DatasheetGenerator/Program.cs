@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DatasheetGenerator.ModuleManager;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,10 +15,10 @@ namespace DatasheetGenerator
         [STAThread]
         static void Main()
         {
-            SQL.con.Open();
+      //      SQL.con.Open();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frn_TestForm());
+            Application.Run(new frm_Subheader());
         }
     }
 }

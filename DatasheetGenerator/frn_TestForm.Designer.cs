@@ -36,11 +36,12 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
-            this.dataGridView1.Location = new System.Drawing.Point(444, 166);
+            this.dataGridView1.Location = new System.Drawing.Point(40, 37);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(428, 181);
             this.dataGridView1.TabIndex = 0;
@@ -67,11 +68,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1769, 850);
+            this.ClientSize = new System.Drawing.Size(527, 258);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frn_TestForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frn_TestForm";
+            this.Text = "Test Form";
             this.Load += new System.EventHandler(this.frn_TestForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
