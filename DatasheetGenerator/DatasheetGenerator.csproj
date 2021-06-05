@@ -115,6 +115,12 @@
     <Compile Include="frm_MediaLibrary.Designer.cs">
       <DependentUpon>frm_MediaLibrary.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModuleManager\frm_Module.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleManager\frm_Module.Designer.cs">
+      <DependentUpon>frm_Module.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModuleManager\frm_Subheader.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MediaLibrary.resx">
       <DependentUpon>frm_MediaLibrary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleManager\frm_Module.resx">
+      <DependentUpon>frm_Module.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModuleManager\frm_Subheader.resx">
       <DependentUpon>frm_Subheader.cs</DependentUpon>
