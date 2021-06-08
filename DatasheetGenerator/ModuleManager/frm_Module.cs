@@ -30,9 +30,29 @@ namespace DatasheetGenerator.ModuleManager
                     dataGridView1_CellFormatting,
                     dataGridView1_RowsAdded);
 
-            //Main.fillCombo(cmb_SubheaderName,cmb_SubheaderName)
-        }
 
+
+            Main.fillCombo(cmb_SubheaderName, "SubheaderMaster", "SubheaderMasterName", "SubheaderMasterID", "SubheaderMasterActive = 1");
+        }
+        public bool ContainsSubheader(string value)
+        {
+            foreach (DataGridViewRow row in dgv_Preview.Rows)
+            {
+                try
+                {
+                    if (row.Cells[0].Value.ToString() == value)
+                    {
+                        return true;
+                    }
+                }
+                catch (Exception)
+                {
+
+                }
+               
+            }
+            return false;
+        }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -60,7 +80,44 @@ namespace DatasheetGenerator.ModuleManager
 
         private void btn_AddNewProductFamily_Click(object sender, EventArgs e)
         {
-            dgv_Preview.Rows.Add("", "Subheader", "Value");
+            if (cmb_SubheaderName.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please Select Header Name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (ContainsSubheader(cmb_SubheaderName.SelectedValue.ToString()))
+            {
+                MessageBox.Show("Module Already Contain The Selected Subheader", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else
+            {
+                dgv_Preview.Rows.Add(cmb_SubheaderName.SelectedValue, cmb_SubheaderName.Text, "Text Field");
+            }
+        }
+
+        private void dgv_Preview_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgv_Preview.RowCount > 1)
+            {
+                if (e.ColumnIndex == 0)
+                {
+                    var valueBox = dgv_Preview.Rows[e.RowIndex].Cells[1] as DataGridViewComboBoxCell;
+                    valueBox.Items.Clear();
+
+                    if (dgv_Preview.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Power")
+                    {
+                        valueBox.Items.Add("Monday");
+                        valueBox.Items.Add("Tuesday");
+                        valueBox.Items.Add("Wednesday");
+                    }
+                    if (dgv_Preview.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Color")
+                    {
+                        valueBox.Items.Add("Red");
+                        valueBox.Items.Add("Green");
+                        valueBox.Items.Add("Blue");
+                    }
+                }
+            }
         }
     }
 }

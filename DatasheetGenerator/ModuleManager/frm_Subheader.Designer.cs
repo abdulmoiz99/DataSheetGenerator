@@ -28,17 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Subheader));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_SubHeaderName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label7 = new System.Windows.Forms.Label();
             this.xuiObjectEllipse1 = new XanderUI.XUIObjectEllipse();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_Value = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.dgv_Values = new System.Windows.Forms.DataGridView();
             this.BundleDetailItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Remove = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -56,6 +55,7 @@
             this.SubheaderMasterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubheaderMasterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubheaderMasterActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_Value = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Values)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -77,7 +77,7 @@
             // txt_SubHeaderName
             // 
             this.txt_SubHeaderName.Depth = 0;
-            this.txt_SubHeaderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SubHeaderName.Font = new System.Drawing.Font("Roboto", 12F);
             this.txt_SubHeaderName.Hint = "";
             this.txt_SubHeaderName.Location = new System.Drawing.Point(61, 141);
             this.txt_SubHeaderName.MaxLength = 32767;
@@ -120,53 +120,35 @@
             this.label2.TabIndex = 32;
             this.label2.Text = "Value";
             // 
-            // txt_Value
-            // 
-            this.txt_Value.Depth = 0;
-            this.txt_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Value.Hint = "";
-            this.txt_Value.Location = new System.Drawing.Point(61, 221);
-            this.txt_Value.MaxLength = 32767;
-            this.txt_Value.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txt_Value.Name = "txt_Value";
-            this.txt_Value.PasswordChar = '\0';
-            this.txt_Value.SelectedText = "";
-            this.txt_Value.SelectionLength = 0;
-            this.txt_Value.SelectionStart = 0;
-            this.txt_Value.Size = new System.Drawing.Size(307, 25);
-            this.txt_Value.TabIndex = 39;
-            this.txt_Value.TabStop = false;
-            this.txt_Value.UseSystemPasswordChar = false;
-            // 
             // dgv_Values
             // 
             this.dgv_Values.AllowUserToAddRows = false;
             this.dgv_Values.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.dgv_Values.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+            this.dgv_Values.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dgv_Values.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Values.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Values.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Values.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dgv_Values.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Values.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BundleDetailItemName,
             this.Remove});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(83)))), ((int)(((byte)(121)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Values.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(83)))), ((int)(((byte)(121)))));
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Values.DefaultCellStyle = dataGridViewCellStyle19;
             this.dgv_Values.Location = new System.Drawing.Point(438, 65);
             this.dgv_Values.Name = "dgv_Values";
             this.dgv_Values.ReadOnly = true;
@@ -384,9 +366,9 @@
             // 
             this.dgv_Subheader.AllowUserToAddRows = false;
             this.dgv_Subheader.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dgv_Subheader.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            this.dgv_Subheader.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgv_Subheader.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Subheader.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Subheader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -425,6 +407,24 @@
             this.SubheaderMasterActive.Name = "SubheaderMasterActive";
             this.SubheaderMasterActive.ReadOnly = true;
             this.SubheaderMasterActive.Visible = false;
+            // 
+            // txt_Value
+            // 
+            this.txt_Value.Depth = 0;
+            this.txt_Value.Font = new System.Drawing.Font("Roboto", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Value.Hint = "";
+            this.txt_Value.Location = new System.Drawing.Point(61, 221);
+            this.txt_Value.MaxLength = 32767;
+            this.txt_Value.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txt_Value.Name = "txt_Value";
+            this.txt_Value.PasswordChar = '\0';
+            this.txt_Value.SelectedText = "";
+            this.txt_Value.SelectionLength = 0;
+            this.txt_Value.SelectionStart = 0;
+            this.txt_Value.Size = new System.Drawing.Size(307, 25);
+            this.txt_Value.TabIndex = 39;
+            this.txt_Value.TabStop = false;
+            this.txt_Value.UseSystemPasswordChar = false;
             // 
             // frm_Subheader
             // 
@@ -468,7 +468,6 @@
         private XanderUI.XUIButton btn_Delete;
         private XanderUI.XUIButton btn_Exit;
         private XanderUI.XUIButton btn_Save;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txt_Value;
         private System.Windows.Forms.Label label2;
         private XanderUI.XUIButton btn_AddValue;
         private System.Windows.Forms.DataGridView dgv_Values;
@@ -484,5 +483,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SubheaderMasterID;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubheaderMasterName;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubheaderMasterActive;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txt_Value;
     }
 }

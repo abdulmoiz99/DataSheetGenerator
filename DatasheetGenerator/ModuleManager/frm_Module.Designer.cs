@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Module));
             this.label1 = new System.Windows.Forms.Label();
-            this.cmb_SubheaderName = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_Name = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label7 = new System.Windows.Forms.Label();
             this.xuiObjectEllipse1 = new XanderUI.XUIObjectEllipse();
-            this.btn_AddNewProductFamily = new XanderUI.XUIButton();
+            this.btn_AddSubheader = new XanderUI.XUIButton();
             this.btn_Exit = new XanderUI.XUIButton();
             this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
             this.dgv_Preview = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmb_SubheaderName = new SergeUtils.EasyCompletionComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Preview)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -56,16 +56,6 @@
             this.label1.Size = new System.Drawing.Size(121, 39);
             this.label1.TabIndex = 34;
             this.label1.Text = "Module";
-            // 
-            // cmb_SubheaderName
-            // 
-            this.cmb_SubheaderName.CausesValidation = false;
-            this.cmb_SubheaderName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmb_SubheaderName.FormattingEnabled = true;
-            this.cmb_SubheaderName.Location = new System.Drawing.Point(40, 230);
-            this.cmb_SubheaderName.Name = "cmb_SubheaderName";
-            this.cmb_SubheaderName.Size = new System.Drawing.Size(349, 21);
-            this.cmb_SubheaderName.TabIndex = 33;
             // 
             // label2
             // 
@@ -114,27 +104,27 @@
             this.xuiObjectEllipse1.EffectedControl = this;
             this.xuiObjectEllipse1.EffectedForm = this;
             // 
-            // btn_AddNewProductFamily
+            // btn_AddSubheader
             // 
-            this.btn_AddNewProductFamily.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_AddNewProductFamily.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_AddNewProductFamily.ButtonImage")));
-            this.btn_AddNewProductFamily.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
-            this.btn_AddNewProductFamily.ButtonText = "";
-            this.btn_AddNewProductFamily.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btn_AddNewProductFamily.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btn_AddNewProductFamily.CornerRadius = 50;
-            this.btn_AddNewProductFamily.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.btn_AddNewProductFamily.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_AddNewProductFamily.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btn_AddNewProductFamily.HoverTextColor = System.Drawing.Color.White;
-            this.btn_AddNewProductFamily.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btn_AddNewProductFamily.Location = new System.Drawing.Point(395, 224);
-            this.btn_AddNewProductFamily.Name = "btn_AddNewProductFamily";
-            this.btn_AddNewProductFamily.Size = new System.Drawing.Size(36, 36);
-            this.btn_AddNewProductFamily.TabIndex = 38;
-            this.btn_AddNewProductFamily.TextColor = System.Drawing.Color.White;
-            this.btn_AddNewProductFamily.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.btn_AddNewProductFamily.Click += new System.EventHandler(this.btn_AddNewProductFamily_Click);
+            this.btn_AddSubheader.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_AddSubheader.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_AddSubheader.ButtonImage")));
+            this.btn_AddSubheader.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
+            this.btn_AddSubheader.ButtonText = "";
+            this.btn_AddSubheader.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_AddSubheader.ClickTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_AddSubheader.CornerRadius = 50;
+            this.btn_AddSubheader.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btn_AddSubheader.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_AddSubheader.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_AddSubheader.HoverTextColor = System.Drawing.Color.White;
+            this.btn_AddSubheader.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_AddSubheader.Location = new System.Drawing.Point(395, 224);
+            this.btn_AddSubheader.Name = "btn_AddSubheader";
+            this.btn_AddSubheader.Size = new System.Drawing.Size(36, 36);
+            this.btn_AddSubheader.TabIndex = 38;
+            this.btn_AddSubheader.TextColor = System.Drawing.Color.White;
+            this.btn_AddSubheader.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_AddSubheader.Click += new System.EventHandler(this.btn_AddNewProductFamily_Click);
             // 
             // btn_Exit
             // 
@@ -162,11 +152,10 @@
             // materialRadioButton1
             // 
             this.materialRadioButton1.AutoSize = true;
-            this.materialRadioButton1.Checked = true;
             this.materialRadioButton1.Depth = 0;
             this.materialRadioButton1.Font = new System.Drawing.Font("Roboto", 10F);
             this.materialRadioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.materialRadioButton1.Location = new System.Drawing.Point(38, 312);
+            this.materialRadioButton1.Location = new System.Drawing.Point(120, 311);
             this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
             this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -174,7 +163,6 @@
             this.materialRadioButton1.Ripple = true;
             this.materialRadioButton1.Size = new System.Drawing.Size(104, 30);
             this.materialRadioButton1.TabIndex = 39;
-            this.materialRadioButton1.TabStop = true;
             this.materialRadioButton1.Text = "Drop Down  ";
             this.materialRadioButton1.UseVisualStyleBackColor = true;
             // 
@@ -192,10 +180,11 @@
             // materialRadioButton2
             // 
             this.materialRadioButton2.AutoSize = true;
+            this.materialRadioButton2.Checked = true;
             this.materialRadioButton2.Depth = 0;
             this.materialRadioButton2.Font = new System.Drawing.Font("Roboto", 10F);
             this.materialRadioButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.materialRadioButton2.Location = new System.Drawing.Point(159, 312);
+            this.materialRadioButton2.Location = new System.Drawing.Point(40, 311);
             this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
             this.materialRadioButton2.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
@@ -203,18 +192,22 @@
             this.materialRadioButton2.Ripple = true;
             this.materialRadioButton2.Size = new System.Drawing.Size(59, 30);
             this.materialRadioButton2.TabIndex = 41;
+            this.materialRadioButton2.TabStop = true;
             this.materialRadioButton2.Text = "Text";
             this.materialRadioButton2.UseVisualStyleBackColor = true;
             // 
             // dgv_Preview
             // 
+            this.dgv_Preview.AllowUserToAddRows = false;
             this.dgv_Preview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Preview.Location = new System.Drawing.Point(18, 42);
             this.dgv_Preview.Name = "dgv_Preview";
+            this.dgv_Preview.ReadOnly = true;
             this.dgv_Preview.Size = new System.Drawing.Size(646, 315);
             this.dgv_Preview.TabIndex = 42;
             this.dgv_Preview.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dgv_Preview.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            this.dgv_Preview.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Preview_CellValueChanged);
             this.dgv_Preview.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             this.dgv_Preview.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
             // 
@@ -230,20 +223,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Preview";
             // 
+            // cmb_SubheaderName
+            // 
+            this.cmb_SubheaderName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmb_SubheaderName.Font = new System.Drawing.Font("Roboto", 12F);
+            this.cmb_SubheaderName.FormattingEnabled = true;
+            this.cmb_SubheaderName.Location = new System.Drawing.Point(39, 227);
+            this.cmb_SubheaderName.Margin = new System.Windows.Forms.Padding(4);
+            this.cmb_SubheaderName.Name = "cmb_SubheaderName";
+            this.cmb_SubheaderName.Size = new System.Drawing.Size(349, 31);
+            this.cmb_SubheaderName.TabIndex = 234;
+            // 
             // frm_Module
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 776);
+            this.Controls.Add(this.cmb_SubheaderName);
             this.Controls.Add(this.materialRadioButton2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.materialRadioButton1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmb_SubheaderName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_Name);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.btn_AddNewProductFamily);
+            this.Controls.Add(this.btn_AddSubheader);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -261,17 +265,17 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmb_SubheaderName;
         private System.Windows.Forms.Label label2;
         private MaterialSkin.Controls.MaterialSingleLineTextField txt_Name;
         private System.Windows.Forms.Label label7;
         private XanderUI.XUIObjectEllipse xuiObjectEllipse1;
-        private XanderUI.XUIButton btn_AddNewProductFamily;
+        private XanderUI.XUIButton btn_AddSubheader;
         private XanderUI.XUIButton btn_Exit;
         private System.Windows.Forms.Label label3;
         private MaterialSkin.Controls.MaterialRadioButton materialRadioButton1;
         private MaterialSkin.Controls.MaterialRadioButton materialRadioButton2;
         private System.Windows.Forms.DataGridView dgv_Preview;
         private System.Windows.Forms.GroupBox groupBox1;
+        internal SergeUtils.EasyCompletionComboBox cmb_SubheaderName;
     }
 }
