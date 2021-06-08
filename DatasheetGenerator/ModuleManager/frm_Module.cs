@@ -50,7 +50,7 @@ namespace DatasheetGenerator.ModuleManager
                 {
 
                 }
-               
+
             }
             return false;
         }
@@ -111,7 +111,7 @@ namespace DatasheetGenerator.ModuleManager
                         valueBox.Items.Add("Tuesday");
                         valueBox.Items.Add("Wednesday");
                     }
-                    if (dgv_Preview.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Color")
+                    if (dgv_Preview.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Width")
                     {
                         valueBox.Items.Add("Red");
                         valueBox.Items.Add("Green");
@@ -132,10 +132,11 @@ namespace DatasheetGenerator.ModuleManager
                 col.HeaderText = string.Empty;
                 dgv_Preview.Columns.Insert(2, col);
 
-                foreach (DataGridViewRow row in dgv_Preview.Rows) 
+                foreach (DataGridViewRow row in dgv_Preview.Rows)
                 {
                     if (row.Index == dgv_Preview.Rows.Count - 1) break;
                     row.Cells["Value2"].Value = "Text Field";
+
                 }
             }
         }
@@ -153,15 +154,41 @@ namespace DatasheetGenerator.ModuleManager
                 col.Items.Add("Monday");
                 col.Items.Add("Tuesday");
                 col.Items.Add("Wednesday");
-                
+
                 dgv_Preview.Columns.Insert(2, col);
 
                 foreach (DataGridViewRow row in dgv_Preview.Rows)
                 {
                     if (row.Index == dgv_Preview.Rows.Count - 1) break;
-                    row.Cells[col.Name].Value = (row.Cells[col.Name] as DataGridViewComboBoxCell).Items[0];                   
+                    row.Cells[col.Name].Value = (row.Cells[col.Name] as DataGridViewComboBoxCell).Items[0];
+                }
+
+                FillDgvComboBox();
+
+            }
+        }
+
+        private void FillDgvComboBox()
+        {
+            foreach (DataGridViewRow row in dgv_Preview.Rows)
+            {
+
+                if (row.Cells["ID"].Value != null)
+                {
+                    DataGridViewComboBoxCell comboBoxCell = (DataGridViewComboBoxCell)row.Cells[2];
+                    comboBoxCell.Items.Clear();
+                    var SubheaderValues = Datasheet.GetDataTable("SELECT * FROM SubheaderDetail where SubheaderMasterID  = " + row.Cells["ID"].Value.ToString() + ";");
+                    foreach (DataRow values in SubheaderValues.Rows)
+                    {
+                        comboBoxCell.Items.Add(values["SubheaderDetailValue"].ToString());
+                    }
                 }
             }
+        }
+
+        private void dgv_Preview_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
         }
     }
 }
