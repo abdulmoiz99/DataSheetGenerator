@@ -68,6 +68,7 @@ namespace DatasheetGenerator.ModuleManager
         private void frm_Subheader_Load(object sender, EventArgs e)
         {
             ToogleControls();
+            Main.fillDgv(dgv_Subheader, "select * from SubheaderMaster where SubheaderMasterActive = 1;");
         }
 
         private void btn_New_Click(object sender, EventArgs e)
@@ -84,6 +85,7 @@ namespace DatasheetGenerator.ModuleManager
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
+            string query = "";
             if (txt_SubHeaderName.Text == "")
             {
                 MessageBox.Show("Please Enter Subheader Name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -94,7 +96,21 @@ namespace DatasheetGenerator.ModuleManager
             }
             else if (mode == 1) // Save
             {
+                query = "Insert Into SubheaderMaster (SubheaderMasterName             ,SubheaderMasterActive    )" +
+                                             " values('" + txt_SubHeaderName.Text + "',1 )";
+                SQL.NonScalarQuery(query);
 
+                query = "SELECT MAX(SubheaderMasterID) FROM SubheaderMaster";
+                int ID = 0;
+                int.TryParse(SQL.ScalarQuery(query), out ID);
+
+                foreach (DataGridViewRow row in dgv_Values.Rows)
+                {
+                    query = "Insert Into SubheaderDetail (SubheaderMasterID ,SubheaderDetailValue                   ,SubheaderDetailActive    )" +
+                                                 " values('" + ID + "'      ,'" + row.Cells[0].Value.ToString() + "',1 )";
+                    SQL.NonScalarQuery(query);
+                }
+                MessageBox.Show("Record Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (mode == 2) // Edit
             {
@@ -118,6 +134,11 @@ namespace DatasheetGenerator.ModuleManager
                 }
             }
             else MessageBox.Show("Unable To Remove Record", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void txt_Find_TextChanged(object sender, EventArgs e)
+        {
+            Main.fillDgv(dgv_Subheader, "SELECT * FROM SubheaderMaster WHERE SubheaderMasterActive = 1 and  SubheaderMasterName LIKE '%" + txt_Find.Text+"%'");
         }
     }
 }

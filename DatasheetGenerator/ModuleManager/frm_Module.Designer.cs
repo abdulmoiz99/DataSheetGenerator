@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Module));
             this.label1 = new System.Windows.Forms.Label();
-            this.cmb_ProductFamily = new System.Windows.Forms.ComboBox();
+            this.cmb_SubheaderName = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_Name = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label7 = new System.Windows.Forms.Label();
@@ -57,15 +57,15 @@
             this.label1.TabIndex = 34;
             this.label1.Text = "Module";
             // 
-            // cmb_ProductFamily
+            // cmb_SubheaderName
             // 
-            this.cmb_ProductFamily.CausesValidation = false;
-            this.cmb_ProductFamily.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmb_ProductFamily.FormattingEnabled = true;
-            this.cmb_ProductFamily.Location = new System.Drawing.Point(40, 230);
-            this.cmb_ProductFamily.Name = "cmb_ProductFamily";
-            this.cmb_ProductFamily.Size = new System.Drawing.Size(349, 21);
-            this.cmb_ProductFamily.TabIndex = 33;
+            this.cmb_SubheaderName.CausesValidation = false;
+            this.cmb_SubheaderName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmb_SubheaderName.FormattingEnabled = true;
+            this.cmb_SubheaderName.Location = new System.Drawing.Point(40, 230);
+            this.cmb_SubheaderName.Name = "cmb_SubheaderName";
+            this.cmb_SubheaderName.Size = new System.Drawing.Size(349, 21);
+            this.cmb_SubheaderName.TabIndex = 33;
             // 
             // label2
             // 
@@ -239,7 +239,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.materialRadioButton1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmb_ProductFamily);
+            this.Controls.Add(this.cmb_SubheaderName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_Name);
             this.Controls.Add(this.label7);
@@ -261,7 +261,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmb_ProductFamily;
+        private System.Windows.Forms.ComboBox cmb_SubheaderName;
         private System.Windows.Forms.Label label2;
         private MaterialSkin.Controls.MaterialSingleLineTextField txt_Name;
         private System.Windows.Forms.Label label7;

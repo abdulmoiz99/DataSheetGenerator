@@ -50,15 +50,17 @@
             this.btn_Edit = new XanderUI.XUIButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txt_Find = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Subheader = new System.Windows.Forms.DataGridView();
+            this.SubheaderMasterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubheaderMasterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubheaderMasterActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Values)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Subheader)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -329,7 +331,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dgv_Subheader);
             this.groupBox1.Font = new System.Drawing.Font("Roboto Medium", 12F);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.groupBox1.Location = new System.Drawing.Point(61, 358);
@@ -341,7 +343,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.materialSingleLineTextField1);
+            this.groupBox2.Controls.Add(this.txt_Find);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Location = new System.Drawing.Point(130, 28);
             this.groupBox2.Name = "groupBox2";
@@ -349,23 +351,24 @@
             this.groupBox2.TabIndex = 249;
             this.groupBox2.TabStop = false;
             // 
-            // materialSingleLineTextField1
+            // txt_Find
             // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(6, 23);
-            this.materialSingleLineTextField1.MaxLength = 32767;
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(397, 25);
-            this.materialSingleLineTextField1.TabIndex = 171;
-            this.materialSingleLineTextField1.TabStop = false;
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
+            this.txt_Find.Depth = 0;
+            this.txt_Find.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.792453F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Find.Hint = "";
+            this.txt_Find.Location = new System.Drawing.Point(6, 23);
+            this.txt_Find.MaxLength = 32767;
+            this.txt_Find.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txt_Find.Name = "txt_Find";
+            this.txt_Find.PasswordChar = '\0';
+            this.txt_Find.SelectedText = "";
+            this.txt_Find.SelectionLength = 0;
+            this.txt_Find.SelectionStart = 0;
+            this.txt_Find.Size = new System.Drawing.Size(397, 25);
+            this.txt_Find.TabIndex = 171;
+            this.txt_Find.TabStop = false;
+            this.txt_Find.UseSystemPasswordChar = false;
+            this.txt_Find.TextChanged += new System.EventHandler(this.txt_Find_TextChanged);
             // 
             // pictureBox1
             // 
@@ -377,33 +380,51 @@
             this.pictureBox1.TabIndex = 170;
             this.pictureBox1.TabStop = false;
             // 
-            // dataGridView1
+            // dgv_Subheader
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dgv_Subheader.AllowUserToAddRows = false;
+            this.dgv_Subheader.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1});
-            this.dataGridView1.Location = new System.Drawing.Point(29, 86);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 35;
-            this.dataGridView1.Size = new System.Drawing.Size(645, 236);
-            this.dataGridView1.TabIndex = 248;
-            this.dataGridView1.TabStop = false;
+            this.dgv_Subheader.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_Subheader.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Subheader.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_Subheader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Subheader.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SubheaderMasterID,
+            this.SubheaderMasterName,
+            this.SubheaderMasterActive});
+            this.dgv_Subheader.Location = new System.Drawing.Point(29, 86);
+            this.dgv_Subheader.Name = "dgv_Subheader";
+            this.dgv_Subheader.ReadOnly = true;
+            this.dgv_Subheader.RowTemplate.Height = 35;
+            this.dgv_Subheader.Size = new System.Drawing.Size(645, 236);
+            this.dgv_Subheader.TabIndex = 248;
+            this.dgv_Subheader.TabStop = false;
             // 
-            // dataGridViewTextBoxColumn1
+            // SubheaderMasterID
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "BundleDetailItemName";
-            this.dataGridViewTextBoxColumn1.FillWeight = 131.9797F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Subheader";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.SubheaderMasterID.DataPropertyName = "SubheaderMasterID";
+            this.SubheaderMasterID.HeaderText = "SubheaderMasterID";
+            this.SubheaderMasterID.Name = "SubheaderMasterID";
+            this.SubheaderMasterID.ReadOnly = true;
+            this.SubheaderMasterID.Visible = false;
+            // 
+            // SubheaderMasterName
+            // 
+            this.SubheaderMasterName.DataPropertyName = "SubheaderMasterName";
+            this.SubheaderMasterName.FillWeight = 131.9797F;
+            this.SubheaderMasterName.HeaderText = "Subheader";
+            this.SubheaderMasterName.Name = "SubheaderMasterName";
+            this.SubheaderMasterName.ReadOnly = true;
+            // 
+            // SubheaderMasterActive
+            // 
+            this.SubheaderMasterActive.DataPropertyName = "SubheaderMasterActive";
+            this.SubheaderMasterActive.HeaderText = "SubheaderMasterActive";
+            this.SubheaderMasterActive.Name = "SubheaderMasterActive";
+            this.SubheaderMasterActive.ReadOnly = true;
+            this.SubheaderMasterActive.Visible = false;
             // 
             // frm_Subheader
             // 
@@ -432,7 +453,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Subheader)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,9 +478,11 @@
         private XanderUI.XUIButton btn_Edit;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txt_Find;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView dgv_Subheader;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubheaderMasterID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubheaderMasterName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubheaderMasterActive;
     }
 }

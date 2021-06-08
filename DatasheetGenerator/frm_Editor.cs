@@ -239,7 +239,7 @@ namespace DatasheetGenerator
                 myCommand.CommandText = @"update Datasheet set Active = 0  where ID = " + Datasheet.Id + "";
                 myCommand.ExecuteNonQuery();
 
-
+                    
                 //Add New Record
                 string date = DateTime.Now.ToString("yyyy-MM-dd");
                 myCommand.CommandText = "Insert into Datasheet (Name                    ,PF_ID                             ,Flag ,Type  ,DateCreated    ,DateModified    ,Active) " +
