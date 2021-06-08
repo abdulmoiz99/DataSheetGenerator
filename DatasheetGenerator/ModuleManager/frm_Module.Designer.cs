@@ -36,9 +36,9 @@
             this.xuiObjectEllipse1 = new XanderUI.XUIObjectEllipse();
             this.btn_AddSubheader = new XanderUI.XUIButton();
             this.btn_Exit = new XanderUI.XUIButton();
-            this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rb_DropDown = new MaterialSkin.Controls.MaterialRadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rb_Text = new MaterialSkin.Controls.MaterialRadioButton();
             this.dgv_Preview = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmb_SubheaderName = new SergeUtils.EasyCompletionComboBox();
@@ -53,7 +53,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label1.Location = new System.Drawing.Point(31, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 39);
+            this.label1.Size = new System.Drawing.Size(113, 36);
             this.label1.TabIndex = 34;
             this.label1.Text = "Module";
             // 
@@ -64,7 +64,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label2.Location = new System.Drawing.Point(36, 193);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 22);
+            this.label2.Size = new System.Drawing.Size(90, 19);
             this.label2.TabIndex = 32;
             this.label2.Text = "SubHeader";
             // 
@@ -81,7 +81,7 @@
             this.txt_Name.SelectedText = "";
             this.txt_Name.SelectionLength = 0;
             this.txt_Name.SelectionStart = 0;
-            this.txt_Name.Size = new System.Drawing.Size(349, 25);
+            this.txt_Name.Size = new System.Drawing.Size(349, 23);
             this.txt_Name.TabIndex = 31;
             this.txt_Name.TabStop = false;
             this.txt_Name.UseSystemPasswordChar = false;
@@ -94,7 +94,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label7.Location = new System.Drawing.Point(36, 101);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 22);
+            this.label7.Size = new System.Drawing.Size(52, 19);
             this.label7.TabIndex = 30;
             this.label7.Text = "Name";
             // 
@@ -149,22 +149,23 @@
             this.btn_Exit.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
-            // materialRadioButton1
+            // rb_DropDown
             // 
-            this.materialRadioButton1.AutoSize = true;
-            this.materialRadioButton1.Depth = 0;
-            this.materialRadioButton1.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialRadioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.materialRadioButton1.Location = new System.Drawing.Point(120, 311);
-            this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton1.Name = "materialRadioButton1";
-            this.materialRadioButton1.Ripple = true;
-            this.materialRadioButton1.Size = new System.Drawing.Size(104, 30);
-            this.materialRadioButton1.TabIndex = 39;
-            this.materialRadioButton1.Text = "Drop Down  ";
-            this.materialRadioButton1.UseVisualStyleBackColor = true;
+            this.rb_DropDown.AutoSize = true;
+            this.rb_DropDown.Depth = 0;
+            this.rb_DropDown.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rb_DropDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.rb_DropDown.Location = new System.Drawing.Point(120, 311);
+            this.rb_DropDown.Margin = new System.Windows.Forms.Padding(0);
+            this.rb_DropDown.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rb_DropDown.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rb_DropDown.Name = "rb_DropDown";
+            this.rb_DropDown.Ripple = true;
+            this.rb_DropDown.Size = new System.Drawing.Size(96, 30);
+            this.rb_DropDown.TabIndex = 39;
+            this.rb_DropDown.Text = "Drop Down  ";
+            this.rb_DropDown.UseVisualStyleBackColor = true;
+            this.rb_DropDown.CheckedChanged += new System.EventHandler(this.rb_DropDown_CheckedChanged);
             // 
             // label3
             // 
@@ -173,28 +174,29 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label3.Location = new System.Drawing.Point(36, 271);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 22);
+            this.label3.Size = new System.Drawing.Size(44, 19);
             this.label3.TabIndex = 40;
             this.label3.Text = "Type";
             // 
-            // materialRadioButton2
+            // rb_Text
             // 
-            this.materialRadioButton2.AutoSize = true;
-            this.materialRadioButton2.Checked = true;
-            this.materialRadioButton2.Depth = 0;
-            this.materialRadioButton2.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialRadioButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.materialRadioButton2.Location = new System.Drawing.Point(40, 311);
-            this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton2.Name = "materialRadioButton2";
-            this.materialRadioButton2.Ripple = true;
-            this.materialRadioButton2.Size = new System.Drawing.Size(59, 30);
-            this.materialRadioButton2.TabIndex = 41;
-            this.materialRadioButton2.TabStop = true;
-            this.materialRadioButton2.Text = "Text";
-            this.materialRadioButton2.UseVisualStyleBackColor = true;
+            this.rb_Text.AutoSize = true;
+            this.rb_Text.Checked = true;
+            this.rb_Text.Depth = 0;
+            this.rb_Text.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rb_Text.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.rb_Text.Location = new System.Drawing.Point(40, 311);
+            this.rb_Text.Margin = new System.Windows.Forms.Padding(0);
+            this.rb_Text.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rb_Text.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rb_Text.Name = "rb_Text";
+            this.rb_Text.Ripple = true;
+            this.rb_Text.Size = new System.Drawing.Size(56, 30);
+            this.rb_Text.TabIndex = 41;
+            this.rb_Text.TabStop = true;
+            this.rb_Text.Text = "Text";
+            this.rb_Text.UseVisualStyleBackColor = true;
+            this.rb_Text.CheckedChanged += new System.EventHandler(this.materialRadioButton2_CheckedChanged);
             // 
             // dgv_Preview
             // 
@@ -202,7 +204,6 @@
             this.dgv_Preview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Preview.Location = new System.Drawing.Point(18, 42);
             this.dgv_Preview.Name = "dgv_Preview";
-            this.dgv_Preview.ReadOnly = true;
             this.dgv_Preview.Size = new System.Drawing.Size(646, 315);
             this.dgv_Preview.TabIndex = 42;
             this.dgv_Preview.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -231,7 +232,7 @@
             this.cmb_SubheaderName.Location = new System.Drawing.Point(39, 227);
             this.cmb_SubheaderName.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_SubheaderName.Name = "cmb_SubheaderName";
-            this.cmb_SubheaderName.Size = new System.Drawing.Size(349, 31);
+            this.cmb_SubheaderName.Size = new System.Drawing.Size(349, 28);
             this.cmb_SubheaderName.TabIndex = 234;
             // 
             // frm_Module
@@ -240,9 +241,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 776);
             this.Controls.Add(this.cmb_SubheaderName);
-            this.Controls.Add(this.materialRadioButton2);
+            this.Controls.Add(this.rb_Text);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.materialRadioButton1);
+            this.Controls.Add(this.rb_DropDown);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_Name);
@@ -272,8 +273,8 @@
         private XanderUI.XUIButton btn_AddSubheader;
         private XanderUI.XUIButton btn_Exit;
         private System.Windows.Forms.Label label3;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton1;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton2;
+        private MaterialSkin.Controls.MaterialRadioButton rb_DropDown;
+        private MaterialSkin.Controls.MaterialRadioButton rb_Text;
         private System.Windows.Forms.DataGridView dgv_Preview;
         private System.Windows.Forms.GroupBox groupBox1;
         internal SergeUtils.EasyCompletionComboBox cmb_SubheaderName;

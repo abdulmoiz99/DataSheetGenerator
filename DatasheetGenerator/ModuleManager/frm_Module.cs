@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -40,7 +41,7 @@ namespace DatasheetGenerator.ModuleManager
             {
                 try
                 {
-                    if (row.Cells[0].Value.ToString() == value)
+                    if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == value)
                     {
                         return true;
                     }
@@ -116,6 +117,49 @@ namespace DatasheetGenerator.ModuleManager
                         valueBox.Items.Add("Green");
                         valueBox.Items.Add("Blue");
                     }
+                }
+            }
+        }
+
+        private void materialRadioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_Text.Checked)
+            {
+                dgv_Preview.Columns.Remove("Value2");
+
+                DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+                col.Name = "Value2";
+                col.HeaderText = string.Empty;
+                dgv_Preview.Columns.Insert(2, col);
+
+                foreach (DataGridViewRow row in dgv_Preview.Rows) 
+                {
+                    if (row.Index == dgv_Preview.Rows.Count - 1) break;
+                    row.Cells["Value2"].Value = "Text Field";
+                }
+            }
+        }
+
+        private void rb_DropDown_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_DropDown.Checked)
+            {
+                dgv_Preview.Columns.Remove("Value2");
+
+                DataGridViewComboBoxColumn col = new DataGridViewComboBoxColumn();
+                col.Name = "Value2";
+                col.HeaderText = string.Empty;
+                col.FlatStyle = FlatStyle.Flat;
+                col.Items.Add("Monday");
+                col.Items.Add("Tuesday");
+                col.Items.Add("Wednesday");
+                
+                dgv_Preview.Columns.Insert(2, col);
+
+                foreach (DataGridViewRow row in dgv_Preview.Rows)
+                {
+                    if (row.Index == dgv_Preview.Rows.Count - 1) break;
+                    row.Cells[col.Name].Value = (row.Cells[col.Name] as DataGridViewComboBoxCell).Items[0];                   
                 }
             }
         }
