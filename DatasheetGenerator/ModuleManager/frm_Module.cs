@@ -48,9 +48,7 @@ namespace DatasheetGenerator.ModuleManager
                 }
                 catch (Exception)
                 {
-
                 }
-
             }
             return false;
         }
@@ -58,27 +56,22 @@ namespace DatasheetGenerator.ModuleManager
         {
 
         }
-
         private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
 
         }
-
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
 
         }
-
         private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
 
         }
-
         private void txt_Name_TextChanged(object sender, EventArgs e)
         {
             dgv_Preview.Columns[1].HeaderText = txt_Name.Text;
         }
-
         private void btn_AddNewProductFamily_Click(object sender, EventArgs e)
         {
             if (cmb_SubheaderName.SelectedIndex < 0)
@@ -95,7 +88,6 @@ namespace DatasheetGenerator.ModuleManager
                 dgv_Preview.Rows.Add(cmb_SubheaderName.SelectedValue, cmb_SubheaderName.Text, "Text Field");
             }
         }
-
         private void dgv_Preview_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (dgv_Preview.RowCount > 1)
@@ -120,7 +112,6 @@ namespace DatasheetGenerator.ModuleManager
                 }
             }
         }
-
         private void materialRadioButton2_CheckedChanged(object sender, EventArgs e)
         {
             if (rb_Text.Checked)
@@ -140,6 +131,28 @@ namespace DatasheetGenerator.ModuleManager
                 }
             }
         }
+        private void FillDgvComboBox(DataGridViewComboBoxColumn column)
+        {
+            foreach (DataGridViewRow row in dgv_Preview.Rows)
+            {
+
+                if (row.Cells["ID"].Value != null)
+                {
+                    //  DataGridViewComboBoxCell comboBoxCell = (DataGridViewComboBoxCell)row.Cells[2];
+                    column.Items.Clear();
+                    var SubheaderValues = Datasheet.GetDataTable("SELECT * FROM SubheaderDetail where SubheaderMasterID  = " + row.Cells["ID"].Value.ToString() + ";");
+                    foreach (DataRow values in SubheaderValues.Rows)
+                    {
+                        column.Items.Add(values["SubheaderDetailValue"].ToString());
+                    }
+                }
+            }
+        }
+
+        private void dgv_Preview_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
+        }
 
         private void rb_DropDown_CheckedChanged(object sender, EventArgs e)
         {
@@ -151,44 +164,16 @@ namespace DatasheetGenerator.ModuleManager
                 col.Name = "Value2";
                 col.HeaderText = string.Empty;
                 col.FlatStyle = FlatStyle.Flat;
-                col.Items.Add("Monday");
-                col.Items.Add("Tuesday");
-                col.Items.Add("Wednesday");
+
+                FillDgvComboBox(col);
 
                 dgv_Preview.Columns.Insert(2, col);
-
                 foreach (DataGridViewRow row in dgv_Preview.Rows)
                 {
                     if (row.Index == dgv_Preview.Rows.Count - 1) break;
                     row.Cells[col.Name].Value = (row.Cells[col.Name] as DataGridViewComboBoxCell).Items[0];
                 }
-
-                FillDgvComboBox();
-
             }
-        }
-
-        private void FillDgvComboBox()
-        {
-            foreach (DataGridViewRow row in dgv_Preview.Rows)
-            {
-
-                if (row.Cells["ID"].Value != null)
-                {
-                    DataGridViewComboBoxCell comboBoxCell = (DataGridViewComboBoxCell)row.Cells[2];
-                    comboBoxCell.Items.Clear();
-                    var SubheaderValues = Datasheet.GetDataTable("SELECT * FROM SubheaderDetail where SubheaderMasterID  = " + row.Cells["ID"].Value.ToString() + ";");
-                    foreach (DataRow values in SubheaderValues.Rows)
-                    {
-                        comboBoxCell.Items.Add(values["SubheaderDetailValue"].ToString());
-                    }
-                }
-            }
-        }
-
-        private void dgv_Preview_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-
         }
     }
 }
