@@ -26,11 +26,16 @@ namespace DatasheetGenerator.ModuleManager
                 btn_Edit.BackgroundColor = Color.DarkGray;
                 selectedId = 0;
 
+                txt_Find.Enabled = false;
+
+
             }
             else // Edit
             {
                 btn_New.BackgroundColor = Color.DarkGray;
                 btn_Edit.BackgroundColor = Color.FromArgb(0, 118, 190);
+
+                txt_Find.Enabled = true;
             }
         }
         private void btn_Exit_Click(object sender, EventArgs e)
@@ -120,16 +125,26 @@ namespace DatasheetGenerator.ModuleManager
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
+            if (mode != 2)
+            {
+                MessageBox.Show("Please Select The Edit Mode First", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (selectedId == 0)
             {
                 MessageBox.Show("No Record Selected", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+        
             DialogResult YorN = MessageBox.Show("Are You Sure To Deleted The Selected Record?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (YorN == DialogResult.Yes)
             {
-                if (SQL.NonScalarQuery("Update Bundles set BundleActive = 0 where BundleID = " + selectedId + ""))
+                if (SQL.NonScalarQuery("Update SubheaderMaster set SubheaderMasterActive = 0 where SubheaderMasterID = " + selectedId + ""))
                 {
+                    txt_SubHeaderName.Text = string.Empty;
+                    txt_Value.Text = string.Empty;
+                    mode = 1;
+                    ToogleControls();
                     MessageBox.Show("Record Removed Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -138,7 +153,45 @@ namespace DatasheetGenerator.ModuleManager
 
         private void txt_Find_TextChanged(object sender, EventArgs e)
         {
-            Main.fillDgv(dgv_Subheader, "SELECT * FROM SubheaderMaster WHERE SubheaderMasterActive = 1 and  SubheaderMasterName LIKE '%" + txt_Find.Text+"%'");
+            Main.fillDgv(dgv_Subheader, "SELECT * FROM SubheaderMaster WHERE SubheaderMasterActive = 1 and  SubheaderMasterName LIKE '%" + txt_Find.Text + "%'");
+        }
+
+        private void dgv_Subheader_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (mode != 2) //not edit
+            {
+                MessageBox.Show("Please Select The Edit Mode First", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            try
+            {
+                int index = e.RowIndex;
+
+                if (index > -1)
+                {
+                    DataGridViewRow selectedrow = dgv_Subheader.Rows[index];
+                    selectedId = Convert.ToInt32(selectedrow.Cells["SubheaderMasterID"].Value);
+                    txt_SubHeaderName.Text = selectedrow.Cells["SubheaderMasterName"].Value.ToString();
+
+                    var SubheaderValues = Datasheet.GetDataTable("SELECT * FROM SubheaderDetail where SubheaderMasterID  = " + selectedId + ";");
+                    dgv_Values.Rows.Clear();
+                    foreach (DataRow values in SubheaderValues.Rows)
+                    {
+                        dgv_Values.Rows.Add(values["SubheaderDetailValue"].ToString());
+                    }
+                }
+                index = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void frm_Subheader_Activated(object sender, EventArgs e)
+        {
+            ToogleControls();
+            Main.fillDgv(dgv_Subheader, "select * from SubheaderMaster where SubheaderMasterActive = 1;");
         }
     }
 }
