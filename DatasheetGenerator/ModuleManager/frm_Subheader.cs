@@ -193,5 +193,16 @@ namespace DatasheetGenerator.ModuleManager
             ToogleControls();
             Main.fillDgv(dgv_Subheader, "select * from SubheaderMaster where SubheaderMasterActive = 1;");
         }
+
+        private void dgv_Values_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var dgv = sender as DataGridView;
+            if (e.ColumnIndex == 1 && e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningRow;
+                //if (Datasheet.IsEditing) //Add Subheader function.
+                dgv.Rows.Remove(row);
+            }
+        }
     }
 }
