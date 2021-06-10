@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DatasheetGenerator.Properties;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -51,9 +52,11 @@ namespace DatasheetGenerator
             column.Name = "deleteCell";
             column.HeaderText = "";
             column.FillWeight = 10;
-            column.DefaultCellStyle.NullValue = null;
+            column.Image = Resources.icons8_multiply_24;
+            column.DefaultCellStyle.NullValue = null;           
 
             dataGridView.Columns.Add(column);
+
 
             //COLUMN HEADER
             //Set Header height
@@ -114,7 +117,31 @@ namespace DatasheetGenerator
             dataGridView.CellClick += CellClick;
             dataGridView.CellFormatting += CellFormatting;
             dataGridView.RowsAdded += RowAdded;
+
+            dataGridView.CellClick += DataGridView_CellClick;
+            dataGridView.CellFormatting += DataGridView_CellFormatting;
         }
+
+        private static void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            var dgv = sender as DataGridView;
+            if (dgv.Rows[e.RowIndex].IsNewRow && e.ColumnIndex == 3)
+            {
+                e.Value = null;
+            }
+        }
+
+        private static void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var dgv = sender as DataGridView;
+            if (e.ColumnIndex == 3 && e.RowIndex >= 0 && e.RowIndex != dgv.RowCount - 1)
+            {
+                DataGridViewRow row = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningRow;
+                //if (Datasheet.IsEditing) //Add Subheader function.
+                dgv.Rows.Remove(row);
+            }
+        }
+
         public static void UpdateImageDetails(SergeUtils.EasyCompletionComboBox CategoryComboBox, SergeUtils.EasyCompletionComboBox ImageComboBox)
         {
             int type = 0;

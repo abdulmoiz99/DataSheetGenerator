@@ -53,7 +53,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label1.Location = new System.Drawing.Point(31, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 39);
+            this.label1.Size = new System.Drawing.Size(113, 36);
             this.label1.TabIndex = 34;
             this.label1.Text = "Module";
             // 
@@ -64,7 +64,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label2.Location = new System.Drawing.Point(36, 193);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 22);
+            this.label2.Size = new System.Drawing.Size(90, 19);
             this.label2.TabIndex = 32;
             this.label2.Text = "SubHeader";
             // 
@@ -81,7 +81,7 @@
             this.txt_Name.SelectedText = "";
             this.txt_Name.SelectionLength = 0;
             this.txt_Name.SelectionStart = 0;
-            this.txt_Name.Size = new System.Drawing.Size(349, 25);
+            this.txt_Name.Size = new System.Drawing.Size(349, 23);
             this.txt_Name.TabIndex = 31;
             this.txt_Name.TabStop = false;
             this.txt_Name.UseSystemPasswordChar = false;
@@ -94,7 +94,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label7.Location = new System.Drawing.Point(36, 101);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 22);
+            this.label7.Size = new System.Drawing.Size(52, 19);
             this.label7.TabIndex = 30;
             this.label7.Text = "Name";
             // 
@@ -161,7 +161,7 @@
             this.rb_DropDown.MouseState = MaterialSkin.MouseState.HOVER;
             this.rb_DropDown.Name = "rb_DropDown";
             this.rb_DropDown.Ripple = true;
-            this.rb_DropDown.Size = new System.Drawing.Size(104, 30);
+            this.rb_DropDown.Size = new System.Drawing.Size(96, 30);
             this.rb_DropDown.TabIndex = 39;
             this.rb_DropDown.Text = "Drop Down  ";
             this.rb_DropDown.UseVisualStyleBackColor = true;
@@ -174,7 +174,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label3.Location = new System.Drawing.Point(36, 271);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 22);
+            this.label3.Size = new System.Drawing.Size(44, 19);
             this.label3.TabIndex = 40;
             this.label3.Text = "Type";
             // 
@@ -191,7 +191,7 @@
             this.rb_Text.MouseState = MaterialSkin.MouseState.HOVER;
             this.rb_Text.Name = "rb_Text";
             this.rb_Text.Ripple = true;
-            this.rb_Text.Size = new System.Drawing.Size(59, 30);
+            this.rb_Text.Size = new System.Drawing.Size(56, 30);
             this.rb_Text.TabIndex = 41;
             this.rb_Text.TabStop = true;
             this.rb_Text.Text = "Text";
@@ -233,7 +233,7 @@
             this.cmb_SubheaderName.Location = new System.Drawing.Point(39, 227);
             this.cmb_SubheaderName.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_SubheaderName.Name = "cmb_SubheaderName";
-            this.cmb_SubheaderName.Size = new System.Drawing.Size(349, 31);
+            this.cmb_SubheaderName.Size = new System.Drawing.Size(349, 28);
             this.cmb_SubheaderName.TabIndex = 234;
             // 
             // frm_Module
