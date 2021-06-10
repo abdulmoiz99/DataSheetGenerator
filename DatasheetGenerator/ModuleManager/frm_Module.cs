@@ -131,19 +131,19 @@ namespace DatasheetGenerator.ModuleManager
                 }
             }
         }
-        private void FillDgvComboBox(DataGridViewComboBoxColumn column)
+        private void FillDgvComboBox()
         {
             foreach (DataGridViewRow row in dgv_Preview.Rows)
             {
 
                 if (row.Cells["ID"].Value != null)
                 {
-                    //  DataGridViewComboBoxCell comboBoxCell = (DataGridViewComboBoxCell)row.Cells[2];
-                    column.Items.Clear();
+                    DataGridViewComboBoxCell comboBoxCell = (DataGridViewComboBoxCell)row.Cells[2];
+                    comboBoxCell.Items.Clear();
                     var SubheaderValues = Datasheet.GetDataTable("SELECT * FROM SubheaderDetail where SubheaderMasterID  = " + row.Cells["ID"].Value.ToString() + ";");
                     foreach (DataRow values in SubheaderValues.Rows)
                     {
-                        column.Items.Add(values["SubheaderDetailValue"].ToString());
+                        comboBoxCell.Items.Add(values["SubheaderDetailValue"].ToString());
                     }
                 }
             }
@@ -164,10 +164,11 @@ namespace DatasheetGenerator.ModuleManager
                 col.Name = "Value2";
                 col.HeaderText = string.Empty;
                 col.FlatStyle = FlatStyle.Flat;
-
-                FillDgvComboBox(col);
+                col.Items.Add("123");
+              
 
                 dgv_Preview.Columns.Insert(2, col);
+                FillDgvComboBox();
                 foreach (DataGridViewRow row in dgv_Preview.Rows)
                 {
                     if (row.Index == dgv_Preview.Rows.Count - 1) break;
