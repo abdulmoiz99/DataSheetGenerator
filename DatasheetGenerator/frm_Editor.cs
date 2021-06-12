@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DatasheetGenerator.ModuleManager;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,7 +39,7 @@ namespace DatasheetGenerator
         }
         private void btn_AddHeader_Click(object sender, EventArgs e)
         {
-            Editor.DisplayCenterPanel(pnl_AddHeader, txt_HeaderName, this);
+            Editor.DisplayCenterPanel(pnl_AddHeader, cmb_ModuleName, this);
         }
         //   private void GenerateGrid(DataGridView dataGridView, string HeaderID, string HeaderText, DataTable SubHeader)
 
@@ -392,6 +393,9 @@ namespace DatasheetGenerator
                 //Fill combobox for copying to a new draft
                 Main.fillComboWithoutCondition(cmb_ProductFamily, "ProductFamily", "Name", "ID");
 
+                //To fill module names in comboBOX
+                Main.fillCombo(cmb_ModuleName, "SubheaderMaster", "SubheaderMasterName", "SubheaderMasterID", "SubheaderMasterActive = 1");
+
             }
             catch (Exception ex)
             {
@@ -430,7 +434,7 @@ namespace DatasheetGenerator
         }
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
-            txt_HeaderName.Clear();
+           
             pnl_AddHeader.Visible = false;
         }
         private bool IsHeaderNameExists(string name)
@@ -448,11 +452,11 @@ namespace DatasheetGenerator
 
         private void btn_AddNewHeader_Click(object sender, EventArgs e)
         {
-            if (txt_HeaderName.Text == "")
+            if (cmb_ModuleName.SelectedIndex <0)
             {
-                MessageBox.Show("Please Enter Header Name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please Select Module Name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (IsHeaderNameExists(txt_HeaderName.Text)) //Header Name Already Exist
+            else if (IsHeaderNameExists(cmb_ModuleName.Text)) //Header Name Already Exist
             {
                 MessageBox.Show("Header Name Alreay Exist", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -461,20 +465,24 @@ namespace DatasheetGenerator
                 var dgv = new DataGridView();
                 dgv.Size = new Size(500, 277);
 
-                Editor.GenerateGrid(dgv, "", txt_HeaderName.Text,
+                Editor.AddGridFromDatabase(dgv, "", cmb_ModuleName.Text,
                     DataGridView_EditingControlShowing,
                     DataGridView_CellClick,
                     DataGridView_CellFormatting,
-                    DataGridView_RowsAdded);
+                    DataGridView_RowsAdded,
+                    Convert.ToInt32(cmb_ModuleName.SelectedValue));
 
-                UpdateHeaderDetails(dgv_HeaderDetails, txt_HeaderName.Text, count, dgv);
+                UpdateHeaderDetails(dgv_HeaderDetails, cmb_ModuleName.Text, count, dgv);
                 dgv.Tag = count++;
                 flowLayoutPanel1.Controls.Add(dgv);
                 flowLayoutPanel1.Controls.SetChildIndex(dgv, count - 1);
                 HeaderController.Header.DisableNewHeader();
                 dgv_HeaderDetails.ClearSelection();
-                txt_HeaderName.Clear();
                 pnl_AddHeader.Visible = false;
+
+
+                //Header Name
+                //Subheader + Values
             }
         }
         private void btn_AddImage_Click(object sender, EventArgs e)
@@ -600,7 +608,7 @@ namespace DatasheetGenerator
         }
         private void btn_CopyToDraft_Click(object sender, EventArgs e)
         {
-            Editor.DisplayCenterPanel(pnl_CopyToANewDraft, txt_NewDraftName, this);
+            Editor.DisplayCenterPanel(pnl_CopyToANewDraft, cmb_ModuleName, this);
         }
 
         private void btn_CloseDraft_Click(object sender, EventArgs e)
@@ -621,6 +629,16 @@ namespace DatasheetGenerator
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void frm_Editor_Activated(object sender, EventArgs e)
+        {
+        }
+
+        private void btn_NewModule_Click(object sender, EventArgs e)
+        {
+            var frm = new frm_Module();
+            frm.ShowDialog();
         }
     }
 }
