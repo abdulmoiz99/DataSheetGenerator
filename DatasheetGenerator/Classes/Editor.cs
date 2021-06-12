@@ -200,7 +200,22 @@ namespace DatasheetGenerator
             }
             if (IsDropDown)
             {
-                dataGridView.Rows.Add("", "", "");
+                dataGridView.Columns.Remove("Value2");
+
+                DataGridViewComboBoxColumn col = new DataGridViewComboBoxColumn();
+                col.Name = "Value2";
+                col.HeaderText = string.Empty;
+                col.FlatStyle = FlatStyle.Flat;
+                col.Items.Add("123");
+
+
+                dataGridView.Columns.Insert(2, col);
+                FillDgvComboBox(dataGridView);
+                foreach (DataGridViewRow row in dataGridView.Rows)
+                {
+                    if (row.Index == dataGridView.Rows.Count - 1) break;
+                    row.Cells[col.Name].Value = (row.Cells[col.Name] as DataGridViewComboBoxCell).Items[0];
+                }
             }
 
             //dataGridView.Rows.Add("Product Name", "Text Field", Properties.Resources.icons8_multiply_24);
@@ -223,7 +238,23 @@ namespace DatasheetGenerator
             dataGridView.CellClick += DataGridView_CellClick;
             dataGridView.CellFormatting += DataGridView_CellFormatting;
         }
+        private static void FillDgvComboBox(DataGridView dataGridView)
+        {
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
 
+                if (row.Cells["ID"].Value != null)
+                {
+                    DataGridViewComboBoxCell comboBoxCell = (DataGridViewComboBoxCell)row.Cells[2];
+                    comboBoxCell.Items.Clear();
+                    var SubheaderValues = Datasheet.GetDataTable("SELECT * FROM SubheaderDetail where SubheaderMasterID  = " + row.Cells["ID"].Value.ToString() + ";");
+                    foreach (DataRow values in SubheaderValues.Rows)
+                    {
+                        comboBoxCell.Items.Add(values["SubheaderDetailValue"].ToString());
+                    }
+                }
+            }
+        }
         private static void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             var dgv = sender as DataGridView;

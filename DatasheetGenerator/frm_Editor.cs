@@ -240,7 +240,7 @@ namespace DatasheetGenerator
                 myCommand.CommandText = @"update Datasheet set Active = 0  where ID = " + Datasheet.Id + "";
                 myCommand.ExecuteNonQuery();
 
-                    
+
                 //Add New Record
                 string date = DateTime.Now.ToString("yyyy-MM-dd");
                 myCommand.CommandText = "Insert into Datasheet (Name                    ,PF_ID                             ,Flag ,Type  ,DateCreated    ,DateModified    ,Active) " +
@@ -248,7 +248,7 @@ namespace DatasheetGenerator
                 myCommand.ExecuteNonQuery();
 
                 myCommand.CommandText = "SELECT MAX(id) FROM Datasheet;";
-                Datasheet.Id  = myCommand.ExecuteScalar().ToString();
+                Datasheet.Id = myCommand.ExecuteScalar().ToString();
 
 
             }
@@ -434,7 +434,7 @@ namespace DatasheetGenerator
         }
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
-           
+
             pnl_AddHeader.Visible = false;
         }
         private bool IsHeaderNameExists(string name)
@@ -452,7 +452,7 @@ namespace DatasheetGenerator
 
         private void btn_AddNewHeader_Click(object sender, EventArgs e)
         {
-            if (cmb_ModuleName.SelectedIndex <0)
+            if (cmb_ModuleName.SelectedIndex < 0)
             {
                 MessageBox.Show("Please Select Module Name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -465,12 +465,17 @@ namespace DatasheetGenerator
                 var dgv = new DataGridView();
                 dgv.Size = new Size(500, 277);
 
+                bool IsDropDown = false;
+                string ModuleDropDown = SQL.ScalarQuery("select ModuleDropDown from Module Where ModuleID= " + Convert.ToInt32(cmb_ModuleName.SelectedValue) + "");
+                if (ModuleDropDown == "1")  IsDropDown = true;
+
                 Editor.AddGridFromDatabase(dgv, "", cmb_ModuleName.Text,
                     DataGridView_EditingControlShowing,
                     DataGridView_CellClick,
                     DataGridView_CellFormatting,
                     DataGridView_RowsAdded,
-                    Convert.ToInt32(cmb_ModuleName.SelectedValue));
+                    Convert.ToInt32(cmb_ModuleName.SelectedValue),
+                    IsDropDown);
 
                 UpdateHeaderDetails(dgv_HeaderDetails, cmb_ModuleName.Text, count, dgv);
                 dgv.Tag = count++;
