@@ -42,6 +42,10 @@
             this.dgv_Preview = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmb_SubheaderName = new SergeUtils.EasyCompletionComboBox();
+            this.btn_Edit = new XanderUI.XUIButton();
+            this.btn_New = new XanderUI.XUIButton();
+            this.btn_Delete = new XanderUI.XUIButton();
+            this.btn_Save = new XanderUI.XUIButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Preview)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +57,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label1.Location = new System.Drawing.Point(31, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 39);
+            this.label1.Size = new System.Drawing.Size(113, 36);
             this.label1.TabIndex = 34;
             this.label1.Text = "Module";
             // 
@@ -64,7 +68,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label2.Location = new System.Drawing.Point(36, 193);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 22);
+            this.label2.Size = new System.Drawing.Size(90, 19);
             this.label2.TabIndex = 32;
             this.label2.Text = "SubHeader";
             // 
@@ -81,7 +85,7 @@
             this.txt_Name.SelectedText = "";
             this.txt_Name.SelectionLength = 0;
             this.txt_Name.SelectionStart = 0;
-            this.txt_Name.Size = new System.Drawing.Size(349, 25);
+            this.txt_Name.Size = new System.Drawing.Size(349, 23);
             this.txt_Name.TabIndex = 31;
             this.txt_Name.TabStop = false;
             this.txt_Name.UseSystemPasswordChar = false;
@@ -94,7 +98,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label7.Location = new System.Drawing.Point(36, 101);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 22);
+            this.label7.Size = new System.Drawing.Size(52, 19);
             this.label7.TabIndex = 30;
             this.label7.Text = "Name";
             // 
@@ -161,7 +165,7 @@
             this.rb_DropDown.MouseState = MaterialSkin.MouseState.HOVER;
             this.rb_DropDown.Name = "rb_DropDown";
             this.rb_DropDown.Ripple = true;
-            this.rb_DropDown.Size = new System.Drawing.Size(104, 30);
+            this.rb_DropDown.Size = new System.Drawing.Size(96, 30);
             this.rb_DropDown.TabIndex = 39;
             this.rb_DropDown.Text = "Drop Down  ";
             this.rb_DropDown.UseVisualStyleBackColor = true;
@@ -174,7 +178,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label3.Location = new System.Drawing.Point(36, 271);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 22);
+            this.label3.Size = new System.Drawing.Size(44, 19);
             this.label3.TabIndex = 40;
             this.label3.Text = "Type";
             // 
@@ -191,7 +195,7 @@
             this.rb_Text.MouseState = MaterialSkin.MouseState.HOVER;
             this.rb_Text.Name = "rb_Text";
             this.rb_Text.Ripple = true;
-            this.rb_Text.Size = new System.Drawing.Size(59, 30);
+            this.rb_Text.Size = new System.Drawing.Size(56, 30);
             this.rb_Text.TabIndex = 41;
             this.rb_Text.TabStop = true;
             this.rb_Text.Text = "Text";
@@ -201,6 +205,7 @@
             // dgv_Preview
             // 
             this.dgv_Preview.AllowUserToAddRows = false;
+            this.dgv_Preview.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Preview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Preview.Location = new System.Drawing.Point(18, 42);
             this.dgv_Preview.Name = "dgv_Preview";
@@ -233,14 +238,107 @@
             this.cmb_SubheaderName.Location = new System.Drawing.Point(39, 227);
             this.cmb_SubheaderName.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_SubheaderName.Name = "cmb_SubheaderName";
-            this.cmb_SubheaderName.Size = new System.Drawing.Size(349, 31);
+            this.cmb_SubheaderName.Size = new System.Drawing.Size(349, 28);
             this.cmb_SubheaderName.TabIndex = 234;
+            // 
+            // btn_Edit
+            // 
+            this.btn_Edit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_Edit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(190)))));
+            this.btn_Edit.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_Edit.ButtonImage")));
+            this.btn_Edit.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_Edit.ButtonText = "Edit";
+            this.btn_Edit.ClickBackColor = System.Drawing.Color.White;
+            this.btn_Edit.ClickTextColor = System.Drawing.Color.White;
+            this.btn_Edit.CornerRadius = 5;
+            this.btn_Edit.Font = new System.Drawing.Font("Roboto Slab", 13F);
+            this.btn_Edit.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Edit.HoverBackgroundColor = System.Drawing.Color.White;
+            this.btn_Edit.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(190)))));
+            this.btn_Edit.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_Edit.Location = new System.Drawing.Point(565, 128);
+            this.btn_Edit.Name = "btn_Edit";
+            this.btn_Edit.Size = new System.Drawing.Size(160, 42);
+            this.btn_Edit.TabIndex = 253;
+            this.btn_Edit.TextColor = System.Drawing.Color.White;
+            this.btn_Edit.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
+            // 
+            // btn_New
+            // 
+            this.btn_New.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_New.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(190)))));
+            this.btn_New.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_New.ButtonImage")));
+            this.btn_New.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_New.ButtonText = "New";
+            this.btn_New.ClickBackColor = System.Drawing.Color.White;
+            this.btn_New.ClickTextColor = System.Drawing.Color.White;
+            this.btn_New.CornerRadius = 5;
+            this.btn_New.Font = new System.Drawing.Font("Roboto Slab", 13F);
+            this.btn_New.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_New.HoverBackgroundColor = System.Drawing.Color.White;
+            this.btn_New.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(190)))));
+            this.btn_New.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_New.Location = new System.Drawing.Point(565, 78);
+            this.btn_New.Name = "btn_New";
+            this.btn_New.Size = new System.Drawing.Size(160, 42);
+            this.btn_New.TabIndex = 252;
+            this.btn_New.TextColor = System.Drawing.Color.White;
+            this.btn_New.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
+            // 
+            // btn_Delete
+            // 
+            this.btn_Delete.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(79)))), ((int)(((byte)(95)))));
+            this.btn_Delete.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_Delete.ButtonImage")));
+            this.btn_Delete.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_Delete.ButtonText = "Delete";
+            this.btn_Delete.ClickBackColor = System.Drawing.Color.White;
+            this.btn_Delete.ClickTextColor = System.Drawing.Color.White;
+            this.btn_Delete.CornerRadius = 5;
+            this.btn_Delete.Font = new System.Drawing.Font("Roboto Slab", 12F);
+            this.btn_Delete.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Delete.HoverBackgroundColor = System.Drawing.Color.White;
+            this.btn_Delete.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(79)))), ((int)(((byte)(95)))));
+            this.btn_Delete.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_Delete.Location = new System.Drawing.Point(565, 225);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(160, 42);
+            this.btn_Delete.TabIndex = 251;
+            this.btn_Delete.TextColor = System.Drawing.Color.White;
+            this.btn_Delete.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_Save.ButtonImage = ((System.Drawing.Image)(resources.GetObject("btn_Save.ButtonImage")));
+            this.btn_Save.ButtonStyle = XanderUI.XUIButton.Style.Invert;
+            this.btn_Save.ButtonText = "Save";
+            this.btn_Save.ClickBackColor = System.Drawing.Color.White;
+            this.btn_Save.ClickTextColor = System.Drawing.Color.White;
+            this.btn_Save.CornerRadius = 5;
+            this.btn_Save.Font = new System.Drawing.Font("Roboto Slab", 12F);
+            this.btn_Save.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Save.HoverBackgroundColor = System.Drawing.Color.White;
+            this.btn_Save.HoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(184)))), ((int)(((byte)(79)))));
+            this.btn_Save.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btn_Save.Location = new System.Drawing.Point(565, 177);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(160, 42);
+            this.btn_Save.TabIndex = 250;
+            this.btn_Save.TextColor = System.Drawing.Color.White;
+            this.btn_Save.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // frm_Module
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 776);
+            this.Controls.Add(this.btn_Edit);
+            this.Controls.Add(this.btn_New);
+            this.Controls.Add(this.btn_Delete);
+            this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.cmb_SubheaderName);
             this.Controls.Add(this.rb_Text);
             this.Controls.Add(this.label3);
@@ -279,5 +377,9 @@
         private System.Windows.Forms.DataGridView dgv_Preview;
         private System.Windows.Forms.GroupBox groupBox1;
         internal SergeUtils.EasyCompletionComboBox cmb_SubheaderName;
+        private XanderUI.XUIButton btn_Edit;
+        private XanderUI.XUIButton btn_New;
+        private XanderUI.XUIButton btn_Delete;
+        private XanderUI.XUIButton btn_Save;
     }
 }

@@ -43,6 +43,7 @@ namespace DatasheetGenerator
             DataGridViewRowsAddedEventHandler RowAdded,
             DataTable SubHeader = null, bool IsEditing = false)
         {
+            
             dataGridView.AllowUserToAddRows = false;
             //Adding column names
             dataGridView.Columns.Add("ID", HeaderID);
@@ -105,7 +106,7 @@ namespace DatasheetGenerator
             //dataGridView.Rows.Add("Product Name", "Text Field", Properties.Resources.icons8_multiply_24);
             //dataGridView.Rows.Add("Product Code", "Text Field", Properties.Resources.icons8_multiply_24);
             //dataGridView.Rows.Add("Product Description", "Text Field", Properties.Resources.icons8_multiply_24);
-            dataGridView.AllowUserToAddRows = true;
+            //dataGridView.AllowUserToAddRows = true;
 
             //Disabling Selection Color
             dataGridView.DefaultCellStyle.SelectionBackColor = dataGridView.DefaultCellStyle.BackColor;
@@ -267,7 +268,7 @@ namespace DatasheetGenerator
         private static void DataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var dgv = sender as DataGridView;
-            if (e.ColumnIndex == 3 && e.RowIndex >= 0 && e.RowIndex != dgv.RowCount - 1)
+            if (e.ColumnIndex == 3 && e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningRow;
                 //if (Datasheet.IsEditing) //Add Subheader function.

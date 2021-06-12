@@ -40,7 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_Values = new System.Windows.Forms.DataGridView();
             this.BundleDetailItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Remove = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Remove = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_AddValue = new XanderUI.XUIButton();
             this.btn_Delete = new XanderUI.XUIButton();
             this.btn_Exit = new XanderUI.XUIButton();
@@ -70,7 +70,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label1.Location = new System.Drawing.Point(54, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 45);
+            this.label1.Size = new System.Drawing.Size(164, 39);
             this.label1.TabIndex = 34;
             this.label1.Text = "Subheader";
             // 
@@ -87,7 +87,7 @@
             this.txt_SubHeaderName.SelectedText = "";
             this.txt_SubHeaderName.SelectionLength = 0;
             this.txt_SubHeaderName.SelectionStart = 0;
-            this.txt_SubHeaderName.Size = new System.Drawing.Size(349, 25);
+            this.txt_SubHeaderName.Size = new System.Drawing.Size(349, 23);
             this.txt_SubHeaderName.TabIndex = 31;
             this.txt_SubHeaderName.TabStop = false;
             this.txt_SubHeaderName.UseSystemPasswordChar = false;
@@ -99,7 +99,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label7.Location = new System.Drawing.Point(61, 111);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 22);
+            this.label7.Size = new System.Drawing.Size(52, 19);
             this.label7.TabIndex = 30;
             this.label7.Text = "Name";
             // 
@@ -116,7 +116,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
             this.label2.Location = new System.Drawing.Point(61, 190);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 22);
+            this.label2.Size = new System.Drawing.Size(50, 19);
             this.label2.TabIndex = 32;
             this.label2.Text = "Value";
             // 
@@ -145,8 +145,8 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(83)))), ((int)(((byte)(121)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(83)))), ((int)(((byte)(121)))));
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_Values.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_Values.Location = new System.Drawing.Point(438, 65);
@@ -156,11 +156,12 @@
             this.dgv_Values.Size = new System.Drawing.Size(320, 268);
             this.dgv_Values.TabIndex = 247;
             this.dgv_Values.TabStop = false;
+            this.dgv_Values.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Values_CellClick);
             // 
             // BundleDetailItemName
             // 
             this.BundleDetailItemName.DataPropertyName = "BundleDetailItemName";
-            this.BundleDetailItemName.FillWeight = 131.9797F;
+            this.BundleDetailItemName.FillWeight = 169.5432F;
             this.BundleDetailItemName.HeaderText = "Values";
             this.BundleDetailItemName.Name = "BundleDetailItemName";
             this.BundleDetailItemName.ReadOnly = true;
@@ -168,12 +169,12 @@
             // Remove
             // 
             this.Remove.DataPropertyName = "Remove";
-            this.Remove.FillWeight = 68.02031F;
+            this.Remove.FillWeight = 30.45685F;
             this.Remove.HeaderText = "";
+            this.Remove.Image = global::DatasheetGenerator.Properties.Resources.icons8_multiply_24;
             this.Remove.Name = "Remove";
             this.Remove.ReadOnly = true;
-            this.Remove.Text = "Remove";
-            this.Remove.UseColumnTextForButtonValue = true;
+            this.Remove.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // btn_AddValue
             // 
@@ -346,7 +347,7 @@
             this.txt_Find.SelectedText = "";
             this.txt_Find.SelectionLength = 0;
             this.txt_Find.SelectionStart = 0;
-            this.txt_Find.Size = new System.Drawing.Size(397, 25);
+            this.txt_Find.Size = new System.Drawing.Size(397, 23);
             this.txt_Find.TabIndex = 171;
             this.txt_Find.TabStop = false;
             this.txt_Find.UseSystemPasswordChar = false;
@@ -422,7 +423,7 @@
             this.txt_Value.SelectedText = "";
             this.txt_Value.SelectionLength = 0;
             this.txt_Value.SelectionStart = 0;
-            this.txt_Value.Size = new System.Drawing.Size(307, 25);
+            this.txt_Value.Size = new System.Drawing.Size(307, 23);
             this.txt_Value.TabIndex = 39;
             this.txt_Value.TabStop = false;
             this.txt_Value.UseSystemPasswordChar = false;
@@ -473,8 +474,6 @@
         private System.Windows.Forms.Label label2;
         private XanderUI.XUIButton btn_AddValue;
         private System.Windows.Forms.DataGridView dgv_Values;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BundleDetailItemName;
-        private System.Windows.Forms.DataGridViewButtonColumn Remove;
         private XanderUI.XUIButton btn_New;
         private XanderUI.XUIButton btn_Edit;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -486,5 +485,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SubheaderMasterName;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubheaderMasterActive;
         private MaterialSkin.Controls.MaterialSingleLineTextField txt_Value;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BundleDetailItemName;
+        private System.Windows.Forms.DataGridViewImageColumn Remove;
     }
 }
