@@ -394,7 +394,7 @@ namespace DatasheetGenerator
                 Main.fillComboWithoutCondition(cmb_ProductFamily, "ProductFamily", "Name", "ID");
 
                 //To fill module names in comboBOX
-                Main.fillCombo(cmb_ModuleName, "SubheaderMaster", "SubheaderMasterName", "SubheaderMasterID", "SubheaderMasterActive = 1");
+                Main.fillCombo(cmb_ModuleName, "Module", "ModuleName", "ModuleID", "ModuleActive = 1");
 
             }
             catch (Exception ex)

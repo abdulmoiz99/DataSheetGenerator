@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DatasheetGenerator.ModuleManager;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -128,6 +129,24 @@ namespace DatasheetGenerator
             frm.ShowDialog();
             this.Close();
 
+        }
+
+        private void btn_Modules_Click(object sender, EventArgs e)
+        {
+            CloseAllForm();
+            var frm = new frm_Module();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+        }
+
+        private void btn_Subheaders_Click(object sender, EventArgs e)
+        {
+            CloseAllForm();
+            var frm = new frm_Subheader();
+            frm.MdiParent = this;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
         }
     }
 }
