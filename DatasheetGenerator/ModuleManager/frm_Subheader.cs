@@ -18,7 +18,7 @@ namespace DatasheetGenerator.ModuleManager
         {
             InitializeComponent();
         }
-        public void ToogleControls()
+        public void ToggleControls()
         {
             if (mode == 1) // New
             {
@@ -72,20 +72,20 @@ namespace DatasheetGenerator.ModuleManager
 
         private void frm_Subheader_Load(object sender, EventArgs e)
         {
-            ToogleControls();
+            ToggleControls();
             Main.fillDgv(dgv_Subheader, "select * from SubheaderMaster where SubheaderMasterActive = 1;");
         }
 
         private void btn_New_Click(object sender, EventArgs e)
         {
             mode = 1;
-            ToogleControls();
+            ToggleControls();
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
             mode = 2;
-            ToogleControls();
+            ToggleControls();
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
@@ -144,7 +144,7 @@ namespace DatasheetGenerator.ModuleManager
                     txt_SubHeaderName.Text = string.Empty;
                     txt_Value.Text = string.Empty;
                     mode = 1;
-                    ToogleControls();
+                    ToggleControls();
                     MessageBox.Show("Record Removed Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -190,7 +190,7 @@ namespace DatasheetGenerator.ModuleManager
 
         private void frm_Subheader_Activated(object sender, EventArgs e)
         {
-            ToogleControls();
+            ToggleControls();
             Main.fillDgv(dgv_Subheader, "select * from SubheaderMaster where SubheaderMasterActive = 1;");
         }
 

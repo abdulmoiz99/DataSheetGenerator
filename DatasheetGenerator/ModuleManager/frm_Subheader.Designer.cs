@@ -39,6 +39,8 @@
             this.xuiObjectEllipse1 = new XanderUI.XUIObjectEllipse();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_Values = new System.Windows.Forms.DataGridView();
+            this.BundleDetailItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Remove = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_AddValue = new XanderUI.XUIButton();
             this.btn_Delete = new XanderUI.XUIButton();
             this.btn_Exit = new XanderUI.XUIButton();
@@ -54,8 +56,6 @@
             this.SubheaderMasterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubheaderMasterActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_Value = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.BundleDetailItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Remove = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Values)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -157,6 +157,24 @@
             this.dgv_Values.TabIndex = 247;
             this.dgv_Values.TabStop = false;
             this.dgv_Values.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Values_CellClick);
+            // 
+            // BundleDetailItemName
+            // 
+            this.BundleDetailItemName.DataPropertyName = "BundleDetailItemName";
+            this.BundleDetailItemName.FillWeight = 169.5432F;
+            this.BundleDetailItemName.HeaderText = "Values";
+            this.BundleDetailItemName.Name = "BundleDetailItemName";
+            this.BundleDetailItemName.ReadOnly = true;
+            // 
+            // Remove
+            // 
+            this.Remove.DataPropertyName = "Remove";
+            this.Remove.FillWeight = 30.45685F;
+            this.Remove.HeaderText = "";
+            this.Remove.Image = global::DatasheetGenerator.Properties.Resources.icons8_multiply_24;
+            this.Remove.Name = "Remove";
+            this.Remove.ReadOnly = true;
+            this.Remove.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // btn_AddValue
             // 
@@ -409,24 +427,6 @@
             this.txt_Value.TabIndex = 39;
             this.txt_Value.TabStop = false;
             this.txt_Value.UseSystemPasswordChar = false;
-            // 
-            // BundleDetailItemName
-            // 
-            this.BundleDetailItemName.DataPropertyName = "BundleDetailItemName";
-            this.BundleDetailItemName.FillWeight = 169.5432F;
-            this.BundleDetailItemName.HeaderText = "Values";
-            this.BundleDetailItemName.Name = "BundleDetailItemName";
-            this.BundleDetailItemName.ReadOnly = true;
-            // 
-            // Remove
-            // 
-            this.Remove.DataPropertyName = "Remove";
-            this.Remove.FillWeight = 30.45685F;
-            this.Remove.HeaderText = "";
-            this.Remove.Image = global::DatasheetGenerator.Properties.Resources.icons8_multiply_24;
-            this.Remove.Name = "Remove";
-            this.Remove.ReadOnly = true;
-            this.Remove.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // frm_Subheader
             // 

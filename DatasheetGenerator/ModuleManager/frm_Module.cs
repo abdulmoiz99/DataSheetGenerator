@@ -13,6 +13,9 @@ namespace DatasheetGenerator.ModuleManager
 {
     public partial class frm_Module : Form
     {
+        private int mode;
+        private int selectedId;
+
         public frm_Module()
         {
             InitializeComponent();
@@ -25,15 +28,8 @@ namespace DatasheetGenerator.ModuleManager
 
         private void frm_Module_Load(object sender, EventArgs e)
         {
-            Editor.GenerateGrid(dgv_Preview, "", "Header Name",
-                    dataGridView1_EditingControlShowing,
-                    dataGridView1_CellClick,
-                    dataGridView1_CellFormatting,
-                    dataGridView1_RowsAdded);
-
-
-
             Main.fillCombo(cmb_SubheaderName, "SubheaderMaster", "SubheaderMasterName", "SubheaderMasterID", "SubheaderMasterActive = 1");
+
         }
         public bool ContainsSubheader(string value)
         {
@@ -86,6 +82,7 @@ namespace DatasheetGenerator.ModuleManager
             else
             {
                 dgv_Preview.Rows.Add(cmb_SubheaderName.SelectedValue, cmb_SubheaderName.Text, "Text Field");
+                if (rb_DropDown.Checked) FillDgvComboBox();
             }
         }
         private void dgv_Preview_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -125,9 +122,7 @@ namespace DatasheetGenerator.ModuleManager
 
                 foreach (DataGridViewRow row in dgv_Preview.Rows)
                 {
-                    if (row.Index == dgv_Preview.Rows.Count - 1) break;
                     row.Cells["Value2"].Value = "Text Field";
-
                 }
             }
         }
@@ -171,9 +166,87 @@ namespace DatasheetGenerator.ModuleManager
                 FillDgvComboBox();
                 foreach (DataGridViewRow row in dgv_Preview.Rows)
                 {
-                    if (row.Index == dgv_Preview.Rows.Count - 1) break;
                     row.Cells[col.Name].Value = (row.Cells[col.Name] as DataGridViewComboBoxCell).Items[0];
                 }
+            }
+        }
+
+        public void ToggleControls()
+        {
+            if (mode == 1) // New
+            {
+                btn_New.BackgroundColor = Color.FromArgb(0, 118, 190);
+                btn_Edit.BackgroundColor = Color.DarkGray;
+                selectedId = 0;
+            }
+            else // Edit
+            {
+                btn_New.BackgroundColor = Color.DarkGray;
+                btn_Edit.BackgroundColor = Color.FromArgb(0, 118, 190);
+            }
+        }
+
+        private void btn_New_Click(object sender, EventArgs e)
+        {
+            txt_Name.Clear();
+            dgv_Preview.Columns.Clear();
+            rb_Text.Checked = true;
+            Editor.GenerateGrid(dgv_Preview, "", "Header Name",
+                           dataGridView1_EditingControlShowing,
+                                       dataGridView1_CellClick,
+                                  dataGridView1_CellFormatting,
+                                       dataGridView1_RowsAdded);
+            mode = 1;         
+            ToggleControls();
+        }
+
+        private void btn_Edit_Click(object sender, EventArgs e)
+        {
+            mode = 2;
+            ToggleControls();
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            string query = "";
+            if (txt_Name.Text == "")
+            {
+                MessageBox.Show("Please Enter Module Name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (dgv_Preview.RowCount <= 0)
+            {
+                MessageBox.Show("Please Add Values To List", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (mode == 1) // Save
+            {
+                query = "Insert Into Module (ModuleName,                        ModuleDropDown,                             ModuleActive    )" +
+                                             " values('" + txt_Name.Text + "',  " + Convert.ToInt32(rb_DropDown.Checked) + "            ,1 )";
+                SQL.NonScalarQuery(query);
+
+                query = "SELECT MAX(ModuleID) FROM Module";
+                int ID = 0;
+                int.TryParse(SQL.ScalarQuery(query), out ID);
+
+                foreach (DataGridViewRow row in dgv_Preview.Rows)
+                {
+                    query = "Insert Into ModuleDetail (ModuleMasterID , SubheaderMasterID )" +
+                                                 " values('" + ID + "'      ,'" + row.Cells[0].Value.ToString() + "')";
+                    SQL.NonScalarQuery(query);
+                }
+                MessageBox.Show("Record Added Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txt_Name.Clear();
+                rb_Text.Checked = true;
+                dgv_Preview.Columns.Clear();
+                Editor.GenerateGrid(dgv_Preview, "", "Header Name",
+                               dataGridView1_EditingControlShowing,
+                                           dataGridView1_CellClick,
+                                      dataGridView1_CellFormatting,
+                                           dataGridView1_RowsAdded);
+            }
+            else if (mode == 2) // Edit
+            {
+
             }
         }
     }
